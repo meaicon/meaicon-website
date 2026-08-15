@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<title>Contact MEAICON — Talk to an Expert</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Talk to MEAICON about connectivity, data centre, cyber security, blockchain or consulting projects across the Middle East & Africa. We respond within one business day.">
+<link rel="icon" href="data:,">
+<meta property="og:title" content="Contact | MEAICON Technology Group">
+<meta property="og:description" content="Tell us what you're building. We'll map the architecture around it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.meaicon.com/contact.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { paper:'#F6F3EC', card:'#FFFFFF', ink:'#23241F', muted:'#9A9C92', accent:'#C1873D', teal:'#6FA39A', line:'#E2DDCF', dark:'#1D1E1A' },
+      fontFamily: { display:['"Space Grotesk"','sans-serif'], sans:['Inter','sans-serif'], mono:['"IBM Plex Mono"','monospace'] }
+    }
+  }
+}
+</script>
+<style>
+  html{ background:#F6F3EC; }
+  body{ font-family:'Inter',sans-serif; }
+  .font-display{ font-family:'Space Grotesk',sans-serif; }
+  .font-mono{ font-family:'IBM Plex Mono',monospace; }
+  ::selection{ background:#C1873D; color:#F6F3EC; }
+  a{ transition:color .15s ease, border-color .15s ease, background-color .15s ease; }
+  .nav-link{ position:relative; }
+  .nav-link::after{ content:''; position:absolute; left:0; right:0; bottom:-4px; height:1px; background:#C1873D; transform:scaleX(0); transform-origin:left; transition:transform .2s ease; }
+  .nav-link:hover::after{ transform:scaleX(1); }
+  .hairline{ border-color:#E2DDCF; }
+  .btn-primary{ background:#23241F; color:#F6F3EC; }
+  .btn-primary:hover{ background:#000; }
+  .btn-outline{ border:1px solid #23241F; color:#23241F; }
+  .btn-outline:hover{ border-color:#C1873D; color:#C1873D; }
+  .card{ background:#FFFFFF; border:1px solid #E2DDCF; }
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:#F6F3EC; }
+  ::-webkit-scrollbar-thumb{ background:#D8D2C1; border-radius:999px; }
+  :focus-visible{ outline:2px solid #C1873D; outline-offset:2px; }
+  .form-wrap{ background:#FFFFFF; border:1px solid #E2DDCF; }
+  .form-wrap iframe{ border:none; display:block; width:100%; }
+</style>
+</head>
+<body class="bg-paper text-ink min-h-screen flex flex-col antialiased">
+
+<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b hairline">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="h-8 w-8 border-2 border-accent"></div>
+      <div class="flex flex-col leading-tight">
+        <span class="font-display font-semibold tracking-wide text-sm text-ink">MEAICON</span>
+        <span class="font-mono text-[9px] text-muted uppercase tracking-[0.2em]">Technology Group</span>
+      </div>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[13px] font-medium text-ink">
+      <a href="solutions.html" class="nav-link">Solutions</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="global-connectivity.html" class="nav-link">Presence</a>
+      <a href="partners.html" class="nav-link">Partners</a>
+      <a href="case-studies.html" class="nav-link">Case Studies</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="inline-flex items-center px-4 py-2 border border-ink bg-ink text-paper text-[12px] font-mono uppercase tracking-wide">Talk to an Expert</a>
+    </nav>
+    <button id="mobile-menu-toggle" class="lg:hidden inline-flex items-center justify-center h-9 w-9 border border-ink/30 text-ink">
+      <span class="sr-only">Toggle navigation</span>☰
+    </button>
+  </div>
+  <div id="mobile-menu" class="lg:hidden hidden border-t hairline bg-paper">
+    <nav class="px-4 py-3 flex flex-col gap-3 text-sm">
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="global-connectivity.html">Presence</a>
+      <a href="partners.html">Partners</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="mt-2 inline-flex items-center justify-center px-4 py-2 border border-ink font-mono text-xs uppercase">Talk to an Expert</a>
+    </nav>
+  </div>
+</header>
+
+<main class="flex-1">
+
+<section class="max-w-6xl mx-auto px-4 pt-14 pb-10">
+  <p class="font-mono text-[11px] uppercase tracking-[0.25em] text-teal mb-3">Contact</p>
+  <h1 class="font-display text-4xl sm:text-5xl max-w-2xl">
+    <span class="text-muted">Tell us what you're building.</span> <span class="text-ink font-medium">We'll map the architecture around it.</span>
+  </h1>
+  <p class="mt-5 max-w-xl text-[15px] text-ink/70 leading-relaxed">
+    Share a few details about your project or environment, and a member of our team will respond within one
+    business day. For ongoing projects or support, your enquiry is routed to the relevant specialist.
+  </p>
+</section>
+
+<section class="border-t hairline">
+  <div class="max-w-6xl mx-auto px-4 py-14 grid gap-10 md:grid-cols-2">
+
+    <div>
+      <h2 class="font-display text-xl mb-2">Share your requirements</h2>
+      <p class="text-sm text-ink/70 mb-6">Use the form below for new projects, RFPs, partnerships or general enquiries. The more context you provide, the better we can prepare before we respond.</p>
+      <div class="form-wrap rounded-none">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeMRVsqsfZJCCRlH9-urg5HV9N5v9IYVHvZtSgdXDDsrXysiA/viewform?embedded=true"
+          width="100%"
+          height="900"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="MEAICON Contact Form">
+          Loading…
+        </iframe>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="card p-6">
+        <h2 class="font-display text-lg mb-2">Reach us directly</h2>
+        <p class="text-sm text-ink/70 mb-5">Prefer email or a call? Use the details below and our team will route your enquiry to the right specialist.</p>
+        <div class="space-y-4">
+          <div>
+            <p class="font-mono text-[10px] uppercase tracking-[0.15em] text-teal">Email</p>
+            <p class="mt-1 text-sm text-ink">connect@meaicon.com</p>
+          </div>
+          <div>
+            <p class="font-mono text-[10px] uppercase tracking-[0.15em] text-teal">Phone</p>
+            <p class="mt-1 text-sm text-ink">+971 55 513 5784</p>
+            <p class="mt-0.5 text-[12px] text-ink/50">Office hours: Sunday–Thursday, 9:00–18:00 Gulf Standard Time.</p>
+          </div>
+          <div>
+            <p class="font-mono text-[10px] uppercase tracking-[0.15em] text-teal">Office</p>
+            <p class="mt-1 text-sm text-ink">MEAICON LLC FZ<br>Meydan Free Zone, UAE</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-6">
+        <h2 class="font-display text-lg mb-2">Find us on the map</h2>
+        <p class="text-sm text-ink/70 mb-4">Our office is located in Meydan Free Zone, providing convenient access across the UAE and the wider MEA region.</p>
+        <div class="border hairline overflow-hidden">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.351671033651!2d55.29901426100238!3d25.1576007776436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69c36f082541%3A0x16f65b407bb87f9!2sMeydan%20Grandstand!5e0!3m2!1sen!2som!4v1786609742036!5m2!1sen!2som" width="100%" height="220" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p class="mt-2 text-[11px] text-ink/50">Map location is indicative. Use the contact details above to schedule onsite meetings.</p>
+      </div>
+
+      <div class="border border-dashed hairline p-5">
+        <p class="font-mono text-[10px] uppercase tracking-[0.15em] text-accent mb-2">Next steps</p>
+        <p class="text-sm text-ink/70">After you submit the form, we will review your requirements and respond with either clarifying questions or a proposal for the next conversation.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t hairline bg-paper">
+  <div class="max-w-6xl mx-auto px-4 py-14 grid gap-10 md:grid-cols-4 text-sm">
+    <div class="md:col-span-1">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="h-8 w-8 border-2 border-accent"></div>
+        <div class="flex flex-col leading-tight">
+          <span class="font-display font-semibold text-sm text-ink">MEAICON</span>
+          <span class="font-mono text-[9px] text-muted uppercase tracking-[0.2em]">Technology Group</span>
+        </div>
+      </div>
+      <p class="text-ink/70 text-xs leading-relaxed max-w-[220px]">Connectivity, data centre, cyber security, blockchain and consulting services for enterprises and governments across the Middle East &amp; Africa.</p>
+      <p class="mt-4 text-xs text-ink/60">Meydan Free Zone, Dubai, UAE</p>
+      <p class="text-xs text-ink/60">+971 55 513 5784</p>
+      <p class="text-xs text-ink/60"><a href="mailto:connect@meaicon.com" class="hover:text-accent">connect@meaicon.com</a></p>
+    </div>
+    <div>
+      <h4 class="font-mono text-[11px] uppercase tracking-[0.15em] text-ink mb-4">Solutions</h4>
+      <ul class="space-y-2 text-xs text-ink/70">
+        <li><a href="solutions.html#connectivity" class="hover:text-accent">Connectivity</a></li>
+        <li><a href="solutions.html#data-centre" class="hover:text-accent">Data Centre</a></li>
+        <li><a href="solutions.html#cyber-security" class="hover:text-accent">Cyber Security</a></li>
+        <li><a href="solutions.html#blockchain" class="hover:text-accent">Blockchain</a></li>
+        <li><a href="solutions.html#consulting" class="hover:text-accent">Consulting</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-mono text-[11px] uppercase tracking-[0.15em] text-ink mb-4">Company</h4>
+      <ul class="space-y-2 text-xs text-ink/70">
+        <li><a href="about.html" class="hover:text-accent">Approach</a></li>
+        <li><a href="industries.html" class="hover:text-accent">Industries</a></li>
+        <li><a href="global-connectivity.html" class="hover:text-accent">Presence</a></li>
+        <li><a href="case-studies.html" class="hover:text-accent">Case studies</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-mono text-[11px] uppercase tracking-[0.15em] text-ink mb-4">Get in touch</h4>
+      <ul class="space-y-2 text-xs text-ink/70">
+        <li><a href="contact.html" class="hover:text-accent">Talk to an expert</a></li>
+        <li><a href="mailto:connect@meaicon.com" class="hover:text-accent">Email us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t hairline">
+    <div class="max-w-6xl mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-2">
+      <p class="text-[11px] text-ink/50 font-mono">© 2026 MEAICON LLC FZ. All rights reserved.</p>
+      <p class="text-[11px] text-ink/50 font-mono">Built for enterprises &amp; governments across MEA.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if(toggle && menu){ toggle.addEventListener('click', ()=> menu.classList.toggle('hidden')); }
+</script>
+</body>
+</html>
