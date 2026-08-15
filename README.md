@@ -13,6 +13,7 @@ Official static website for **Meaicon**. This repository contains the full sourc
 - [Branching & Commit Conventions](#branching--commit-conventions)
 - [Deployment](#deployment)
 - [Guidelines for AI Agents](#guidelines-for-ai-agents)
+- [Standard `<head>` Block Template](#standard-head-block-template)
 - [Pre-Commit / Pre-Merge Checklist](#pre-commit--pre-merge-checklist)
 - [Roadmap / TODO](#roadmap--todo)
 - [License](#license)
@@ -158,6 +159,62 @@ This section exists so that any AI coding agent (e.g. Google Jules, Copilot, Cla
 9. Commit messages must follow the Conventional Commits format described above.
 10. Never remove content (copy, sections, images) without explicit instruction — flag it instead of deleting.
 11. Ask/flag ambiguity in a PR description or comment rather than guessing silently when requirements are unclear.
+
+## Standard `<head>` Block Template
+
+This is the canonical, final `<head>` block that every page in this repository must use (adjusting only the page-specific title, description, canonical URL, and OG/Twitter fields). It reflects the completed favicon, canonical, and social meta tag rollout across all 10 pages. Copy this exact structure for any new page:
+
+```html
+<!DOCTYPE html>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://www.meaicon.com/PAGE-NAME.html">
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page Title — Meaicon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="140-160 character unique page description.">
+
+  <meta property="og:title" content="Page Title | MEAICON Technology Group">
+  <meta property="og:description" content="Short OG description.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.meaicon.com/assets/brand/meaicon/meaicon-LLC-FZ-logo-black.png">
+  <meta property="og:url" content="https://www.meaicon.com/PAGE-NAME.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Page Title | MEAICON Technology Group">
+  <meta name="twitter:description" content="Short Twitter description.">
+  <meta name="twitter:image" content="https://www.meaicon.com/assets/brand/meaicon/meaicon-LLC-FZ-logo-black.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { paper:'#F6F3EC', card:'#FFFFFF', ink:'#23241F', muted:'#9A9C92', accent:'#C1873D', teal:'#6FA39A', line:'#E2DDCF', dark:'#1D1E1A' },
+          fontFamily: { display:['"Space Grotesk"','sans-serif'], sans:['Inter','sans-serif'], mono:['"IBM Plex Mono"','monospace'] }
+        }
+      }
+    }
+  </script>
+</head>
+```
+
+Rules for using this template:
+
+- • Replace `PAGE-NAME.html` in both `canonical` and `og:url` with the actual page file name (must match exactly, including for `index.html`).
+- • Title must be 50-60 characters, following the `Page Topic — Meaicon` pattern.
+- • Meta description must be unique per page, 140-160 characters.
+- • `og:image` / `twitter:image` default to the primary black MEAICON logo unless a page has a more specific hero/share image approved.
+- • Only `index.html` also carries the Organization JSON-LD schema in addition to this block — do not duplicate it on inner pages.
+- • Legacy/redirect stubs (e.g. `products.html`) keep the favicon/canonical/`noindex` lines but omit full OG/Twitter tags, per its existing pattern.
+- • Never remove or reorder the favicon/canonical lines that precede `<html>` — this ordering matches the current production markup across all pages and must stay consistent.
 
 ## Pre-Commit / Pre-Merge Checklist
 
