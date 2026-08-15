@@ -47,10 +47,14 @@ meaicon-website/
 ├── case-studies.html         # Case studies / selected work
 ├── contact.html              # Contact page (embedded form + map)
 ├── products.html             # Legacy redirect stub -> solutions.html (noindex, canonical set)
+├── assets/
+│   ├── css/                  # Shared stylesheets (currently placeholder; Tailwind is CDN-based, see Roadmap)
+│   ├── js/                   # Shared vanilla JS files (currently placeholder; inline scripts still in use)
+│   └── images/               # Shared images/media (currently placeholder)
 ├── README.md                 # This file
 └── .gitignore
 
-Note: This is currently a flat structure (all HTML files at repo root). If the project grows, consider introducing /assets/css/, /assets/js/, /assets/images/ folders for shared static assets — update this section immediately if that change is made.
+Note: /assets/css/, /assets/js/, and /assets/images/ now exist for shared static assets. New shared stylesheets, scripts, and media should be added there instead of inline per-page, to keep the site maintainable as it grows. Update this section immediately if the structure changes again.
 
 ## Getting Started
 
