@@ -1,0 +1,10 @@
+# robots.txt for meaicon.com
+# Meaicon corporate website
+
+User-agent: *
+Allow: /
+
+# Legacy redirect stub - excluded from indexing (see products.html <meta noindex>)
+Disallow: /products.html
+
+Sitemap: https://meaicon.com/sitemap.xml
