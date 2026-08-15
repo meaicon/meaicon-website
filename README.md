@@ -179,9 +179,9 @@ Run through this list before every commit or pull request merge:
 
 ## Roadmap / TODO
 
-- [ ] Add `sitemap.xml` and `robots.txt`
-- [ ] Add real favicon and `apple-touch-icon` (replace data URI placeholder)
-- [ ] Add `og:image` to all pages (1200x630px)
+- [x] Add `sitemap.xml` and `robots.txt`
+- [x] Add real favicon (`favicon.ico`, `favicon.svg`) and `apple-touch-icon` (replace data URI placeholder) — done for all 10 pages
+- [x] Add `og:image` and `twitter:image`/`twitter:title`/`twitter:description` to all pages; add `link rel="canonical"` to all pages
 - [ ] Replace Tailwind CDN script with compiled/purged production CSS
 - [ ] Self-host or preload critical fonts
 - [ ] Add `privacy-policy.html` and `terms-of-service.html`
