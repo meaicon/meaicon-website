@@ -243,7 +243,7 @@ Run through this list before every commit or pull request merge:
 - [ ] Self-host or preload critical fonts
 - [ ] Add `privacy-policy.html` and `terms-of-service.html`
 - [ ] Add custom `404.html`
-- [ ] Add cookie-consent mechanism before enabling analytics
+- [x] Add cookie-consent mechanism before enabling analytics
 - [ ] Add `BreadcrumbList` and `Service` schema (JSON-LD) to inner pages
 - [ ] Set up GitHub Pages / hosting deployment
 - [ ] Add basic HTML/CSS linting (e.g. Prettier, Stylelint) if project grows
