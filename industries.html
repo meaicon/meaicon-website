@@ -97,14 +97,31 @@ tailwind.config = {
 
 <section class="max-w-6xl mx-auto px-4 pt-14 pb-10">
   <p class="font-mono text-[11px] uppercase tracking-[0.25em] text-teal mb-3">Industries</p>
-  <h1 class="font-display text-4xl sm:text-5xl max-w-2xl">
-    <span class="text-muted">Regulated, mission-critical, and</span> <span class="text-ink font-medium">public-facing operators.</span>
-  </h1>
-  <p class="mt-5 max-w-xl text-[15px] text-ink/70 leading-relaxed">
-    Different sectors carry different failure costs. A dropped guest Wi-Fi session and a dropped trade-finance
-    settlement are not the same category of problem — our architectures, SLAs and pricing are built to match
-    the sector, not a generic template.
-  </p>
+  <div class="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-end">
+    <div>
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.08] max-w-2xl">
+        <span class="text-muted">Where the stakes are highest,</span>
+        <span class="text-ink font-medium"> we build differently.</span>
+      </h1>
+      <p class="mt-5 max-w-xl text-[15px] text-ink/70 leading-relaxed">
+        Different sectors carry different failure costs. A service outage in a hospital, a smart-city control room or a financial settlement flow is not a minor interruption — it is a business risk. Our solutions are designed around that reality.
+      </p>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="card p-5">
+        <p class="font-display text-3xl text-muted">Mission</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mt-1">Critical operations</p>
+      </div>
+      <div class="card p-5">
+        <p class="font-display text-3xl text-muted">Risk</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mt-1">Managed by design</p>
+      </div>
+      <div class="card p-5 sm:col-span-2">
+        <p class="font-display text-2xl text-muted">SLAs built for reality</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mt-1">Not a generic template</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="border-t hairline">
@@ -163,7 +180,7 @@ tailwind.config = {
 
 <section class="border-t hairline bg-dark">
   <div class="max-w-6xl mx-auto px-4 py-16 text-center">
-    <h2 class="font-display text-2xl sm:text-3xl text-paper mb-6 max-w-xl mx-auto">Don't see your sector? We still probably do.</h2>
+    <h2 class="font-display text-2xl sm:text-3xl text-paper mb-6 max-w-xl mx-auto">If your sector is different, we can still help you shape it.</h2>
     <a href="contact.html" class="inline-flex items-center px-6 py-3 border border-paper/40 text-paper font-mono text-[12px] uppercase tracking-wide hover:border-accent hover:text-accent">Talk to an expert →</a>
   </div>
 </section>

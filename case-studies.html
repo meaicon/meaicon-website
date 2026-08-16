@@ -97,13 +97,31 @@ tailwind.config = {
 
 <section class="max-w-6xl mx-auto px-4 pt-14 pb-10">
   <p class="font-mono text-[11px] uppercase tracking-[0.25em] text-teal mb-3">Selected work</p>
-  <h1 class="font-display text-4xl sm:text-5xl max-w-2xl">
-    <span class="text-muted">Proof,</span> <span class="text-ink font-medium">not promises.</span>
-  </h1>
-  <p class="mt-5 max-w-xl text-[15px] text-ink/70 leading-relaxed">
-    We help customers turn complex infrastructure programmes into stable, measurable operations. The examples
-    below illustrate how integrated design and execution deliver better outcomes.
-  </p>
+  <div class="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-end">
+    <div>
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.08] max-w-2xl">
+        <span class="text-muted">Proof,</span>
+        <span class="text-ink font-medium"> not promises.</span>
+      </h1>
+      <p class="mt-5 max-w-xl text-[15px] text-ink/70 leading-relaxed">
+        We help customers turn complex infrastructure programmes into stable, measurable operations. The examples below show how integrated design, governance and delivery create more resilient outcomes.
+      </p>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="card p-5">
+        <p class="font-display text-3xl text-muted">65%</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mt-1">Faster workflow cycles</p>
+      </div>
+      <div class="card p-5">
+        <p class="font-display text-3xl text-muted">0</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mt-1">Security incidents</p>
+      </div>
+      <div class="card p-5 sm:col-span-2">
+        <p class="font-display text-2xl text-muted">Outcome-led delivery</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mt-1">Measured against real business goals</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- FEATURED: BANKING -->

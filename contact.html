@@ -98,13 +98,32 @@ tailwind.config = {
 
 <section class="max-w-6xl mx-auto px-4 pt-14 pb-10">
   <p class="font-mono text-[11px] uppercase tracking-[0.25em] text-teal mb-3">Contact</p>
-  <h1 class="font-display text-4xl sm:text-5xl max-w-2xl">
-    <span class="text-muted">Tell us what you're building.</span> <span class="text-ink font-medium">We'll map the architecture around it.</span>
-  </h1>
-  <p class="mt-5 max-w-xl text-[15px] text-ink/70 leading-relaxed">
-    Share a few details about your project or environment, and a member of our team will respond within one
-    business day. For ongoing projects or support, your enquiry is routed to the relevant specialist.
-  </p>
+  <div class="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-end">
+    <div>
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.08] max-w-2xl">
+        <span class="text-muted">Tell us what you're building.</span>
+        <span class="text-ink font-medium"> We'll shape the right solution around it.</span>
+      </h1>
+      <p class="mt-5 max-w-xl text-[15px] text-ink/70 leading-relaxed">
+        Share a few details about your project or environment, and a member of our team will respond within one business day.
+        For ongoing projects or support, your enquiry is routed to the relevant specialist with the right commercial and technical context.
+      </p>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="card p-5">
+        <p class="font-display text-3xl text-muted">1 day</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mt-1">Typical response</p>
+      </div>
+      <div class="card p-5">
+        <p class="font-display text-3xl text-muted">Expert</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mt-1">Routing</p>
+      </div>
+      <div class="card p-5 sm:col-span-2">
+        <p class="font-display text-2xl text-muted">Strategy-first</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mt-1">Before procurement</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="border-t hairline">
