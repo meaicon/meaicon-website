@@ -79,9 +79,10 @@
     banner.innerHTML = `
       <div class="cc-card" role="dialog" aria-live="polite" aria-label="Cookie preferences">
         <div class="cc-text">
-          <h3>We use cookies</h3>
-          <p>We use necessary cookies to keep the site secure and optional analytics cookies to understand site usage. You can accept, reject, or customize your choice.</p>
-          <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+          <span class="cc-kicker">Privacy & cookies</span>
+          <h3>Your privacy and website preferences.</h3>
+          <p>This website uses strictly necessary cookies to provide secure, reliable access and analytics cookies to understand how visitors use our services. You may accept all, reject non-essential cookies, or customize your settings at any time.</p>
+          <p class="mt-2"><a href="/privacy-policy.html">Review our Privacy Policy</a></p>
         </div>
         <div class="cc-actions">
           <button type="button" class="cc-btn cc-btn-secondary" data-cc-action="reject">Reject non-essential</button>
@@ -124,8 +125,8 @@
       modal.innerHTML = `
         <div class="cc-modal-backdrop" data-cc-close="true"></div>
         <div class="cc-modal" role="dialog" aria-modal="true" aria-label="Cookie preferences">
-          <h3>Cookie preferences</h3>
-          <p>Necessary cookies are always on. Analytics cookies help us measure traffic. Marketing cookies are currently off by default.</p>
+          <h3>Manage cookie preferences</h3>
+          <p>Necessary cookies are required for secure site operation and are always active. Analytics cookies help us measure visitor activity and improve our services. Marketing cookies remain disabled by default.</p>
 
           <label class="cc-toggle">
             <input type="checkbox" checked disabled>

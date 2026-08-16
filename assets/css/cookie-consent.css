@@ -6,24 +6,54 @@
 
 .cc-card,
 .cc-modal {
-  max-width: 720px;
+  position: relative;
+  max-width: 760px;
   margin: 0 auto;
-  background: #FFFFFF;
+  background: rgba(255,255,255,0.98);
   color: #23241F;
   border: 1px solid #E2DDCF;
+  border-left: 3px solid #C1873D;
   border-radius: 0;
-  padding: 20px 20px 18px;
+  padding: 28px 28px 24px;
   box-shadow: 0 18px 52px rgba(35, 36, 31, 0.12);
   font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+.cc-card::before,
+.cc-modal::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, #C1873D 0%, #E7D3A8 52%, #C1873D 100%);
+  opacity: 0.9;
+}
+
+.cc-card {
+  display: grid;
+  gap: 22px;
+  align-items: center;
 }
 
 .cc-card h3,
 .cc-modal h3 {
   margin: 0 0 10px;
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
   line-height: 1.2;
+  letter-spacing: -0.03em;
   color: #23241F;
+}
+
+.cc-kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6FA39A;
 }
 
 .cc-card p,
@@ -32,7 +62,7 @@
   margin: 0;
   color: rgba(35, 36, 31, 0.72);
   font-size: 0.94rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .cc-card a,
@@ -51,7 +81,8 @@
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 18px;
+  justify-content: flex-start;
+  margin-top: 8px;
 }
 
 .cc-btn {
@@ -60,11 +91,15 @@
   padding: 12px 16px;
   cursor: pointer;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 10px;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.cc-btn:hover {
+  transform: translateY(-1px);
 }
 
 .cc-btn-primary {
@@ -123,4 +158,24 @@
 .cc-toggle input {
   accent-color: #C1873D;
   margin-top: 3px;
+}
+
+@media (max-width: 640px) {
+  #cookie-consent-banner {
+    inset: auto 12px 12px 12px;
+  }
+
+  .cc-card,
+  .cc-modal {
+    padding: 18px 16px 16px;
+  }
+
+  .cc-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cc-btn {
+    width: 100%;
+  }
 }

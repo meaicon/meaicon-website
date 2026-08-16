@@ -92,7 +92,17 @@ The public site follows a fixed brand language built around the Meaicon identity
 - border tone: `#E2DDCF`
 - button and heading typography remain consistent with the existing design system
 
-The cookie consent banner and modal were aligned to this system so they match the rest of the site instead of using a generic dark-template look.
+The cookie consent banner and modal were aligned to this system so they match the rest of the site instead of using a generic dark-template look. Recent refinements increased the luxury feel with more generous spacing, an enterprise-style legal tone, and a subtle gold brand accent line across the consent surfaces.
+
+## Recent progress
+
+- Updated repo with refreshed site content from the new zip package
+- Replaced placeholder brand references with official Meaicon brand assets
+- Normalized homepage and footer logo variants for consistent visual identity
+- Added legal policy pages for privacy and terms references in the consent flow
+- Improved cookie consent styling to match the corporate brand system
+- Refined the consent prompt to read more like a premium enterprise compliance banner
+- Verified the consent logic remains centralized and site-wide consistent
 
 ## Notes
 
