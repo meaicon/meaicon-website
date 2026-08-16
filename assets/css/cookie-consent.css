@@ -1,0 +1,61 @@
+#cookie-consent-banner {
+  position: fixed;
+  inset: auto 16px 16px 16px;
+  z-index: 9999;
+}
+.cc-card, .cc-modal {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #111827;
+  color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+.cc-card a, .cc-modal a { color: #93c5fd; }
+.cc-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.cc-btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font: inherit;
+}
+.cc-btn-primary {
+  background: #0ea5e9;
+  color: #fff;
+}
+.cc-btn-secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+#cookie-preferences-modal {
+  display: none;
+}
+#cookie-preferences-modal.is-open {
+  display: block;
+}
+.cc-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+}
+.cc-modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: min(92vw, 640px);
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+}
+.cc-toggle {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 14px;
+}
