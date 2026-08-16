@@ -82,16 +82,24 @@ Before deployment, verify that:
 - favicon and branding assets are present
 - the site root renders correctly on desktop and mobile
 
+## Branding and UI consistency
+
+The public site follows a fixed brand language built around the Meaicon identity:
+
+- warm paper background: `#F6F3EC`
+- dark ink text: `#23241F`
+- accent gold: `#C1873D`
+- border tone: `#E2DDCF`
+- button and heading typography remain consistent with the existing design system
+
+The cookie consent banner and modal were aligned to this system so they match the rest of the site instead of using a generic dark-template look.
+
 ## Notes
 
 - This repo is intentionally lightweight and easy to manage.
 - Keep the site stateless and static unless a new build system is explicitly added.
 - If you update structure or asset paths, keep this README current.
-
-## License
-
-This project is for the Meaicon website and is intended for internal site management and deployment use unless otherwise specified by the owning organization.
-- [ ] Run Lighthouse/PageSpeed Insights audit and address Core Web Vitals issues
+- Run Lighthouse or PageSpeed Insights checks periodically and address Core Web Vitals issues when they appear.
 
 ## License
 
