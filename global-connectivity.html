@@ -54,6 +54,10 @@ tailwind.config = {
   .btn-outline:hover{ border-color:#C1873D; color:#C1873D; }
   .card{ background:#FFFFFF; border:1px solid #E2DDCF; }
   .card:hover{ border-color:#C1873D; }
+  .geo-panel{ background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(246,243,236,0.96)); border:1px solid #E2DDCF; }
+  .geo-grid{ background-image:linear-gradient(rgba(35,36,31,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(35,36,31,0.04) 1px, transparent 1px); background-size:24px 24px; }
+  .country-card{ background:#FFFFFF; border:1px solid #E2DDCF; transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+  .country-card:hover{ border-color:#C1873D; transform:translateY(-2px); box-shadow:0 18px 36px rgba(35,36,31,0.06); }
   .node-pulse{ animation:nodePulse 2.8s ease-in-out infinite; }
   @keyframes nodePulse{ 0%,100%{ opacity:1; } 50%{ opacity:.4; } }
   .line-draw{ stroke-dasharray:500; stroke-dashoffset:500; animation:drawLine 1.4s ease forwards; }
@@ -101,95 +105,191 @@ tailwind.config = {
 <main class="flex-1">
 
 <section class="max-w-6xl mx-auto px-4 pt-14 pb-10">
-  <p class="font-mono text-[11px] uppercase tracking-[0.25em] text-teal mb-3">Regional footprint</p>
-  <h1 class="font-display text-4xl sm:text-5xl max-w-2xl">
-    <span class="text-muted">Local delivery teams,</span> <span class="text-ink font-medium">one operating standard.</span>
-  </h1>
-  <p class="mt-5 max-w-xl text-[15px] text-ink/70 leading-relaxed">
-    MEAICON runs delivery and support teams across seven markets, connected through a shared NOC/SOC backbone
-    so an incident in one country is handled to the same standard as any other.
-  </p>
+  <p class="font-mono text-[11px] uppercase tracking-[0.25em] text-teal mb-3">Global connectivity</p>
+  <div class="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-end">
+    <div>
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.08] max-w-xl">
+        <span class="text-muted">Regional reach.</span>
+        <span class="text-ink font-medium"> One operating standard.</span>
+      </h1>
+      <p class="mt-5 max-w-xl text-[15px] text-ink/70 leading-relaxed">
+        MEAICON combines local delivery capability with a shared regional operating model, so projects move faster,
+        incidents are handled consistently, and enterprise teams work with a single standard across every market they enter.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a href="contact.html" class="btn-primary inline-flex items-center px-6 py-3 font-mono text-[12px] uppercase tracking-wide">Discuss your region →</a>
+        <a href="solutions.html" class="btn-outline inline-flex items-center px-6 py-3 font-mono text-[12px] uppercase tracking-wide">View solutions</a>
+      </div>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="card p-5">
+        <p class="font-display text-3xl text-muted">7</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mt-1">MEA markets</p>
+      </div>
+      <div class="card p-5">
+        <p class="font-display text-3xl text-muted">24/7</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mt-1">NOC / SOC</p>
+      </div>
+      <div class="card p-5 sm:col-span-2">
+        <p class="font-display text-3xl text-muted">99.95%</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mt-1">Service continuity target</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="border-y hairline bg-card/60">
-  <div class="max-w-6xl mx-auto px-4 py-14 flex justify-center">
-    <svg viewBox="0 0 460 300" class="w-full max-w-md h-auto">
-      <g stroke="#6FA39A" stroke-width="1" opacity="0.75" fill="none">
-        <line class="line-draw" x1="230" y1="150" x2="90" y2="70"/>
-        <line class="line-draw" x1="230" y1="150" x2="180" y2="40"/>
-        <line class="line-draw" x1="230" y1="150" x2="290" y2="40"/>
-        <line class="line-draw" x1="230" y1="150" x2="380" y2="90"/>
-        <line class="line-draw" x1="230" y1="150" x2="360" y2="220"/>
-        <line class="line-draw" x1="230" y1="150" x2="150" y2="240"/>
-        <line class="line-draw" x1="230" y1="150" x2="70" y2="190"/>
-      </g>
-      <circle cx="230" cy="150" r="11" fill="#C1873D"/>
-      <text x="230" y="175" text-anchor="middle" class="font-mono" font-size="10" fill="#9A9C92" letter-spacing="1">CORE POP &middot; UAE</text>
-      <circle class="node-pulse" cx="90" cy="70" r="4" fill="#23241F"/>
-      <circle class="node-pulse" cx="180" cy="40" r="4" fill="#23241F"/>
-      <circle class="node-pulse" cx="290" cy="40" r="4" fill="#23241F"/>
-      <circle class="node-pulse" cx="380" cy="90" r="4" fill="#23241F"/>
-      <circle class="node-pulse" cx="360" cy="220" r="4" fill="#23241F"/>
-      <circle class="node-pulse" cx="150" cy="240" r="4" fill="#23241F"/>
-      <circle class="node-pulse" cx="70" cy="190" r="4" fill="#23241F"/>
-    </svg>
+  <div class="max-w-6xl mx-auto px-4 py-16 grid gap-10 lg:grid-cols-[1.2fr,0.8fr] items-center">
+    <div class="geo-panel geo-grid rounded-none p-6 sm:p-8">
+      <div class="mb-5 flex items-center justify-between gap-3">
+        <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-teal">Regional map</p>
+        <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55">MEA footprint</span>
+      </div>
+      <svg viewBox="0 0 560 360" class="w-full h-auto">
+        <g stroke="#6FA39A" stroke-width="1.2" opacity="0.8" fill="none">
+          <line class="line-draw" x1="278" y1="178" x2="110" y2="108"/>
+          <line class="line-draw" x1="278" y1="178" x2="186" y2="82"/>
+          <line class="line-draw" x1="278" y1="178" x2="342" y2="86"/>
+          <line class="line-draw" x1="278" y1="178" x2="438" y2="130"/>
+          <line class="line-draw" x1="278" y1="178" x2="400" y2="248"/>
+          <line class="line-draw" x1="278" y1="178" x2="198" y2="268"/>
+          <line class="line-draw" x1="278" y1="178" x2="102" y2="216"/>
+        </g>
+        <circle cx="278" cy="178" r="13" fill="#C1873D"/>
+        <text x="278" y="205" text-anchor="middle" class="font-mono" font-size="10" fill="#6B6E66" letter-spacing="1">UAE HQ</text>
+
+        <circle class="node-pulse" cx="110" cy="108" r="5" fill="#23241F"/>
+        <circle class="node-pulse" cx="186" cy="82" r="5" fill="#23241F"/>
+        <circle class="node-pulse" cx="342" cy="86" r="5" fill="#23241F"/>
+        <circle class="node-pulse" cx="438" cy="130" r="5" fill="#23241F"/>
+        <circle class="node-pulse" cx="400" cy="248" r="5" fill="#23241F"/>
+        <circle class="node-pulse" cx="198" cy="268" r="5" fill="#23241F"/>
+        <circle class="node-pulse" cx="102" cy="216" r="5" fill="#23241F"/>
+
+        <text x="96" y="95" text-anchor="middle" class="font-mono" font-size="9" fill="#7F7F78">Qatar</text>
+        <text x="184" y="66" text-anchor="middle" class="font-mono" font-size="9" fill="#7F7F78">Saudi</text>
+        <text x="342" y="70" text-anchor="middle" class="font-mono" font-size="9" fill="#7F7F78">Oman</text>
+        <text x="438" y="114" text-anchor="middle" class="font-mono" font-size="9" fill="#7F7F78">Pakistan</text>
+        <text x="408" y="280" text-anchor="middle" class="font-mono" font-size="9" fill="#7F7F78">Kenya</text>
+        <text x="198" y="290" text-anchor="middle" class="font-mono" font-size="9" fill="#7F7F78">Egypt</text>
+        <text x="86" y="236" text-anchor="middle" class="font-mono" font-size="9" fill="#7F7F78">UAE</text>
+      </svg>
+    </div>
+
+    <div class="space-y-4">
+      <div class="card p-6">
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-teal mb-2">Why it matters</p>
+        <p class="text-sm text-ink/75 leading-relaxed">
+          We do not operate as a single-country vendor. We bring regional consistency to every rollout, with the same governance, escalation paths and support expectations in each market.
+        </p>
+      </div>
+      <div class="card p-6">
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-teal mb-2">Operating model</p>
+        <p class="text-sm text-ink/75 leading-relaxed">
+          Local teams provide presence and familiarity. Shared delivery standards keep quality, risk and response time aligned across the region.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="max-w-6xl mx-auto px-4 py-14">
-  <div class="divide-y hairline border-t hairline border-b">
-    <div class="flex items-center justify-between py-4 text-sm">
-      <span class="text-ink">United Arab Emirates</span>
-      <span class="font-mono text-xs text-ink/50">HQ &middot; Meydan Free Zone</span>
-    </div>
-    <div class="flex items-center justify-between py-4 text-sm">
-      <span class="text-ink">Saudi Arabia</span>
-      <span class="font-mono text-xs text-ink/50">Riyadh &middot; Jeddah</span>
-    </div>
-    <div class="flex items-center justify-between py-4 text-sm">
-      <span class="text-ink">Qatar</span>
-      <span class="font-mono text-xs text-ink/50">Doha</span>
-    </div>
-    <div class="flex items-center justify-between py-4 text-sm">
-      <span class="text-ink">Oman</span>
-      <span class="font-mono text-xs text-ink/50">Muscat</span>
-    </div>
-    <div class="flex items-center justify-between py-4 text-sm">
-      <span class="text-ink">Egypt</span>
-      <span class="font-mono text-xs text-ink/50">Cairo</span>
-    </div>
-    <div class="flex items-center justify-between py-4 text-sm">
-      <span class="text-ink">Kenya</span>
-      <span class="font-mono text-xs text-ink/50">Nairobi</span>
-    </div>
-    <div class="flex items-center justify-between py-4 text-sm">
-      <span class="text-ink">Pakistan</span>
-      <span class="font-mono text-xs text-ink/50">Karachi &middot; Lahore</span>
-    </div>
+<section class="max-w-6xl mx-auto px-4 py-16">
+  <div class="mb-8">
+    <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-teal mb-3">Markets served</p>
+    <h2 class="font-display text-3xl sm:text-4xl max-w-xl">Built for the realities of doing business across MEA.</h2>
   </div>
 
-  <div class="grid sm:grid-cols-3 gap-4 mt-10">
-    <div class="card p-5">
-      <p class="font-display text-2xl text-muted">7</p>
-      <p class="font-mono text-[11px] uppercase tracking-wide text-ink/60 mt-1">Countries across MEA</p>
-    </div>
-    <div class="card p-5">
-      <p class="font-display text-2xl text-muted">99.95%</p>
-      <p class="font-mono text-[11px] uppercase tracking-wide text-ink/60 mt-1">Network &amp; DC uptime SLA</p>
-    </div>
-    <div class="card p-5">
-      <p class="font-display text-2xl text-muted">24/7</p>
-      <p class="font-mono text-[11px] uppercase tracking-wide text-ink/60 mt-1">SOC &amp; NOC operations</p>
-    </div>
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+    <article class="country-card p-5">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-display text-2xl text-ink">UAE</span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/50">HQ</span>
+      </div>
+      <p class="text-sm text-ink/70 leading-relaxed">Meydan Free Zone anchors the group’s regional coordination, governance and client service model.</p>
+    </article>
+
+    <article class="country-card p-5">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-display text-2xl text-ink">Saudi</span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/50">Arabia</span>
+      </div>
+      <p class="text-sm text-ink/70 leading-relaxed">Delivery capability across Riyadh and Jeddah supports enterprise transformation and infrastructure expansion.</p>
+    </article>
+
+    <article class="country-card p-5">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-display text-2xl text-ink">Qatar</span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/50">Doha</span>
+      </div>
+      <p class="text-sm text-ink/70 leading-relaxed">Strong alignment for secure, mission-critical environments where uptime and operational continuity matter most.</p>
+    </article>
+
+    <article class="country-card p-5">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-display text-2xl text-ink">Oman</span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/50">Muscat</span>
+      </div>
+      <p class="text-sm text-ink/70 leading-relaxed">Applied delivery across growing enterprise and public-sector infrastructure programmes.</p>
+    </article>
+
+    <article class="country-card p-5">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-display text-2xl text-ink">Egypt</span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/50">Cairo</span>
+      </div>
+      <p class="text-sm text-ink/70 leading-relaxed">Support for network, security and digital transformation initiatives across a large enterprise base.</p>
+    </article>
+
+    <article class="country-card p-5">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-display text-2xl text-ink">Kenya</span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/50">Nairobi</span>
+      </div>
+      <p class="text-sm text-ink/70 leading-relaxed">Regional reach into East Africa, with local execution and consistent controls across distributed environments.</p>
+    </article>
+
+    <article class="country-card p-5 md:col-span-2 xl:col-span-3">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-display text-2xl text-ink">Pakistan</span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/50">Karachi &middot; Lahore</span>
+      </div>
+      <p class="text-sm text-ink/70 leading-relaxed max-w-2xl">Regional delivery capability for large-format projects, security operations and infrastructure programmes where local presence and rapid response matter equally.</p>
+    </article>
   </div>
 </section>
 
 <section class="border-t hairline bg-dark">
-  <div class="max-w-6xl mx-auto px-4 py-16 text-center">
-    <h2 class="font-display text-2xl sm:text-3xl text-paper mb-6 max-w-xl mx-auto">Building outside these seven markets?</h2>
-    <p class="text-paper/60 text-sm max-w-md mx-auto mb-6">We regularly extend delivery into adjacent markets for existing clients. Tell us where you're building.</p>
-    <a href="contact.html" class="inline-flex items-center px-6 py-3 border border-paper/40 text-paper font-mono text-[12px] uppercase tracking-wide hover:border-accent hover:text-accent">Talk to an expert →</a>
+  <div class="max-w-6xl mx-auto px-4 py-16">
+    <div class="grid gap-10 lg:grid-cols-[0.9fr,1.1fr] items-center">
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-teal mb-3">Regional advantage</p>
+        <h2 class="font-display text-3xl sm:text-4xl text-paper max-w-md">What a regional footprint gives your team.</h2>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="card bg-transparent border border-paper/15 p-5 text-paper">
+          <p class="font-display text-2xl mb-2 text-paper">Faster rollout</p>
+          <p class="text-sm text-paper/65 leading-relaxed">Local teams shorten deployment cycles without losing governance or project control.</p>
+        </div>
+        <div class="card bg-transparent border border-paper/15 p-5 text-paper">
+          <p class="font-display text-2xl mb-2 text-paper">Lower risk</p>
+          <p class="text-sm text-paper/65 leading-relaxed">A shared operating model reduces variability between sites and support teams.</p>
+        </div>
+        <div class="card bg-transparent border border-paper/15 p-5 text-paper">
+          <p class="font-display text-2xl mb-2 text-paper">Better support</p>
+          <p class="text-sm text-paper/65 leading-relaxed">24/7 incident handling and escalation ensures continuity when business-critical services depend on it.</p>
+        </div>
+        <div class="card bg-transparent border border-paper/15 p-5 text-paper">
+          <p class="font-display text-2xl mb-2 text-paper">Clear accountability</p>
+          <p class="text-sm text-paper/65 leading-relaxed">One delivery chain means one team accountable for performance, not multiple disconnected vendors.</p>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-4 py-16 text-center">
+  <h2 class="font-display text-3xl sm:text-4xl max-w-xl mx-auto mb-6">If your next programme spans markets, we can help you run it like one.</h2>
+  <a href="contact.html" class="btn-primary inline-flex items-center px-6 py-3 font-mono text-[12px] uppercase tracking-wide">Talk to an expert →</a>
 </section>
 
 </main>
