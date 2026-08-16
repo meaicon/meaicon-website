@@ -7,4 +7,4 @@ Allow: /
 # Legacy redirect stub - excluded from indexing (see products.html <meta noindex>)
 Disallow: /products.html
 
-Sitemap: https://meaicon.com/sitemap.xml
+Sitemap: https://www.meaicon.com/sitemap.xml
