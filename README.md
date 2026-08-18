@@ -175,4 +175,4 @@ All pages include professional social media profiles optimized for SEO and brand
 
 ## License
 
-Proprietary — All rights reserved by Meaicon / Triqbit, unless otherwise specified.
+Proprietary — All rights reserved by Meaicon LLC FZ, unless otherwise specified.
