@@ -1,10 +1,58 @@
-# robots.txt for meaicon.com
-# Meaicon corporate website
+# ====================================================================
+# Production Robots.txt for MEAICON (https://meaicon.com)
+# Optimized for Cloudflare/GitHub Pages Infrastructure & Global AI Search
+# ====================================================================
 
+# --------------------------------------------------------------------
+# SECTION 1: GLOBAL SEARCH & MODERN AI FRAMEWORKS
+# Opens the door natively for normal search indexing and embeds
+# data rights for real-time LLM reference and contextual grounding.
+# --------------------------------------------------------------------
 User-agent: *
+Content-Signal: search=yes,ai-input=yes,ai-train=yes,use=full
 Allow: /
-
-# Legacy redirect stub - excluded from indexing (see products.html <meta noindex>)
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /components/
+Disallow: /layouts/
 Disallow: /products.html
 
-Sitemap: https://www.meaicon.com/sitemap.xml
+# --------------------------------------------------------------------
+# SECTION 2: EXPLICIT AI RETRIEVAL CRAWLER ALLOWANCES
+# Forces active crawling permissions for specialized AI agents that 
+# browse web links to generate dynamic citations for conversational users.
+# --------------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# --------------------------------------------------------------------
+# SECTION 3: XML NAVIGATION ROADMAP
+# --------------------------------------------------------------------
+Sitemap: https://meaicon.com/sitemap.xml
