@@ -94,7 +94,50 @@ The public site follows a fixed brand language built around the Meaicon identity
 
 The cookie consent banner and modal were aligned to this system so they match the rest of the site instead of using a generic dark-template look. Recent refinements increased the luxury feel with more generous spacing, an enterprise-style legal tone, and a subtle gold brand accent line across the consent surfaces.
 
+## Social Media Integration
+
+All pages include professional social media profiles optimized for SEO and brand visibility:
+
+### Social Profiles
+- **LinkedIn**: https://www.linkedin.com/company/meaicon/
+- **X (Twitter)**: https://x.com/meaicon
+- **Instagram**: https://www.instagram.com/meaicon.official/
+- **Facebook**: https://www.facebook.com/Meaicon.Official
+- **YouTube**: https://www.youtube.com/channel/UCVbuZOFqHeFGAMmzu3jE3oA
+
+### Implementation Details
+
+#### Footer Social Icons
+- Professional SVG icons for all 5 social media platforms
+- Responsive grid layout with hover effects (accent color transition)
+- Proper accessibility with `aria-label` attributes and semantic `rel="me"` links
+- Consistent styling across all 10 main website pages
+
+#### JSON-LD Schema Markup
+- Added `sameAs` property to Organization schema on every page
+- Improves search engine entity recognition and knowledge graph linking
+- Enhances presence in social media search results
+- Optimizes for improved SEO visibility across platforms
+
+#### Coverage
+- **Pages updated**: 10 (index.html, about.html, solutions.html, case-studies.html, contact.html, global-connectivity.html, industries.html, partners.html, privacy-policy.html, terms-of-service.html)
+- **Total social profile references**: 50 (5 platforms × 10 pages)
+- **Each page includes**: 2 Instagram references, 2 Facebook references, 2 YouTube references, plus all profiles in JSON-LD schema
+
 ## Recent progress
+
+### Social Media & SEO Optimization (August 2026)
+- **Social Profile Integration**: Added professional social media links to all 10 main website pages
+  - Footer social icons with responsive design and hover effects
+  - JSON-LD schema markup with `sameAs` property for 5 social platforms
+  - Proper accessibility attributes (aria-labels, rel="me") for improved SEO
+- **Social Profiles Configured**:
+  - LinkedIn Company Page: https://www.linkedin.com/company/meaicon/
+  - X (Twitter): https://x.com/meaicon
+  - Instagram Official: https://www.instagram.com/meaicon.official/
+  - Facebook Page: https://www.facebook.com/Meaicon.Official
+  - YouTube Channel: https://www.youtube.com/channel/UCVbuZOFqHeFGAMmzu3jE3oA
+- **SEO Benefits**: Schema.org integration improves entity recognition, knowledge graph linking, and cross-platform visibility
 
 ### Infrastructure & Compliance
 - Updated repo with refreshed site content from the new zip package
