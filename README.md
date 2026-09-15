@@ -81,6 +81,7 @@ Before deployment, verify that:
 - all links resolve without 404s
 - favicon and branding assets are present
 - the site root renders correctly on desktop and mobile
+- the hosting platform applies the `_headers` security policy
 
 ### IndexNow
 
@@ -131,7 +132,7 @@ All pages include professional social media profiles optimized for SEO and brand
 - Professional SVG icons for all 5 social media platforms
 - Responsive grid layout with hover effects (accent color transition)
 - Proper accessibility with `aria-label` attributes and semantic `rel="me"` links
-- Consistent styling across all 10 main website pages
+- Consistent styling across all 11 indexable website pages
 
 #### JSON-LD Schema Markup
 - Added `sameAs` property to Organization schema on every page
@@ -141,13 +142,13 @@ All pages include professional social media profiles optimized for SEO and brand
 
 #### Coverage
 - **Pages updated**: 10 (index.html, about.html, solutions.html, case-studies.html, contact.html, global-connectivity.html, industries.html, partners.html, privacy-policy.html, terms-of-service.html)
-- **Total social profile references**: 50 (5 platforms × 10 pages)
+- **Total social profile coverage**: 11 indexable pages × 5 platforms
 - **Each page includes**: 2 Instagram references, 2 Facebook references, 2 YouTube references, plus all profiles in JSON-LD schema
 
 ## Recent progress
 
 ### Social Media & SEO Optimization (August 2026)
-- **Social Profile Integration**: Added professional social media links to all 10 main website pages
+- **Social Profile Integration**: Added professional social media links to all 11 indexable website pages
   - Footer social icons with responsive design and hover effects
   - JSON-LD schema markup with `sameAs` property for 5 social platforms
   - Proper accessibility attributes (aria-labels, rel="me") for improved SEO

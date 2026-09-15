@@ -13,6 +13,7 @@ Thumbs.db
 # Logs
 *.log
 .seo-audits/
+storage/
 
 # Dependencies (if any tooling is added later)
 node_modules/
