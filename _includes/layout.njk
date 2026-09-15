@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+{% include "site-head.njk" %}
+<body class="bg-paper text-ink min-h-screen flex flex-col antialiased">
+{% include "header.njk" %}
+{{ content | safe }}
+{% include "footer.njk" %}
+</body>
+</html>

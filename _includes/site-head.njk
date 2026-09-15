@@ -1,0 +1,79 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="canonical" href="{{ canonical | default('https://www.meaicon.com/') }}">
+  <link rel="stylesheet" href="/assets/css/cookie-consent.css">
+  <script src="/assets/js/cookie-consent.js" defer></script>
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta property="og:title" content="{{ ogTitle | default(title) }}">
+  <meta property="og:description" content="{{ ogDescription | default(description) }}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.meaicon.com/assets/brand/meaicon/meaicon-LLC-FZ-logo-black.png">
+  <meta property="og:url" content="{{ canonical | default('https://www.meaicon.com/') }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ twitterTitle | default(ogTitle | default(title)) }}">
+  <meta name="twitter:description" content="{{ twitterDescription | default(ogDescription | default(description)) }}">
+  <meta name="twitter:image" content="https://www.meaicon.com/assets/brand/meaicon/meaicon-LLC-FZ-logo-black.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MEAICON LLC FZ",
+    "url": "https://www.meaicon.com/",
+    "address": { "@type": "PostalAddress", "addressCountry": "AE", "addressLocality": "Dubai", "streetAddress": "Meydan Free Zone" },
+    "contactPoint": { "@type": "ContactPoint", "telephone": "+971 55 513 5784", "contactType": "sales" },
+    "sameAs": [
+      "https://www.linkedin.com/company/meaicon/",
+      "https://x.com/meaicon",
+      "https://www.instagram.com/meaicon.official/",
+      "https://www.facebook.com/Meaicon.Official",
+      "https://www.youtube.com/channel/UCVbuZOFqHeFGAMmzu3jE3oA"
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { paper:'#F6F3EC', card:'#FFFFFF', ink:'#23241F', muted:'#9A9C92', accent:'#C1873D', teal:'#6FA39A', line:'#E2DDCF', dark:'#1D1E1A' },
+        fontFamily: { display:['"Space Grotesk"','sans-serif'], sans:['Inter','sans-serif'], mono:['"IBM Plex Mono"','monospace'] }
+      }
+    }
+  }
+  </script>
+  <style>
+    html{ background:#F6F3EC; }
+    body{ font-family:'Inter',sans-serif; }
+    .font-display{ font-family:'Space Grotesk',sans-serif; }
+    .font-mono{ font-family:'IBM Plex Mono',monospace; }
+    ::selection{ background:#C1873D; color:#F6F3EC; }
+    a{ transition:color .15s ease, border-color .15s ease, background-color .15s ease; }
+    .nav-link{ position:relative; }
+    .nav-link::after{ content:''; position:absolute; left:0; right:0; bottom:-4px; height:1px; background:#C1873D; transform:scaleX(0); transform-origin:left; transition:transform .2s ease; }
+    .nav-link:hover::after{ transform:scaleX(1); }
+    .hairline{ border-color:#E2DDCF; }
+    .node-pulse{ animation:nodePulse 2.8s ease-in-out infinite; }
+    @keyframes nodePulse{ 0%,100%{ opacity:1; } 50%{ opacity:.4; } }
+    .line-draw{ stroke-dasharray:500; stroke-dashoffset:500; animation:drawLine 1.4s ease forwards; }
+    @keyframes drawLine{ to{ stroke-dashoffset:0; } }
+    @media (prefers-reduced-motion: reduce){ .node-pulse,.line-draw{ animation:none; stroke-dashoffset:0; } }
+    .btn-primary{ background:#23241F; color:#F6F3EC; }
+    .btn-primary:hover{ background:#000; }
+    .btn-outline{ border:1px solid #23241F; color:#23241F; }
+    .btn-outline:hover{ border-color:#C1873D; color:#C1873D; }
+    .card{ background:#FFFFFF; border:1px solid #E2DDCF; }
+    .card:hover{ border-color:#C1873D; }
+    ::-webkit-scrollbar{ width:10px; }
+    ::-webkit-scrollbar-track{ background:#F6F3EC; }
+    ::-webkit-scrollbar-thumb{ background:#D8D2C1; border-radius:999px; }
+    :focus-visible{ outline:2px solid #C1873D; outline-offset:2px; }
+  </style>
+</head>

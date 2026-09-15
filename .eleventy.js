@@ -1,4 +1,5 @@
 module.exports = function (eleventyConfig) {
+  eleventyConfig.ignores.add("index.html");
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
   eleventyConfig.addPassthroughCopy({ "favicon.ico": "favicon.ico" });
   eleventyConfig.addPassthroughCopy({ "favicon.svg": "favicon.svg" });
@@ -16,7 +17,7 @@ module.exports = function (eleventyConfig) {
       input: ".",
       output: "_site"
     },
-    templateFormats: ["html"],
+    templateFormats: ["html", "njk"],
     htmlTemplateEngine: false,
     markdownTemplateEngine: false
   };
