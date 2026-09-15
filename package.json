@@ -6,7 +6,10 @@
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve",
-    "audit:metadata": "node scripts/audit-metadata.js"
+    "audit:metadata": "node scripts/audit-metadata.js",
+    "validate:content": "node scripts/validate-content.js",
+    "generate:page": "node scripts/generate-page.js",
+    "generate:pages": "node scripts/generate-pages-from-manifest.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"

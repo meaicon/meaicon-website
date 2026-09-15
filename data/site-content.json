@@ -1,0 +1,15 @@
+{
+  "brand": {
+    "name": "MEAICON LLC FZ",
+    "shortName": "MEAICON",
+    "baseUrl": "https://www.meaicon.com",
+    "streetAddress": "Meydan Free Zone",
+    "city": "Dubai",
+    "country": "AE",
+    "phone": "+971 55 513 5784",
+    "email": "connect@meaicon.com"
+  },
+  "bulkPageReady": true,
+  "targetPageCount": null,
+  "futurePages": []
+}

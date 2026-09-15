@@ -16,6 +16,8 @@ const migratedPages = [
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("index.html");
+  eleventyConfig.ignores.add("content/page-template.njk");
+  eleventyConfig.ignores.add("migrated/generated/**");
   migratedPages.forEach((page) => eleventyConfig.ignores.add(page));
   eleventyConfig.addFilter("legacyBody", (source) => {
     const html = fs.readFileSync(path.join(process.cwd(), source), "utf8");

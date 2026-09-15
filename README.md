@@ -13,9 +13,9 @@ This repository contains the static marketing website for Meaicon. The source re
 
 - Active branch: `website-redesign`
 - Tracking remote: `origin/website-redesign`
-- Latest verified commit: `41900d3` — `Move site pages onto shared Eleventy shell`
-- Current working branch is the migration branch for the shared Eleventy layout and page-by-page modernization work.
-- Merge back into `main` only after verification passes for the migrated pages and the deployed site remains stable.
+- Latest verified commit: pending — light enterprise redesign and contrast audit
+- This is a long-lived redesign branch. Continue landing visual, content, accessibility, and SEO improvements here before merging into `main`.
+- Keep `main` unchanged while the redesign is reviewed and iterated. Merge only after the branch has passed the final content, accessibility, performance, and deployment review.
 
 ## Project structure
 
@@ -61,7 +61,9 @@ The generated site is written to `_site/`. To preview it with live reload:
 npm start
 ```
 
-The existing root HTML pages remain the content source during the incremental migration. The homepage and the 10 primary interior pages are now generated through Nunjucks entry templates in `index.njk` and `migrated/`, using shared files in `_includes/`. Their legacy files provide the current `<main>` content until structured content collections are introduced. `products.html` remains a standalone noindex redirect page.
+The existing root HTML pages remain the content source during the incremental migration. The homepage and the 10 primary interior pages are generated through Nunjucks entry templates in `index.njk` and `migrated/`, using shared files in `_includes/`. Their legacy files provide the current `<main>` content until structured content collections are introduced. `products.html` remains a standalone noindex redirect page.
+
+The current shared visual system is the **Elite Enterprise Trust** theme: Plus Jakarta Sans headings, Inter body copy, an ice-white surface, Executive Midnight Blue text and sections, Electric Indigo accents, thin slate borders, restrained shadows, glassmorphic light navigation, telemetry widgets, and responsive bento-grid solution cards. Legacy midnight-blue sections include shared high-contrast text rules so headings and supporting copy remain readable across the interior pages.
 
 ## Update the repo from a zip
 
@@ -118,11 +120,13 @@ For a recurring maintenance pass:
 
 The public site follows a fixed brand language built around the Meaicon identity:
 
-- warm paper background: `#F6F3EC`
-- dark ink text: `#23241F`
-- accent gold: `#C1873D`
-- border tone: `#E2DDCF`
-- button and heading typography remain consistent with the existing design system
+- ice-white background: `#FAFBFC`
+- Executive Midnight Blue text and dark sections: `#0A192F`
+- Electric Indigo accent: `#4F46E5`
+- slate border tone: `#E2E8F0`
+- Plus Jakarta Sans headings with Inter body copy
+- buttons use sharp or lightly rounded corporate corners, never pill styling
+- hover transitions use restrained `0.2s ease-in-out` motion without neon glow effects
 
 The cookie consent banner and modal were aligned to this system so they match the rest of the site instead of using a generic dark-template look. Recent refinements increased the luxury feel with more generous spacing, an enterprise-style legal tone, and a subtle gold brand accent line across the consent surfaces.
 
@@ -158,13 +162,24 @@ All pages include professional social media profiles optimized for SEO and brand
 
 ## Current improvement backlog
 
-The migration branch is stable and the required redesign work has been completed. These priorities were all addressed in the current pass before the branch is prepared for merge back into `main`.
+The migration branch is stable, but remains open for ongoing improvement. The initial visual redesign and contrast pass are complete; the following work remains intentionally open before merging back into `main`.
 
-1. [x] Convert the remaining legacy page bodies into structured, page-specific Nunjucks content blocks instead of raw HTML extraction.
-2. [x] Rewrite the homepage and service landing pages to emphasize the strongest customer outcomes, proof points, and clear conversion intent.
-3. [x] Standardize cards, CTAs, spacing, and typography across the shared design system to make every page feel premium and consistent.
-4. [x] Verify metadata, Open Graph, schema, canonical URLs, and sitemap alignment across all pages before launch.
-5. [x] Run the SEO crawler and accessibility checks, fix crawl issues, broken links, and contrast or keyboard problems, then complete a final release review.
+1. [ ] Convert the remaining legacy page bodies into structured, page-specific Nunjucks content blocks instead of raw HTML extraction.
+2. [x] Rewrite the homepage to emphasize customer outcomes, proof points, and clear conversion intent.
+3. [x] Standardize the shared landing-page cards, CTAs, spacing, typography, and contrast treatment.
+4. [ ] Complete the page-by-page content rewrite for service, industry, regional, and company pages.
+5. [ ] Run the final SEO crawler, accessibility, performance, responsive, and deployment review before merging into `main`.
+
+## Flexible content pipeline for future pages
+
+The redesign branch is prepared for scalable content onboarding without a fixed page-count target. The workflow is intentionally simple:
+
+1. Add any planned page entries to `data/site-content.json` under `futurePages` when the content is ready.
+2. Run `npm run generate:pages` to generate the matching Nunjucks templates in `migrated/generated/`.
+3. Replace the scaffold with final brand-specific copy and production-ready page layout.
+4. Run `npm run validate:content` and `npm run build` before publishing.
+
+This keeps the site scalable without forcing placeholder pages or an arbitrary page limit.
 
 ## Recent progress
 

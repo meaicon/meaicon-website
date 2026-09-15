@@ -1,0 +1,58 @@
+---
+layout: layout.njk
+title: "{{ pageTitle }}"
+description: "{{ pageDescription }}"
+canonical: "https://www.meaicon.com/{{ pageSlug }}.html"
+permalink: /{{ pageSlug }}.html
+---
+<main class="flex-1">
+  <section class="max-w-6xl mx-auto px-4 pt-14 pb-10 lg:pt-20">
+    <p class="font-mono text-[11px] uppercase tracking-[0.25em] text-teal mb-4">{{ pageSection }}</p>
+    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.08] max-w-3xl">
+      <span class="text-muted">{{ pageTitlePrefix }}</span>
+      <span class="text-ink font-medium">{{ pageTitle }}</span>
+    </h1>
+    <p class="mt-6 max-w-2xl text-[15px] text-ink/70 leading-relaxed">
+      {{ pageDescription }}
+    </p>
+    <div class="mt-8 flex flex-wrap items-center gap-4">
+      <a href="contact.html" class="btn-primary inline-flex items-center px-6 py-3 font-mono text-[12px] uppercase tracking-wide">Speak to an expert →</a>
+      <a href="solutions.html" class="btn-outline inline-flex items-center px-6 py-3 font-mono text-[12px] uppercase tracking-wide">Explore services</a>
+    </div>
+  </section>
+
+  <section class="border-t hairline bg-card/60">
+    <div class="max-w-6xl mx-auto px-4 py-16 grid gap-8 lg:grid-cols-2">
+      <article class="card p-8">
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-teal mb-3">What this delivers</p>
+        <h2 class="font-display text-2xl mb-4">Business outcomes</h2>
+        <p class="text-sm text-ink/70 leading-relaxed">MEAICON helps organisations design resilient systems, improve operational control, and accelerate the delivery of mission-critical digital services.</p>
+      </article>
+      <article class="card p-8">
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-teal mb-3">Why it matters</p>
+        <h2 class="font-display text-2xl mb-4">Operational clarity</h2>
+        <p class="text-sm text-ink/70 leading-relaxed">The right architecture reduces risk, improves user experience, and creates a more governable foundation for scale.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="grid gap-6 md:grid-cols-3">
+      <div class="card p-6">
+        <p class="font-mono text-[10px] uppercase tracking-wide text-teal mb-3">1</p>
+        <h3 class="font-display text-xl mb-2">Assess</h3>
+        <p class="text-sm text-ink/70">Understand current capability, risk, and constraints.</p>
+      </div>
+      <div class="card p-6">
+        <p class="font-mono text-[10px] uppercase tracking-wide text-teal mb-3">2</p>
+        <h3 class="font-display text-xl mb-2">Design</h3>
+        <p class="text-sm text-ink/70">Create the roadmap, architecture and delivery plan.</p>
+      </div>
+      <div class="card p-6">
+        <p class="font-mono text-[10px] uppercase tracking-wide text-teal mb-3">3</p>
+        <h3 class="font-display text-xl mb-2">Operate</h3>
+        <p class="text-sm text-ink/70">Support the system through implementation, optimisation and governance.</p>
+      </div>
+    </div>
+  </section>
+</main>
