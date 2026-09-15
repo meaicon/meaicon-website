@@ -4,11 +4,15 @@ Thumbs.db
 
 # Editor/IDE
 .vscode/
+!.vscode/
+!.vscode/extensions.json
+!.vscode/mcp.json
 .idea/
 *.swp
 
 # Logs
 *.log
+.seo-audits/
 
 # Dependencies (if any tooling is added later)
 node_modules/

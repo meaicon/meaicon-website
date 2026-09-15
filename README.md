@@ -82,6 +82,26 @@ Before deployment, verify that:
 - favicon and branding assets are present
 - the site root renders correctly on desktop and mobile
 
+### IndexNow
+
+The public verification key is available at `/7cc8503712a0c79742073c805efa675e.txt`. After deploying a metadata or content update, submit changed URLs to `https://api.indexnow.org/indexnow` with this key and the matching host. IndexNow requests discovery; search engines still decide whether and when to crawl or index a URL.
+
+### SEO crawler MCP
+
+VS Code is configured to start `@houtini/seo-crawler-mcp@2.1.5` on demand through `.vscode/mcp.json`. Use its `run_seo_audit` tool against the deployed site after content or design changes, then use `analyze_seo` to inspect missing metadata, broken links, canonical issues, sitemap coverage, and other crawl findings. Reports are written to `.seo-audits/`, which is intentionally excluded from version control.
+
+### Content and design toolkit
+
+The workspace recommends extensions for live previews, HTML and CSS validation, JavaScript linting, consistent formatting, spelling and content QA, color inspection, image preview, and image compression. These recommendations are stored in `.vscode/extensions.json` so contributors can reproduce the same editing environment.
+
+For a recurring maintenance pass:
+
+1. Preview changed pages with Live Preview at desktop and mobile widths.
+2. Run the SEO crawler against the deployed site and review its report.
+3. Fix broken links, missing metadata, canonical or sitemap issues, and accessibility warnings.
+4. Check copy with Code Spell Checker and format changed files with Prettier.
+5. Compress newly added image assets and rerun the crawl after deployment.
+
 ## Branding and UI consistency
 
 The public site follows a fixed brand language built around the Meaicon identity:

@@ -1,0 +1,15 @@
+{
+  "servers": {
+    "seo-crawler": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@houtini/seo-crawler-mcp@2.1.5"
+      ],
+      "env": {
+        "OUTPUT_DIR": "${workspaceFolder}/.seo-audits"
+      }
+    }
+  }
+}
