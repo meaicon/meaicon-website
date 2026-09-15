@@ -9,6 +9,14 @@ This repository contains the static marketing website for Meaicon. The source re
 - Designed for fast hosting on GitHub Pages, Netlify, Vercel, or any static host
 - Assets are stored in the `assets/` folder, including branding, CSS, and JavaScript
 
+## Branch and release status
+
+- Active branch: `website-redesign`
+- Tracking remote: `origin/website-redesign`
+- Latest verified commit: `41900d3` — `Move site pages onto shared Eleventy shell`
+- Current working branch is the migration branch for the shared Eleventy layout and page-by-page modernization work.
+- Merge back into `main` only after verification passes for the migrated pages and the deployed site remains stable.
+
 ## Project structure
 
 ```text
