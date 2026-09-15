@@ -156,6 +156,16 @@ All pages include professional social media profiles optimized for SEO and brand
 - **Total social profile coverage**: 11 indexable pages × 5 platforms
 - **Each page includes**: 2 Instagram references, 2 Facebook references, 2 YouTube references, plus all profiles in JSON-LD schema
 
+## Current improvement backlog
+
+The migration branch is stable and the required redesign work has been completed. These priorities were all addressed in the current pass before the branch is prepared for merge back into `main`.
+
+1. [x] Convert the remaining legacy page bodies into structured, page-specific Nunjucks content blocks instead of raw HTML extraction.
+2. [x] Rewrite the homepage and service landing pages to emphasize the strongest customer outcomes, proof points, and clear conversion intent.
+3. [x] Standardize cards, CTAs, spacing, and typography across the shared design system to make every page feel premium and consistent.
+4. [x] Verify metadata, Open Graph, schema, canonical URLs, and sitemap alignment across all pages before launch.
+5. [x] Run the SEO crawler and accessibility checks, fix crawl issues, broken links, and contrast or keyboard problems, then complete a final release review.
+
 ## Recent progress
 
 ### Social Media & SEO Optimization (August 2026)

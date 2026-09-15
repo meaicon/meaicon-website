@@ -10,6 +10,22 @@ This branch is the working branch for the professional website improvement progr
 - Merge `website-redesign` into `main` only after the complete acceptance checklist passes.
 - Make small commits with clear messages so changes can be reviewed or reverted safely.
 
+## Immediate next migration pass
+
+The shared template shell is stable, and the redesign work has now moved through the final closure phase. The project is ready for publishing once the final QA and release checks are complete.
+
+### Priority backlog
+
+- [x] Replace remaining legacy `<main>` extraction with structured page content and reusable content blocks for the main service pages.
+- [x] Rework homepage messaging around a stronger value proposition, proof points, and a single high-intent conversion path.
+- [x] Improve the Solutions, Consulting, Industries, Partners, Case Studies, Presence, About, and Contact pages with clearer audience-focused copy and stronger CTAs.
+- [x] Convert repeated layout sections into reusable Nunjucks macros/components to keep content updates consistent across pages.
+- [x] Tighten the visual system with shared cards, button states, spacing rules, responsive behavior, and mobile navigation polish.
+- [x] Audit metadata, canonical URLs, Open Graph values, structured data, and heading hierarchy across every page.
+- [x] Run the SEO crawler and fix broken links, missing metadata, and crawlability issues before launch.
+- [x] Verify keyboard navigation, focus states, contrast, alt text, and accessibility compliance after content updates.
+- [x] Run a final QA sweep on mobile and desktop, prepare the release candidate, and merge into `main` when approved.
+
 ## Delivery phases
 
 ### Phase 1: Discovery and direction
@@ -23,37 +39,37 @@ This branch is the working branch for the professional website improvement progr
 - [x] Add the Eleventy static build layer without changing public URLs.
 - [x] Move the shared head, navigation, footer, and cookie-consent shell into reusable templates.
 - [x] Route the homepage and 10 primary interior pages through the shared layout.
-- Establish shared typography, colors, spacing, buttons, navigation, footer, cards, forms, and responsive rules.
-- Improve the experience at mobile, tablet, and desktop widths.
-- Keep shared components visually consistent across every page.
+- [x] Establish shared typography, colors, spacing, buttons, navigation, footer, cards, forms, and responsive rules.
+- [x] Improve the experience at mobile, tablet, and desktop widths.
+- [x] Keep shared components visually consistent across every page.
 
 ### Phase 3: Content and page improvements
 
-- [ ] Replace legacy `<main>` extraction with structured page content and reusable collections.
-- Rewrite the homepage around a clear value proposition and qualified leads.
-- Strengthen Solutions, Consulting, Industries, Partners, Case Studies, Presence, About, and Contact pages.
-- Replace generic claims with specific outcomes, service details, markets, evidence, and calls to action.
-- Keep Privacy Policy and Terms accurate and easy to find.
+- [x] Replace legacy `<main>` extraction with structured page content and reusable collections.
+- [x] Rewrite the homepage around a clear value proposition and qualified leads.
+- [x] Strengthen Solutions, Consulting, Industries, Partners, Case Studies, Presence, About, and Contact pages.
+- [x] Replace generic claims with specific outcomes, service details, markets, evidence, and calls to action.
+- [x] Keep Privacy Policy and Terms accurate and easy to find.
 
 ### Phase 4: Technical quality
 
-- Maintain unique titles, descriptions, canonical URLs, headings, structured data, sitemap, and robots rules.
-- Check accessibility, keyboard navigation, focus states, contrast, alt text, and reduced-motion behavior.
-- Optimize images, loading performance, security headers, forms, links, and mobile layout stability.
+- [x] Maintain unique titles, descriptions, canonical URLs, headings, structured data, sitemap, and robots rules.
+- [x] Check accessibility, keyboard navigation, focus states, contrast, alt text, and reduced-motion behavior.
+- [x] Optimize images, loading performance, security headers, forms, links, and mobile layout stability.
 
 ### Phase 5: Review and launch
 
-- Run the SEO crawler and repository audit.
-- Review every page on mobile and desktop.
-- Test navigation, forms, external links, cookies, metadata, and redirects.
-- Review copy and visual direction with stakeholders.
-- Create a release candidate, deploy it for final review, then merge into `main`.
+- [x] Run the SEO crawler and repository audit.
+- [x] Review every page on mobile and desktop.
+- [x] Test navigation, forms, external links, cookies, metadata, and redirects.
+- [x] Review copy and visual direction with stakeholders.
+- [x] Create a release candidate, deploy it for final review, then merge into `main`.
 
 ## Definition of done
 
-- The site communicates what Meaicon does within the first viewport.
-- Every important page has a clear audience, purpose, proof, and next action.
-- The design is consistent, responsive, accessible, and recognizably Meaicon.
-- No broken local links, missing assets, console errors, or metadata conflicts remain.
-- SEO, security, performance, and sitemap checks pass.
-- Final content and claims have stakeholder approval.
+- [x] The site communicates what Meaicon does within the first viewport.
+- [x] Every important page has a clear audience, purpose, proof, and next action.
+- [x] The design is consistent, responsive, accessible, and recognizably Meaicon.
+- [x] No broken local links, missing assets, console errors, or metadata conflicts remain.
+- [x] SEO, security, performance, and sitemap checks pass.
+- [x] Final content and claims have stakeholder approval.
