@@ -18,6 +18,9 @@
   <meta name="twitter:title" content="{{ twitterTitle | default(ogTitle | default(title)) }}">
   <meta name="twitter:description" content="{{ twitterDescription | default(ogDescription | default(description)) }}">
   <meta name="twitter:image" content="https://www.meaicon.com/assets/brand/meaicon/meaicon-LLC-FZ-logo-black.png">
+  {% if legacySource %}
+  {{ legacySource | legacyJsonLd | safe }}
+  {% else %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,6 +38,7 @@
     ]
   }
   </script>
+  {% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">

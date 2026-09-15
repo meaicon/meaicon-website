@@ -53,7 +53,7 @@ The generated site is written to `_site/`. To preview it with live reload:
 npm start
 ```
 
-The existing root HTML pages remain the source of truth during the incremental migration, except for the homepage, which is now generated from `index.njk` using the shared files in `_includes/`. Shared layouts and content collections will move into Eleventy templates in later phases.
+The existing root HTML pages remain the content source during the incremental migration. The homepage and the 10 primary interior pages are now generated through Nunjucks entry templates in `index.njk` and `migrated/`, using shared files in `_includes/`. Their legacy files provide the current `<main>` content until structured content collections are introduced. `products.html` remains a standalone noindex redirect page.
 
 ## Update the repo from a zip
 

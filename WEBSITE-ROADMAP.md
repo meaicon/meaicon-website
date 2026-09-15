@@ -20,12 +20,16 @@ This branch is the working branch for the professional website improvement progr
 
 ### Phase 2: Design system
 
+- [x] Add the Eleventy static build layer without changing public URLs.
+- [x] Move the shared head, navigation, footer, and cookie-consent shell into reusable templates.
+- [x] Route the homepage and 10 primary interior pages through the shared layout.
 - Establish shared typography, colors, spacing, buttons, navigation, footer, cards, forms, and responsive rules.
 - Improve the experience at mobile, tablet, and desktop widths.
 - Keep shared components visually consistent across every page.
 
 ### Phase 3: Content and page improvements
 
+- [ ] Replace legacy `<main>` extraction with structured page content and reusable collections.
 - Rewrite the homepage around a clear value proposition and qualified leads.
 - Strengthen Solutions, Consulting, Industries, Partners, Case Studies, Presence, About, and Contact pages.
 - Replace generic claims with specific outcomes, service details, markets, evidence, and calls to action.
