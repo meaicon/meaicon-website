@@ -1,0 +1,14 @@
+{
+  "name": "meaicon-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static Meaicon marketing website built with Eleventy.",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "audit:metadata": "node scripts/audit-metadata.js"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

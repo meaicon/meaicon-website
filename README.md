@@ -1,11 +1,11 @@
 # Meaicon Website
 
-This repository contains the static marketing website for Meaicon. The project is built with plain HTML, CSS, and JavaScript, and does not require a build step.
+This repository contains the static marketing website for Meaicon. The source remains plain HTML, CSS, and JavaScript, with Eleventy providing an optional static build layer for shared layouts and future content collections.
 
 ## Overview
 
 - Static site with multi-page HTML structure
-- No framework dependency required
+- Eleventy generates static output without a server-side runtime
 - Designed for fast hosting on GitHub Pages, Netlify, Vercel, or any static host
 - Assets are stored in the `assets/` folder, including branding, CSS, and JavaScript
 
@@ -39,18 +39,21 @@ This repository contains the static marketing website for Meaicon. The project i
 
 ## Quick start
 
-Open the site directly in a browser, or run a local static server:
+Install dependencies and build the static output:
 
 ```bash
 cd /workspaces/meaicon-website
-python3 -m http.server 8000
+npm install
+npm run build
 ```
 
-Then open:
+The generated site is written to `_site/`. To preview it with live reload:
 
 ```text
-http://localhost:8000
+npm start
 ```
+
+The existing root HTML pages remain the source of truth during the incremental migration. Shared layouts and content collections will move into Eleventy templates in later phases.
 
 ## Update the repo from a zip
 

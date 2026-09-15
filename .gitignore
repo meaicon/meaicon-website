@@ -21,6 +21,7 @@ node_modules/
 # Build output (if a build step is introduced later)
 dist/
 build/
+_site/
 
 # Environment files
 .env
