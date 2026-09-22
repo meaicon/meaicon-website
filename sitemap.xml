@@ -29,6 +29,16 @@
   <url><loc>https://www.meaicon.com/solutions/identity-access.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.meaicon.com/solutions/disaster-recovery.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.meaicon.com/solutions/iot.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Edge & AI Solutions -->
+  <url><loc>https://www.meaicon.com/solutions/edge-compute-infrastructure.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.meaicon.com/solutions/edge-ai-inference.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.meaicon.com/solutions/sovereign-compute.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.meaicon.com/solutions/mobile-data-centre.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.meaicon.com/solutions/secure-edge-computing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.meaicon.com/solutions/hardware-security.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.meaicon.com/solutions/post-quantum-security.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.meaicon.com/solutions/ota-fleet-management.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.meaicon.com/solutions/smart-building-edge.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <!-- Industries -->
   <url><loc>https://www.meaicon.com/industries.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.meaicon.com/industries/government.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -41,6 +51,8 @@
   <url><loc>https://www.meaicon.com/industries/logistics.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.meaicon.com/industries/education.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.meaicon.com/industries/real-estate.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.meaicon.com/industries/defence.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.meaicon.com/industries/maritime.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <!-- Insights -->
   <url><loc>https://www.meaicon.com/insights.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.meaicon.com/insights/digital-transformation-mea.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -49,6 +61,8 @@
   <url><loc>https://www.meaicon.com/insights/data-centre-trends.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.meaicon.com/insights/sd-wan-mea.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.meaicon.com/insights/cloud-migration-strategy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.meaicon.com/insights/edge-ai-fleet-management.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.meaicon.com/insights/sovereign-compute-mea.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.meaicon.com/insights/whitepapers.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.meaicon.com/insights/case-studies.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <!-- Case Studies -->
@@ -60,6 +74,7 @@
   <url><loc>https://www.meaicon.com/case-studies/energy-scada.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.meaicon.com/case-studies/retail-omnichannel.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.meaicon.com/case-studies/hospitality-guest-experience.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.meaicon.com/case-studies/fleet-predictive-maintenance.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <!-- Legal -->
   <url><loc>https://www.meaicon.com/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.meaicon.com/terms-of-service.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>

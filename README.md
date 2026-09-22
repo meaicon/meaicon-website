@@ -4,9 +4,9 @@ Static marketing website for MEAICON LLC FZ — a digital infrastructure company
 
 ## Overview
 
-- **58-page** corporate website built with Eleventy 3.1.6 and Nunjucks templates
+- **72-page** corporate website built with Eleventy 3.1.6 and Nunjucks templates
 - Original MEAICON content — connectivity, data centre, cybersecurity, blockchain, cloud, managed services, consulting
-- 10 industry vertical pages, 6 insight articles, 7 case studies, company pages, legal pages
+- 12 industry vertical pages, 8 insight articles, 8 case studies, company pages, legal pages
 - Design system: Plus Jakarta Sans + Inter typography, custom CSS token system, Tailwind utility layer
 - Production-ready: SEO-complete, accessible, semantic HTML5
 
@@ -48,7 +48,7 @@ meaicon-website/
 │   ├── solutions-index.njk
 │   ├── industries-index.njk
 │   ├── case-studies-index.njk
-│   ├── solutions/            # 12 solution pages + 6 consulting sub-pages
+│   ├── solutions/            # 22 solution pages + 6 consulting sub-pages
 │   │   ├── connectivity.njk
 │   │   ├── data-centre.njk
 │   │   ├── cyber-security.njk
@@ -60,14 +60,23 @@ meaicon-website/
 │   │   ├── identity-access.njk
 │   │   ├── disaster-recovery.njk
 │   │   ├── iot.njk
-│   │   └── consulting/        # 6 consulting sub-pages
-│   │       ├── digital-transformation-strategy.njk
-│   │       ├── infrastructure-network-audits.njk
-│   │       ├── technology-roadmap-vendor-selection.njk
-│   │       ├── regulatory-compliance-advisory.njk
-│   │       ├── managed-services-outsourcing.njk
-│   │       └── tokenisation-advisory.njk
-│   ├── industries/           # 10 industry pages
+│   │   ├── consulting/        # 6 consulting sub-pages
+│   │   │   ├── digital-transformation-strategy.njk
+│   │   │   ├── infrastructure-network-audits.njk
+│   │   │   ├── technology-roadmap-vendor-selection.njk
+│   │   │   ├── regulatory-compliance-advisory.njk
+│   │   │   ├── managed-services-outsourcing.njk
+│   │   │   └── tokenisation-advisory.njk
+│   │   ├── edge-compute-infrastructure.njk   # Edge & AI solutions
+│   │   ├── edge-ai-inference.njk
+│   │   ├── sovereign-compute.njk
+│   │   ├── mobile-data-centre.njk
+│   │   ├── secure-edge-computing.njk
+│   │   ├── hardware-security.njk
+│   │   ├── post-quantum-security.njk
+│   │   ├── ota-fleet-management.njk
+│   │   └── smart-building-edge.njk
+│   ├── industries/           # 12 industry pages
 │   │   ├── government.njk
 │   │   ├── banking.njk
 │   │   ├── healthcare.njk
@@ -77,8 +86,10 @@ meaicon-website/
 │   │   ├── retail.njk
 │   │   ├── logistics.njk
 │   │   ├── education.njk
-│   │   └── real-estate.njk
-│   ├── insights/             # 9 insight pages (6 articles + 3 indexes)
+│   │   ├── real-estate.njk
+│   │   ├── defence.njk
+│   │   └── maritime.njk
+│   ├── insights/             # 11 insight pages (8 articles + 3 indexes)
 │   │   ├── index.njk         # → /insights.html
 │   │   ├── digital-transformation-mea.njk
 │   │   ├── cybersecurity-threat-landscape.njk
@@ -86,16 +97,19 @@ meaicon-website/
 │   │   ├── data-centre-trends.njk
 │   │   ├── sd-wan-mea.njk
 │   │   ├── cloud-migration-strategy.njk
+│   │   ├── edge-ai-fleet-management.njk
+│   │   ├── sovereign-compute-mea.njk
 │   │   ├── whitepapers.njk
 │   │   └── case-studies.njk
-│   └── case-studies/         # 7 case study pages
+│   └── case-studies/         # 8 case study pages
 │       ├── banking-blockchain.njk
 │       ├── government-smart-city.njk
 │       ├── healthcare-uptime.njk
 │       ├── telecom-edge.njk
 │       ├── energy-scada.njk
 │       ├── retail-omnichannel.njk
-│       └── hospitality-guest-experience.njk
+│       ├── hospitality-guest-experience.njk
+│       └── fleet-predictive-maintenance.njk
 ├── data/
 │   └── site-content.json     # Brand metadata (name, address, contact, nav)
 ├── scripts/

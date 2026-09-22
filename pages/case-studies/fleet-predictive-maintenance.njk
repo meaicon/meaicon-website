@@ -1,0 +1,135 @@
+---
+layout: layout.njk
+title: "Fleet Predictive Maintenance — MEAICON Case Study"
+description: "How MEAICON edge AI delivers predictive fleet maintenance — on-device fault detection, closed-loop work orders, and reduced unplanned downtime."
+canonical: "https://www.meaicon.com/case-studies/fleet-predictive-maintenance.html"
+permalink: /case-studies/fleet-predictive-maintenance.html
+---
+<main class="flex-1 site-shell">
+  <section class="page-hero">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="breadcrumb"><a href="/index.html">Home</a> / <a href="/case-studies.html">Case Studies</a> / <span>Fleet Predictive Maintenance</span></div>
+      <p class="eyebrow mb-4 mt-6">Case Study · Fleet Operations</p>
+      <h1 class="page-title max-w-3xl">Fleet Predictive Maintenance</h1>
+      <p class="mt-4 max-w-2xl text-base text-ink/70">Fleet operators face unplanned downtime costing an estimated $448–760 per day per idle vehicle. MEAICON's edge AI platform processes vehicle telemetry on-device, detects developing faults before they cascade, and automates maintenance workflows — all without cloud round-trips or physical diagnostic visits.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="grid-2">
+        <div>
+          <p class="eyebrow mb-3">The challenge</p>
+          <h2 class="section-title">What fleet operators face</h2>
+        </div>
+        <div class="prose-content">
+          <p>Fleet operators across logistics, public transport, and heavy industry lose an estimated $448 to $760 per day for each vehicle sitting idle due to unplanned breakdowns. The traditional approach relies on cloud-processed telematics — vehicle data is transmitted to a central server, analysed, and alerts are returned. This round-trip introduces 200–300ms of latency, which is too slow for real-time safety applications such as brake degradation detection or tyre pressure monitoring.</p>
+          <p>Compounding the problem, the most expensive maintenance task remains the physical diagnostic visit. When a vehicle's onboard diagnostics flag an issue, a technician must physically connect to the vehicle to read codes, interpret data, and determine the repair. For fleets operating across dispersed geographic areas, these visits consume significant labour hours and extend vehicle downtime.</p>
+          <p>Legacy telematics platforms also struggle with data fragmentation. Different vehicle makes and models expose telemetry through proprietary protocols — CAN-bus, J1939, OBD-II — each with varying data formats and health parameters. Without a unified processing layer, operators manage multiple dashboards with inconsistent visibility into fleet health.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="grid-2">
+        <div>
+          <p class="eyebrow mb-3">Our approach</p>
+          <h2 class="section-title">How we engaged</h2>
+        </div>
+        <div class="prose-content">
+          <p>MEAICON designed an edge AI solution architecture that moves intelligence from the cloud to the vehicle itself. The platform centres on an edge gateway with a dedicated neural processing unit (NPU) that processes CAN-bus and J1939 health data locally — enabling on-device fault detection with sub-10ms inference latency, far below the 200–300ms round-trip of cloud-dependent systems.</p>
+          <p>The design prioritises closed-loop automation. Rather than generating alerts that require human interpretation, the platform's predictive models are designed to flag developing faults days in advance and automatically open work orders, schedule the nearest qualified workshop, and notify fleet managers — closing the loop from detection to action without manual intervention.</p>
+          <ul>
+            <li>Vehicle telemetry analysis across CAN-bus, J1939, and OBD-II protocols</li>
+            <li>Edge gateway architecture with dedicated NPU for on-device inference</li>
+            <li>Predictive model design targeting early fault detection across vehicle makes and models</li>
+            <li>Closed-loop maintenance automation with auto-generated work orders and workshop scheduling</li>
+            <li>OTA firmware and model update pipeline eliminating physical service visits</li>
+            <li>Unified fleet dashboard aggregating health data across all vehicles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="grid-2">
+        <div>
+          <p class="eyebrow mb-3">The solution</p>
+          <h2 class="section-title">What we delivered</h2>
+        </div>
+        <div class="prose-content">
+          <p>The solution architecture consists of an edge gateway installed in each vehicle, equipped with a dedicated NPU that processes telemetry data on-device. The gateway ingests CAN-bus and J1939 health streams from the vehicle's onboard systems, runs predictive models locally, and transmits only actionable alerts and summaries to the cloud — dramatically reducing bandwidth consumption compared to raw data streaming.</p>
+          <p>When a predictive model flags a developing fault, the platform automatically opens a maintenance work order, identifies the nearest qualified workshop based on location and capability, schedules the service appointment, and notifies the fleet manager through the unified dashboard. This closed-loop automation is designed to eliminate the manual steps between fault detection and repair scheduling that typically add days to vehicle downtime.</p>
+          <p>OTA updates deliver new AI models and security patches to every vehicle remotely. When a predictive model is refined based on aggregated fleet data, the updated model is pushed to all gateways without physical service visits. The unified dashboard provides fleet managers with a single view of vehicle health, maintenance status, and predictive alerts across all makes and models in the fleet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Outcomes</p>
+      <h2 class="section-title mb-12">What the platform is designed to achieve</h2>
+      <div class="stat-row">
+        <div class="stat-box">
+          <p class="stat-value">Designed to reduce</p>
+          <p class="stat-label">Unplanned downtime</p>
+        </div>
+        <div class="stat-box">
+          <p class="stat-value">Sub-10ms</p>
+          <p class="stat-label">On-device inference latency</p>
+        </div>
+        <div class="stat-box">
+          <p class="stat-value">Engineered to eliminate</p>
+          <p class="stat-label">Physical diagnostic visits</p>
+        </div>
+        <div class="stat-box">
+          <p class="stat-value">Closed-loop</p>
+          <p class="stat-label">Maintenance automation</p>
+        </div>
+      </div>
+      <div class="prose-content max-w-4xl mt-12">
+        <p>This case study presents a MEAICON solution architecture and capability demonstration. The platform is designed to achieve reductions in unplanned downtime, targeting high predictive model accuracy, and engineered to eliminate physical diagnostic visits through closed-loop automation. These are design targets, not verified client outcomes — MEAICON presents them as the engineering objectives the platform is built around, not as proven production results.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Related case studies</p>
+      <h2 class="section-title mb-12">More work</h2>
+      <div class="grid-3">
+        <a href="/case-studies/telecom-edge.html" class="insight-card block">
+          <h3>Telecom Edge Computing</h3>
+          <p>Edge computing infrastructure with remote management for a regional telecom operator.</p>
+          <span class="text-link mt-4">Read more &rarr;</span>
+        </a>
+        <a href="/case-studies/government-smart-city.html" class="insight-card block">
+          <h3>Government Smart City Infrastructure</h3>
+          <p>City-scale command centre integrating CCTV, sensors and incident response.</p>
+          <span class="text-link mt-4">Read more &rarr;</span>
+        </a>
+        <a href="/case-studies/energy-scada.html" class="insight-card block">
+          <h3>Energy SCADA Security</h3>
+          <p>SCADA network hardening and continuous monitoring for a regional energy utility.</p>
+          <span class="text-link mt-4">Read more &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="max-w-4xl mx-auto px-4 py-20 text-center lg:px-6 lg:py-24">
+      <p class="eyebrow mb-4">Start a conversation</p>
+      <h2 class="cta-title">Tell us what you are building.</h2>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="mailto:connect@meaicon.com" class="text-link">connect@meaicon.com</a>
+        <a href="/contact.html" class="btn-primary inline-flex items-center px-5 py-3">Talk to an expert &rarr;</a>
+      </div>
+    </div>
+  </section>
+</main>
