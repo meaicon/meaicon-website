@@ -3,6 +3,67 @@
 {% include "site-head.njk" %}
 <body class="bg-paper text-ink min-h-screen flex flex-col antialiased">
 {% include "header.njk" %}
+{% set breadcrumb_path = page.url %}
+{% set breadcrumb_parts = breadcrumb_path.split("/") %}
+{% set bc_section = "" %}
+{% set bc_page = "" %}
+{% if breadcrumb_parts.length >= 2 and breadcrumb_parts[1] != "" and breadcrumb_parts[1] != "index.html" %}
+  {% set bc_section_raw = breadcrumb_parts[1] | replace(".html", "") | replace("-", " ") %}
+  {% set bc_section = bc_section_raw | capitalize %}
+  {% if breadcrumb_parts.length >= 3 and breadcrumb_parts[2] != "" %}
+    {% set bc_page_raw = breadcrumb_parts[breadcrumb_parts.length - 1] | replace(".html", "") | replace("-", " ") %}
+    {% set bc_page = bc_page_raw | capitalize %}
+  {% else %}
+    {% set bc_page = bc_section %}
+  {% endif %}
+{% endif %}
+{% if bc_section != "" %}
+<nav class="site-shell breadcrumb-nav max-w-7xl mx-auto px-4 lg:px-6 py-3" aria-label="Breadcrumb">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    {% if bc_page != bc_section %}
+    <li><a href="/{{ breadcrumb_parts[1] }}.html">{{ bc_section }}</a></li>
+    <li aria-current="page">{{ bc_page }}</li>
+    {% else %}
+    <li aria-current="page">{{ bc_section }}</li>
+    {% endif %}
+  </ol>
+</nav>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.meaicon.com/"
+    }{% if bc_page != bc_section %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ bc_section }}",
+      "item": "https://www.meaicon.com/{{ breadcrumb_parts[1] }}.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ bc_page }}",
+      "item": "https://www.meaicon.com{{ breadcrumb_path }}"
+    }
+    {% else %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ bc_section }}",
+      "item": "https://www.meaicon.com{{ breadcrumb_path }}"
+    }
+    {% endif %}
+  ]
+}
+</script>
+{% endif %}
 <main id="main-content" class="site-shell flex-1">
 {{ content | safe }}
 </main>

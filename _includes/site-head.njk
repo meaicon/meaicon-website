@@ -42,6 +42,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- TODO: Migrate to build-time Tailwind for production — remove CDN script and 'unsafe-inline' CSP -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
   tailwind.config = {
@@ -69,6 +70,7 @@
   }
   </script>
   <style>
+    /* === Base === */
     :root {
       --paper: #FAFBFC;
       --card: #FFFFFF;
@@ -364,11 +366,7 @@
     .cta-band h2 { color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2rem; font-weight: 700; }
     .cta-band p { color: rgba(255,255,255,.78); }
 
-    .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; }
-    .footer-col h4 { color: var(--ink); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 1rem; }
-    .footer-col ul { display: grid; gap: .5rem; }
-    .footer-col a { color: var(--muted); font-size: .85rem; }
-    .footer-col a:hover { color: var(--accent); }
+
 
     .page-hero {
       background: linear-gradient(135deg, #F8FAFC 0%, #fff 72%);
@@ -420,7 +418,7 @@
 
     @media (max-width: 767px) {
       .telemetry-grid, .industry-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .bento-grid, .process-grid, .grid-2, .grid-3, .grid-4, .feature-grid, .footer-grid { grid-template-columns: 1fr; }
+      .bento-grid, .process-grid, .grid-2, .grid-3, .grid-4, .feature-grid { grid-template-columns: 1fr; }
       .solution-card, .solution-card-featured, .solution-card-wide { grid-column: auto; }
       .case-metrics { grid-template-columns: 1fr; }
       .presence-list small { text-align: right; }
@@ -429,7 +427,7 @@
       .stat-row { grid-template-columns: 1fr; }
     }
     @media (max-width: 1023px) {
-      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+
       .bento-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
       .solution-card { grid-column: span 2; }
       .solution-card-featured, .solution-card-wide { grid-column: span 2; }
@@ -814,6 +812,33 @@
     .skip-link:focus {
       top: 0;
     }
+
+    /* === Utilities === */
+    .back-to-top {
+      position: fixed; bottom: 20px; right: 20px; width: 44px; height: 44px;
+      background: var(--accent); color: #fff; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity .3s ease;
+      z-index: 1000;
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    html { scroll-behavior: smooth; }
+
+    .breadcrumb { display: flex; list-style: none; gap: 0.5rem; font-size: 0.85rem; color: var(--muted); }
+    .breadcrumb li:not(:last-child)::after { content: ' › '; margin-left: 0.5rem; }
+    .breadcrumb a:hover { color: var(--accent); }
+
+    .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .related-links .card { background: var(--paper); padding: 1.5rem; border-radius: 0.5rem; }
+    .related-links .card:hover { border: 1px solid var(--accent); }
+
+    .newsletter-band { background: var(--dark); color: #fff; padding: 3rem 0; text-align: center; }
+    .newsletter-band .input-group { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+    .newsletter-band input { padding: 0.5rem 1rem; border-radius: 0.25rem; color: var(--ink); }
+    .newsletter-band button { background: var(--accent); color: #fff; padding: 0.5rem 1rem; border-radius: 0.25rem; }
+
+    .skeleton { background: linear-gradient(90deg, #E2E8F0 25%, #F7FAFC 50%, #E2E8F0 75%); background-size: 200% 100%; animation: loading 1.5s infinite; border-radius: 0.25rem; }
+    @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
   </style>
 <script>
 (function() {

@@ -8,7 +8,7 @@ permalink: /case-studies.html
 <main class="flex-1 site-shell">
   <section class="reveal page-hero">
     <div class="max-w-7xl mx-auto px-4 lg:px-6">
-      <div class="breadcrumb"><a href="/index.html">Home</a> / <span>Case Studies</span></div>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> / <span aria-current="page">Case Studies</span></nav>
       <p class="eyebrow mb-4 mt-6">Selected work</p>
       <h1 class="page-title max-w-3xl">Proof, not promises.</h1>
       <p>A selection of engagements where MEAICON designed, built, and operated infrastructure that governments and enterprises across MEA rely on.</p>
@@ -83,4 +83,18 @@ permalink: /case-studies.html
       </div>
     </div>
   </section>
+
+  <aside class="newsletter-band reveal" aria-label="Newsletter signup">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6 flex flex-col lg:flex-row items-center justify-between gap-6">
+      <div>
+        <h3>Stay informed</h3>
+        <p>Get our latest insights on MEA infrastructure.</p>
+      </div>
+      <form action="#" method="post" class="flex gap-3 w-full lg:w-auto">
+        <input type="email" placeholder="work@email.com" required class="flex-1 lg:w-64 px-4 py-3 rounded-lg border border-line bg-surface">
+        <button type="submit" class="btn-primary px-5 py-3">Subscribe</button>
+      </form>
+    </div>
+  </aside>
+
 </main>

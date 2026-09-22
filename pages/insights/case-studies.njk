@@ -8,7 +8,7 @@ permalink: /insights/case-studies.html
 <main class="flex-1 site-shell">
   <section class="reveal page-hero">
     <div class="max-w-7xl mx-auto px-4 lg:px-6">
-      <div class="breadcrumb"><a href="/index.html">Home</a> / <a href="/insights.html">Insights</a> / <span>Case Studies</span></div>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> / <a href="/insights.html">Insights</a> / <span aria-current="page">Case Studies</span></nav>
       <p class="eyebrow mb-4 mt-6">Case Studies</p>
       <h1 class="page-title max-w-3xl">Case Studies</h1>
       <p class="max-w-2xl text-ink/70">Real-world examples of how MEAICON has helped organisations across the Middle East and Africa solve infrastructure, security, and connectivity challenges. Each case study outlines the problem, the approach, and the outcomes delivered.</p>
@@ -62,4 +62,18 @@ permalink: /insights/case-studies.html
       </div>
     </div>
   </section>
+
+  <aside class="newsletter-band reveal" aria-label="Newsletter signup">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6 flex flex-col lg:flex-row items-center justify-between gap-6">
+      <div>
+        <h3>Stay informed</h3>
+        <p>Get our latest insights on MEA infrastructure.</p>
+      </div>
+      <form action="#" method="post" class="flex gap-3 w-full lg:w-auto">
+        <input type="email" placeholder="work@email.com" required class="flex-1 lg:w-64 px-4 py-3 rounded-lg border border-line bg-surface">
+        <button type="submit" class="btn-primary px-5 py-3">Subscribe</button>
+      </form>
+    </div>
+  </aside>
+
 </main>

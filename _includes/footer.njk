@@ -3,7 +3,18 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Top: Brand + CTA -->
-      <div class="footer-top reveal">
+    
+  <div class="newsletter-band">
+    <div class="max-w-xl mx-auto px-4 text-center">
+      <h3>Stay Informed</h3>
+      <form action="#" method="post" class="input-group">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  
+  <div class="footer-top reveal">
         <div class="footer-brand-block">
           <img src="/assets/brand/meaicon/meaicon-LLC-FZ-logo-black.svg" alt="MEAICON Technology Group logo" class="footer-logo" width="200" height="40" loading="eager" />
           <p class="footer-tagline">Connectivity, data centre, cyber security, blockchain and consulting services for enterprises and governments across the Middle East &amp; Africa.</p>
@@ -103,6 +114,8 @@
 
     </div>
   </div>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
 </footer>
 
 <style>
@@ -309,34 +322,12 @@
   }
 
   /* Hamburger nav styles (kept here for layout proximity) */
-  .hamburger-bar { transition: all 0.3s ease-in-out; }
-  #mobile-menu-toggle[aria-expanded="true"] .hamburger-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  #mobile-menu-toggle[aria-expanded="true"] .hamburger-bar:nth-child(2) { opacity: 0; }
-  #mobile-menu-toggle[aria-expanded="true"] .hamburger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 </style>
 
 <script>
 (function() {
-  // --- Nav scroll state ---
-  var header = document.getElementById('site-header');
-  if (header) {
-    var ticking = false;
-    function onScroll() {
-      if (!ticking) {
-        window.requestAnimationFrame(function() {
-          if (window.scrollY > 50) {
-            header.classList.add('nav-scrolled');
-          } else {
-            header.classList.remove('nav-scrolled');
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
+
 
   // --- Mobile menu toggle ---
   var toggle = document.getElementById('mobile-menu-toggle');
