@@ -1,24 +1,14 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const migratedPages = [
-  "about.html",
-  "case-studies.html",
-  "consulting.html",
-  "contact.html",
-  "global-connectivity.html",
-  "industries.html",
-  "partners.html",
-  "privacy-policy.html",
-  "solutions.html",
-  "terms-of-service.html"
-];
-
 module.exports = function (eleventyConfig) {
-  eleventyConfig.ignores.add("index.html");
+  // Ignore old standalone HTML files (replaced by pages/*.njk templates)
+  eleventyConfig.ignores.add("*.html");
   eleventyConfig.ignores.add("content/page-template.njk");
-  eleventyConfig.ignores.add("migrated/generated/**");
-  migratedPages.forEach((page) => eleventyConfig.ignores.add(page));
+  eleventyConfig.ignores.add("migrated/");
+  eleventyConfig.ignores.add("products.html");
+
+  // Keep legacy filters for backward compatibility (site-head.njk references them)
   eleventyConfig.addFilter("legacyBody", (source) => {
     const html = fs.readFileSync(path.join(process.cwd(), source), "utf8");
     const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1];
@@ -26,28 +16,28 @@ module.exports = function (eleventyConfig) {
     if (!main) throw new Error(`Could not extract <main> from ${source}`);
     return main;
   });
+
   eleventyConfig.addFilter("legacyJsonLd", (source) => {
     const html = fs.readFileSync(path.join(process.cwd(), source), "utf8");
     return [...html.matchAll(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi)]
       .map((match) => match[0])
       .join("\n");
   });
+
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
   eleventyConfig.addPassthroughCopy({ "favicon.ico": "favicon.ico" });
   eleventyConfig.addPassthroughCopy({ "favicon.svg": "favicon.svg" });
   eleventyConfig.addPassthroughCopy({ "apple-touch-icon.png": "apple-touch-icon.png" });
   eleventyConfig.addPassthroughCopy({ "robots.txt": "robots.txt" });
-  eleventyConfig.addPassthroughCopy({ "sitemap.xml": "sitemap.xml" });
+  eleventyConfig.addPassthroughCopy({ sitemap: "sitemap" });
   eleventyConfig.addPassthroughCopy({ _headers: "_headers" });
   eleventyConfig.addWatchTarget("assets/");
-  eleventyConfig.addGlobalData("eleventyComputed", {
-    permalink: (data) => `/${data.page.fileSlug || "index"}.html`
-  });
 
   return {
     dir: {
       input: ".",
-      output: "_site"
+      output: "_site",
+      includes: "_includes"
     },
     templateFormats: ["html", "njk"],
     htmlTemplateEngine: false,

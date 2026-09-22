@@ -1,0 +1,128 @@
+---
+layout: layout.njk
+title: "Energy SCADA Security — MEAICON"
+description: "How MEAICON hardened a regional energy utility's SCADA network with segmentation, monitoring and incident response."
+canonical: "https://www.meaicon.com/case-studies/energy-scada.html"
+permalink: /case-studies/energy-scada.html
+---
+<main class="flex-1 site-shell">
+  <section class="page-hero">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../case-studies.html">Case Studies</a> / <span>Energy SCADA Security</span></div>
+      <p class="eyebrow mb-4 mt-6">Case Study · Energy &amp; Utilities</p>
+      <h1 class="page-title max-w-3xl">Energy SCADA Security</h1>
+      <p class="mt-4 max-w-2xl text-base text-ink/70">A regional energy utility needed to harden its SCADA control network against cyber threats while maintaining operational continuity. MEAICON delivered network segmentation, continuous monitoring and an incident response framework tailored to industrial control systems.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="grid-2">
+        <div>
+          <p class="eyebrow mb-3">The challenge</p>
+          <h2 class="section-title">What the client needed</h2>
+        </div>
+        <div class="prose-content">
+          <p>A regional energy utility operating generation, transmission and distribution infrastructure across multiple sites had a SCADA control network that had grown organically over years. Control systems, engineering workstations and corporate IT shared network paths with minimal segmentation, creating paths an attacker could traverse from corporate systems into operational technology.</p>
+          <p>The utility's operations team had visibility into power flow but not into the network traffic flowing between SCADA devices. There was no continuous monitoring for anomalous activity on the control network, and no incident response plan specific to industrial control system threats. Regulators were increasingly demanding evidence of OT security controls.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="grid-2">
+        <div>
+          <p class="eyebrow mb-3">Our approach</p>
+          <h2 class="section-title">How we engaged</h2>
+        </div>
+        <div class="prose-content">
+          <p>MEAICON began with an OT network assessment, mapping every device on the SCADA network — controllers, engineering workstations, HMI terminals, data historians — and the communication paths between them. We identified flat network segments where OT and IT traffic intermingled and designed a segmentation architecture based on the Purdue model for industrial control systems.</p>
+          <p>The monitoring and incident response tracks were designed to fit the utility's operational constraints. Any security control had to be deployable without disrupting power operations, so we prioritised passive monitoring and out-of-band analysis where active scanning would risk interfering with control traffic.</p>
+          <ul>
+            <li>OT network assessment and SCADA device inventory mapping</li>
+            <li>Purdue-model segmentation architecture design and deployment</li>
+            <li>Passive continuous monitoring for anomalous OT traffic</li>
+            <li>Industrial control system incident response framework development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="grid-2">
+        <div>
+          <p class="eyebrow mb-3">The solution</p>
+          <h2 class="section-title">What we delivered</h2>
+        </div>
+        <div class="prose-content">
+          <p>The delivered architecture segments the SCADA network into layered zones following the Purdue model — a corporate IT zone, an industrial demilitarised zone, and OT control zones — with strictly controlled traffic flows between them. An attacker reaching the corporate network can no longer traverse into operational technology without crossing monitored checkpoints.</p>
+          <p>A passive monitoring system watches OT traffic continuously, flagging anomalous communication patterns — unexpected device connections, unusual protocol usage, traffic to unknown destinations — without injecting probes that could disrupt control systems. The incident response framework gives the utility's operations and security teams defined playbooks for containing and investigating OT-specific threats.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Outcomes</p>
+      <h2 class="section-title mb-12">What changed</h2>
+      <div class="stat-row">
+        <div class="stat-box">
+          <p class="stat-value">Segmented</p>
+          <p class="stat-label">OT network zones</p>
+        </div>
+        <div class="stat-box">
+          <p class="stat-value">Continuous</p>
+          <p class="stat-label">SCADA monitoring</p>
+        </div>
+        <div class="stat-box">
+          <p class="stat-value">Defined</p>
+          <p class="stat-label">Incident response</p>
+        </div>
+        <div class="stat-box">
+          <p class="stat-value">No disruption</p>
+          <p class="stat-label">To power operations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Related case studies</p>
+      <h2 class="section-title mb-12">More work</h2>
+      <div class="grid-3">
+        <a href="banking-blockchain.html" class="insight-card block">
+          <h3>Banking Blockchain Trade Finance</h3>
+          <p>Shared trade-finance ledger and managed SOC for a regional banking group.</p>
+          <span class="text-link mt-4">Read more &rarr;</span>
+        </a>
+        <a href="telecom-edge.html" class="insight-card block">
+          <h3>Telecom Edge Computing</h3>
+          <p>Edge computing deployment bringing low-latency processing to regional sites.</p>
+          <span class="text-link mt-4">Read more &rarr;</span>
+        </a>
+        <a href="government-smart-city.html" class="insight-card block">
+          <h3>Government Smart City Infrastructure</h3>
+          <p>City-scale command centre integrating CCTV, sensors and incident response.</p>
+          <span class="text-link mt-4">Read more &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="max-w-4xl mx-auto px-4 py-20 text-center lg:px-6 lg:py-24">
+      <p class="eyebrow mb-4">Start a conversation</p>
+      <h2 class="cta-title">Tell us what you are building.</h2>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="mailto:connect@meaicon.com" class="text-link">connect@meaicon.com</a>
+        <a href="../contact.html" class="btn-primary inline-flex items-center px-5 py-3">Talk to an expert &rarr;</a>
+      </div>
+    </div>
+  </section>
+</main>

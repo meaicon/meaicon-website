@@ -7,9 +7,33 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
+function scanPageDir(dir, errors) {
+  if (!fs.existsSync(dir)) return 0;
+  let count = 0;
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      count += scanPageDir(fullPath, errors);
+    } else if (entry.name.endsWith('.njk')) {
+      count++;
+      const contents = fs.readFileSync(fullPath, 'utf8');
+      const frontMatterMatch = contents.match(/^---\n([\s\S]*?)\n---/);
+      if (!frontMatterMatch) {
+        errors.push(`${path.relative(process.cwd(), fullPath)}: missing front matter`);
+        continue;
+      }
+      const fm = frontMatterMatch[1];
+      if (!/title:\s*"/.test(fm)) errors.push(`${path.relative(process.cwd(), fullPath)}: missing title`);
+      if (!/description:\s*"/.test(fm)) errors.push(`${path.relative(process.cwd(), fullPath)}: missing description`);
+      if (!/permalink:\s*\//.test(fm)) errors.push(`${path.relative(process.cwd(), fullPath)}: missing permalink`);
+    }
+  }
+  return count;
+}
+
 const root = process.cwd();
 const manifestPath = path.join(root, 'data', 'site-content.json');
-const generatedDir = path.join(root, 'migrated', 'generated');
 
 const manifest = readJson(manifestPath);
 const pages = Array.isArray(manifest.futurePages) ? manifest.futurePages : [];
@@ -24,17 +48,20 @@ for (const page of pages) {
   if (page.slug) seen.add(page.slug);
 }
 
-if (fs.existsSync(generatedDir)) {
-  const generatedFiles = fs.readdirSync(generatedDir).filter((file) => file.endsWith('.njk')).sort();
-  for (const file of generatedFiles) {
-    const fullPath = path.join(generatedDir, file);
-    const contents = fs.readFileSync(fullPath, 'utf8');
-    const frontMatterMatch = contents.match(/^---\n([\s\S]*?)\n---\n/);
-    if (!frontMatterMatch) {
-      errors.push(`${file}: missing front matter`);
-      continue;
-    }
+// Scan pages/ directory for .njk files
+const pagesDir = path.join(root, 'pages');
+let pageFiles = 0;
+if (fs.existsSync(pagesDir)) {
+  pageFiles = scanPageDir(pagesDir, errors);
+}
 
+// Also scan root-level .njk files
+const rootNjk = fs.readdirSync(root).filter(f => f.endsWith('.njk'));
+for (const file of rootNjk) {
+  const fullPath = path.join(root, file);
+  const contents = fs.readFileSync(fullPath, 'utf8');
+  const frontMatterMatch = contents.match(/^---\n([\s\S]*?)\n---/);
+  if (frontMatterMatch) {
     const fm = frontMatterMatch[1];
     if (!/title:\s*"/.test(fm)) errors.push(`${file}: missing title`);
     if (!/description:\s*"/.test(fm)) errors.push(`${file}: missing description`);
@@ -47,4 +74,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`PASS: ${pages.length} planned pages and ${fs.existsSync(generatedDir) ? fs.readdirSync(generatedDir).filter((file) => file.endsWith('.njk')).length : 0} generated page templates are structurally valid.`);
+console.log(`PASS: ${pages.length} planned pages in manifest, ${pageFiles} page templates in pages/, ${rootNjk.length} root .njk files — all structurally valid.`);

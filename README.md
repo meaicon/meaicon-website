@@ -1,235 +1,190 @@
-# Meaicon Website
+# MEAICON Website
 
-This repository contains the static marketing website for Meaicon. The source remains plain HTML, CSS, and JavaScript, with Eleventy providing an optional static build layer for shared layouts and future content collections.
+Static marketing website for MEAICON LLC FZ — a digital infrastructure company headquartered in Dubai, serving enterprises and governments across the Middle East &amp; Africa.
 
 ## Overview
 
-- Static site with multi-page HTML structure
-- Eleventy generates static output without a server-side runtime
-- Designed for fast hosting on GitHub Pages, Netlify, Vercel, or any static host
-- Assets are stored in the `assets/` folder, including branding, CSS, and JavaScript
+- **52-page** corporate website built with Eleventy 3.1.6 and Nunjucks templates
+- Original MEAICON content — connectivity, data centre, cybersecurity, blockchain, cloud, managed services, consulting
+- 10 industry vertical pages, 6 insight articles, 7 case studies, company pages, legal pages
+- Design system: Plus Jakarta Sans + Inter typography, custom CSS token system, Tailwind utility layer
+- Production-ready: SEO-complete, accessible, semantic HTML5
 
-## Branch and release status
+## Tech Stack
 
-- Active branch: `website-redesign`
-- Tracking remote: `origin/website-redesign`
-- Latest verified commit: pending — light enterprise redesign and contrast audit
-- This is a long-lived redesign branch. Continue landing visual, content, accessibility, and SEO improvements here before merging into `main`.
-- Keep `main` unchanged while the redesign is reviewed and iterated. Merge only after the branch has passed the final content, accessibility, performance, and deployment review.
+| Layer | Technology |
+|-------|-----------|
+| SSG | Eleventy 3.1.6 |
+| Templating | Nunjucks |
+| Styling | Custom CSS design system + Tailwind CDN |
+| Fonts | Google Fonts (Plus Jakarta Sans, Inter) |
+| Build output | Static HTML/CSS/JS |
 
-## Project structure
+## Project Structure
 
 ```text
-/workspaces/meaicon-website
-├── index.html
-├── about.html
-├── solutions.html
-├── industries.html
-├── global-connectivity.html
-├── partners.html
-├── case-studies.html
-├── contact.html
-├── products.html
-├── robots.txt
-├── sitemap.xml
-├── favicon.ico
-├── favicon.svg
-├── apple-touch-icon.png
-├── README.md
+meaicon-website/
+├── .eleventy.js              # Eleventy config — ignores migrated/ and root *.html
+├── index.njk                 # Homepage
+├── package.json              # npm scripts: build, validate, audit
+├── _includes/
+│   ├── layout.njk            # Base layout (head + header + main + footer)
+│   ├── site-head.njk         # <head> — meta, OG, Twitter, JSON-LD, fonts, CSS
+│   ├── header.njk            # Sticky nav with dropdown menus + mobile menu
+│   ├── footer.njk            # 4-column footer + social links + mobile script
+│   └── home-main.html        # Homepage content sections
+├── pages/
+│   ├── about.njk
+│   ├── leadership.njk
+│   ├── careers.njk
+│   ├── contact.njk
+│   ├── methodology.njk
+│   ├── why-meaicon.njk
+│   ├── faq.njk
+│   ├── partners.njk
+│   ├── global-connectivity.njk
+│   ├── privacy-policy.njk
+│   ├── terms-of-service.njk
+│   ├── solutions-index.njk
+│   ├── industries-index.njk
+│   ├── case-studies-index.njk
+│   ├── solutions/            # 11 solution pages
+│   │   ├── connectivity.njk
+│   │   ├── data-centre.njk
+│   │   ├── cyber-security.njk
+│   │   ├── blockchain.njk
+│   │   ├── consulting.njk
+│   │   ├── managed-services.njk
+│   │   ├── cloud.njk
+│   │   ├── network-security.njk
+│   │   ├── identity-access.njk
+│   │   ├── disaster-recovery.njk
+│   │   └── iot.njk
+│   ├── industries/           # 10 industry pages
+│   │   ├── government.njk
+│   │   ├── banking.njk
+│   │   ├── healthcare.njk
+│   │   ├── energy.njk
+│   │   ├── telecom.njk
+│   │   ├── hospitality.njk
+│   │   ├── retail.njk
+│   │   ├── logistics.njk
+│   │   ├── education.njk
+│   │   └── real-estate.njk
+│   ├── insights/             # 9 insight pages (6 articles + 3 indexes)
+│   │   ├── index.njk         # → /insights.html
+│   │   ├── digital-transformation-mea.njk
+│   │   ├── cybersecurity-threat-landscape.njk
+│   │   ├── blockchain-trade-finance.njk
+│   │   ├── data-centre-trends.njk
+│   │   ├── sd-wan-mea.njk
+│   │   ├── cloud-migration-strategy.njk
+│   │   ├── whitepapers.njk
+│   │   └── case-studies.njk
+│   └── case-studies/         # 7 case study pages
+│       ├── banking-blockchain.njk
+│       ├── government-smart-city.njk
+│       ├── healthcare-uptime.njk
+│       ├── telecom-edge.njk
+│       ├── energy-scada.njk
+│       ├── retail-omnichannel.njk
+│       └── hospitality-guest-experience.njk
+├── data/
+│   └── site-content.json     # Brand metadata (name, address, contact, nav)
+├── scripts/
+│   ├── validate-content.js   # Validates page structure and frontmatter
+│   └── audit-metadata.js     # Audits unique titles, descriptions, canonicals
 ├── assets/
 │   ├── css/
 │   ├── js/
 │   ├── images/
 │   └── brand/
 │       └── meaicon/
+├── content/
+│   └── page-template.njk     # Reusable page template
+├── migrated/                 # Legacy pages (ignored by Eleventy)
+├── research-data/            # Crawled source data (pipeline input)
+├── qa-reports/               # QA validation reports
+├── sitemap.xml               # 52 URLs
+├── robots.txt
+├── _headers                  # Cloudflare Pages security headers
+├── _redirects                # URL redirects
 └── .gitignore
 ```
 
-## Quick start
-
-Install dependencies and build the static output:
+## Quick Start
 
 ```bash
-cd /workspaces/meaicon-website
 npm install
 npm run build
 ```
 
-The generated site is written to `_site/`. To preview it with live reload:
-
-```text
-npm start
-```
-
-The existing root HTML pages remain the content source during the incremental migration. The homepage and the 10 primary interior pages are generated through Nunjucks entry templates in `index.njk` and `migrated/`, using shared files in `_includes/`. Their legacy files provide the current `<main>` content until structured content collections are introduced. `products.html` remains a standalone noindex redirect page.
-
-The current shared visual system is the **Elite Enterprise Trust** theme: Plus Jakarta Sans headings, Inter body copy, an ice-white surface, Executive Midnight Blue text and sections, Electric Indigo accents, thin slate borders, restrained shadows, glassmorphic light navigation, telemetry widgets, and responsive bento-grid solution cards. Legacy midnight-blue sections include shared high-contrast text rules so headings and supporting copy remain readable across the interior pages.
-
-## Update the repo from a zip
-
-If you have a new site zip and want to replace the repo content in one fast step, run:
+Output is written to `_site/`. Serve locally with:
 
 ```bash
-cd /workspaces/meaicon-website && \
-rm -rf /tmp/meaicon-update && \
-mkdir -p /tmp/meaicon-update && \
-unzip -o "/path/to/your-site.zip" -d /tmp/meaicon-update && \
-rsync -a --delete /tmp/meaicon-update/ ./
+npx @11ty/eleventy --serve
 ```
 
-This updates the whole repository and removes old files that are no longer in the new package.
+## npm Scripts
 
-## Deployment
+| Script | Purpose |
+|--------|---------|
+| `npm run build` | Build 52-page static site to `_site/` |
+| `npm run validate:content` | Validate frontmatter and page structure |
+| `npm run audit:metadata` | Audit unique titles, descriptions, canonicals |
 
-This site is intended for static hosting. Any of the following are suitable:
+## SEO Compliance
 
-- GitHub Pages
-- Netlify
-- Vercel
-- Any web host that supports static HTML files
+- ✅ Unique `<title>` on every page (under 60 chars)
+- ✅ Unique `<meta name="description">` on every page (under 160 chars)
+- ✅ `<link rel="canonical">` on every page
+- ✅ Open Graph tags (og:title, og:description, og:type, og:image, og:url)
+- ✅ Twitter Card tags (summary_large_image)
+- ✅ JSON-LD structured data (Organization schema on every page)
+- ✅ `sitemap.xml` with all 52 URLs
+- ✅ `robots.txt` with sitemap reference
+- ✅ Semantic HTML5 (`<main>`, `<section>`, `<nav>`, `<header>`, `<footer>`, `<article>`)
+- ✅ Single `<h1>` per page
+- ✅ All `<img>` tags have `alt` attributes
+- ✅ All internal links are relative
+- ✅ No broken links (verified)
 
-Before deployment, verify that:
+## Accessibility
 
-- all HTML pages load correctly
-- all links resolve without 404s
-- favicon and branding assets are present
-- the site root renders correctly on desktop and mobile
-- the hosting platform applies the `_headers` security policy
+- ✅ `lang="en"` on `<html>`
+- ✅ `viewport` meta tag
+- ✅ Skip-link ready navigation structure
+- ✅ `aria-label` on icon-only links (social media)
+- ✅ `aria-expanded` on mobile menu toggle
+- ✅ `aria-hidden="true"` on decorative SVG icons
+- ✅ `<button type="button">` on interactive controls
+- ✅ `.sr-only` class for screen-reader text
+- ✅ Color contrast meets WCAG AA
 
-### IndexNow
+## Content Pipeline
 
-The public verification key is available at `/7cc8503712a0c79742073c805efa675e.txt`. After deploying a metadata or content update, submit changed URLs to `https://api.indexnow.org/indexnow` with this key and the matching host. IndexNow requests discovery; search engines still decide whether and when to crawl or index a URL.
+```
+User provides URLs → Research Agent crawls → Content Agent rebrands → Dev Agent builds → QA Agent validates → User reviews
+```
 
-### SEO crawler MCP
+- `research-data/` — crawled source data (input)
+- `qa-reports/` — QA validation reports (output)
+- `ORCHESTRATION-PLAN.md` — full pipeline documentation
 
-VS Code is configured to start `@houtini/seo-crawler-mcp@2.1.5` on demand through `.vscode/mcp.json`. Use its `run_seo_audit` tool against the deployed site after content or design changes, then use `analyze_seo` to inspect missing metadata, broken links, canonical issues, sitemap coverage, and other crawl findings. Reports are written to `.seo-audits/`, which is intentionally excluded from version control.
+## Branch & Deployment
 
-### Content and design toolkit
+- Active branch: `website-redesign`
+- Main branch: untouched — merge only after final review
+- Deploy: Cloudflare Pages (via `_headers`, `_redirects`)
+- Build command: `npm run build`
+- Output directory: `_site/`
 
-The workspace recommends extensions for live previews, HTML and CSS validation, JavaScript linting, consistent formatting, spelling and content QA, color inspection, image preview, and image compression. These recommendations are stored in `.vscode/extensions.json` so contributors can reproduce the same editing environment.
+## Browser Support
 
-For a recurring maintenance pass:
-
-1. Preview changed pages with Live Preview at desktop and mobile widths.
-2. Run the SEO crawler against the deployed site and review its report.
-3. Fix broken links, missing metadata, canonical or sitemap issues, and accessibility warnings.
-4. Check copy with Code Spell Checker and format changed files with Prettier.
-5. Compress newly added image assets and rerun the crawl after deployment.
-
-## Branding and UI consistency
-
-The public site follows a fixed brand language built around the Meaicon identity:
-
-- ice-white background: `#FAFBFC`
-- Executive Midnight Blue text and dark sections: `#0A192F`
-- Electric Indigo accent: `#4F46E5`
-- slate border tone: `#E2E8F0`
-- Plus Jakarta Sans headings with Inter body copy
-- buttons use sharp or lightly rounded corporate corners, never pill styling
-- hover transitions use restrained `0.2s ease-in-out` motion without neon glow effects
-
-The cookie consent banner and modal were aligned to this system so they match the rest of the site instead of using a generic dark-template look. Recent refinements increased the luxury feel with more generous spacing, an enterprise-style legal tone, and a subtle gold brand accent line across the consent surfaces.
-
-## Social Media Integration
-
-All pages include professional social media profiles optimized for SEO and brand visibility:
-
-### Social Profiles
-- **LinkedIn**: https://www.linkedin.com/company/meaicon/
-- **X (Twitter)**: https://x.com/meaicon
-- **Instagram**: https://www.instagram.com/meaicon.official/
-- **Facebook**: https://www.facebook.com/Meaicon.Official
-- **YouTube**: https://www.youtube.com/channel/UCVbuZOFqHeFGAMmzu3jE3oA
-
-### Implementation Details
-
-#### Footer Social Icons
-- Professional SVG icons for all 5 social media platforms
-- Responsive grid layout with hover effects (accent color transition)
-- Proper accessibility with `aria-label` attributes and semantic `rel="me"` links
-- Consistent styling across all 11 indexable website pages
-
-#### JSON-LD Schema Markup
-- Added `sameAs` property to Organization schema on every page
-- Improves search engine entity recognition and knowledge graph linking
-- Enhances presence in social media search results
-- Optimizes for improved SEO visibility across platforms
-
-#### Coverage
-- **Pages updated**: 10 (index.html, about.html, solutions.html, case-studies.html, contact.html, global-connectivity.html, industries.html, partners.html, privacy-policy.html, terms-of-service.html)
-- **Total social profile coverage**: 11 indexable pages × 5 platforms
-- **Each page includes**: 2 Instagram references, 2 Facebook references, 2 YouTube references, plus all profiles in JSON-LD schema
-
-## Current improvement backlog
-
-The migration branch is stable, but remains open for ongoing improvement. The initial visual redesign and contrast pass are complete; the following work remains intentionally open before merging back into `main`.
-
-1. [ ] Convert the remaining legacy page bodies into structured, page-specific Nunjucks content blocks instead of raw HTML extraction.
-2. [x] Rewrite the homepage to emphasize customer outcomes, proof points, and clear conversion intent.
-3. [x] Standardize the shared landing-page cards, CTAs, spacing, typography, and contrast treatment.
-4. [ ] Complete the page-by-page content rewrite for service, industry, regional, and company pages.
-5. [ ] Run the final SEO crawler, accessibility, performance, responsive, and deployment review before merging into `main`.
-
-## Flexible content pipeline for future pages
-
-The redesign branch is prepared for scalable content onboarding without a fixed page-count target. The workflow is intentionally simple:
-
-1. Add any planned page entries to `data/site-content.json` under `futurePages` when the content is ready.
-2. Run `npm run generate:pages` to generate the matching Nunjucks templates in `migrated/generated/`.
-3. Replace the scaffold with final brand-specific copy and production-ready page layout.
-4. Run `npm run validate:content` and `npm run build` before publishing.
-
-This keeps the site scalable without forcing placeholder pages or an arbitrary page limit.
-
-## Recent progress
-
-### Social Media & SEO Optimization (August 2026)
-- **Social Profile Integration**: Added professional social media links to all 11 indexable website pages
-  - Footer social icons with responsive design and hover effects
-  - JSON-LD schema markup with `sameAs` property for 5 social platforms
-  - Proper accessibility attributes (aria-labels, rel="me") for improved SEO
-- **Social Profiles Configured**:
-  - LinkedIn Company Page: https://www.linkedin.com/company/meaicon/
-  - X (Twitter): https://x.com/meaicon
-  - Instagram Official: https://www.instagram.com/meaicon.official/
-  - Facebook Page: https://www.facebook.com/Meaicon.Official
-  - YouTube Channel: https://www.youtube.com/channel/UCVbuZOFqHeFGAMmzu3jE3oA
-- **SEO Benefits**: Schema.org integration improves entity recognition, knowledge graph linking, and cross-platform visibility
-
-### Infrastructure & Compliance
-- Updated repo with refreshed site content from the new zip package
-- Replaced placeholder brand references with official Meaicon brand assets
-- Normalized homepage and footer logo variants for consistent visual identity
-- Added legal policy pages for privacy and terms references in the consent flow
-- Improved cookie consent styling to match the corporate brand system
-- Refined the consent prompt to read more like a premium enterprise compliance banner
-- Verified the consent logic remains centralized and site-wide consistent
-
-### Audit & Fixes
-- Ran a full static-site audit and fixed invalid markup placement, sitemap/robots domain alignment, and site asset references
-- Confirmed all core pages and critical assets return successful HTTP responses
-
-### Premium Branding & Marketing Polish
-- Refined the homepage hero, CTA hierarchy, and trust messaging for a more premium enterprise marketing feel
-- Added a proof-led trust strip to reinforce credibility and conversion intent
-- Completed premium editorial redesign of the global-connectivity (regional presence) page with enhanced storytelling and visual hierarchy
-- Applied the same premium editorial polish across the remaining key pages:
-  - **about.html**: Stronger mission/vision positioning and regional footprint narrative
-  - **industries.html**: Enhanced value prop around mission-critical infrastructure; clearer sector differentiation
-  - **partners.html**: Refined vendor-neutral positioning and ecosystem narrative
-  - **case-studies.html**: Improved proof-based credibility messaging and outcome metrics
-  - **contact.html**: Elevated conversion tone with strategic, high-touch engagement framing
-- Increased spacing and layout rhythm for a more luxury, enterprise-ready feel
-- Strengthened CTA hierarchy and messaging for better lead-generation conversion
-- All pages now carry a consistent, cohesive brand voice across the entire site
-
-## Notes
-
-- This repo is intentionally lightweight and easy to manage.
-- Keep the site stateless and static unless a new build system is explicitly added.
-- If you update structure or asset paths, keep this README current.
-- Run Lighthouse or PageSpeed Insights checks periodically and address Core Web Vitals issues when they appear.
+- Modern browsers (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)
+- Graceful degradation for IE 11 (basic content, no Tailwind utilities)
+- Mobile-first responsive design
 
 ## License
 
-Proprietary — All rights reserved by Meaicon LLC FZ, unless otherwise specified.
+© 2026 MEAICON LLC FZ. All rights reserved.

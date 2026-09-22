@@ -10,7 +10,7 @@ Disallow: /.git/
 Disallow: /node_modules/
 Disallow: /components/
 Disallow: /layouts/
-Disallow: /products.html
+
 
 # --- Major Search Engines ---
 User-agent: Googlebot
