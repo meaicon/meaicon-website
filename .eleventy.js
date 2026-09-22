@@ -33,6 +33,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ _headers: "_headers" });
   eleventyConfig.addWatchTarget("assets/");
 
+  // GitHub Pages serves under /meaicon-website/, production serves from root
+  eleventyConfig.addGlobalData("baseUrl", process.env.GITHUB_ACTIONS ? "/meaicon-website/" : "/");
+
   return {
     dir: {
       input: ".",
