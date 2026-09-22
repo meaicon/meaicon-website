@@ -34,7 +34,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("assets/");
 
   // GitHub Pages serves under /meaicon-website/, production serves from root
-  eleventyConfig.addGlobalData("baseUrl", process.env.GITHUB_ACTIONS ? "/meaicon-website/" : "/");
+  const baseUrl = process.env.GITHUB_ACTIONS ? "/meaicon-website/" : "/";
+  eleventyConfig.addGlobalData("baseUrl", baseUrl);
+
+  // Rewrite root-relative URLs to include the base path on GitHub Pages
+  if (process.env.GITHUB_ACTIONS) {
+    eleventyConfig.addTransform("gh-pages-basepath", function (content) {
+      if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+        // Rewrite href="/..." and src="/..." to /meaicon-website/...
+        content = content.replace(/(href|src)="(\/[^"]*)"/g, (match, attr, path) => {
+          if (path === "/") return `${attr}="${baseUrl}"`;
+          return `${attr}="${baseUrl}${path.slice(1)}"`;
+        });
+      }
+      return content;
+    });
+  }
 
   return {
     dir: {
