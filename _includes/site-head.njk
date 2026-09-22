@@ -396,5 +396,132 @@
       .solution-card { grid-column: span 2; }
       .solution-card-featured, .solution-card-wide { grid-column: span 2; }
     }
+
+    /* === Scroll Animation System === */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* === Dark Hero Variant === */
+    .page-hero-dark {
+      background: linear-gradient(135deg, #0A192F 0%, #1a2744 100%);
+      border-bottom: 1px solid rgba(79, 70, 229, 0.2);
+      padding: 4rem 0 3rem;
+    }
+    .page-hero-dark .eyebrow { color: #A5B4FC; }
+    .page-hero-dark .page-title { color: #fff; }
+    .page-hero-dark p { color: rgba(255,255,255,0.78); }
+    .page-hero-dark .breadcrumb { color: rgba(255,255,255,0.5); }
+    .page-hero-dark .breadcrumb a { color: #A5B4FC; }
+
+    /* === Gradient Accents on Buttons === */
+    .btn-gradient {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--teal) 100%);
+      border: 1px solid transparent;
+      color: #fff;
+      box-shadow: 0 4px 12px -4px rgba(79, 70, 229, 0.4);
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .btn-gradient:hover {
+      background: linear-gradient(135deg, var(--accent-strong) 0%, #1E3A8A 100%);
+      box-shadow: 0 6px 16px -4px rgba(79, 70, 229, 0.5);
+      transform: translateY(-1px);
+    }
+
+    /* === Enhanced Card Hover === */
+    .card:hover, .solution-card:hover, .industry-card:hover, .feature-card:hover, .insight-card:hover {
+      transform: translateY(-3px) scale(1.01);
+    }
+
+    /* === Section Divider with Gradient === */
+    .gradient-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+      border: none;
+      margin: 2rem 0;
+    }
+
+    /* === Dark Section Variant === */
+    .content-section-dark {
+      background: var(--ink);
+      color: rgba(255,255,255,0.78);
+      padding: 4rem 0;
+    }
+    .content-section-dark h2, .content-section-dark h3 { color: #fff; }
+    .content-section-dark p, .content-section-dark li { color: rgba(255,255,255,0.72); }
+    .content-section-dark .eyebrow { color: #A5B4FC; }
+    .content-section-dark .card, .content-section-dark .feature-card {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.78);
+    }
+    .content-section-dark .card h3, .content-section-dark .feature-card h3 { color: #fff; }
+
+    /* === Skeleton Loading State === */
+    .skeleton {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: skeleton-loading 1.5s infinite;
+      border-radius: 4px;
+    }
+    @keyframes skeleton-loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .skeleton-text { height: 1rem; margin-bottom: 0.5rem; }
+    .skeleton-text:last-child { width: 60%; }
+    @media (prefers-reduced-motion: reduce) {
+      .skeleton { animation: none; }
+    }
+
+    /* === Focus Visibility Enhancement === */
+    *:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* === Smooth Scroll Padding === */
+    html { scroll-padding-top: 80px; }
+
+    /* === Active Nav Link Indicator === */
+    .nav-link[aria-current="page"] {
+      color: var(--accent);
+    }
+    .nav-link[aria-current="page"]::after {
+      transform: scaleX(1);
+    }
   </style>
+<script>
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      observer.observe(el);
+    });
+  });
+})();
+</script>
 </head>
