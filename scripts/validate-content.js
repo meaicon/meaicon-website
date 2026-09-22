@@ -18,15 +18,15 @@ function scanPageDir(dir, errors) {
     } else if (entry.name.endsWith('.njk')) {
       count++;
       const contents = fs.readFileSync(fullPath, 'utf8');
-      const frontMatterMatch = contents.match(/^---\n([\s\S]*?)\n---/);
+      const frontMatterMatch = contents.match(/^---\r?\n([\s\S]*?)\r?\n---/);
       if (!frontMatterMatch) {
         errors.push(`${path.relative(process.cwd(), fullPath)}: missing front matter`);
         continue;
       }
       const fm = frontMatterMatch[1];
-      if (!/title:\s*"/.test(fm)) errors.push(`${path.relative(process.cwd(), fullPath)}: missing title`);
-      if (!/description:\s*"/.test(fm)) errors.push(`${path.relative(process.cwd(), fullPath)}: missing description`);
-      if (!/permalink:\s*\//.test(fm)) errors.push(`${path.relative(process.cwd(), fullPath)}: missing permalink`);
+      if (!/^title:\s+.+/m.test(fm)) errors.push(`${path.relative(process.cwd(), fullPath)}: missing title`);
+      if (!/^description:\s+.+/m.test(fm)) errors.push(`${path.relative(process.cwd(), fullPath)}: missing description`);
+      if (!/^permalink:\s+\//m.test(fm)) errors.push(`${path.relative(process.cwd(), fullPath)}: missing permalink`);
     }
   }
   return count;
@@ -60,12 +60,12 @@ const rootNjk = fs.readdirSync(root).filter(f => f.endsWith('.njk'));
 for (const file of rootNjk) {
   const fullPath = path.join(root, file);
   const contents = fs.readFileSync(fullPath, 'utf8');
-  const frontMatterMatch = contents.match(/^---\n([\s\S]*?)\n---/);
+  const frontMatterMatch = contents.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (frontMatterMatch) {
     const fm = frontMatterMatch[1];
-    if (!/title:\s*"/.test(fm)) errors.push(`${file}: missing title`);
-    if (!/description:\s*"/.test(fm)) errors.push(`${file}: missing description`);
-    if (!/permalink:\s*\//.test(fm)) errors.push(`${file}: missing permalink`);
+    if (!/^title:\s+.+/m.test(fm)) errors.push(`${file}: missing title`);
+    if (!/^description:\s+.+/m.test(fm)) errors.push(`${file}: missing description`);
+    if (!/^permalink:\s+\//m.test(fm)) errors.push(`${file}: missing permalink`);
   }
 }
 

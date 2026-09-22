@@ -4,7 +4,7 @@ Static marketing website for MEAICON LLC FZ — a digital infrastructure company
 
 ## Overview
 
-- **52-page** corporate website built with Eleventy 3.1.6 and Nunjucks templates
+- **58-page** corporate website built with Eleventy 3.1.6 and Nunjucks templates
 - Original MEAICON content — connectivity, data centre, cybersecurity, blockchain, cloud, managed services, consulting
 - 10 industry vertical pages, 6 insight articles, 7 case studies, company pages, legal pages
 - Design system: Plus Jakarta Sans + Inter typography, custom CSS token system, Tailwind utility layer
@@ -48,18 +48,25 @@ meaicon-website/
 │   ├── solutions-index.njk
 │   ├── industries-index.njk
 │   ├── case-studies-index.njk
-│   ├── solutions/            # 11 solution pages
+│   ├── solutions/            # 12 solution pages + 6 consulting sub-pages
 │   │   ├── connectivity.njk
 │   │   ├── data-centre.njk
 │   │   ├── cyber-security.njk
 │   │   ├── blockchain.njk
-│   │   ├── consulting.njk
+│   │   ├── consulting.njk     # Main consulting hub → 6 sub-pages below
 │   │   ├── managed-services.njk
 │   │   ├── cloud.njk
 │   │   ├── network-security.njk
 │   │   ├── identity-access.njk
 │   │   ├── disaster-recovery.njk
-│   │   └── iot.njk
+│   │   ├── iot.njk
+│   │   └── consulting/        # 6 consulting sub-pages
+│   │       ├── digital-transformation-strategy.njk
+│   │       ├── infrastructure-network-audits.njk
+│   │       ├── technology-roadmap-vendor-selection.njk
+│   │       ├── regulatory-compliance-advisory.njk
+│   │       ├── managed-services-outsourcing.njk
+│   │       └── tokenisation-advisory.njk
 │   ├── industries/           # 10 industry pages
 │   │   ├── government.njk
 │   │   ├── banking.njk
