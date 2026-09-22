@@ -1,8 +1,8 @@
 (function () {
-  const STORAGE_KEY = 'meaicon_cookie_consent_v1';
-  const CONSENT_EVENT = 'meaicon:consent-updated';
+  var STORAGE_KEY = 'meaicon_cookie_consent_v1';
+  var CONSENT_EVENT = 'meaicon:consent-updated';
 
-  const defaultConsent = {
+  var defaultConsent = {
     necessary: true,
     analytics: false,
     marketing: false,
@@ -12,21 +12,16 @@
 
   function readConsent() {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return { ...defaultConsent };
-      return { ...defaultConsent, ...JSON.parse(raw) };
-    } catch {
-      return { ...defaultConsent };
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return Object.assign({}, defaultConsent);
+      return Object.assign({}, defaultConsent, JSON.parse(raw));
+    } catch (e) {
+      return Object.assign({}, defaultConsent);
     }
   }
 
   function saveConsent(consent) {
-    const next = {
-      ...defaultConsent,
-      ...consent,
-      necessary: true,
-      updatedAt: new Date().toISOString()
-    };
+    var next = Object.assign({}, defaultConsent, consent, { necessary: true, updatedAt: new Date().toISOString() });
     localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
     window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: next }));
     return next;
@@ -38,13 +33,12 @@
 
   function applyGoogleConsentMode(consent) {
     window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function(){ dataLayer.push(arguments); };
-
+    window.gtag = window.gtag || function () { dataLayer.push(arguments); };
     gtag('consent', consent.decided ? 'update' : 'default', {
       analytics_storage: consent.analytics ? 'granted' : 'denied',
-      ad_storage: consent.marketing ? 'granted' : 'denied',
-      ad_user_data: consent.marketing ? 'granted' : 'denied',
-      ad_personalization: consent.marketing ? 'granted' : 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
       functionality_storage: 'granted',
       personalization_storage: 'denied',
       security_storage: 'granted',
@@ -59,11 +53,10 @@
     s.src = 'https://www.googletagmanager.com/gtag/js?id=G-K2L9LYGJBV';
     s.setAttribute('data-meaicon-ga', 'true');
     document.head.appendChild(s);
-
     window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function(){ dataLayer.push(arguments); };
+    window.gtag = window.gtag || function () { dataLayer.push(arguments); };
     gtag('js', new Date());
-    gtag('config', 'G-K2L9LYGJBV');
+    gtag('config', 'G-K2L9LYGJBV', { anonymize_ip: true });
   }
 
   function syncTracking(consent) {
@@ -71,39 +64,30 @@
     if (consent.analytics) loadGA();
   }
 
-  /* --- Focus trap for modal accessibility (WCAG 2.4.3) --- */
+  /* --- Focus trap --- */
   var focusTrapHandler = null;
 
   function trapFocus(modal) {
-    var focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    var focusable = modal.querySelectorAll('button, [href], input, [tabindex]:not([tabindex="-1"])');
     if (focusable.length === 0) return;
     var first = focusable[0];
     var last = focusable[focusable.length - 1];
-
     first.focus();
-
     focusTrapHandler = function (e) {
       if (e.key === 'Escape') {
         modal.classList.remove('is-open');
-        document.removeEventListener('keydown', focusTrapHandler);
+        untrapFocus();
         var trigger = document.querySelector('[data-open-cookie-settings]');
         if (trigger) trigger.focus();
         return;
       }
       if (e.key !== 'Tab') return;
       if (e.shiftKey) {
-        if (document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        }
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
       } else {
-        if (document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
       }
     };
-
     document.addEventListener('keydown', focusTrapHandler);
   }
 
@@ -114,29 +98,28 @@
     }
   }
 
+  /* --- Banner --- */
   function createBanner() {
     if (hasConsent()) return;
 
     var banner = document.createElement('div');
     banner.id = 'cookie-consent-banner';
     banner.innerHTML =
-      '<div class="cc-card" role="dialog" aria-live="polite" aria-label="Cookie preferences">' +
+      '<div class="cc-card" role="dialog" aria-live="polite" aria-label="Cookie consent">' +
         '<div class="cc-text">' +
-          '<span class="cc-kicker">Privacy &amp; cookies</span>' +
-          '<h3>Your privacy and website preferences.</h3>' +
-          '<p>This website uses strictly necessary cookies to provide secure, reliable access and analytics cookies to understand how visitors use our services. You may accept all, reject non-essential cookies, or customize your settings at any time.</p>' +
-          '<p class="mt-2"><a href="/privacy-policy.html">Review our Privacy Policy</a></p>' +
+          '<p>We use essential cookies for site security. Optional analytics cookies help us improve. ' +
+          '<a href="/privacy-policy.html">Privacy Policy</a></p>' +
         '</div>' +
         '<div class="cc-actions">' +
-          '<button type="button" class="cc-btn cc-btn-secondary" data-cc-action="reject">Reject non-essential</button>' +
-          '<button type="button" class="cc-btn cc-btn-secondary" data-cc-action="customize">Customize</button>' +
-          '<button type="button" class="cc-btn cc-btn-primary" data-cc-action="accept">Accept all</button>' +
+          '<button type="button" class="cc-btn cc-btn-secondary" data-cc-action="reject">Reject</button>' +
+          '<button type="button" class="cc-btn cc-btn-link" data-cc-action="customize">Customize</button>' +
+          '<button type="button" class="cc-btn cc-btn-primary" data-cc-action="accept">Accept</button>' +
         '</div>' +
       '</div>';
     document.body.appendChild(banner);
 
     banner.addEventListener('click', function (e) {
-      var action = e.target && e.target.getAttribute('data-cc-action');
+      var action = e.target && e.target.getAttribute && e.target.getAttribute('data-cc-action');
       if (!action) return;
 
       if (action === 'accept') {
@@ -144,19 +127,18 @@
         syncTracking(consent);
         banner.remove();
       }
-
       if (action === 'reject') {
         var consent2 = saveConsent({ decided: true, analytics: false, marketing: false });
         syncTracking(consent2);
         banner.remove();
       }
-
       if (action === 'customize') {
         openPreferences();
       }
     });
   }
 
+  /* --- Preferences modal --- */
   function openPreferences() {
     var modal = document.getElementById('cookie-preferences-modal');
     var current = readConsent();
@@ -167,27 +149,19 @@
       modal.innerHTML =
         '<div class="cc-modal-backdrop" data-cc-close="true"></div>' +
         '<div class="cc-modal" role="dialog" aria-modal="true" aria-label="Cookie preferences">' +
-          '<h3>Manage cookie preferences</h3>' +
-          '<p>Necessary cookies are required for secure site operation and are always active. Analytics cookies help us measure visitor activity and improve our services. Marketing cookies remain disabled by default.</p>' +
-
+          '<h3>Cookie preferences</h3>' +
+          '<p>Manage which cookies you allow. Necessary cookies are always active.</p>' +
           '<label class="cc-toggle">' +
             '<input type="checkbox" checked disabled>' +
-            '<span>Strictly necessary cookies (always active)</span>' +
+            '<span>Necessary (always active)</span>' +
           '</label>' +
-
           '<label class="cc-toggle">' +
             '<input id="cc-analytics" type="checkbox">' +
-            '<span>Analytics cookies</span>' +
+            '<span>Analytics (help us improve)</span>' +
           '</label>' +
-
-          '<label class="cc-toggle">' +
-            '<input id="cc-marketing" type="checkbox" disabled>' +
-            '<span>Marketing cookies (not active yet)</span>' +
-          '</label>' +
-
-          '<div class="cc-actions">' +
-            '<button type="button" class="cc-btn cc-btn-secondary" data-cc-save="reject">Reject non-essential</button>' +
-            '<button type="button" class="cc-btn cc-btn-primary" data-cc-save="save">Save preferences</button>' +
+          '<div class="cc-actions" style="margin-top:16px">' +
+            '<button type="button" class="cc-btn cc-btn-secondary" data-cc-save="reject">Reject all</button>' +
+            '<button type="button" class="cc-btn cc-btn-primary" data-cc-save="save">Save</button>' +
           '</div>' +
         '</div>';
       document.body.appendChild(modal);
@@ -196,9 +170,9 @@
         if (e.target.matches && e.target.matches('[data-cc-close="true"]')) {
           modal.classList.remove('is-open');
           untrapFocus();
+          return;
         }
-
-        var saveAction = e.target && e.target.getAttribute('data-cc-save');
+        var saveAction = e.target && e.target.getAttribute && e.target.getAttribute('data-cc-save');
         if (!saveAction) return;
 
         if (saveAction === 'reject') {
@@ -209,7 +183,6 @@
           var banner = document.getElementById('cookie-consent-banner');
           if (banner) banner.remove();
         }
-
         if (saveAction === 'save') {
           var analytics = modal.querySelector('#cc-analytics').checked;
           var consent2 = saveConsent({ decided: true, analytics: analytics, marketing: false });
@@ -227,15 +200,17 @@
     trapFocus(modal.querySelector('.cc-modal'));
   }
 
+  /* --- Settings triggers (footer link etc.) --- */
   function attachSettingsTriggers() {
     document.addEventListener('click', function (e) {
-      var trigger = e.target.closest('[data-open-cookie-settings]');
+      var trigger = e.target.closest && e.target.closest('[data-open-cookie-settings]');
       if (!trigger) return;
       e.preventDefault();
       openPreferences();
     });
   }
 
+  /* --- Init --- */
   var consent = readConsent();
   applyGoogleConsentMode(consent);
 
