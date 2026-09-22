@@ -9,10 +9,10 @@
   position: relative;
   max-width: 760px;
   margin: 0 auto;
-  background: rgba(255,255,255,0.98);
+  background: rgba(255, 255, 255, 0.98);
   color: #23241F;
   border: 1px solid #E2DDCF;
-  border-left: 3px solid #C1873D;
+  border-left: 3px solid #0066FF;
   border-radius: 0;
   padding: 28px 28px 24px;
   box-shadow: 0 18px 52px rgba(35, 36, 31, 0.12);
@@ -26,7 +26,7 @@
   position: absolute;
   inset: 0 0 auto 0;
   height: 3px;
-  background: linear-gradient(90deg, #C1873D 0%, #E7D3A8 52%, #C1873D 100%);
+  background: linear-gradient(90deg, #0066FF 0%, #4D8CFF 52%, #0066FF 100%);
   opacity: 0.9;
 }
 
@@ -74,7 +74,7 @@
 
 .cc-card a:hover,
 .cc-modal a:hover {
-  color: #C1873D;
+  color: #0066FF;
 }
 
 .cc-actions {
@@ -85,10 +85,13 @@
   margin-top: 8px;
 }
 
+/* --- Buttons: 44px minimum touch target (WCAG 2.5.5) --- */
 .cc-btn {
+  min-height: 44px;
+  min-width: 44px;
   border: 1px solid #23241F;
   border-radius: 0;
-  padding: 12px 16px;
+  padding: 12px 20px;
   cursor: pointer;
   font-family: "IBM Plex Mono", monospace;
   font-size: 10px;
@@ -96,10 +99,23 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cc-btn:hover {
   transform: translateY(-1px);
+}
+
+/* --- Visible focus states (WCAG 2.4.7) --- */
+.cc-btn:focus-visible,
+.cc-card a:focus-visible,
+.cc-modal a:focus-visible,
+.cc-toggle input:focus-visible {
+  outline: 3px solid #0066FF;
+  outline-offset: 2px;
+  border-radius: 0;
 }
 
 .cc-btn-primary {
@@ -109,8 +125,8 @@
 }
 
 .cc-btn-primary:hover {
-  background: #000000;
-  border-color: #000000;
+  background: #0a0e1a;
+  border-color: #0a0e1a;
 }
 
 .cc-btn-secondary {
@@ -120,8 +136,8 @@
 }
 
 .cc-btn-secondary:hover {
-  border-color: #C1873D;
-  color: #C1873D;
+  border-color: #0066FF;
+  color: #0066FF;
 }
 
 #cookie-preferences-modal {
@@ -153,11 +169,94 @@
   align-items: flex-start;
   margin-top: 16px;
   cursor: pointer;
+  min-height: 44px;
+  padding: 4px 0;
 }
 
 .cc-toggle input {
-  accent-color: #C1873D;
+  accent-color: #0066FF;
   margin-top: 3px;
+  width: 18px;
+  height: 18px;
+}
+
+/* --- Dark mode support --- */
+@media (prefers-color-scheme: dark) {
+  .cc-card,
+  .cc-modal {
+    background: rgba(35, 36, 31, 0.98);
+    color: #F6F3EC;
+    border-color: rgba(0, 102, 255, 0.3);
+  }
+
+  .cc-card h3,
+  .cc-modal h3 {
+    color: #F6F3EC;
+  }
+
+  .cc-kicker {
+    color: #6FA39A;
+  }
+
+  .cc-card p,
+  .cc-modal p,
+  .cc-toggle span {
+    color: rgba(246, 243, 236, 0.72);
+  }
+
+  .cc-card a,
+  .cc-modal a {
+    color: #4D8CFF;
+  }
+
+  .cc-card a:hover,
+  .cc-modal a:hover {
+    color: #0066FF;
+  }
+
+  .cc-btn {
+    border-color: #F6F3EC;
+    color: #F6F3EC;
+  }
+
+  .cc-btn-primary {
+    background: #F6F3EC;
+    color: #23241F;
+    border-color: #F6F3EC;
+  }
+
+  .cc-btn-primary:hover {
+    background: #4D8CFF;
+    border-color: #4D8CFF;
+  }
+
+  .cc-btn-secondary {
+    background: transparent;
+    color: #F6F3EC;
+    border-color: #F6F3EC;
+  }
+
+  .cc-btn-secondary:hover {
+    border-color: #0066FF;
+    color: #0066FF;
+  }
+
+  .cc-modal-backdrop {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* --- Reduced motion (WCAG 2.3.3) --- */
+@media (prefers-reduced-motion: reduce) {
+  .cc-btn,
+  .cc-card::before,
+  .cc-modal::before {
+    transition: none;
+  }
+
+  .cc-btn:hover {
+    transform: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -177,5 +276,6 @@
 
   .cc-btn {
     width: 100%;
+    min-height: 44px;
   }
 }

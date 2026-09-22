@@ -1,4 +1,5 @@
-<header class="sticky top-0 z-40 border-b hairline" style="background: rgba(250, 251, 252, 0.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header id="site-header" class="sticky top-0 z-40 border-b hairline" style="background: rgba(250, 251, 252, 0.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4 lg:px-6">
     <a href="/" class="flex items-center gap-3" aria-label="MEAICON home">
       <img src="/assets/brand/meaicon/meaicon-LLC-FZ-logo-black.svg" alt="MEAICON Technology Group logo" class="h-8 w-auto max-w-[220px]" />
@@ -88,13 +89,21 @@
           <a href="/faq.html" class="block px-4 py-2 text-xs text-ink/70 hover:text-accent hover:bg-paper">FAQ</a>
         </div>
       </div>
-      <a href="/case-studies.html" class="nav-link">Case Studies</a>
-      <a href="/insights.html" class="nav-link">Insights</a>
-      <a href="/careers.html" class="nav-link">Careers</a>
+      <a href="/case-studies.html" class="nav-link" aria-current="false">Case Studies</a>
+      <a href="/insights.html" class="nav-link" aria-current="false">Insights</a>
+      <a href="/careers.html" class="nav-link" aria-current="false">Careers</a>
+      <button type="button" id="theme-toggle" class="inline-flex items-center justify-center h-9 w-9 border border-line rounded text-ink/70 hover:text-accent transition-colors" aria-label="Toggle dark mode" aria-expanded="false" aria-pressed="false">
+        <svg class="w-4 h-4 theme-icon-light" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A3 3 0 0129 13H3a3 3 0 012.646-5.354 3 3 0 015.354-2.646 3 3 0 013-3 3 3 0 013 3z" /></svg>
+        <svg class="w-4 h-4 theme-icon-dark hidden" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9.9 7.5l-1 1A6 6 0 0 1 6 12a6 6 0 0 1 6-9z" /></svg>
+      </button>
       <a href="/contact.html" class="btn-primary inline-flex items-center px-4 py-2 text-[11px]">Talk to an Expert</a>
     </nav>
-    <button type="button" id="mobile-menu-toggle" class="lg:hidden inline-flex items-center justify-center h-9 w-9 border border-line text-ink/80" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="sr-only">Toggle navigation</span>☰
+    <button type="button" id="mobile-menu-toggle" class="lg:hidden inline-flex items-center justify-center min-h-[44px] min-w-[44px] border border-line text-ink/80 rounded transition-colors hover:text-accent" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+      <span class="hamburger-icon w-5 h-4 flex flex-col justify-between items-center" aria-hidden="true">
+        <span class="hamburger-bar block h-0.5 w-full bg-current transition-all duration-300 ease-in-out origin-center"></span>
+        <span class="hamburger-bar block h-0.5 w-full bg-current transition-all duration-300 ease-in-out origin-center"></span>
+        <span class="hamburger-bar block h-0.5 w-full bg-current transition-all duration-300 ease-in-out origin-center"></span>
+      </span>
     </button>
   </div>
   <div id="mobile-menu" class="lg:hidden hidden border-t hairline" style="background: rgba(250,251,252,0.96);">

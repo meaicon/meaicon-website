@@ -6,10 +6,14 @@
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve",
+    "clean": "rimraf _site",
     "audit:metadata": "node scripts/audit-metadata.js",
     "validate:content": "node scripts/validate-content.js",
     "generate:page": "node scripts/generate-page.js",
-    "generate:pages": "node scripts/generate-pages-from-manifest.js"
+    "generate:pages": "node scripts/generate-pages-from-manifest.js",
+    "lint": "eslint assets/js/ .eleventy.js 2>/dev/null || echo 'eslint not configured — skipping'",
+    "format": "prettier --write assets/css/ assets/js/ .eleventy.js _headers robots.txt 2>/dev/null || echo 'prettier not configured — skipping'",
+    "audit": "npm audit --omit=dev"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"

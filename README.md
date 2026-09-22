@@ -150,9 +150,14 @@ npx @11ty/eleventy --serve
 
 | Script | Purpose |
 |--------|---------|
-| `npm run build` | Build 52-page static site to `_site/` |
+| `npm run build` | Build static site to `_site/` |
+| `npm run start` | Local dev server with live reload |
+| `npm run clean` | Remove `_site/` build directory |
 | `npm run validate:content` | Validate frontmatter and page structure |
 | `npm run audit:metadata` | Audit unique titles, descriptions, canonicals |
+| `npm run lint` | Lint JS/CSS (if eslint configured) |
+| `npm run format` | Format files with prettier (if configured) |
+| `npm run audit` | Run npm security audit |
 
 ## SEO Compliance
 
@@ -170,7 +175,7 @@ npx @11ty/eleventy --serve
 - ✅ All internal links are relative
 - ✅ No broken links (verified)
 
-## Accessibility
+## Accessibility (WCAG AA)
 
 - ✅ `lang="en"` on `<html>`
 - ✅ `viewport` meta tag
@@ -180,7 +185,74 @@ npx @11ty/eleventy --serve
 - ✅ `aria-hidden="true"` on decorative SVG icons
 - ✅ `<button type="button">` on interactive controls
 - ✅ `.sr-only` class for screen-reader text
-- ✅ Color contrast meets WCAG AA
+- ✅ Color contrast meets WCAG AA (4.5:1 normal text, 3:1 large text)
+- ✅ Cookie consent: 44px minimum touch targets (WCAG 2.5.5)
+- ✅ Cookie consent: visible `:focus-visible` outlines (WCAG 2.4.7)
+- ✅ Cookie consent: focus trap + Escape key in preferences modal (WCAG 2.4.3)
+- ✅ Cookie consent: `prefers-reduced-motion` support (WCAG 2.3.3)
+- ✅ Cookie consent: `prefers-color-scheme: dark` support
+
+## Performance (Core Web Vitals)
+
+- LCP < 2.5s — preload critical fonts, minimize render-blocking CSS
+- CLS < 0.1 — reserve space for images/ads, avoid layout shifts
+- INP < 200ms — defer non-critical JS, use `async` on analytics
+
+### Resource Hints
+
+The following `<link>` hints should be added to the `<head>` (via `site-head.njk`):
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.tailwindcss.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+```
+
+### Tailwind CDN Performance Tradeoff
+
+This site uses the **Tailwind CDN** (`https://cdn.tailwindcss.com`) for rapid prototyping.
+The CDN injects a runtime script that parses the DOM and generates utility classes in the
+browser — this has known tradeoffs:
+
+| Factor | CDN (current) | Build-time Tailwind (recommended for production) |
+|--------|---------------|--------------------------------------------------|
+| Initial JS payload | ~400 KB runtime script | 0 — purged CSS only |
+| Render blocking | Yes — script must execute before styles apply | No — CSS is static |
+| LCP impact | Can delay LCP by 200-500ms | Minimal |
+| CSP compatibility | Requires `script-src` for CDN | Fully self-hosted |
+| Tree-shaking | None — all utilities shipped | Full purge of unused classes |
+
+**Recommendation**: Migrate to build-time Tailwind (`tailwindcss` + `@tailwindcss/postcss`) before
+production launch. This removes the runtime script, reduces CSP to `script-src 'self'`, and
+improves LCP by ~200-500ms.
+
+## Security Headers
+
+All security headers are configured in `_headers` and deployed via Cloudflare Pages:
+
+| Header | Value | Purpose |
+|--------|-------|---------|
+| `Strict-Transport-Security` | `max-age=31536000; includeSubDomains; preload` | Force HTTPS |
+| `Content-Security-Policy` | `default-src 'self'; ...` | Restrict resource origins |
+| `X-Frame-Options` | `DENY` | Prevent clickjacking |
+| `X-Content-Type-Options` | `nosniff` | Prevent MIME sniffing |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` | Limit referrer leakage |
+| `Permissions-Policy` | `geolocation=(), microphone=(), camera=(), payment=(), browsing-topics=()` | Disable unused APIs |
+| `Cross-Origin-Opener-Policy` | `same-origin` | Isolate browsing context |
+| `Cross-Origin-Resource-Policy` | `same-origin` | Restrict cross-origin loads |
+
+### Caching Strategy
+
+- `/assets/*` — `Cache-Control: public, max-age=31536000, immutable` (1 year, never revalidate)
+- `/*.html` — `Cache-Control: public, max-age=0, must-revalidate` (always check for updates)
+- `/favicon.*` — `Cache-Control: public, max-age=604800` (7 days)
+
+### CSP Inline Allowances
+
+The CSP includes `'unsafe-inline'` for `script-src` and `style-src` because the site currently
+uses the Tailwind CDN (which injects inline styles/scripts). When migrating to build-time
+Tailwind, remove `'unsafe-inline'` from both directives for stricter security.
 
 ## Content Pipeline
 

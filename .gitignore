@@ -15,10 +15,10 @@ Thumbs.db
 .seo-audits/
 storage/
 
-# Dependencies (if any tooling is added later)
+# Dependencies
 node_modules/
 
-# Build output (if a build step is introduced later)
+# Build output
 dist/
 build/
 _site/
@@ -26,3 +26,6 @@ _site/
 # Environment files
 .env
 .env.local
+
+# QA reports (generated, not committed)
+qa-reports/

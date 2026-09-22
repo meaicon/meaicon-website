@@ -99,3 +99,30 @@ If QA passes, the user reviews the built site. If QA fails, issues route back to
 - **No source traces**: Zero references to original sites in final output.
 - **Excellent UI/UX**: Target Stripe/Linear/Vercel-level polish.
 - **Production-ready**: Lighthouse 95+, WCAG AA, semantic HTML.
+
+## Infrastructure Audit (2026-09-22)
+
+### Security Headers (`_headers`)
+- ✅ CSP with restricted script/style/img/font/connect sources
+- ✅ HSTS with preload, X-Frame-Options: DENY, X-Content-Type-Options: nosniff
+- ✅ Referrer-Policy: strict-origin-when-cross-origin
+- ✅ Permissions-Policy disabling geolocation, microphone, camera, payment, browsing-topics
+- ✅ Cross-Origin-Opener-Policy + Resource-Policy: same-origin
+- ✅ Caching: immutable for /assets/*, must-revalidate for HTML
+- Note: `unsafe-inline` in CSP required while Tailwind CDN is in use
+
+### Sitemap (`sitemap.xml`)
+- Fixed: added 8 missing URLs (about/engagement-model, insights/ai-native-enterprise-transformation, insights/continuous-modernization, insights/hybrid-cloud-default-architecture, solutions/ai-data-services, solutions/application-services, solutions/critical-infrastructure-consulting, solutions/digital-workplace)
+- Total: 80 URLs (homepage + 79 page templates)
+
+### Cookie Consent (Accessibility)
+- ✅ 44px minimum touch targets (WCAG 2.5.5)
+- ✅ Visible `:focus-visible` outlines (WCAG 2.4.7)
+- ✅ Focus trap + Escape key in preferences modal (WCAG 2.4.3)
+- ✅ `prefers-reduced-motion` support (WCAG 2.3.3)
+- ✅ `prefers-color-scheme: dark` support
+
+### CI/CD
+- ✅ GitHub Actions workflow builds and deploys to GitHub Pages
+- Added `GITHUB_ACTIONS: true` env var for correct base-path rewriting
+- Added `continue-on-error` for non-blocking validation/audit steps

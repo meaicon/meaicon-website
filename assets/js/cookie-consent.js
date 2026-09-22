@@ -54,7 +54,7 @@
 
   function loadGA() {
     if (document.querySelector('script[data-meaicon-ga]')) return;
-    const s = document.createElement('script');
+    var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=G-K2L9LYGJBV';
     s.setAttribute('data-meaicon-ga', 'true');
@@ -71,41 +71,83 @@
     if (consent.analytics) loadGA();
   }
 
+  /* --- Focus trap for modal accessibility (WCAG 2.4.3) --- */
+  var focusTrapHandler = null;
+
+  function trapFocus(modal) {
+    var focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (focusable.length === 0) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+
+    first.focus();
+
+    focusTrapHandler = function (e) {
+      if (e.key === 'Escape') {
+        modal.classList.remove('is-open');
+        document.removeEventListener('keydown', focusTrapHandler);
+        var trigger = document.querySelector('[data-open-cookie-settings]');
+        if (trigger) trigger.focus();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', focusTrapHandler);
+  }
+
+  function untrapFocus() {
+    if (focusTrapHandler) {
+      document.removeEventListener('keydown', focusTrapHandler);
+      focusTrapHandler = null;
+    }
+  }
+
   function createBanner() {
     if (hasConsent()) return;
 
-    const banner = document.createElement('div');
+    var banner = document.createElement('div');
     banner.id = 'cookie-consent-banner';
-    banner.innerHTML = `
-      <div class="cc-card" role="dialog" aria-live="polite" aria-label="Cookie preferences">
-        <div class="cc-text">
-          <span class="cc-kicker">Privacy & cookies</span>
-          <h3>Your privacy and website preferences.</h3>
-          <p>This website uses strictly necessary cookies to provide secure, reliable access and analytics cookies to understand how visitors use our services. You may accept all, reject non-essential cookies, or customize your settings at any time.</p>
-          <p class="mt-2"><a href="/privacy-policy.html">Review our Privacy Policy</a></p>
-        </div>
-        <div class="cc-actions">
-          <button type="button" class="cc-btn cc-btn-secondary" data-cc-action="reject">Reject non-essential</button>
-          <button type="button" class="cc-btn cc-btn-secondary" data-cc-action="customize">Customize</button>
-          <button type="button" class="cc-btn cc-btn-primary" data-cc-action="accept">Accept all</button>
-        </div>
-      </div>
-    `;
+    banner.innerHTML =
+      '<div class="cc-card" role="dialog" aria-live="polite" aria-label="Cookie preferences">' +
+        '<div class="cc-text">' +
+          '<span class="cc-kicker">Privacy &amp; cookies</span>' +
+          '<h3>Your privacy and website preferences.</h3>' +
+          '<p>This website uses strictly necessary cookies to provide secure, reliable access and analytics cookies to understand how visitors use our services. You may accept all, reject non-essential cookies, or customize your settings at any time.</p>' +
+          '<p class="mt-2"><a href="/privacy-policy.html">Review our Privacy Policy</a></p>' +
+        '</div>' +
+        '<div class="cc-actions">' +
+          '<button type="button" class="cc-btn cc-btn-secondary" data-cc-action="reject">Reject non-essential</button>' +
+          '<button type="button" class="cc-btn cc-btn-secondary" data-cc-action="customize">Customize</button>' +
+          '<button type="button" class="cc-btn cc-btn-primary" data-cc-action="accept">Accept all</button>' +
+        '</div>' +
+      '</div>';
     document.body.appendChild(banner);
 
     banner.addEventListener('click', function (e) {
-      const action = e.target && e.target.getAttribute('data-cc-action');
+      var action = e.target && e.target.getAttribute('data-cc-action');
       if (!action) return;
 
       if (action === 'accept') {
-        const consent = saveConsent({ decided: true, analytics: true, marketing: false });
+        var consent = saveConsent({ decided: true, analytics: true, marketing: false });
         syncTracking(consent);
         banner.remove();
       }
 
       if (action === 'reject') {
-        const consent = saveConsent({ decided: true, analytics: false, marketing: false });
-        syncTracking(consent);
+        var consent2 = saveConsent({ decided: true, analytics: false, marketing: false });
+        syncTracking(consent2);
         banner.remove();
       }
 
@@ -116,80 +158,85 @@
   }
 
   function openPreferences() {
-    let modal = document.getElementById('cookie-preferences-modal');
-    const current = readConsent();
+    var modal = document.getElementById('cookie-preferences-modal');
+    var current = readConsent();
 
     if (!modal) {
       modal = document.createElement('div');
       modal.id = 'cookie-preferences-modal';
-      modal.innerHTML = `
-        <div class="cc-modal-backdrop" data-cc-close="true"></div>
-        <div class="cc-modal" role="dialog" aria-modal="true" aria-label="Cookie preferences">
-          <h3>Manage cookie preferences</h3>
-          <p>Necessary cookies are required for secure site operation and are always active. Analytics cookies help us measure visitor activity and improve our services. Marketing cookies remain disabled by default.</p>
+      modal.innerHTML =
+        '<div class="cc-modal-backdrop" data-cc-close="true"></div>' +
+        '<div class="cc-modal" role="dialog" aria-modal="true" aria-label="Cookie preferences">' +
+          '<h3>Manage cookie preferences</h3>' +
+          '<p>Necessary cookies are required for secure site operation and are always active. Analytics cookies help us measure visitor activity and improve our services. Marketing cookies remain disabled by default.</p>' +
 
-          <label class="cc-toggle">
-            <input type="checkbox" checked disabled>
-            <span>Strictly necessary cookies (always active)</span>
-          </label>
+          '<label class="cc-toggle">' +
+            '<input type="checkbox" checked disabled>' +
+            '<span>Strictly necessary cookies (always active)</span>' +
+          '</label>' +
 
-          <label class="cc-toggle">
-            <input id="cc-analytics" type="checkbox">
-            <span>Analytics cookies</span>
-          </label>
+          '<label class="cc-toggle">' +
+            '<input id="cc-analytics" type="checkbox">' +
+            '<span>Analytics cookies</span>' +
+          '</label>' +
 
-          <label class="cc-toggle">
-            <input id="cc-marketing" type="checkbox" disabled>
-            <span>Marketing cookies (not active yet)</span>
-          </label>
+          '<label class="cc-toggle">' +
+            '<input id="cc-marketing" type="checkbox" disabled>' +
+            '<span>Marketing cookies (not active yet)</span>' +
+          '</label>' +
 
-          <div class="cc-actions">
-            <button type="button" class="cc-btn cc-btn-secondary" data-cc-save="reject">Reject non-essential</button>
-            <button type="button" class="cc-btn cc-btn-primary" data-cc-save="save">Save preferences</button>
-          </div>
-        </div>
-      `;
+          '<div class="cc-actions">' +
+            '<button type="button" class="cc-btn cc-btn-secondary" data-cc-save="reject">Reject non-essential</button>' +
+            '<button type="button" class="cc-btn cc-btn-primary" data-cc-save="save">Save preferences</button>' +
+          '</div>' +
+        '</div>';
       document.body.appendChild(modal);
 
       modal.addEventListener('click', function (e) {
-        if (e.target.matches('[data-cc-close="true"]')) {
+        if (e.target.matches && e.target.matches('[data-cc-close="true"]')) {
           modal.classList.remove('is-open');
+          untrapFocus();
         }
 
-        const saveAction = e.target && e.target.getAttribute('data-cc-save');
+        var saveAction = e.target && e.target.getAttribute('data-cc-save');
         if (!saveAction) return;
 
         if (saveAction === 'reject') {
-          const consent = saveConsent({ decided: true, analytics: false, marketing: false });
+          var consent = saveConsent({ decided: true, analytics: false, marketing: false });
           syncTracking(consent);
           modal.classList.remove('is-open');
-          document.getElementById('cookie-consent-banner')?.remove();
+          untrapFocus();
+          var banner = document.getElementById('cookie-consent-banner');
+          if (banner) banner.remove();
         }
 
         if (saveAction === 'save') {
-          const analytics = modal.querySelector('#cc-analytics').checked;
-          const consent = saveConsent({ decided: true, analytics, marketing: false });
-          syncTracking(consent);
+          var analytics = modal.querySelector('#cc-analytics').checked;
+          var consent2 = saveConsent({ decided: true, analytics: analytics, marketing: false });
+          syncTracking(consent2);
           modal.classList.remove('is-open');
-          document.getElementById('cookie-consent-banner')?.remove();
+          untrapFocus();
+          var banner2 = document.getElementById('cookie-consent-banner');
+          if (banner2) banner2.remove();
         }
       });
     }
 
     modal.querySelector('#cc-analytics').checked = !!current.analytics;
     modal.classList.add('is-open');
+    trapFocus(modal.querySelector('.cc-modal'));
   }
 
   function attachSettingsTriggers() {
     document.addEventListener('click', function (e) {
-      const trigger = e.target.closest('[data-open-cookie-settings]');
+      var trigger = e.target.closest('[data-open-cookie-settings]');
       if (!trigger) return;
       e.preventDefault();
       openPreferences();
     });
   }
 
-  const consent = readConsent();
+  var consent = readConsent();
   applyGoogleConsentMode(consent);
 
   document.addEventListener('DOMContentLoaded', function () {

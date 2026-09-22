@@ -3,7 +3,33 @@
 {% include "site-head.njk" %}
 <body class="bg-paper text-ink min-h-screen flex flex-col antialiased">
 {% include "header.njk" %}
+<main id="main-content" class="site-shell flex-1">
 {{ content | safe }}
+</main>
 {% include "footer.njk" %}
+<script>
+(function() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      el.classList.add('reveal-visible');
+    });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      observer.observe(el);
+    });
+  });
+})();
+</script>
 </body>
 </html>

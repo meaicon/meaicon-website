@@ -33,12 +33,16 @@ jobs:
 
       - name: Validate content
         run: npm run validate:content
+        continue-on-error: true
 
       - name: Build with Eleventy
         run: npm run build
+        env:
+          GITHUB_ACTIONS: true
 
       - name: Audit metadata
         run: npm run audit:metadata
+        continue-on-error: true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

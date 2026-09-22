@@ -29,7 +29,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "favicon.svg": "favicon.svg" });
   eleventyConfig.addPassthroughCopy({ "apple-touch-icon.png": "apple-touch-icon.png" });
   eleventyConfig.addPassthroughCopy({ "robots.txt": "robots.txt" });
-  eleventyConfig.addPassthroughCopy({ sitemap: "sitemap" });
+  eleventyConfig.addPassthroughCopy({ "sitemap.xml": "sitemap.xml" });
   eleventyConfig.addPassthroughCopy({ _headers: "_headers" });
   eleventyConfig.addWatchTarget("assets/");
 
