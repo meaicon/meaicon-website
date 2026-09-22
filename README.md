@@ -4,11 +4,12 @@ Static marketing website for MEAICON LLC FZ — a digital infrastructure company
 
 ## Overview
 
-- **72-page** corporate website built with Eleventy 3.1.6 and Nunjucks templates
+- **80-page** corporate website built with Eleventy 3.1.6 and Nunjucks templates
 - Original MEAICON content — connectivity, data centre, cybersecurity, blockchain, cloud, managed services, consulting
 - 12 industry vertical pages, 8 insight articles, 8 case studies, company pages, legal pages
 - Design system: Plus Jakarta Sans + Inter typography, custom CSS token system, Tailwind utility layer
-- Production-ready: SEO-complete, accessible, semantic HTML5
+- Enterprise UI/UX: full-viewport hero, dark mode (auto + manual toggle), IntersectionObserver scroll reveals, card hover effects, button micro-interactions
+- Production-ready: SEO-complete, accessible (WCAG AA), semantic HTML5
 
 ## Tech Stack
 
@@ -17,7 +18,9 @@ Static marketing website for MEAICON LLC FZ — a digital infrastructure company
 | SSG | Eleventy 3.1.6 |
 | Templating | Nunjucks |
 | Styling | Custom CSS design system + Tailwind CDN |
-| Fonts | Google Fonts (Plus Jakarta Sans, Inter) |
+| Fonts | Google Fonts (Plus Jakarta Sans, Inter, IBM Plex Mono, Space Grotesk) |
+| Design tokens | CSS custom properties (color, typography, spacing, gradients) |
+| Dark mode | Auto (`prefers-color-scheme`) + manual toggle (`[data-theme]`, localStorage) |
 | Build output | Static HTML/CSS/JS |
 
 ## Project Structure
@@ -25,13 +28,13 @@ Static marketing website for MEAICON LLC FZ — a digital infrastructure company
 ```text
 meaicon-website/
 ├── .eleventy.js              # Eleventy config — ignores migrated/ and root *.html
-├── index.njk                 # Homepage
-├── package.json              # npm scripts: build, validate, audit
+├── index.html               # Homepage (standalone, not Nunjucks)
+├── package.json              # npm scripts: build, start, clean, validate, audit, lint, format
 ├── _includes/
-│   ├── layout.njk            # Base layout (head + header + main + footer)
-│   ├── site-head.njk         # <head> — meta, OG, Twitter, JSON-LD, fonts, CSS
-│   ├── header.njk            # Sticky nav with dropdown menus + mobile menu
-│   ├── footer.njk            # 4-column footer + social links + mobile script
+│   ├── layout.njk            # Base layout — <main id="main-content"> wrapper, skip-link target
+│   ├── site-head.njk         # <head> — meta, OG, Twitter, JSON-LD, fonts, CSS design system, dark mode toggle
+│   ├── header.njk            # Sticky nav — semi-transparent on scroll, mega-menu, animated hamburger, dark mode toggle
+│   ├── footer.njk            # Redesigned 4-column footer — brand+CTA, link grid, social, dark mode
 │   └── home-main.html        # Homepage content sections
 ├── pages/
 │   ├── about.njk
@@ -126,10 +129,12 @@ meaicon-website/
 ├── migrated/                 # Legacy pages (ignored by Eleventy)
 ├── research-data/            # Crawled source data (pipeline input)
 ├── qa-reports/               # QA validation reports
-├── sitemap.xml               # 52 URLs
+├── sitemap.xml               # 80 URLs
 ├── robots.txt
-├── _headers                  # Cloudflare Pages security headers
+├── _headers                  # Cloudflare Pages security headers (CSP, HSTS, COOP/CORP)
 ├── _redirects                # URL redirects
+├── docs/
+│   └── design-guideline.md   # UI/UX design guideline for MEAICON
 └── .gitignore
 ```
 
@@ -167,7 +172,7 @@ npx @11ty/eleventy --serve
 - ✅ Open Graph tags (og:title, og:description, og:type, og:image, og:url)
 - ✅ Twitter Card tags (summary_large_image)
 - ✅ JSON-LD structured data (Organization schema on every page)
-- ✅ `sitemap.xml` with all 52 URLs
+- ✅ `sitemap.xml` with all 80 URLs
 - ✅ `robots.txt` with sitemap reference
 - ✅ Semantic HTML5 (`<main>`, `<section>`, `<nav>`, `<header>`, `<footer>`, `<article>`)
 - ✅ Single `<h1>` per page
@@ -179,18 +184,44 @@ npx @11ty/eleventy --serve
 
 - ✅ `lang="en"` on `<html>`
 - ✅ `viewport` meta tag
-- ✅ Skip-link ready navigation structure
+- ✅ Skip-to-main-content link + `<main id="main-content">` target
 - ✅ `aria-label` on icon-only links (social media)
 - ✅ `aria-expanded` on mobile menu toggle
 - ✅ `aria-hidden="true"` on decorative SVG icons
 - ✅ `<button type="button">` on interactive controls
 - ✅ `.sr-only` class for screen-reader text
 - ✅ Color contrast meets WCAG AA (4.5:1 normal text, 3:1 large text)
-- ✅ Cookie consent: 44px minimum touch targets (WCAG 2.5.5)
-- ✅ Cookie consent: visible `:focus-visible` outlines (WCAG 2.4.7)
-- ✅ Cookie consent: focus trap + Escape key in preferences modal (WCAG 2.4.3)
-- ✅ Cookie consent: `prefers-reduced-motion` support (WCAG 2.3.3)
-- ✅ Cookie consent: `prefers-color-scheme: dark` support
+- ✅ `*:focus-visible` outlines on all interactive elements (2px solid accent)
+- ✅ 44px minimum touch targets on mobile (WCAG 2.5.5) — nav, buttons, footer links
+- ✅ Cookie consent: 44px touch targets, focus trap, Escape key, backdrop close
+- ✅ `prefers-reduced-motion` — disables all animations/transitions, forces reveal visible
+- ✅ `prefers-color-scheme: dark` + `[data-theme]` manual toggle with localStorage persistence
+
+## UI/UX Design System
+
+### Color Tokens
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--accent` | `#0066FF` | Electric blue — buttons, links, focus states |
+| `--accent-strong` | `#0044CC` | Hover/active states |
+| `--paper` | `#FAFBFC` | Page background (light) |
+| `--ink` | `#0A192F` | Body text (light) |
+| `--muted` | `#475569` | Secondary text |
+| `--dark` | `#0a0e1a` | Charcoal — dark sections, dark mode bg (not pure black) |
+| `--gradient-accent` | `135deg, #0066FF → #0044CC` | Buttons, CTA bands |
+| `--gradient-dark` | `135deg, #0a0e1a → #1a2744` | Hero, dark sections |
+
+### Key UI Patterns
+
+- **Full-viewport hero** (`min-height: 100vh`) — dark overlay, left-aligned headline, dual CTAs, animated scroll cue
+- **Scroll reveals** — IntersectionObserver with `.reveal`/`.reveal-visible` classes (opacity 0→1, translateY 30px→0, 600ms ease)
+- **Card hover** — `translateY(-6px)` + shadow increase + image zoom within frame
+- **Button micro-interactions** — 250ms ease-in-out, `scale(1.02)` on active, gradient fill on hover
+- **Nav transparency** — transparent + blur at top, solid on scroll (`.nav-scrolled` class, rAF-throttled)
+- **Hamburger animation** — 3-bar → X icon via CSS transforms
+- **Dark mode** — auto via `prefers-color-scheme`, manual via `[data-theme]` toggle with localStorage, logo invert
+- **Footer** — 4-column grid (Solutions / Security & Edge / Company / Resources), brand + CTA top, gradient dividers, social circle buttons
 
 ## Performance (Core Web Vitals)
 
@@ -266,17 +297,18 @@ User provides URLs → Research Agent crawls → Content Agent rebrands → Dev 
 
 ## Branch & Deployment
 
-- Active branch: `website-redesign`
+- Active branch: `website-redesign` — all UI/UX overhaul work lives here
 - Main branch: untouched — merge only after final review
-- Deploy: Cloudflare Pages (via `_headers`, `_redirects`)
+- Deploy: GitHub Pages via GitHub Actions (`.github/workflows/pages.yml`)
 - Build command: `npm run build`
 - Output directory: `_site/`
+- Live URL: https://meaicon.github.io/meaicon-website/
 
 ## Browser Support
 
 - Modern browsers (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)
-- Graceful degradation for IE 11 (basic content, no Tailwind utilities)
-- Mobile-first responsive design
+- Mobile-first responsive design (breakpoints: 640px, 760px, 1023px)
+- Dark mode support across all modern browsers
 
 ## License
 
