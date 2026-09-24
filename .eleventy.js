@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const Image = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
   // Ignore old standalone HTML files (replaced by pages/*.njk templates)
@@ -9,6 +10,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("products.html");
 
   // Keep legacy filters for backward compatibility (site-head.njk references them)
+  /*
   eleventyConfig.addFilter("legacyBody", (source) => {
     const html = fs.readFileSync(path.join(process.cwd(), source), "utf8");
     const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1];
@@ -19,9 +21,22 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("legacyJsonLd", (source) => {
     const html = fs.readFileSync(path.join(process.cwd(), source), "utf8");
-    return [...html.matchAll(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi)]
+    return [...html.matchAll(/<script type="application\/ld+json">[\s\S]*?<\/script>/gi)]
       .map((match) => match[0])
       .join("\n");
+  });
+  */
+
+  eleventyConfig.addAsyncShortcode("image", async function (src, alt, classes) {
+    if (!alt) throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
+    let metadata = await Image(src, {
+      widths: [400, 800, 1200],
+      formats: ["avif", "webp", "jpeg"],
+      outputDir: "./_site/assets/img/",
+      urlPath: "/assets/img/"
+    });
+    let imageAttributes = { alt, sizes: "100vw", class: classes, loading: "lazy", decoding: "async" };
+    return Image.generateHTML(metadata, imageAttributes);
   });
 
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
@@ -35,7 +50,6 @@ module.exports = function (eleventyConfig) {
 
   // GitHub Pages serves under /meaicon-website/, production serves from root
   const baseUrl = process.env.GITHUB_ACTIONS ? "/meaicon-website/" : "/";
-  eleventyConfig.addGlobalData("baseUrl", baseUrl);
 
   // Rewrite root-relative URLs to include the base path on GitHub Pages
   if (process.env.GITHUB_ACTIONS) {

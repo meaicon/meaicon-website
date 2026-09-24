@@ -1,0 +1,496 @@
+/* ============================================
+   Component Styles
+   ============================================ */
+
+/* Header / Nav */
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 0;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.header-inner h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  color: var(--ink);
+}
+.header-inner p {
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* Feature Cards */
+.feature-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.25s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent);
+}
+.feature-card h3 {
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+/* Button Variants */
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--muted);
+  color: var(--ink);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.btn-outline:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button (gradient outline / ghost variant) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1.5px solid rgba(0, 102, 255, 0.4);
+  color: var(--accent);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-secondary:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px -6px rgba(0, 102, 255, 0.3);
+}
+.btn-secondary:active {
+  transform: translateY(0);
+}
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--muted);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.badge-success {
+  background: rgba(76, 175, 80, 0.15);
+  color: #4ade80;
+}
+.badge-warning {
+    background: rgba(252, 203, 99, 0.15);
+    color: var(--warning);
+  }
+  .badge-danger {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--danger);
+  }
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ============================================
+   Hero Typography & Display
+   ============================================ */
+
+/* Display Title — hero H1, 48–72px per design guideline */
+.display-title {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+/* Eyebrow — small uppercase label above section headings */
+.eyebrow {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+/* Accent Underline — gradient text underline for emphasis */
+.accent-underline {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.accent-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.05em;
+  height: 3px;
+  background: linear-gradient(90deg, #0066FF 0%, #6B4EFF 50%, #00B8D9 100%);
+  border-radius: 2px;
+}
+
+/* Page Title — interior page H1 */
+.page-title {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+/* Text Link — inline link with arrow or emphasis */
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.text-link:hover {
+  color: var(--accent-strong);
+  gap: 0.5rem;
+}
+
+/* ============================================
+   Section & Layout Components
+   ============================================ */
+
+/* Hero Section — full-viewport hero with dark navy gradient */
+.hero-section {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 14, 26, 0.86) 0%, rgba(10, 14, 26, 0.94) 100%);
+  color: #F0F0F5;
+  overflow: hidden;
+}
+.hero-section .display-title {
+  color: #fff;
+}
+.hero-section p,
+.hero-section .hero-copy {
+  color: rgba(240, 240, 245, 0.78);
+}
+
+/* Section Band — alternating full-width content band */
+.section-band {
+  width: 100%;
+  padding: 5rem 0;
+  position: relative;
+}
+.section-band:nth-child(even) {
+  background: rgba(10, 25, 47, 0.02);
+}
+
+/* Section Title — secondary heading within sections */
+.section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+/* Section Intro — grid wrapper for section heading + lede */
+.section-intro {
+  margin-bottom: 2rem;
+}
+
+/* Section Lede — supporting paragraph under section title */
+.section-lede {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+/* ============================================
+   Card / Grid Layouts
+   ============================================ */
+
+/* Solution Card — feature card for solutions listing */
+.solution-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.solution-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent);
+}
+.solution-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.solution-card:hover::before {
+  opacity: 1;
+}
+.solution-card-featured {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, rgba(0, 102, 255, 0.02) 100%);
+}
+.solution-card-featured::before {
+  opacity: 1;
+}
+.solution-card-wide {
+  grid-column: span 2;
+}
+.solution-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.solution-index {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.solution-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--accent-light);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.solution-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.solution-copy {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.solution-list {
+  margin-top: 1.5rem;
+}
+
+/* Bento Grid — modular grid for dashboard/metrics layout */
+.bento-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Telemetry Grid — metrics row for hero/telemetry section */
+.telemetry-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  margin-top: 2rem;
+}
+
+/* Telemetry Widget — individual metric tile */
+.telemetry-widget {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Metric Widget — compact metric card (hero dashboard) */
+.metric-widget {
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.metric-widget-wide {
+  grid-column: span 2;
+}
+.metric-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+.metric-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.metric-note {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+/* ============================================
+   Contact & Newsletter
+   ============================================ */
+
+/* Contact Grid — two-column layout for contact page */
+.contact-grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin-top: 2rem;
+}
+
+/* Newsletter Band — full-width email signup section */
+.newsletter-band {
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.06) 0%, rgba(107, 78, 255, 0.04) 100%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 3.5rem 0;
+  text-align: center;
+}
+.newsletter-band .newsletter-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+.newsletter-band .newsletter-sub {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  max-width: 48ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Breadcrumb — page navigation trail */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  padding: 0.75rem 0;
+}
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+.breadcrumb [aria-current="page"] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Input Group — email signup flex container */
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.input-group .form-input {
+  flex: 1;
+}

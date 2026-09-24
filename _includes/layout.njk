@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+<head>
 {% include "site-head.njk" %}
+</head>
 <body class="bg-paper text-ink min-h-screen flex flex-col antialiased">
 {% include "header.njk" %}
 {% set breadcrumb_path = page.url %}
@@ -49,48 +51,45 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "{{ bc_page }}",
-      "item": "https://www.meaicon.com{{ breadcrumb_path }}"
-    }
-    {% else %},
+      "name": "{{ bc_page }}"
+    }{% else %},
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "{{ bc_section }}",
-      "item": "https://www.meaicon.com{{ breadcrumb_path }}"
-    }
-    {% endif %}
+      "name": "{{ bc_section }}"
+    }{% endif %}
   ]
 }
 </script>
 {% endif %}
 <main id="main-content" class="site-shell flex-1">
-{{ content | safe }}
+  {{ content | safe }}
 </main>
 {% include "footer.njk" %}
 <script>
-(function() {
-  if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('.reveal').forEach(function(el) {
-      el.classList.add('reveal-visible');
-    });
-    return;
-  }
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
+// IntersectionObserver for scroll reveal animations
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('reveal-visible');
-        entry.target.classList.add('revealed');
-        observer.unobserve(entry.target);
+        entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.reveal').forEach(function(el) {
-      observer.observe(el);
-    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+}
+// Dark mode toggle
+const themeToggle = document.querySelector('[data-theme-toggle]');
+if (themeToggle) {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
   });
-})();
+}
 </script>
 </body>
 </html>

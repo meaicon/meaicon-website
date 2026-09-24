@@ -1,0 +1,24 @@
+{
+  "executive_summary": {
+    "health_score": 6.5,
+    "top_issues": [
+      "Tailwind CDN usage",
+      "Massive site-head.njk (860 lines)",
+      "Accent color inconsistencies",
+      "Lack of image optimization",
+      "Excessive legacy filters in build config"
+    ]
+  },
+  "tasks": [
+    { "id": 1, "profile": "dev", "task": "Local Tailwind Build", "priority": "P0", "effort": "M" },
+    { "id": 2, "profile": "dev", "task": "Refactor site-head.njk", "priority": "P1", "effort": "L" },
+    { "id": 3, "profile": "qa", "task": "Accessibility Audit", "priority": "P1", "effort": "S" },
+    { "id": 4, "profile": "content", "task": "SEO Meta Audit", "priority": "P1", "effort": "M" },
+    { "id": 5, "profile": "dev", "task": "Image Optimization", "priority": "P2", "effort": "S" },
+    { "id": 6, "profile": "research", "task": "Competitor Analysis", "priority": "P2", "effort": "M" },
+    { "id": 7, "profile": "dev", "task": "CSS Variable Cleanup", "priority": "P2", "effort": "M" },
+    { "id": 8, "profile": "content", "task": "Brand Voice Review", "priority": "P3", "effort": "M" },
+    { "id": 9, "profile": "qa", "task": "Perf Threshold Setup", "priority": "P3", "effort": "S" },
+    { "id": 10, "profile": "qa", "task": "Mega-menu QA", "priority": "P3", "effort": "S" }
+  ]
+}

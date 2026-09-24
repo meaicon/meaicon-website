@@ -90,4 +90,6 @@
   <!-- Legal -->
   <url><loc>https://www.meaicon.com/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.meaicon.com/terms-of-service.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <!-- Error Page -->
+  <url><loc>https://www.meaicon.com/404.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
 </urlset>
