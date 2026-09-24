@@ -79,7 +79,7 @@
             <li><a href="/case-studies.html">Case Studies</a></li>
             <li><a href="/faq.html">FAQ</a></li>
             <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-            <li><button type="button" data-open-cookie-settings class="cookie-prefs-link">Cookie Preferences</button></li>
+            <li><a href="#" data-open-cookie-settings class="cookie-prefs-link">Cookie Preferences</a></li>
             <li><a href="/terms-of-service.html">Terms of Service</a></li>
           </ul>
           <div class="footer-contact">
@@ -121,12 +121,13 @@
 <style>
   /* --- Footer --- */
   .site-footer {
-    border-top: 1px solid rgba(148, 163, 184, 0.18);
+    border-top: 1px solid var(--line);
     background: var(--paper);
   }
 
   .footer-main {
-    padding: 3.5rem 0 0;
+    background: var(--paper);
+    padding: 4rem 1.5rem 2rem;
   }
 
   /* Top section: brand + CTA */
@@ -136,7 +137,7 @@
     justify-content: space-between;
     gap: 2rem;
     flex-wrap: wrap;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .footer-brand-block {
@@ -152,10 +153,11 @@
   }
 
   .footer-tagline {
-    font-size: 0.8125rem;
+    font-size: 0.9375rem;
     line-height: 1.7;
-    color: var(--muted);
-    margin: 0;
+    color: var(--text-secondary);
+    max-width: 32rem;
+    margin: 1rem 0 0;
   }
 
   .footer-cta-btn {
@@ -164,18 +166,18 @@
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
     font-family: 'Inter', sans-serif;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: #fff;
-    background: var(--gradient-accent);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: transparent;
     border-radius: 6px;
     text-decoration: none;
     transition: all 250ms ease-in-out;
     white-space: nowrap;
   }
   .footer-cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 102, 255, 0.25);
+    color: var(--accent-strong);
+    gap: 0.25rem;
   }
   .footer-cta-btn:active { transform: scale(1.02); }
   .footer-cta-arrow { transition: transform 200ms ease; }
@@ -184,26 +186,26 @@
   /* Divider */
   .footer-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.25), transparent);
-    margin: 0;
+    background: var(--line);
+    margin: 2rem 0;
   }
 
   /* Link grid */
   .footer-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem;
-    padding: 2.5rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+    padding: 0;
   }
 
   .footer-col { min-width: 0; }
 
   .footer-heading {
     font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
+    font-size: 0.875rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.05em;
     color: var(--ink);
     margin: 0 0 1rem;
   }
@@ -218,23 +220,20 @@
   .footer-links a,
   .footer-links .cookie-prefs-link {
     font-size: 0.8125rem;
-    color: var(--muted);
+    color: var(--ink);
     text-decoration: none;
     transition: color 200ms ease;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    font-family: inherit;
-    text-align: left;
   }
   .footer-links a:hover,
-  .footer-links .cookie-prefs-link:hover { color: var(--accent); }
+  .footer-links .cookie-prefs-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
 
   .footer-contact {
     margin-top: 1.5rem;
     padding-top: 1.25rem;
-    border-top: 1px solid rgba(148, 163, 184, 0.15);
+    border-top: 1px solid var(--line);
   }
   .footer-contact p {
     font-size: 0.75rem;
@@ -272,45 +271,42 @@
     height: 36px;
     border-radius: 50%;
     color: var(--muted);
-    background: rgba(148, 163, 184, 0.08);
+    background: transparent;
     transition: all 200ms ease;
   }
   .footer-social-link:hover {
     color: var(--accent);
     background: var(--accent-light);
-    transform: translateY(-2px);
   }
 
   .footer-legal { text-align: right; }
   .footer-legal p {
-      font-size: 0.7rem;
+      font-size: 0.8125rem;
       font-family: 'Inter', sans-serif;
-      color: var(--muted);
+      color: var(--text-muted);
       margin: 0;
       line-height: 1.6;
     }
-  .footer-legal-sub { font-size: 0.65rem; margin-top: 0.25rem; }
+  .footer-legal-sub { font-size: 0.8125rem; margin-top: 0.25rem; }
 
   /* --- Responsive --- */
   @media (max-width: 1023px) {
-    .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
     .footer-top { flex-direction: column; }
     .footer-cta { margin-top: 0.5rem; }
   }
   @media (max-width: 640px) {
-    .footer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
-    .footer-main { padding: 2.5rem 0 0; }
+    .footer-main { padding: 2.5rem 1.5rem 1.5rem; }
     .footer-bottom { flex-direction: column; text-align: center; }
     .footer-legal { text-align: center; }
     .footer-social-link { width: 44px; height: 44px; }
-    .footer-links a, .footer-contact a, .footer-cta-btn { min-height: 44px; display: inline-flex; align-items: center; }
+    .footer-links a, .footer-contact a { min-height: 44px; display: inline-flex; align-items: center; }
   }
 
   /* --- Dark mode --- */
   [data-theme="dark"] .site-footer,
   :root:not([data-theme="light"]) .site-footer {
     background: var(--dark);
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--line);
   }
   [data-theme="dark"] .footer-logo,
   :root:not([data-theme="light"]) .footer-logo {
@@ -318,7 +314,7 @@
   }
   [data-theme="dark"] .footer-divider,
   :root:not([data-theme="light"]) .footer-divider {
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+    background: var(--line);
   }
 
   /* --- Reduced motion --- */

@@ -2,45 +2,45 @@
    Dark Mode & Theme Variables
    ============================================ */
 
-/* Dark Theme Variables — accent lifted to #4D8DFF for WCAG AA 4.5:1 on dark bg */
+/* Dark Theme Variables */
 [data-theme="dark"] {
-  --paper: #0a0e1a;
-  --card: #141822;
-  --ink: #F0F0F5;
-  --muted: #A0A8B8;
-  --line: #2a3346;
-  --dark: #0a0e1a;
+  --paper: #2B2B2B;
+  --card: #3D3C3C;
+  --ink: #FFFFFF;
+  --muted: #BBBBBB;
+  --line: #565049;
+  --dark: #2B2B2B;
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 10px 24px -14px rgba(0, 0, 0, 0.4);
   --shadow-xl: 0 20px 40px -16px rgba(0, 0, 0, 0.5);
-  --accent: #4D8DFF;
-  --accent-strong: #2D7DFF;
-  --accent-light: rgba(77, 141, 255, 0.15);
-  --text-primary: #F0F0F5;
-  --text-secondary: #A0A8B8;
-  --text-muted: #6B7280;
-  --text-on-dark: #F0F0F5;
+  --accent: #4CDD84;
+  --accent-strong: #1B904B;
+  --accent-light: rgba(76, 221, 132, 0.15);
+  --text-primary: #FFFFFF;
+  --text-secondary: #BBBBBB;
+  --text-muted: #9E9287;
+  --text-on-dark: #FFFFFF;
 }
 
 /* System dark mode preference (no data-theme attribute set yet) */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #0a0e1a;
-    --card: #141822;
-    --ink: #F0F0F5;
-    --muted: #A0A8B8;
-    --line: #2a3346;
-    --dark: #0a0e1a;
+    --paper: #2B2B2B;
+    --card: #3D3C3C;
+    --ink: #FFFFFF;
+    --muted: #BBBBBB;
+    --line: #565049;
+    --dark: #2B2B2B;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 10px 24px -14px rgba(0, 0, 0, 0.4);
     --shadow-xl: 0 20px 40px -16px rgba(0, 0, 0, 0.5);
-    --accent: #4D8DFF;
-    --accent-strong: #2D7DFF;
-    --accent-light: rgba(77, 141, 255, 0.15);
-    --text-primary: #F0F0F5;
-    --text-secondary: #A0A8B8;
-    --text-muted: #6B7280;
-    --text-on-dark: #F0F0F5;
+    --accent: #4CDD84;
+    --accent-strong: #1B904B;
+    --accent-light: rgba(76, 221, 132, 0.15);
+    --text-primary: #FFFFFF;
+    --text-secondary: #BBBBBB;
+    --text-muted: #9E9287;
+    --text-on-dark: #FFFFFF;
   }
 }
 
@@ -64,249 +64,4 @@
 [data-theme="dark"] .solution-card:hover,
 [data-theme="dark"] .case-study-card:hover {
   border-color: var(--accent);
-  background: rgba(20, 24, 34, 0.9);
-}
-
-/* Dark Hero Section */
-[data-theme="dark"] .hero-section {
-  background: linear-gradient(135deg, #0a0e1a 0%, #141822 72%);
-}
-
-/* Dark Section Bands */
-[data-theme="dark"] .section-band:nth-child(even) {
-  background: rgba(255, 255, 255, 0.015);
-}
-
-/* Dark Newsletter Band */
-[data-theme="dark"] .newsletter-band {
-  background: linear-gradient(135deg, rgba(77, 141, 255, 0.08) 0%, rgba(107, 78, 255, 0.04) 100%);
-  border-color: var(--line);
-}
-
-/* Dark Display Title / Page Title */
-[data-theme="dark"] .display-title,
-[data-theme="dark"] .page-title,
-[data-theme="dark"] .section-title {
-  color: var(--ink);
-}
-[data-theme="dark"] .hero-section .display-title {
-  color: #fff;
-}
-
-/* Dark Eyebrow */
-[data-theme="dark"] .eyebrow {
-  color: var(--accent);
-}
-
-/* Dark Solution Card Featured */
-[data-theme="dark"] .solution-card-featured {
-  background: linear-gradient(135deg, #141822 0%, rgba(77, 141, 255, 0.05) 100%);
-}
-
-/* Dark Telemetry / Metric Widgets */
-[data-theme="dark"] .telemetry-widget,
-[data-theme="dark"] .metric-widget {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.08);
-}
-[data-theme="dark"] .metric-value {
-  color: var(--ink);
-}
-[data-theme="dark"] .metric-label {
-  color: var(--muted);
-}
-[data-theme="dark"] .metric-note {
-  color: var(--muted);
-}
-
-/* Dark CTA Section — inherits gradient-dark */
-[data-theme="dark"] .cta-section {
-  background: var(--gradient-dark);
-}
-[data-theme="dark"] .cta-section .cta-title {
-  color: #fff;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-/* Dark Text Link */
-[data-theme="dark"] .text-link {
-  color: var(--accent);
-}
-[data-theme="dark"] .text-link:hover {
-  color: var(--accent-strong);
-}
-
-/* Dark Breadcrumb */
-[data-theme="dark"] .breadcrumb {
-  color: var(--muted);
-}
-[data-theme="dark"] .breadcrumb a {
-  color: var(--muted);
-}
-[data-theme="dark"] .breadcrumb a:hover {
-  color: var(--accent);
-}
-[data-theme="dark"] .breadcrumb [aria-current="page"] {
-  color: var(--ink);
-}
-
-/* Dark Button States */
-[data-theme="dark"] .btn-primary {
-  background: var(--gradient-accent);
-  color: #fff;
-}
-[data-theme="dark"] .btn-secondary {
-  border-color: rgba(77, 141, 255, 0.4);
-  color: var(--accent);
-}
-[data-theme="dark"] .btn-secondary:hover {
-  background: var(--accent-light);
-  border-color: var(--accent);
-  color: #fff;
-}
-[data-theme="dark"] .btn-outline {
-  color: var(--ink);
-  border-color: var(--line);
-}
-[data-theme="dark"] .btn-outline:hover {
-  background: var(--accent-light);
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-/* Dark Scrollbar */
-[data-theme="dark"] ::-webkit-scrollbar-track {
-  background: #0a0e1a;
-}
-[data-theme="dark"] ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: #0a0e1a;
-}
-[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.25);
-}
-
-/* Dark Progress Track */
-[data-theme="dark"] .progress-track {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* ============================================
-   Link Hierarchy — NOT all links are accent blue
-   Preserve visual hierarchy: body links get accent,
-   but nav/footer/heading links keep their context.
-   ============================================ */
-
-/* Body content links only — within prose/article context */
-[data-theme="dark"] .text-link,
-[data-theme="dark"] .text-link:visited {
-  color: var(--accent);
-}
-[data-theme="dark"] .text-link:hover {
-  color: var(--accent-strong);
-}
-
-/* Nav links — inherit muted text, only accent on hover */
-[data-theme="dark"] .nav-link {
-  color: rgba(240, 240, 245, 0.7);
-}
-[data-theme="dark"] .nav-link:hover {
-  color: var(--accent);
-}
-
-/* Footer links — muted, not accent */
-[data-theme="dark"] .footer-links a,
-[data-theme="dark"] .footer-contact a,
-[data-theme="dark"] .footer-legal a {
-  color: var(--muted);
-}
-[data-theme="dark"] .footer-links a:hover,
-[data-theme="dark"] .footer-contact a:hover,
-[data-theme="dark"] .footer-legal a:hover {
-  color: var(--ink);
-}
-
-/* Heading links — inherit color from parent heading */
-[data-theme="dark"] h1 a,
-[data-theme="dark"] h2 a,
-[data-theme="dark"] h3 a {
-  color: inherit;
-}
-
-/* System dark mode — same hierarchy rules */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) body {
-    background: var(--paper);
-    color: var(--ink);
-  }
-  :root:not([data-theme="light"]) .card,
-  :root:not([data-theme="light"]) .feature-card,
-  :root:not([data-theme="light"]) .solution-card,
-  :root:not([data-theme="light"]) .case-study-card {
-    background: var(--card);
-    border-color: var(--line);
-    color: var(--ink);
-  }
-  :root:not([data-theme="light"]) .hero-section {
-    background: linear-gradient(135deg, #0a0e1a 0%, #141822 72%);
-  }
-  :root:not([data-theme="light"]) .section-band:nth-child(even) {
-    background: rgba(255, 255, 255, 0.015);
-  }
-  :root:not([data-theme="light"]) .newsletter-band {
-    background: linear-gradient(135deg, rgba(77, 141, 255, 0.08) 0%, rgba(107, 78, 255, 0.04) 100%);
-    border-color: var(--line);
-  }
-  :root:not([data-theme="light"]) .display-title,
-  :root:not([data-theme="light"]) .page-title,
-  :root:not([data-theme="light"]) .section-title {
-    color: var(--ink);
-  }
-  :root:not([data-theme="light"]) .hero-section .display-title {
-    color: #fff;
-  }
-  :root:not([data-theme="light"]) .metric-value {
-    color: var(--ink);
-  }
-  :root:not([data-theme="light"]) .nav-link {
-    color: rgba(240, 240, 245, 0.7);
-  }
-  :root:not([data-theme="light"]) .nav-link:hover {
-    color: var(--accent);
-  }
-  :root:not([data-theme="light"]) .footer-links a,
-  :root:not([data-theme="light"]) .footer-contact a,
-  :root:not([data-theme="light"]) .footer-legal a {
-    color: var(--muted);
-  }
-  :root:not([data-theme="light"]) .footer-links a:hover,
-  :root:not([data-theme="light"]) .footer-contact a:hover,
-  :root:not([data-theme="light"]) .footer-legal a:hover {
-    color: var(--ink);
-  }
-  :root:not([data-theme="light"]) h1 a,
-  :root:not([data-theme="light"]) h2 a,
-  :root:not([data-theme="light"]) h3 a {
-    color: inherit;
-  }
-  :root:not([data-theme="light"]) .cta-section .cta-title {
-    color: #fff;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-  }
-  :root:not([data-theme="light"]) ::-webkit-scrollbar-track {
-    background: #0a0e1a;
-  }
-  :root:not([data-theme="light"]) ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: #0a0e1a;
-  }
-  :root:not([data-theme="light"]) .progress-track {
-    background: rgba(255, 255, 255, 0.08);
-  }
 }
