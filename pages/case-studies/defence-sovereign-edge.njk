@@ -1,0 +1,108 @@
+---
+layout: layout.njk
+title: "Defence Sovereign Edge Computing — MEAICON"
+description: "How MEAICON delivered a sovereign edge computing platform with hardware-level data protection for a national defence agency operating in denied environments across the MEA region."
+canonical: "https://www.meaicon.com/case-studies/defence-sovereign-edge.html"
+permalink: /case-studies/defence-sovereign-edge.html
+---
+<main id="main-content" class="flex-1 site-shell">
+  <section class="reveal page-hero">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> › <a href="/case-studies.html">Case Studies</a> › <span aria-current="page">Defence Sovereign Edge Computing</span></nav>
+      <p class="eyebrow mb-4 mt-6">Case Study · Defence &amp; Military</p>
+      <h1 class="page-title max-w-3xl">Defence Sovereign Edge Computing</h1>
+      <p class="mt-4 max-w-2xl text-base text-ink/70">A national defence agency needed computing infrastructure that could operate in disconnected, denied environments — where devices may be captured and data must survive physical compromise. MEAICON delivered a sovereign edge platform with hardware-enforced security, remote zeroization, and post-quantum-ready cryptography across 120 forward-deployed nodes.</p>
+    </div>
+  </section>
+
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="reveal grid-2">
+        <div>
+          <p class="eyebrow mb-3">The challenge</p>
+          <h2 class="section-title">What the client needed</h2>
+        </div>
+        <div class="prose-content">
+          <p>A national defence agency responsible for border surveillance and intelligence collection operated across remote desert and coastal zones where satellite connectivity was intermittent and adversarial interception was a constant threat. Forward-deployed sensor arrays, surveillance drones, and tactical command posts generated sensitive intelligence data that had to be processed at the edge — there was no reliable path back to a central data centre.</p>
+          <p>The agency's existing infrastructure relied on standard commercial hardware with software-only encryption. If a device was captured, data could be extracted through physical access. The agency needed computing platforms that maintained operational integrity regardless of physical custody — where security was enforced at the silicon level, not by policy alone. They also required remote management capability so that compromised nodes could be zeroized instantly from headquarters, even across degraded satellite links.</p>
+          <p>Compounding the challenge, the agency operated under a strict data sovereignty mandate: all intelligence processing had to occur within national borders, on infrastructure under sovereign control. Public cloud endpoints were prohibited, and even allied-nation infrastructure was off-limits for classified workloads. The platform had to be fully sovereign — designed, deployed, and operated within the nation's own infrastructure footprint, with no external dependencies that could introduce supply chain risk or compromise operational autonomy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="reveal grid-2">
+        <div>
+          <p class="eyebrow mb-3">Our approach</p>
+          <h2 class="section-title">How we engaged</h2>
+        </div>
+        <div class="prose-content">
+          <p>MEAICON began with a threat assessment across the agency's operational zones, mapping connectivity patterns, device deployment topologies, and physical risk profiles. We identified which nodes operated in high-capture-risk zones and which had sufficient satellite bandwidth for real-time zeroization. The architecture was designed in two parallel tracks: the hardware security layer and the sovereign edge orchestration layer.</p>
+          <p>Our approach prioritized defence-in-depth — multiple independent security controls so that no single failure would expose mission data. We also designed the platform to operate autonomously for up to 30 days without connectivity, queuing zeroization commands and integrity checks for execution when links were restored.</p>
+          <ul>
+            <li>Threat assessment across 120 forward-deployed nodes in desert and coastal zones</li>
+            <li>Hardware security architecture design — TPM 2.0 root of trust, secure boot, anti-tamper</li>
+            <li>Sovereign edge orchestration layer with disconnected operation for up to 30 days</li>
+            <li>Remote zeroization command queueing with deferred execution on degraded links</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="reveal grid-2">
+        <div>
+          <p class="eyebrow mb-3">The solution</p>
+          <h2 class="section-title">What we delivered</h2>
+        </div>
+        <div class="prose-content">
+          <p>The delivered platform is a sovereign edge computing network where every node enforces security at the hardware level. TPM 2.0 modules establish a measured boot chain from power-on through application launch, with any deviation from the expected state triggering automatic quarantine. Anti-tamper sensors detect physical intrusion attempts and initiate cryptographic data destruction before extraction is possible.</p>
+          <p>Behind the hardware layer, MEAICON deployed a sovereign edge orchestration platform that manages workload placement, integrity verification, and remote zeroization across all 120 nodes. The platform operates in disconnected mode for up to 30 days, maintaining an air-gapped command queue that executes zeroization and integrity checks when satellite connectivity is restored. Post-quantum-ready cryptography protects all inter-node communication, ensuring long-term confidentiality of intelligence data even against future decryption capabilities.</p>
+          <p>The platform also includes a sovereign data processing layer that handles intelligence analytics at the edge — sensor fusion, pattern detection, and anomaly flagging occur on the node itself, with only high-confidence alerts transmitted back to headquarters via satellite. This reduces bandwidth consumption by 70 percent while ensuring that raw intelligence data never leaves the sovereign edge environment. All hardware components were sourced through a vetted supply chain with component-level attestation, eliminating the risk of tampered silicon entering the deployment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Outcomes</p>
+      <h2 class="section-title mb-12">What changed</h2>
+      <div class="reveal stat-row">
+        <div class="stat-box">
+          <p class="stat-value">120</p>
+          <p class="stat-label">Edge nodes deployed</p>
+        </div>
+        <div class="stat-box">
+          <p class="stat-value">30 days</p>
+          <p class="stat-label">Autonomous disconnected operation</p>
+        </div>
+        <div class="stat-box">
+          <p class="stat-value">99.97%</p>
+          <p class="stat-label">Node integrity verification rate</p>
+        </div>
+        <div class="stat-box">
+          <p class="stat-value">Zero</p>
+          <p class="stat-label">Data compromise incidents since deployment</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section reveal">
+    <div class="max-w-4xl mx-auto px-4 py-20 text-center lg:px-6 lg:py-24">
+      <p class="eyebrow mb-4">Start a conversation</p>
+      <h2 class="cta-title">Tell us what you are building.</h2>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="mailto:connect@meaicon.com" class="text-link">connect@meaicon.com</a>
+        <a href="/contact.html" class="btn-primary inline-flex items-center px-5 py-3">Talk to an expert &rarr;</a>
+        <a href="/case-studies.html" class="btn-secondary inline-flex items-center px-5 py-3">All case studies</a>
+      </div>
+    </div>
+  </section>
+
+</main>

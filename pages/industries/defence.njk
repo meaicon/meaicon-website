@@ -8,7 +8,7 @@ permalink: /industries/defence.html
 <main id="main-content" class="flex-1 site-shell">
   <section class="reveal page-hero">
     <div class="max-w-7xl mx-auto px-4 lg:px-6">
-      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> / <a href="/industries.html">Industries</a> / <span aria-current="page">Defence & Military</span></nav>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> › <a href="/industries.html">Industries</a> › <span aria-current="page">Defence & Military</span></nav>
       <p class="eyebrow mb-4 mt-6">Industries</p>
       <h1 class="page-title max-w-3xl">Defence & Military</h1>
       <p>Defence and military operations require computing infrastructure that functions in contested, denied, and disconnected environments. MEAICON engineers secure edge computing and sovereign compute platforms for forward-deployed operations, border security, and intelligence collection — where devices must maintain operational integrity regardless of physical custody, and mission data must be protected even if hardware is captured.</p>
@@ -106,6 +106,25 @@ permalink: /industries/defence.html
 
   <section class="content-section reveal">
     <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Real-world impact</p>
+      <h2 class="section-title mb-12">Sector scenarios & case studies</h2>
+      <div class="reveal grid-2">
+        <div class="prose-content">
+          <p>A Gulf-region airbase required secure connectivity across multiple classified network domains with strict air-gap enforcement between operational, intelligence, and logistics systems. MEAICON deployed capture-resistant edge compute nodes at each network boundary, enabling cross-domain data transfer through hardware-enforced guards while maintaining physical separation. The platform operated on grid-independent power for extended periods, and geo-fence policies automatically restricted node functionality if equipment was moved beyond authorised perimeters.</p>
+          <p>A North African defence ministry engaged MEAICON to segment a sprawling classified network spanning dozens of facilities into discrete security zones. Each zone received sovereign edge compute with hardware-rooted trust chains, ensuring that compromise of one zone could not propagate laterally. Remote zeroization capabilities allowed central command to irreversibly purge any node within seconds, and post-quantum-ready cryptography protected long-term intelligence archives against future decryption threats.</p>
+          <p>For an East African border security programme, MEAICON architected a C5ISR data fusion platform that aggregated sensor feeds from ground radar, aerial surveillance, and coastal AIS into a single situational picture. Edge nodes processed and correlated telemetry locally, reducing satellite bandwidth dependency by filtering noise at the source. The platform maintained operational integrity in denied connectivity scenarios, buffering intelligence for transmission once links were re-established.</p>
+        </div>
+        <div class="prose-content">
+          <h3 class="text-lg font-semibold mb-3">Operational highlights</h3>
+          <p>Across these engagements, MEAICON's defence infrastructure consistently delivered three capabilities that traditional IT architectures could not: capture-resistant security that survives physical loss of equipment, grid-independent operation in austere forward-deployed environments, and sovereign data sovereignty with no dependency on external cloud providers or foreign jurisdictions.</p>
+          <p>Each deployment was tailored to the specific threat model and regulatory framework of the host nation, with hardware-enforced controls replacing policy-based controls wherever mission data was at stake. Post-quantum cryptography ensured that intercepted intelligence retained confidentiality well beyond current decryption horizons.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
       <p class="eyebrow mb-3">Related solutions</p>
       <h2 class="section-title mb-12">Connected capabilities</h2>
       <div class="reveal grid-3">
@@ -126,6 +145,56 @@ permalink: /industries/defence.html
           <p class="solution-copy text-sm mt-2">Architecture and advisory for secure edge and sovereign compute programmes.</p>
         </a>
       </div>
+    </div>
+  </section>
+
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="reveal grid-2">
+        <div>
+          <p class="eyebrow mb-3">Operational scenarios</p>
+          <h2 class="section-title">Where sovereign edge computing delivers</h2>
+        </div>
+        <div class="prose-content">
+          <p>Defence organisations across the MEA region face operational scenarios that commercial infrastructure cannot address. MEAICON's platforms are engineered for three mission-critical use cases that define modern defence computing.</p>
+          <p><strong>Sovereign edge computing in denied environments.</strong> Forward-deployed units operating in contested terrain — desert borders, coastal approaches, and remote intelligence collection points — cannot depend on connectivity to central data centres. MEAICON deploys edge computing nodes that process intelligence data locally, maintain operational pictures during connectivity denial, and queue zeroization commands for deferred execution when satellite links are restored. Every node operates autonomously for up to 30 days without resupply, maintaining mission continuity regardless of network conditions.</p>
+          <p><strong>Secure tactical communications.</strong> Military communications across the Gulf and North African operational zones face interception, jamming, and traffic analysis threats. MEAICON's secure tactical communication platforms use hardware-enforced encryption, post-quantum-ready cryptography, and frequency-agile radio integration to maintain command and control integrity. Communications are encrypted at the silicon level — even if a tactical device is captured, the cryptographic material cannot be extracted through physical access.</p>
+          <p><strong>Hardware-level data protection for captured devices.</strong> In denied environments, computing devices may fall into adversarial hands. MEAICON's platforms enforce security at the hardware level through TPM 2.0 root of trust, secure boot chains, anti-tamper sensors, and remote zeroization. When a device detects physical intrusion, cryptographic data destruction initiates before extraction is possible. When headquarters detects compromise, remote zeroization commands execute across the fleet regardless of individual node connectivity status.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="reveal grid-2">
+        <div>
+          <p class="eyebrow mb-3">How MEAICON helps</p>
+          <h2 class="section-title">Platform capabilities for defence</h2>
+        </div>
+        <div class="prose-content">
+          <p>MEAICON's defence platform spans the full stack — from silicon-level hardware security through sovereign edge orchestration to post-quantum-ready cryptography. Each capability is designed for the specific threat environment that defence organisations operate in.</p>
+          <ul>
+            <li><a href="/solutions/sovereign-compute.html">Sovereign compute</a> — data sovereignty enforced at the infrastructure level, with all processing and storage remaining within national borders under defence agency control</li>
+            <li><a href="/solutions/secure-edge-computing.html">Secure edge computing</a> — forward-deployed nodes with hardware-enforced security, anti-tamper protection, and remote zeroization for denied environments</li>
+            <li><a href="/solutions/hardware-security.html">Hardware security</a> — TPM 2.0 root of trust, secure boot chains, and physical intrusion detection that protects mission data even when devices are captured</li>
+            <li><a href="/solutions/post-quantum-security.html">Post-quantum security</a> — cryptography that protects long-term intelligence data confidentiality against future decryption capabilities</li>
+          </ul>
+          <p>The MEA region's defence spending is projected to exceed $180 billion by 2028, with sovereign infrastructure and cybersecurity representing the fastest-growing budget categories. Gulf cooperation council nations are investing heavily in domestic defence computing capability, reducing dependence on foreign infrastructure and personnel — a shift that MEAICON's sovereign edge platform directly enables.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section reveal bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Case study</p>
+      <h2 class="section-title mb-6">Proof in practice</h2>
+      <a href="/case-studies/defence-sovereign-edge.html" class="block p-6 rounded-lg border border-slate-200 hover:border-accent transition-colors">
+        <h3 class="text-xl font-semibold mb-2">Defence Sovereign Edge Computing</h3>
+        <p class="text-ink/70">How MEAICON deployed 120 capture-resistant edge nodes with hardware-level data protection for a national defence agency operating in denied environments.</p>
+        <span class="text-accent font-medium mt-4 inline-block">Read the case study &rarr;</span>
+      </a>
     </div>
   </section>
 
