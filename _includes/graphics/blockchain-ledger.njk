@@ -1,0 +1,166 @@
+<div class="ledger-diagram" aria-hidden="true">
+  <style>
+    .ledger-diagram {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .ledger-diagram::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #1F5A61);
+    }
+    .ledger-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .ledger-header svg {
+      width: 20px; height: 20px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .ledger-header span {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .ledger-nodes {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .ledger-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .ledger-node-dot {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--paper);
+      border: 1.5px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .ledger-node-dot.hq {
+      background: var(--accent);
+      color: #fff;
+    }
+    .ledger-node-label {
+      font-size: 0.625rem;
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .ledger-chain {
+      flex: 1;
+      height: 2px;
+      background: repeating-linear-gradient(90deg, var(--accent) 0, var(--accent) 6px, transparent 6px, transparent 12px);
+      margin: 0 -4px;
+      position: relative;
+      top: -10px;
+      z-index: 0;
+    }
+    .ledger-blocks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .ledger-block {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0.5rem 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .ledger-block-hash {
+      width: 8px; height: 8px;
+      border-radius: 2px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .ledger-block-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6875rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .ledger-block-text strong {
+      color: var(--ink);
+      font-weight: 600;
+      display: block;
+      font-size: 0.75rem;
+    }
+  </style>
+
+  <div class="ledger-header">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20M6 14h4M14 14h4"/></svg>
+    <span>Trade Finance Ledger — Live</span>
+  </div>
+
+  <div class="ledger-nodes">
+    <div class="ledger-node">
+      <div class="ledger-node-dot hq">B1</div>
+      <div class="ledger-node-label">Bank A</div>
+    </div>
+    <div class="ledger-chain"></div>
+    <div class="ledger-node">
+      <div class="ledger-node-dot">B2</div>
+      <div class="ledger-node-label">Bank B</div>
+    </div>
+    <div class="ledger-chain"></div>
+    <div class="ledger-node">
+      <div class="ledger-node-dot">B3</div>
+      <div class="ledger-node-label">Bank C</div>
+    </div>
+    <div class="ledger-chain"></div>
+    <div class="ledger-node">
+      <div class="ledger-node-dot">B4</div>
+      <div class="ledger-node-label">Bank D</div>
+    </div>
+    <div class="ledger-chain"></div>
+    <div class="ledger-node">
+      <div class="ledger-node-dot">B5</div>
+      <div class="ledger-node-label">Bank E</div>
+    </div>
+    <div class="ledger-chain"></div>
+    <div class="ledger-node">
+      <div class="ledger-node-dot">B6</div>
+      <div class="ledger-node-label">Bank F</div>
+    </div>
+  </div>
+
+  <div class="ledger-blocks">
+    <div class="ledger-block">
+      <div class="ledger-block-hash"></div>
+      <div class="ledger-block-text"><strong>Block #4,821</strong>LC docs · Settled</div>
+    </div>
+    <div class="ledger-block">
+      <div class="ledger-block-hash"></div>
+      <div class="ledger-block-text"><strong>Block #4,822</strong>Pending · 3 nodes</div>
+    </div>
+  </div>
+</div>
