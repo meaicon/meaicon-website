@@ -15,7 +15,7 @@
     .ops-indicators { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
     .ops-indicator { display: flex; flex-direction: column; align-items: flex-start; padding: 0.75rem 1rem; background: var(--card, #F8FAFC); border: 1px solid var(--line, #E2E8F0); border-radius: 0.5rem; }
     .ops-indicator-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem; }
-    .ops-live-dot { width: 8px; height: 8px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 8px rgba(34,197,94,0.6); animation: live-blink 1.5s ease-in-out infinite; }
+    .ops-live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent, #0A66C2); box-shadow: 0 0 8px rgba(10,102,194,0.5); animation: live-blink 1.5s ease-in-out infinite; }
     @keyframes live-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
     @media (prefers-reduced-motion: reduce) { .ops-live-dot { animation: none; } .ops-gauge-fill { transition: none; } }
     .ops-indicator-label { font-size: 0.7rem; font-weight: 600; color: var(--ink, #0F172A); text-transform: uppercase; letter-spacing: 0.05em; }
