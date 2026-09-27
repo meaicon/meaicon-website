@@ -1,0 +1,294 @@
+---
+layout: layout.njk
+title: "AI Compute Infrastructure – MEAICON"
+description: "Bare-metal GPU compute platforms, configurable AI servers, and sovereign cloud instances for model training and inference across the Middle East and Africa."
+canonical: "https://www.meaicon.com/solutions/ai-compute.html"
+permalink: /solutions/ai-compute.html
+---
+<main id="main-content" class="flex-1 site-shell">
+  <section class="reveal page-hero">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> → <a href="/solutions.html">Solutions</a> → <span aria-current="page">AI Compute Infrastructure</span></nav>
+      <p class="eyebrow mb-4 mt-6">Solutions</p>
+      <h1 class="page-title max-w-3xl">AI Compute Infrastructure</h1>
+      <p>Organisations across the Middle East and Africa are training, fine-tuning, and deploying AI models at scale — but regional access to high-performance GPU compute remains a bottleneck. MEAICON designs, sources, and deploys bare-metal GPU infrastructure tailored to your AI workloads, with flexible delivery models that fit whether you are building an on-premises cluster, colocating in a regional data centre, or renting cloud instances on demand.</p>
+      <p>We help you cut through the complexity of GPU selection, system balancing, cooling, and software setup so your data science team can start iterating from day one — not week six.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="/contact.html" class="btn-primary inline-flex items-center px-5 py-3">Talk to an expert &rarr;</a>
+        <a href="/solutions.html" class="btn-secondary inline-flex items-center px-5 py-3">All solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Configurator Section -->
+  <section class="content-section reveal" aria-labelledby="configurator-heading">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Configure your setup</p>
+      <h2 class="section-title mb-8" id="configurator-heading">Build your MI infrastructure</h2>
+      <form id="configurator-form" class="space-y-6" novalidate>
+        <!-- GPU Selection -->
+        <fieldset class="border border-line rounded-lg p-6">
+          <legend class="text-base font-semibold mb-4">GPU Configuration</legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <label class="flex items-center gap-3 p-3 border border-line rounded-md hover:border-accent cursor-pointer transition-colors">
+              <input type="radio" name="gpu" value="rtx3090" class="w-4 h-4 accent-accent" data-base-price="4999">
+              <div>
+                <span class="block font-medium">MI-RTX3090</span>
+                <span class="text-sm text-muted">24GB VRAM · Inference &amp; light training</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 border border-line rounded-md hover:border-accent cursor-pointer transition-colors">
+              <input type="radio" name="gpu" value="a100-40" class="w-4 h-4 accent-accent" data-base-price="8999">
+              <div>
+                <span class="block font-medium">MI-A100-40GB</span>
+                <span class="text-sm text-muted">80GB HBM2e · Professional workloads</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 border border-line rounded-md hover:border-accent cursor-pointer transition-colors">
+              <input type="radio" name="gpu" value="h100" class="w-4 h-4 accent-accent" data-base-price="14999" checked>
+              <div>
+                <span class="block font-medium">MI-H100 80GB</span>
+                <span class="text-sm text-muted">80GB HBM3 · Large-scale training</span>
+              </div>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- System Configuration -->
+        <fieldset class="border border-line rounded-lg p-6">
+          <legend class="text-base font-semibold mb-4">System Configuration</legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="cpu-select" class="block text-sm font-medium mb-2">CPU</label>
+              <select id="cpu-select" name="cpu" class="w-full px-4 py-2 rounded-md border border-line bg-surface">
+                <option value="epyc-9654" data-base-price="1200">AMD EPYC 9654 (96 cores)</option>
+                <option value="xeon-gold" data-base-price="800">Intel Xeon Gold 6448Y</option>
+              </select>
+            </div>
+            <div>
+              <label for="ram-select" class="block text-sm font-medium mb-2">Memory</label>
+              <select id="ram-select" name="ram" class="w-full px-4 py-2 rounded-md border border-line bg-surface">
+                <option value="512gb" data-base-price="800">512GB DDR5</option>
+                <option value="1tb" data-base-price="1400" selected>1TB DDR5</option>
+                <option value="2tb" data-base-price="2400">2TB DDR5</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Delivery Model -->
+        <fieldset class="border border-line rounded-lg p-6">
+          <legend class="text-base font-semibold mb-4">Delivery Model</legend>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <label class="flex items-center gap-3 p-3 border border-line rounded-md hover:border-accent cursor-pointer transition-colors">
+              <input type="radio" name="delivery" value="onprem" class="w-4 h-4 accent-accent" data-multiplier="1.0">
+              <span class="font-medium">On-Premises</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 border border-line rounded-md hover:border-accent cursor-pointer transition-colors">
+              <input type="radio" name="delivery" value="colocate" class="w-4 h-4 accent-accent" data-multiplier="1.15" checked>
+              <span class="font-medium">Co-Located</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 border border-line rounded-md hover:border-accent cursor-pointer transition-colors">
+              <input type="radio" name="delivery" value="cloud" class="w-4 h-4 accent-accent" data-multiplier="1.25">
+              <span class="font-medium">Cloud Rental</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Price Summary -->
+        <div class="bg-surface border border-line rounded-lg p-6">
+          <h3 class="text-lg font-semibold mb-4">Estimated Pricing (25% markup applied)</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-lg">
+            <div>
+              <span class="text-muted">USD:</span>
+              <span id="price-usd" class="font-semibold ml-2">$20,624</span>
+            </div>
+            <div>
+              <span class="text-muted">AED:</span>
+              <span id="price-aed" class="font-semibold ml-2">76,912 AED</span>
+            </div>
+          </div>
+          <p class="text-sm text-muted mt-3">All prices include 25% markup on base component cost. VAT may apply per region.</p>
+        </div>
+
+        <button type="submit" class="btn-primary px-6 py-3">Request Configuration</button>
+      
+<div id="constraint-warning" class="text-red-500 text-sm mt-4 hidden"></div>
+
+<script>
+  // State Management
+  const state = {
+    selectedOptions: {},
+    basePrice: 0,
+    currentTotal: 0
+  };
+
+  const form = document.getElementById('configurator-form');
+  const priceUSD = document.getElementById('price-usd');
+  const priceAED = document.getElementById('price-aed');
+
+  const USD_RATE = 1.08;
+  const AED_RATE = 3.97;
+  const MARKUP = 1.25;
+
+  // JSON Data Source
+  const productData = {
+    "gpu": [
+      {"id": "rtx3090", "label": "MI-RTX3090", "price": 4999},
+      {"id": "a100-40", "label": "MI-A100-40GB", "price": 8999},
+      {"id": "h100", "label": "MI-H100", "price": 14999}
+    ],
+    "cpu": [
+      {"id": "epyc-9654", "label": "AMD EPYC 9654", "price": 1200},
+      {"id": "xeon-gold", "label": "Intel Xeon Gold 6448Y", "price": 800}
+    ],
+    "ram": [
+      {"id": "512gb", "label": "512GB DDR5", "price": 800},
+      {"id": "1tb", "label": "1TB DDR5", "price": 1400},
+      {"id": "2tb", "label": "2TB DDR5", "price": 2400}
+    ]
+  };
+
+  // Hardware Constraints
+  const constraints = {
+    "h100": { "minRam": 2304, "message": "8x GPUs requires a minimum of 2304GB RAM." }
+  };
+
+  function updateState() {
+    const gpuChecked = form.querySelector('input[name="gpu"]:checked');
+    const cpuSelect = form.querySelector('#cpu-select');
+    const ramSelect = form.querySelector('#ram-select');
+    const deliveryChecked = form.querySelector('input[name="delivery"]:checked');
+
+    state.selectedOptions = {
+      gpu: gpuChecked?.value || null,
+      cpu: cpuSelect?.value || null,
+      ram: ramSelect?.value || null,
+      delivery: deliveryChecked?.value || null
+    };
+
+    state.basePrice = 0;
+    if (state.selectedOptions.gpu) {
+      const gpu = productData.gpu.find(g => g.id === state.selectedOptions.gpu);
+      if (gpu) state.basePrice += gpu.price;
+    }
+    if (state.selectedOptions.cpu) {
+      const cpu = productData.cpu.find(c => c.id === state.selectedOptions.cpu);
+      if (cpu) state.basePrice += cpu.price;
+    }
+    if (state.selectedOptions.ram) {
+      const ram = productData.ram.find(r => r.id === state.selectedOptions.ram);
+      if (ram) state.basePrice += ram.price;
+    }
+
+    let multiplier = deliveryChecked ? parseFloat(deliveryChecked.dataset.multiplier) : 1.0;
+    
+    state.currentTotal = state.basePrice * MARKUP * multiplier;
+    
+    // Update display
+    const totalUSD = state.currentTotal * USD_RATE;
+    const totalAED = state.currentTotal * AED_RATE;
+    
+    priceUSD.textContent = '$' + Math.round(totalUSD).toLocaleString();
+    priceAED.textContent = Math.round(totalAED).toLocaleString() + ' AED';
+
+    // Check constraints
+    const warning = document.getElementById('constraint-warning');
+    if (state.selectedOptions.gpu?.includes('h100') && state.selectedOptions.ram?.includes('512')) {
+      warning.textContent = constraints.h100.message;
+      warning.classList.remove('hidden');
+    } else {
+      warning.classList.add('hidden');
+    }
+  }
+
+  form.addEventListener('change', updateState);
+  updateState();
+</script>
+
+</form>
+    </div>
+  </section>
+
+  <section class="content-section-alt reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">How it works</p>
+      <h2 class="section-title mb-12">Delivery approach</h2>
+      <div class="reveal process-grid">
+        <div class="process-step"><span>01</span><h3>Assess</h3><p>Workload analysis — model types, training vs inference ratio, data volume, memory requirements, latency targets, and existing infrastructure. We define the optimal GPU architecture and system topology.</p></div>
+        <div class="process-step"><span>02</span><h3>Design</h3><p>System specification — GPU count and model, CPU pairing, RAM, storage tier, networking, cooling, and power budget. Delivery model selection: on-premises, colocated, or cloud rental.</p></div>
+        <div class="process-step"><span>03</span><h3>Build</h3><p>Source components, assemble the system, install and stress-test components.</p></div>
+        <div class="process-step"><span>04</span><h3>Operate</h3><p>Provision and manage your infrastructure.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="newsletter-band reveal" aria-label="Newsletter signup">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6 flex flex-col lg:flex-row items-center justify-between gap-6">
+      <div>
+        <h3>Stay informed</h3>
+        <p>Get our latest insights on MEA infrastructure.</p>
+      </div>
+      <form action="#" method="post" class="flex gap-3 w-full lg:w-auto">
+        <input type="email" name="newsletter-email" id="newsletter-email" placeholder="work@email.com" aria-label="Email address for newsletter signup" required class="flex-1 lg:w-64 px-4 py-3 rounded-lg border border-line bg-surface">
+        <button type="submit" class="btn-primary px-5 py-3">Subscribe</button>
+      
+<div id="constraint-warning" class="text-red-500 text-sm mt-4 hidden"></div>
+<script>
+  const form = document.getElementById('configurator-form');
+  const warning = document.getElementById('constraint-warning');
+  
+  form.addEventListener('change', () => {
+    const gpu = form.querySelector('input[name="gpu"]:checked')?.value;
+    const ram = form.querySelector('input[name="ram"]:checked')?.value;
+    
+    // Constraint: 8x GPUs requires >= 2304GB RAM
+    if (gpu?.includes('8x') && ram && parseInt(ram) < 2304) {
+      warning.textContent = "Selecting 8x GPUs requires a minimum of 2304GB RAM.";
+      warning.classList.remove('hidden');
+    } else {
+      warning.classList.add('hidden');
+    }
+  });
+</script>
+</form>
+    </div>
+  </aside>
+</main>
+
+<script>
+(function() {
+  const form = document.getElementById('configurator-form');
+  const priceUSD = document.getElementById('price-usd');
+  const priceAED = document.getElementById('price-aed');
+
+  const USD_RATE = 1.08;
+  const AED_RATE = 3.97;
+  const MARKUP = 1.25;
+
+  function updatePrice() {
+    const gpuChecked = form.querySelector('input[name="gpu"]:checked');
+    const cpuSelect = form.querySelector('#cpu-select');
+    const ramSelect = form.querySelector('#ram-select');
+    const deliveryChecked = form.querySelector('input[name="delivery"]:checked');
+
+    let base = 0;
+    if (gpuChecked) base += parseFloat(gpuChecked.dataset.basePrice);
+    if (cpuSelect && cpuSelect.selectedOptions.length > 0) base += parseFloat(cpuSelect.selectedOptions[0].dataset.basePrice);
+    if (ramSelect && ramSelect.selectedOptions.length > 0) base += parseFloat(ramSelect.selectedOptions[0].dataset.basePrice);
+
+    let multiplier = 1.0;
+    if (deliveryChecked) multiplier = parseFloat(deliveryChecked.dataset.multiplier);
+
+    const total = base * MARKUP * multiplier;
+    const totalUSD = total * USD_RATE;
+    const totalAED = total * AED_RATE;
+
+    priceUSD.textContent = '$' + Math.round(totalUSD).toLocaleString();
+    priceAED.textContent = Math.round(totalAED).toLocaleString() + ' AED';
+  }
+
+  form.addEventListener('change', updatePrice);
+  updatePrice();
+})();
+</script>
