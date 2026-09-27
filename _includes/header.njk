@@ -87,7 +87,40 @@
 
     <!-- Desktop nav -->
     <nav class="hidden lg:flex items-center gap-7 text-[13px] font-medium" aria-label="Primary navigation">
-      <a href="/solutions.html" class="nav-link">Solutions</a>
+      <div class="mega-menu-group relative">
+        <a href="/solutions.html" class="nav-link inline-flex items-center gap-1">Solutions <span aria-hidden="true" class="text-[10px]">▾</span></a>
+        <div class="mega-menu-panel absolute top-full left-0 mt-1 w-[640px] grid grid-cols-2 gap-x-6 gap-y-2 p-5 border hairline rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 z-50">
+          <!-- Col 1: Core Infrastructure + Security -->
+          <div>
+            <p class="text-[11px] font-mono uppercase tracking-wide text-muted mb-2">Core Infrastructure</p>
+            <a href="/solutions/connectivity.html" class="block py-1 hover:text-accent">Connectivity</a>
+            <a href="/solutions/data-centre.html" class="block py-1 hover:text-accent">Data Centre</a>
+            <a href="/solutions/cloud.html" class="block py-1 hover:text-accent">Cloud</a>
+            <a href="/solutions/managed-services.html" class="block py-1 hover:text-accent">Managed Services</a>
+            <p class="text-[11px] font-mono uppercase tracking-wide text-muted mb-2 mt-3">Security</p>
+            <a href="/solutions/cyber-security.html" class="block py-1 hover:text-accent">Cyber Security</a>
+            <a href="/solutions/network-security.html" class="block py-1 hover:text-accent">Network Security</a>
+            <a href="/solutions/identity-access.html" class="block py-1 hover:text-accent">Identity &amp; Access</a>
+            <a href="/solutions/post-quantum-security.html" class="block py-1 hover:text-accent">Post-Quantum Security</a>
+          </div>
+          <!-- Col 2: Edge & AI + Consulting -->
+          <div>
+            <p class="text-[11px] font-mono uppercase tracking-wide text-muted mb-2">Edge &amp; AI</p>
+            <a href="/solutions/ai-compute.html" class="block py-1 font-semibold text-accent">AI Compute Infrastructure</a>
+            <a href="/solutions/edge-compute-infrastructure.html" class="block py-1 hover:text-accent">Edge Compute</a>
+            <a href="/solutions/edge-ai-inference.html" class="block py-1 hover:text-accent">Edge AI Inference</a>
+            <a href="/solutions/sovereign-compute.html" class="block py-1 hover:text-accent">Sovereign Compute</a>
+            <a href="/solutions/iot.html" class="block py-1 hover:text-accent">IoT</a>
+            <a href="/solutions/smart-building-edge.html" class="block py-1 hover:text-accent">Smart Building Edge</a>
+            <p class="text-[11px] font-mono uppercase tracking-wide text-muted mb-2 mt-3">Consulting</p>
+            <a href="/solutions/consulting.html" class="block py-1 hover:text-accent">Consulting Overview</a>
+            <a href="/solutions/blockchain.html" class="block py-1 hover:text-accent">Blockchain</a>
+          </div>
+          <div class="mega-menu-featured col-span-2">
+            <a href="/solutions.html"><span aria-hidden="true">→</span> View all 21 solutions</a>
+          </div>
+        </div>
+      </div>
       <a href="/industries.html" class="nav-link">Industries</a>
       <a href="/why-meaicon.html" class="nav-link">Why MEAICON</a>
       <a href="/methodology.html" class="nav-link">Methodology</a>
@@ -109,6 +142,10 @@
   <div id="mobile-menu" class="lg:hidden hidden border-t hairline" style="background: var(--mobile-menu-bg);">
     <nav class="px-4 py-3 flex flex-col gap-3 text-sm" aria-label="Mobile navigation">
       <a href="/solutions.html" class="nav-link">Solutions</a>
+      <a href="/solutions/ai-compute.html" class="nav-link pl-4 text-accent font-semibold">↳ AI Compute Infrastructure</a>
+      <a href="/solutions/edge-compute-infrastructure.html" class="nav-link pl-4 text-muted">↳ Edge Compute</a>
+      <a href="/solutions/cyber-security.html" class="nav-link pl-4 text-muted">↳ Cyber Security</a>
+      <a href="/solutions/sovereign-compute.html" class="nav-link pl-4 text-muted">↳ Sovereign Compute</a>
       <a href="/industries.html" class="nav-link">Industries</a>
       <a href="/why-meaicon.html" class="nav-link">Why MEAICON</a>
       <a href="/methodology.html" class="nav-link">Methodology</a>

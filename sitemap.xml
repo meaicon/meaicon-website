@@ -36,6 +36,7 @@
   <url><loc>https://www.meaicon.com/solutions/post-quantum-security.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.meaicon.com/solutions/ota-fleet-management.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.meaicon.com/solutions/smart-building-edge.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.meaicon.com/solutions/ai-compute.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <!-- Solutions — Additional Services -->
   <url><loc>https://www.meaicon.com/solutions/ai-data-services.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.meaicon.com/solutions/application-services.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -87,6 +88,10 @@
   <url><loc>https://www.meaicon.com/case-studies/retail-omnichannel.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.meaicon.com/case-studies/hospitality-guest-experience.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.meaicon.com/case-studies/fleet-predictive-maintenance.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.meaicon.com/case-studies/defence-sovereign-edge.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.meaicon.com/case-studies/education-connected-campus.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.meaicon.com/case-studies/maritime-fleet-tracking.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.meaicon.com/case-studies/real-estate-smart-tower.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <!-- Legal -->
   <url><loc>https://www.meaicon.com/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.meaicon.com/terms-of-service.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
