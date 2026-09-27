@@ -1,0 +1,187 @@
+<!-- MEAICON Icon Set — inline SVG, inherits currentColor -->
+<!-- Usage: <svg class="mi-icon"><use href="/assets/icons.svg#connectivity"></use></svg> -->
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+  <!-- Connectivity: network nodes connected by lines -->
+  <symbol id="connectivity" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="36" cy="12" r="4" />
+    <circle cx="24" cy="28" r="4" />
+    <circle cx="12" cy="40" r="4" />
+    <circle cx="36" cy="40" r="4" />
+    <line x1="16" y1="14" x2="20" y2="26" />
+    <line x1="32" y1="14" x2="28" y2="26" />
+    <line x1="16" y1="38" x2="20" y2="30" />
+    <line x1="32" y1="38" x2="28" y2="30" />
+    <line x1="16" y1="12" x2="32" y2="12" />
+  </symbol>
+
+  <!-- Data Centres: server rack -->
+  <symbol id="data-centre" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="10" y="6" width="28" height="8" rx="2" />
+    <circle cx="32" cy="10" r="1.5" fill="currentColor" stroke="none" />
+    <line x1="14" y1="10" x2="26" y2="10" />
+    <rect x="10" y="18" width="28" height="8" rx="2" />
+    <circle cx="32" cy="22" r="1.5" fill="currentColor" stroke="none" />
+    <line x1="14" y1="22" x2="26" y2="22" />
+    <rect x="10" y="30" width="28" height="8" rx="2" />
+    <circle cx="32" cy="34" r="1.5" fill="currentColor" stroke="none" />
+    <line x1="14" y1="34" x2="26" y2="34" />
+    <rect x="14" y="42" width="20" height="2" rx="1" fill="currentColor" stroke="none" />
+  </symbol>
+
+  <!-- Cybersecurity: shield with checkmark -->
+  <symbol id="cyber-security" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 4 L42 12 V24 C42 34 34 42 24 44 C14 42 6 34 6 24 V12 Z" />
+    <path d="M16 24 L21 29 L32 18" />
+  </symbol>
+
+  <!-- Blockchain: linked chain blocks -->
+  <symbol id="blockchain" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="6" y="14" width="14" height="14" rx="2" transform="rotate(45 13 21)" />
+    <rect x="20" y="14" width="14" height="14" rx="2" transform="rotate(45 27 21)" />
+    <rect x="14" y="28" width="14" height="14" rx="2" transform="rotate(45 21 35)" />
+    <line x1="19" y1="19" x2="21" y2="21" stroke-width="1.5" />
+    <line x1="33" y1="19" x2="27" y2="25" stroke-width="1.5" />
+    <line x1="21" y1="33" x2="27" y2="27" stroke-width="1.5" />
+  </symbol>
+
+  <!-- Consulting: clipboard with chart -->
+  <symbol id="consulting" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="12" y="8" width="24" height="32" rx="3" />
+    <rect x="18" y="4" width="12" height="6" rx="1.5" />
+    <line x1="16" y1="30" x2="16" y2="24" />
+    <line x1="22" y1="30" x2="22" y2="20" />
+    <line x1="28" y1="30" x2="28" y2="16" />
+    <line x1="14" y1="34" x2="34" y2="34" stroke-width="2" />
+  </symbol>
+
+  <!-- Government: building with columns -->
+  <symbol id="government" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 20 L24 8 L42 20" />
+    <line x1="6" y1="20" x2="42" y2="20" />
+    <line x1="10" y1="20" x2="10" y2="36" />
+    <line x1="19" y1="20" x2="19" y2="36" />
+    <line x1="29" y1="20" x2="29" y2="36" />
+    <line x1="38" y1="20" x2="38" y2="36" />
+    <line x1="6" y1="36" x2="42" y2="36" />
+    <line x1="4" y1="40" x2="44" y2="40" stroke-width="3" />
+  </symbol>
+
+  <!-- Banking: bank building -->
+  <symbol id="banking" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 18 L24 6 L42 18" />
+    <line x1="6" y1="18" x2="42" y2="18" />
+    <line x1="12" y1="18" x2="12" y2="36" />
+    <line x1="20" y1="18" x2="20" y2="36" />
+    <line x1="28" y1="18" x2="28" y2="36" />
+    <line x1="36" y1="18" x2="36" y2="36" />
+    <line x1="8" y1="36" x2="40" y2="36" />
+    <line x1="6" y1="40" x2="42" y2="40" stroke-width="3" />
+    <circle cx="24" cy="11" r="1.5" fill="currentColor" stroke="none" />
+  </symbol>
+
+  <!-- Healthcare: cross/plus in circle -->
+  <symbol id="healthcare" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="18" />
+    <line x1="24" y1="14" x2="24" y2="34" stroke-width="3.5" />
+    <line x1="14" y1="24" x2="34" y2="24" stroke-width="3.5" />
+  </symbol>
+
+  <!-- Energy: lightning bolt -->
+  <symbol id="energy" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M26 4 L12 26 L22 26 L18 44 L36 20 L26 20 Z" />
+  </symbol>
+
+  <!-- Telecom: antenna/signal -->
+  <symbol id="telecom" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="24" y1="44" x2="24" y2="20" />
+    <line x1="16" y1="44" x2="32" y2="44" stroke-width="3" />
+    <path d="M18 20 C18 14, 30 14, 30 20" />
+    <path d="M14 16 C14 6, 34 6, 34 16" opacity="0.6" />
+    <circle cx="24" cy="20" r="2" fill="currentColor" stroke="none" />
+  </symbol>
+
+  <!-- Hospitality: bed -->
+  <symbol id="hospitality" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 36 V14 M6 28 H42 V36 M6 36 H42" />
+    <rect x="12" y="18" width="10" height="8" rx="1.5" />
+    <circle cx="42" cy="36" r="3" />
+  </symbol>
+
+  <!-- Logistics: truck -->
+  <symbol id="logistics" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="16" width="22" height="16" rx="1.5" />
+    <path d="M26 20 H36 L42 26 V32 H26" />
+    <circle cx="14" cy="36" r="3.5" />
+    <circle cx="34" cy="36" r="3.5" />
+  </symbol>
+
+  <!-- Education: graduation cap -->
+  <symbol id="education" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 20 L24 10 L44 20 L24 30 Z" />
+    <path d="M14 24 V34 C14 36 34 36 34 34 V24" />
+    <line x1="44" y1="20" x2="44" y2="30" />
+  </symbol>
+
+  <!-- Maritime: ship/anchor -->
+  <symbol id="maritime" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 30 L42 30 L38 40 L10 40 Z" />
+    <line x1="24" y1="8" x2="24" y2="30" />
+    <path d="M16 18 Q16 12 24 12 Q32 12 32 18" />
+    <line x1="16" y1="18" x2="32" y2="18" />
+    <path d="M8 30 Q8 44 24 44 Q40 44 40 30" opacity="0.4" stroke-width="1.5" />
+  </symbol>
+
+  <!-- Real Estate: building -->
+  <symbol id="real-estate" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="8" y="12" width="14" height="28" rx="1.5" />
+    <rect x="26" y="20" width="14" height="20" rx="1.5" />
+    <line x1="13" y1="18" x2="17" y2="18" stroke-width="1.5" />
+    <line x1="13" y1="24" x2="17" y2="24" stroke-width="1.5" />
+    <line x1="13" y1="30" x2="17" y2="30" stroke-width="1.5" />
+    <line x1="31" y1="26" x2="35" y2="26" stroke-width="1.5" />
+    <line x1="31" y1="32" x2="35" y2="32" stroke-width="1.5" />
+  </symbol>
+
+  <!-- Retail: shopping bag -->
+  <symbol id="retail" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 18 H40 L38 42 H10 Z" />
+    <path d="M16 18 V14 C16 8 32 8 32 14 V18" />
+  </symbol>
+
+  <!-- Defence: shield with star -->
+  <symbol id="defence" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 4 L42 12 V24 C42 34 34 42 24 44 C14 42 6 34 6 24 V12 Z" />
+    <path d="M24 14 L26 20 L32 20 L27 24 L29 30 L24 26 L19 30 L21 24 L16 20 L22 20 Z" fill="currentColor" stroke="none" />
+  </symbol>
+
+  <!-- Assess: magnifying glass -->
+  <symbol id="assess" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="20" cy="20" r="12" />
+    <line x1="29" y1="29" x2="42" y2="42" stroke-width="3" />
+    <line x1="14" y1="20" x2="26" y2="20" stroke-width="1.5" />
+    <line x1="20" y1="14" x2="20" y2="26" stroke-width="1.5" />
+  </symbol>
+
+  <!-- Design: pencil/ruler -->
+  <symbol id="design" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 40 L8 32 L32 8 L40 16 L16 40 Z" />
+    <line x1="8" y1="32" x2="16" y2="40" stroke-width="3" />
+    <line x1="28" y1="12" x2="36" y2="20" stroke-width="1.5" />
+  </symbol>
+
+  <!-- Build: gear/wrench -->
+  <symbol id="build" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 6 L26 14 L32 10 L34 16 L42 16 L40 22 L46 26 L40 30 L42 36 L34 36 L32 42 L26 38 L24 46 L22 38 L16 42 L14 36 L6 36 L8 30 L2 26 L8 22 L6 16 L14 16 L16 10 L22 14 Z" />
+    <circle cx="24" cy="26" r="6" />
+  </symbol>
+
+  <!-- Operate: pulse/activity monitor -->
+  <symbol id="operate" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 24 L14 24 L18 12 L24 36 L30 24 L44 24" />
+    <circle cx="44" cy="24" r="2" fill="currentColor" stroke="none" />
+  </symbol>
+
+</svg>
