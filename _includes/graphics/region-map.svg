@@ -1,8 +1,8 @@
 <!-- MEAICON Regional Footprint Map — 7 MEA markets marked -->
-<!-- Markets: UAE, Saudi Arabia, Qatar, Oman, Egypt, Kenya, Pakistan -->
+<!-- Markets: UAE, Saudi Arabia, Qatar, Oman, Egypt, Kenya, India -->
 <svg class="map-graphic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="map-title map-desc">
   <title id="map-title">MEAICON Regional Footprint — 7 Markets across MEA</title>
-  <desc id="map-desc">Map showing MEAICON's presence in UAE, Saudi Arabia, Qatar, Oman, Egypt, Kenya, and Pakistan.</desc>
+  <desc id="map-desc">Map showing MEAICON's presence in UAE, Saudi Arabia, Qatar, Oman, Egypt, Kenya, and India.</desc>
 
   <defs>
     <!-- Pulse animation for HQ marker -->
@@ -39,17 +39,17 @@
   <path class="map-region" d="M380 130 Q420 120 460 140 Q500 160 520 200 Q530 240 510 270 Q480 290 440 280 Q400 270 380 240 Q365 200 370 160 Q375 140 380 130 Z" />
   <!-- Egypt/Sinai bridge -->
   <path class="map-land" d="M310 160 Q340 150 370 165 Q380 180 375 200 L350 210 Q320 205 308 190 Q302 175 310 160 Z" />
-  <!-- Pakistan landmass (upper right) -->
-  <path class="map-land" d="M580 100 Q620 90 660 110 Q690 130 700 170 Q700 200 680 215 Q640 220 610 205 Q585 185 575 150 Q570 120 580 100 Z" />
+  <!-- India landmass (upper right) -->
+  <path class="map-land" d="M580 80 Q620 70 670 85 Q710 100 730 140 Q740 180 720 220 Q700 260 670 275 Q620 280 590 260 Q560 235 545 200 Q535 165 540 130 Q550 100 580 80 Z" />
   <!-- Persian Gulf islands (decorative dots) -->
   <circle class="map-dot" cx="490" cy="195" r="2" />
   <circle class="map-dot" cx="505" cy="210" r="1.5" />
   <circle class="map-dot" cx="475" cy="185" r="1.5" />
 
   <!-- Market markers -->
-  <!-- Pakistan (Karachi/Lahore) -->
+  <!-- India (Mumbai · Bengaluru · New Delhi) -->
   <circle class="map-marker" cx="640" cy="155" r="5" />
-  <text class="map-label" x="640" y="145">Pakistan</text>
+  <text class="map-label" x="640" y="145">India</text>
 
   <!-- Egypt (Cairo) -->
   <circle class="map-marker" cx="340" cy="180" r="5" />

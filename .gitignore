@@ -36,3 +36,6 @@ qa-reports/
 audit-nav-analysis.json
 audit-ux-results.json
 ui-ux-audit-report.json
+
+# Stale root HTML - Eleventy outputs to _site/
+/*.html

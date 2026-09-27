@@ -183,5 +183,64 @@
     <path d="M4 24 L14 24 L18 12 L24 36 L30 24 L44 24" />
     <circle cx="44" cy="24" r="2" fill="currentColor" stroke="none" />
   </symbol>
-
+  <symbol id="ai-compute" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="ai-data" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="application" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="cloud" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="critical-infrastructure" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="digital-workplace" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="disaster-recovery" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="edge-ai" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="edge-compute" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="fleet-management" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="hardware-security" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="identity-access" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="iot" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="managed-services" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="mobile-data-centre" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="network-security" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="post-quantum-security" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="secure-edge" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="smart-building" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
+  <symbol id="sovereign-compute" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20"/>
+  </symbol>
 </svg>
