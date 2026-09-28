@@ -135,25 +135,18 @@ async def validate_all(req: ValidateRequest):
 @app.post("/api/build")
 async def build_site(req: BuildRequest):
     """Build the website with npm run build."""
-    npm_path = "C:/Users/nev3s/AppData/Local/hermes/tools/node-26.7.0-win32-x64/npm.cmd"
-    
-    # Debug logging
-    import os
-    print(f"[DEBUG] npm_path: {npm_path}")
-    print(f"[DEBUG] npm_path exists: {os.path.exists(npm_path)}")
-    print(f"[DEBUG] PROJECT_ROOT: {PROJECT_ROOT}")
-    print(f"[DEBUG] PROJECT_ROOT exists: {PROJECT_ROOT.exists()}")
+    node_path = r"C:\Users\nev3s\AppData\Local\hermes\tools\node-26.7.0-win32-x64\node.exe"
+    npm_cli = r"C:\Users\nev3s\AppData\Local\hermes\tools\node-26.7.0-win32-x64\node_modules\npm\bin\npm-cli.js"
     
     try:
         result = subprocess.run(
-            [npm_path, "run", "build"],
-            cwd=str(PROJECT_ROOT),
+            [node_path, npm_cli, "run", "build"],
+            cwd=r"C:\Users\nev3s\repos\meaicon-website",
             capture_output=True,
             text=True,
-            timeout=180
+            timeout=180,
+            env=os.environ.copy()
         )
-        
-        print(f"[DEBUG] Return code: {result.returncode}")
         
         return {
             "success": result.returncode == 0,
@@ -163,7 +156,6 @@ async def build_site(req: BuildRequest):
     except subprocess.TimeoutExpired:
         return {"success": False, "error": "Build timeout"}
     except Exception as e:
-        print(f"[DEBUG] Exception: {type(e).__name__}: {e}")
         return {"success": False, "error": str(e)}
 
 @app.get("/health")
