@@ -1,0 +1,62 @@
+{
+  "snapshot_date": "2026-09-28T11:38:56.336404",
+  "pages_scraped": 8,
+  "pages": [
+    {
+      "url": "https://meaicon.com/",
+      "page_name": "home",
+      "extracted_date": "2026-09-28T11:38:36.835229",
+      "word_count": 841,
+      "char_count": 7411
+    },
+    {
+      "url": "https://meaicon.com/solutions.html",
+      "page_name": "solutions-index",
+      "extracted_date": "2026-09-28T11:38:39.623825",
+      "word_count": 565,
+      "char_count": 5307
+    },
+    {
+      "url": "https://meaicon.com/industries.html",
+      "page_name": "industries-index",
+      "extracted_date": "2026-09-28T11:38:42.492510",
+      "word_count": 390,
+      "char_count": 4221
+    },
+    {
+      "url": "https://meaicon.com/global-connectivity.html",
+      "page_name": "global-connectivity",
+      "extracted_date": "2026-09-28T11:38:44.742088",
+      "word_count": 441,
+      "char_count": 4797
+    },
+    {
+      "url": "https://meaicon.com/partners.html",
+      "page_name": "partners",
+      "extracted_date": "2026-09-28T11:38:46.839551",
+      "word_count": 295,
+      "char_count": 3482
+    },
+    {
+      "url": "https://meaicon.com/case-studies.html",
+      "page_name": "case-studies",
+      "extracted_date": "2026-09-28T11:38:50.190258",
+      "word_count": 366,
+      "char_count": 4054
+    },
+    {
+      "url": "https://meaicon.com/about.html",
+      "page_name": "about",
+      "extracted_date": "2026-09-28T11:38:52.729866",
+      "word_count": 331,
+      "char_count": 3773
+    },
+    {
+      "url": "https://meaicon.com/contact.html",
+      "page_name": "contact",
+      "extracted_date": "2026-09-28T11:38:56.326561",
+      "word_count": 444,
+      "char_count": 5096
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-09-28T12:59:22.474259",
+  "total_topics": 6,
+  "approved": 6,
+  "rejected": 0,
+  "results": [
+    {
+      "topic": "connectivity",
+      "status": "APPROVED",
+      "chars": 6103,
+      "issues": 0,
+      "quality": 9
+    },
+    {
+      "topic": "data-centre",
+      "status": "APPROVED",
+      "chars": 8801,
+      "issues": 0,
+      "quality": 6
+    },
+    {
+      "topic": "cyber-security",
+      "status": "APPROVED",
+      "chars": 8865,
+      "issues": 0,
+      "quality": 8
+    },
+    {
+      "topic": "blockchain",
+      "status": "APPROVED",
+      "chars": 10642,
+      "issues": 0,
+      "quality": 8
+    },
+    {
+      "topic": "consulting",
+      "status": "APPROVED",
+      "chars": 15722,
+      "issues": 0,
+      "quality": 9
+    },
+    {
+      "topic": "general",
+      "status": "APPROVED",
+      "chars": 9119,
+      "issues": 0,
+      "quality": 8
+    }
+  ]
+}

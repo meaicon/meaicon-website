@@ -16,7 +16,8 @@
     "audit": "npm audit --omit=dev"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "playwright": "^1.63.0"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^7.0.0"

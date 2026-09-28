@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEAICON Content Enhancement Pipeline</title>
+<style>
+  :root {
+    --bg: var(--card, #1a1a2e);
+    --fg: var(--foreground, #e0e0e0);
+    --accent: var(--accent, #00d4ff);
+    --muted: var(--muted-foreground, #888);
+    --border: var(--border, #333);
+    --card-bg: var(--card, #1e1e3a);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: transparent;
+    color: var(--fg);
+    padding: 24px;
+  }
+  .pipeline-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+    color: var(--fg);
+    margin-bottom: 8px;
+  }
+  .header p {
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+  .pipeline {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .stage {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+  }
+  .stage-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  .firecrawl { background: rgba(255, 120, 50, 0.15); color: #ff7832; }
+  .langchain { background: rgba(0, 200, 100, 0.15); color: #00c864; }
+  .n8n { background: rgba(130, 80, 255, 0.15); color: #8250ff; }
+  .content { background: rgba(0, 150, 255, 0.15); color: #0096ff; }
+  .dev { background: rgba(255, 180, 0, 0.15); color: #ffb400; }
+  .qa { background: rgba(255, 60, 60, 0.15); color: #ff3c3c; }
+  .orchestrator {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(130, 80, 255, 0.1));
+    border: 2px solid var(--accent);
+  }
+  .stage-content { flex: 1; }
+  .stage-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .stage-profile {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: 'Courier New', monospace;
+  }
+  .stage-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .action-tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.05);
+    color: var(--muted);
+  }
+  .arrow {
+    text-align: center;
+    color: var(--accent);
+    font-size: 1.2rem;
+    padding: 4px 0;
+  }
+  .orchestrator-banner {
+    background: var(--card-bg);
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .orchestrator-banner h2 {
+    font-size: 1rem;
+    color: var(--accent);
+  }
+  .orchestrator-banner p {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .status-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .status-card h3 {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    font-size: 0.8rem;
+  }
+  .status-badge {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+  .status-ok { background: rgba(0, 200, 100, 0.15); color: #00c864; }
+  .status-pending { background: rgba(255, 180, 0, 0.15); color: #ffb400; }
+  .status-running { background: rgba(0, 150, 255, 0.15); color: #0096ff; }
+</style>
+</head>
+<body>
+<div class="pipeline-container">
+  <div class="header">
+    <h1>MEAICON Content Enhancement Pipeline</h1>
+    <p>Firecrawl → LangChain → Content → Dev → QA | Orchestrated by Hermes Agent</p>
+  </div>
+
+  <div class="orchestrator-banner">
+    <h2>🎯 Master Orchestrator (meaicon-orchestrator)</h2>
+    <p>Coordinates all agents, verifies handoffs, tracks pipeline status</p>
+  </div>
+
+  <div class="pipeline">
+    <div class="stage">
+      <div class="stage-icon firecrawl">🔥</div>
+      <div class="stage-content">
+        <div class="stage-title">Firecrawl Research</div>
+        <div class="stage-profile">Profile: meaicon-firecrawl</div>
+        <div class="stage-actions">
+          <span class="action-tag">scrape</span>
+          <span class="action-tag">search</span>
+          <span class="action-tag">research</span>
+          <span class="action-tag">extract</span>
+        </div>
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="stage">
+      <div class="stage-icon langchain">🧠</div>
+      <div class="stage-content">
+        <div class="stage-title">LangChain Enhancement</div>
+        <div class="stage-profile">Profile: meaicon-langchain</div>
+        <div class="stage-actions">
+          <span class="action-tag">enhance</span>
+          <span class="action-tag">fact-check</span>
+          <span class="action-tag">analyze</span>
+          <span class="action-tag">summarize</span>
+        </div>
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="stage">
+      <div class="stage-icon content">✍️</div>
+      <div class="stage-content">
+        <div class="stage-title">Content Rebranding</div>
+        <div class="stage-profile">Profile: meaicon-content</div>
+        <div class="stage-actions">
+          <span class="action-tag">rebrand</span>
+          <span class="action-tag">polish</span>
+          <span class="action-tag">template</span>
+          <span class="action-tag">seo</span>
+        </div>
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="stage">
+      <div class="stage-icon dev">⚙️</div>
+      <div class="stage-content">
+        <div class="stage-title">Development & Build</div>
+        <div class="stage-profile">Profile: meaicon-dev</div>
+        <div class="stage-actions">
+          <span class="action-tag">eleventy</span>
+          <span class="action-tag">tailwind</span>
+          <span class="action-tag">components</span>
+          <span class="action-tag">deploy</span>
+        </div>
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="stage">
+      <div class="stage-icon qa">✅</div>
+      <div class="stage-content">
+        <div class="stage-title">QA Validation</div>
+        <div class="stage-profile">Profile: meaicon-qa</div>
+        <div class="stage-actions">
+          <span class="action-tag">build</span>
+          <span class="action-tag">validate</span>
+          <span class="action-tag">audit</span>
+          <span class="action-tag">hallucination-check</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage" style="margin-top: 16px;">
+    <div class="stage-icon n8n">🔄</div>
+    <div class="stage-content">
+      <div class="stage-title">n8n Workflow Automation</div>
+      <div class="stage-profile">Profile: meaicon-n8n | http://localhost:5678</div>
+      <div class="stage-actions">
+        <span class="action-tag">trigger</span>
+        <span class="action-tag">schedule</span>
+        <span class="action-tag">notify</span>
+        <span class="action-tag">monitor</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="status-grid">
+    <div class="status-card">
+      <h3>Firecrawl</h3>
+      <div class="status-item"><span>CLI Status</span><span class="status-badge status-ok">Active</span></div>
+      <div class="status-item"><span>Auth</span><span class="status-badge status-pending">Anonymous</span></div>
+      <div class="status-item"><span>Pages Scraped</span><span class="status-badge status-ok">8</span></div>
+      <div class="status-item"><span>Research Topics</span><span class="status-badge status-ok">5</span></div>
+    </div>
+    <div class="status-card">
+      <h3>LangChain</h3>
+      <div class="status-item"><span>Version</span><span class="status-badge status-ok">1.4.2</span></div>
+      <div class="status-item"><span>LLM Endpoint</span><span class="status-badge status-ok">OmniRoute</span></div>
+      <div class="status-item"><span>Enhancement Test</span><span class="status-badge status-ok">Passed</span></div>
+      <div class="status-item"><span>Full Pipeline</span><span class="status-badge status-running">Running</span></div>
+    </div>
+    <div class="status-card">
+      <h3>n8n</h3>
+      <div class="status-item"><span>Version</span><span class="status-badge status-ok">v2.40.7</span></div>
+      <div class="status-item"><span>Workflow JSON</span><span class="status-badge status-ok">Ready</span></div>
+      <div class="status-item"><span>Server</span><span class="status-badge status-pending">Stopped</span></div>
+      <div class="status-item"><span>Import</span><span class="status-badge status-pending">Pending</span></div>
+    </div>
+    <div class="status-card">
+      <h3>Orchestrator</h3>
+      <div class="status-item"><span>Profile</span><span class="status-badge status-ok">Active</span></div>
+      <div class="status-item"><span>Profiles Managed</span><span class="status-badge status-ok">7</span></div>
+      <div class="status-item"><span>Content.md</span><span class="status-badge status-ok">Created</span></div>
+      <div class="status-item"><span>Architecture</span><span class="status-badge status-ok">Verified</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
