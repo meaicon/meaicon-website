@@ -15,6 +15,7 @@ INJECTION_MAP = {
     "cyber-security.njk": "cyber-security/enhanced-content.md",
     "consulting.njk": "consulting/enhanced-content.md",
     "blockchain.njk": "blockchain/enhanced-content.md",
+    "data-centre.njk": "data-centre/enhanced-content.md",
 }
 
 def inject(template_path: Path, enhanced_path: Path):
