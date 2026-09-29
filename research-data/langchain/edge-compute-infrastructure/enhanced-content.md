@@ -4,19 +4,11 @@
 **Brand:** MEAICON LLC FZ
 **Status:** Enhanced, fact-checked, rebranded
 
----
 
 ## Frontmatter
 
-```yaml
-layout: layout.njk
-title: "Edge Compute Infrastructure — MEAICON LLC FZ | Low-Latency Distributed Compute"
-description: "MEAICON LLC FZ designs edge computing infrastructure delivering low-latency processing, distributed compute, and IoT data aggregation closer to data sources across the Middle East and Africa."
-canonical: "https://www.meaicon.com/solutions/edge-compute-infrastructure.html"
-permalink: /solutions/edge-compute-infrastructure.html
-```
 
----
+
 
 ## Hero Section
 
@@ -29,7 +21,6 @@ Each deployment is engineered for the operational environment, whether that mean
 
 The Middle East edge data centre market is projected to exceed $6 billion in investments through 2030, driven by 5G rollout, low-latency applications, and smart city initiatives — MEAICON LLC FZ positions clients at the forefront of this regional transformation.
 
----
 
 ## Overview
 
@@ -41,7 +32,6 @@ Our edge architectures span three tiers: compact mobile nodes (48 kW) for tactic
 
 Each tier is designed with hardware appropriate to the environment — ruggedised enclosures for +50°C operation, IP-rated environmental protection for dust and moisture, and power systems that accommodate generator-backed or solar-augmented operation in locations where grid reliability is uncertain.
 
----
 
 ## Capabilities
 
@@ -65,7 +55,6 @@ Hardware selection and integration for extreme environments — +50°C ambient o
 **Edge Networking**
 Low-latency networking between edge nodes, field devices, and central platforms — including 5G edge integration, Wi-Fi 6E for high-density environments, and deterministic networking for time-sensitive applications using TSN (Time-Sensitive Networking).
 
----
 
 ## Delivery Approach
 
@@ -83,7 +72,6 @@ We procure, integrate, and install edge hardware at operational sites. Deploymen
 **04 — Manage**
 Ongoing monitoring, remote management, firmware updates, and capacity planning for distributed edge infrastructure. We provide centralised visibility into all edge nodes with automated alerting and predictive maintenance scheduling.
 
----
 
 ## Why MEAICON LLC FZ
 
@@ -96,7 +84,6 @@ Ongoing monitoring, remote management, firmware updates, and capacity planning f
 - Integrated power systems expertise — grid-backed, generator-backed, and solar-augmented
 - Compliance with relevant standards including Uptime Institute, ISO 27001, and local MEA regulatory requirements
 
----
 
 ## Related Solutions
 
@@ -104,7 +91,6 @@ Ongoing monitoring, remote management, firmware updates, and capacity planning f
 - [Sovereign Compute](/solutions/sovereign-compute.html) — Data-locality GPU infrastructure for sensitive workloads
 - [IoT](/solutions/iot.html) — IoT data aggregation and edge processing integration
 
----
 
 ## Fact-Check Notes
 
@@ -115,7 +101,6 @@ Ongoing monitoring, remote management, firmware updates, and capacity planning f
 - **OPC UA, MQTT, CoAP**: Industry-standard IoT and industrial communication protocols. ✅ Verified
 - **DCIM standards**: Data Centre Infrastructure Management — industry standard for monitoring and managing data centre resources. ✅ Verified
 
----
 
 *Enhanced by LangChain content enhancement pipeline for MEAICON LLC FZ.*
 *Word count: ~1,530*

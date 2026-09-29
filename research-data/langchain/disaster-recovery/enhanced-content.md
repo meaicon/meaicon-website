@@ -4,19 +4,11 @@
 **Brand:** MEAICON LLC FZ
 **Status:** Enhanced, fact-checked, rebranded
 
----
 
 ## Frontmatter
 
-```yaml
-layout: layout.njk
-title: "Disaster Recovery & Business Continuity — MEAICON LLC FZ"
-description: "MEAICON LLC FZ delivers disaster recovery and business continuity with RTO/RPO planning, automated failover, and resilient backup architecture across the MEA region."
-canonical: "https://www.meaicon.com/solutions/disaster-recovery.html"
-permalink: /solutions/disaster-recovery.html
-```
 
----
+
 
 ## Hero Section
 
@@ -27,7 +19,6 @@ When systems fail, your ability to recover determines the impact on your busines
 
 We help you prepare for the worst — and ensure that when disruption strikes, your critical operations resume with minimal loss and minimal delay. From ransomware recovery to natural disaster response to grid power failures, we architect resilience into your infrastructure.
 
----
 
 ## Overview
 
@@ -39,7 +30,6 @@ Our approach covers the full resilience spectrum — from high-availability desi
 
 For MEA-region clients, we address regional risk factors — extreme weather events, power grid reliability variations, geopolitical instability, and the need for cross-border recovery sites. We design recovery architectures that account for these realities, not theoretical risk models from other regions.
 
----
 
 ## Capabilities
 
@@ -63,7 +53,6 @@ Recovery architectures specifically designed for ransomware scenarios — immuta
 **DR Testing & Exercising**
 Regular DR testing — tabletop exercises, component-level failover tests, and full-scale disaster simulation. We document test results, identify gaps, and remediate before a real disaster exposes them. Testing cadence aligns with regulatory requirements and risk appetite.
 
----
 
 ## Delivery Approach
 
@@ -81,7 +70,6 @@ We implement the DR infrastructure, configure replication, and execute initial f
 **04 — Maintain & Exercise**
 Ongoing DR maintenance — replication health monitoring, runbook updates for infrastructure changes, and scheduled DR exercises. We provide quarterly test reports and annual DR plan recertification aligned with regulatory requirements.
 
----
 
 ## Why MEAICON LLC FZ
 
@@ -94,7 +82,6 @@ Ongoing DR maintenance — replication health monitoring, runbook updates for in
 - Automated failover with infrastructure-as-code — reducing RTO from hours to minutes
 - Full DR testing programme — tabletop, component, and full-scale simulation exercises
 
----
 
 ## Related Solutions
 
@@ -102,7 +89,6 @@ Ongoing DR maintenance — replication health monitoring, runbook updates for in
 - [Cloud Services](/solutions/cloud.html) — Cloud-based DR sites and replication targets
 - [Data Centre](/solutions/data-centre.html) — Primary and secondary data centre facilities for DR
 
----
 
 ## Fact-Check Notes
 
@@ -114,7 +100,6 @@ Ongoing DR maintenance — replication health monitoring, runbook updates for in
 - **Veeam, Commvault**: Leading enterprise backup solution vendors. ✅ Verified
 - **Hot/Warm/Cold DR sites**: Standard industry classification for disaster recovery site types. ✅ Verified
 
----
 
 *Enhanced by LangChain content enhancement pipeline for MEAICON LLC FZ.*
 *Word count: ~1,550*

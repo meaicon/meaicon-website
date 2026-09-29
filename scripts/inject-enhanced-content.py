@@ -1,9 +1,15 @@
 #!/usr/bin/env python
-"""Inject enhanced content into solution page templates. Inserts enhanced-content.md before </main> in each .njk template."""
+"""Inject enhanced content into solution page templates. Inserts enhanced-content.md before </main> in each .njk template.
 
+SANITIZATION: Strips code fences, enforces single H1, removes raw research notes before injection.
+"""
+
+import re
+import json
 from pathlib import Path
 
 REPO_ROOT = Path("C:/Users/nev3s/repos/meaicon-website")
+PROGRESS_FILE = REPO_ROOT / "research-data" / "progress.json"
 ENHANCED_DIR = REPO_ROOT / "research-data" / "langchain"
 PAGES_DIR = REPO_ROOT / "pages"
 
@@ -88,30 +94,123 @@ INJECTION_MAP = {
     "insights/whitepapers.njk": "insights/whitepapers/enhanced-content.md",
 }
 
-def inject(template_path: Path, enhanced_path: Path):
-    if not enhanced_path.exists():
-        print(f"Missing: {enhanced_path}")
-        return False
+def sanitize_content(content: str) -> str:
+    """Sanitize enhanced content before injection into templates.
 
-    original = template_path.read_text()
-    enhanced = enhanced_path.read_text()
+    - Strips markdown code fences that would render as raw text in HTML
+    - Enforces single H1: converts any H1 after the first to H2
+    - Removes raw research notes (metadata-like lines)
+    - Strips trailing whitespace per line
+    """
+    # Strip code fences (```...``` blocks)
+    content = re.sub(r'```[a-zA-Z]*\n.*?```', '', content, flags=re.DOTALL)
+    content = re.sub(r'```', '', content)
+
+    lines = content.split('\n')
+    cleaned_lines = []
+    h1_count = 0
+    for line in lines:
+        stripped = line.strip()
+
+        # Enforce single H1: convert subsequent H1s to H2
+        if stripped.startswith('# ') and not stripped.startswith('## '):
+            h1_count += 1
+            if h1_count > 1:
+                line = line.replace('# ', '## ', 1)
+
+        # Skip raw separator lines (---) in body content
+        if stripped == '---' and len(cleaned_lines) > 0:
+            continue
+
+        # Skip metadata-like lines
+        if re.match(r'^(Source|Research|URL|Reference|Metadata|Fact-check)\s*:', stripped, re.IGNORECASE):
+            continue
+
+        cleaned_lines.append(line.rstrip())
+
+    return '\n'.join(cleaned_lines).strip()
+
+
+def inject(template_path: Path, enhanced_path: Path):
+    """Inject sanitized enhanced content into a template."""
+    if not enhanced_path.exists():
+        print(f"SKIP: {enhanced_path} not found")
+        return False, "missing_enhanced"
+
+    original = template_path.read_text(encoding="utf-8")
+    raw_enhanced = enhanced_path.read_text(encoding="utf-8")
+
+    # SANITIZE before injection
+    enhanced = sanitize_content(raw_enhanced)
+
+    if not enhanced.strip():
+        print(f"SKIP: {enhanced_path} empty after sanitization")
+        return False, "empty_after_sanitize"
+
+    # Prevent double-injection with a marker comment
+    marker = f"<!-- enhanced-content-injected: {enhanced_path.name} -->"
+    if marker in original:
+        print(f"SKIP: {template_path.name} already injected")
+        return False, "already_injected"
 
     if "</main>" in original:
-        updated = original.replace("</main>", enhanced + "\n\n</main>")
+        updated = original.replace("</main>", f"{marker}\n{enhanced}\n\n</main>")
     else:
-        updated = original + "\n\n" + enhanced
+        updated = original + f"\n{marker}\n{enhanced}\n"
 
-    template_path.write_text(updated)
-    print(f"OK {template_path.name}")
-    return True
+    template_path.write_text(updated, encoding="utf-8")
+    print(f"OK: {template_path.name} ({len(enhanced)} chars injected)")
+    return True, "injected"
+
 
 def main():
-    print("=== Enhanced Content Injection ===\n")
+    print("=" * 60)
+    print("Enhanced Content Injection (with sanitization)")
+    print("=" * 60)
+
+    # Load or init progress tracking
+    if PROGRESS_FILE.exists():
+        progress = json.loads(PROGRESS_FILE.read_text(encoding="utf-8"))
+    else:
+        progress = {"pages": {}}
+
     updated = 0
+    skipped = 0
     for tmpl, enh in INJECTION_MAP.items():
-        if inject(PAGES_DIR / tmpl, ENHANCED_DIR / enh):
+        template_path = PAGES_DIR / tmpl
+        enhanced_path = ENHANCED_DIR / enh
+
+        if not template_path.exists():
+            print(f"SKIP: {tmpl} template not found")
+            progress["pages"][tmpl] = {"status": "template_missing"}
+            continue
+
+        success, reason = inject(template_path, enhanced_path)
+
+        progress["pages"][tmpl] = {
+            "status": "injected" if success else reason,
+            "enhanced_source": enh,
+        }
+
+        if success:
             updated += 1
-    print(f"\n=== Summary: {updated} files updated ===")
+        else:
+            skipped += 1
+
+    progress["injection_summary"] = {
+        "injected": updated,
+        "skipped": skipped,
+        "total": len(INJECTION_MAP),
+    }
+
+    # Save progress
+    PROGRESS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    PROGRESS_FILE.write_text(json.dumps(progress, indent=2), encoding="utf-8")
+
+    print(f"\n{'=' * 60}")
+    print(f"Summary: {updated} injected, {skipped} skipped, {len(INJECTION_MAP)} total")
+    print(f"Progress saved to: {PROGRESS_FILE}")
+
 
 if __name__ == "__main__":
     main()

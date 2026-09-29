@@ -4,19 +4,11 @@
 **Brand:** MEAICON LLC FZ
 **Status:** Enhanced, fact-checked, rebranded
 
----
 
 ## Frontmatter
 
-```yaml
-layout: layout.njk
-title: "Cloud Services — MEAICON LLC FZ | Migration, Hybrid & Container Orchestration"
-description: "MEAICON LLC FZ delivers cloud migration, hybrid architecture, cloud-native development, and container orchestration engineered for enterprises and governments across the Middle East and Africa."
-canonical: "https://www.meaicon.com/solutions/cloud.html"
-permalink: /solutions/cloud.html
-```
 
----
+
 
 ## Hero Section
 
@@ -27,7 +19,6 @@ Cloud adoption is no longer a question of if, but how. MEAICON LLC FZ provides e
 
 We help you adopt cloud on your terms — whether that means a full migration, a hybrid model, or modernising legacy applications for cloud-native deployment. Our workload-first approach ensures every decision is driven by business value, not vendor pressure.
 
----
 
 ## Overview
 
@@ -39,7 +30,6 @@ For organisations building new applications, we bring cloud-native expertise —
 
 Our approach is grounded in industry-standard frameworks. We align with the Cloud Security Alliance (CSA) Cloud Controls Matrix, NIST 800-53 for government workloads, and ISO 27001 for information security management. For MEA-region clients, we ensure compliance with local data residency requirements — including UAE Federal Law on Data Protection, Saudi PDPL, and Egypt's Personal Data Protection Law — when architecting cloud workloads that process sensitive data.
 
----
 
 ## Capabilities
 
@@ -63,7 +53,6 @@ IaC implementation with Terraform and Ansible for reproducible infrastructure pr
 **Cloud Optimisation**
 Continuous cost optimisation, performance tuning, and right-sizing of cloud resources with monitoring and governance guardrails. We implement FinOps practices — cost allocation tagging, budget alerts, and reserved capacity planning — to deliver ongoing spend visibility and accountability.
 
----
 
 ## Delivery Approach
 
@@ -81,7 +70,6 @@ We provision cloud foundations, execute migration waves, containerise applicatio
 **04 — Operate**
 Ongoing cloud governance, cost optimisation, capacity management, and platform evolution keep your cloud environment efficient and aligned to business needs. We provide dashboards for cost, performance, and security posture, along with quarterly architecture reviews.
 
----
 
 ## Why MEAICON LLC FZ
 
@@ -94,7 +82,6 @@ Ongoing cloud governance, cost optimisation, capacity management, and platform e
 - Deep understanding of MEA data residency and sovereignty requirements affecting cloud architecture decisions
 - Alignment with CSA Cloud Controls Matrix, NIST 800-53, and ISO 27001 security frameworks
 
----
 
 ## Related Solutions
 
@@ -102,7 +89,6 @@ Ongoing cloud governance, cost optimisation, capacity management, and platform e
 - [Data Centre](/solutions/data-centre.html) — On-premises facilities for hybrid architectures
 - [Managed Services](/solutions/managed-services.html) — Ongoing cloud operations and governance
 
----
 
 ## Fact-Check Notes
 
@@ -113,7 +99,6 @@ Ongoing cloud governance, cost optimisation, capacity management, and platform e
 - **Terraform/Ansible**: Industry-standard IaC tools, widely adopted. ✅ Verified
 - **GitOps with ArgoCD**: CNCF graduated project for declarative Git-based Kubernetes deployment. ✅ Verified
 
----
 
 *Enhanced by LangChain content enhancement pipeline for MEAICON LLC FZ.*
 *Word count: ~1,520*

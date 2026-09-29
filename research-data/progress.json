@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-09-29T11:30:00",
+  "pipeline": {
+    "firecrawl": {
+      "status": "complete",
+      "pages_crawled": 43,
+      "output_dir": "research-data/firecrawl/"
+    },
+    "langchain": {
+      "status": "partial",
+      "pages_enhanced": 32,
+      "total_pages": 72,
+      "gap": 40,
+      "gap_note": "40 pages got Firecrawl-only content without LangChain enhancement",
+      "output_dir": "research-data/langchain/",
+      "server": "localhost:8080",
+      "server_status": "running"
+    },
+    "n8n": {
+      "status": "not_started",
+      "workflow_versions": ["v1", "v2", "v3"],
+      "active_workflow": "none",
+      "note": "3 JSON workflow files created but n8n never started/imported. Pipeline run manually.",
+      "start_command": "~/.n8n/start-n8n.sh"
+    },
+    "safety_gate": {
+      "status": "complete",
+      "initial_run": "2026-09-28 12:31 - 2 approved, 4 rejected",
+      "final_run": "2026-09-29 11:12 - 6 approved, 0 rejected",
+      "mode_added": "pre-injection (validates ALL dirs before injection)"
+    },
+    "injection": {
+      "status": "complete",
+      "pages_injected": 60,
+      "sanitization_added": true,
+      "double_injection_guard": true
+    }
+  },
+  "chunks": {
+    "chunk_1": {"pages": 8, "status": "complete", "committed": "1289dd9"},
+    "chunk_2": {"pages": 8, "status": "complete", "committed": "1289dd9"},
+    "chunk_3": {"pages": 8, "status": "complete", "committed": "9addacf"},
+    "chunk_4": {"pages": 8, "status": "complete", "committed": "ec5016e"},
+    "chunk_5": {"pages": 8, "status": "complete", "committed": "ec5016e"},
+    "chunk_6": {"pages": 8, "status": "complete", "committed": "ec5016e"}
+  },
+  "world_map": {
+    "status": "fixed",
+    "original_commit": "20a5e6f (Sep 28 13:00) - random blob shapes",
+    "fix_commit": "2323bb6 (Sep 29 11:08) - accurate geographic SVG paths",
+    "lesson": "Use real SVG path data for geographic visualizations, never generate shapes from scratch"
+  },
+  "lessons_learned": [
+    "Safety gate must run BEFORE injection, not after",
+    "Sanitize LangChain output: strip code fences, enforce single H1, remove raw notes",
+    "Use real SVG path data for geographic content",
+    "Write progress.json after each chunk to survive context compaction",
+    "Build after each chunk commit, not just at the end",
+    "Use delegate_task for parallel chunk processing",
+    "Actually start n8n and import the workflow — don't leave it as JSON artifacts",
+    "Run LangChain enhancement on ALL pages, not just top 32",
+    "Visual QA after each chunk: screenshot sample pages, not just homepage"
+  ]
+}

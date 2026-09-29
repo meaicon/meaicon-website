@@ -4,19 +4,11 @@
 **Brand:** MEAICON LLC FZ
 **Status:** Enhanced, fact-checked, rebranded
 
----
 
 ## Frontmatter
 
-```yaml
-layout: layout.njk
-title: "Edge AI Inference — MEAICON LLC FZ | On-Device Neural & Sub-10ms Latency"
-description: "MEAICON LLC FZ delivers edge AI inference platforms with on-device neural processing, sub-10ms latency, and real-time anomaly detection for fleets, buildings, and industry across MEA."
-canonical: "https://www.meaicon.com/solutions/edge-ai-inference.html"
-permalink: /solutions/edge-ai-inference.html
-```
 
----
+
 
 ## Hero Section
 
@@ -29,7 +21,6 @@ Our architecture processes CAN-bus, telematics, sensor, and video data locally, 
 
 As of 2025-2026, edge AI has matured to support 7-8B parameter LLMs on consumer-grade hardware with sub-50ms latency, making on-device AI viable for production workloads without per-inference cloud costs. MEAICON LLC FZ harnesses this maturity for enterprise and government clients across the region.
 
----
 
 ## Overview
 
@@ -41,7 +32,6 @@ Our approach covers the full pipeline: data acquisition from sensors and field d
 
 For time-critical applications — fleet braking, industrial safety interlocks, building security — we architect inference pipelines with deterministic sub-10ms latency budgets. For less time-critical analytics, we batch inference and synchronise results to central platforms when connectivity permits.
 
----
 
 ## Capabilities
 
@@ -65,7 +55,6 @@ Selection and integration of neural processing hardware matched to model require
 **Model Lifecycle Management**
 End-to-end model lifecycle — training, validation, quantisation, deployment, monitoring, and retraining. We implement MLOps pipelines that handle model versioning, A/B testing at the edge, drift detection, and automated retraining triggers.
 
----
 
 ## Delivery Approach
 
@@ -83,7 +72,6 @@ We package models with inference runtimes (ONNX Runtime, TensorRT, TFLite) and d
 **04 — Monitor & Iterate**
 We monitor inference performance, model drift, and operational outcomes across the deployed edge fleet. Retraining triggers fire automatically when drift thresholds are exceeded, and updated models are deployed via the MLOps pipeline.
 
----
 
 ## Why MEAICON LLC FZ
 
@@ -96,7 +84,6 @@ We monitor inference performance, model drift, and operational outcomes across t
 - Computer vision expertise with YOLO and EfficientDet families deployed on edge hardware
 - Alignment with AI governance frameworks including NIST AI RMF and ISO 42001
 
----
 
 ## Related Solutions
 
@@ -104,7 +91,6 @@ We monitor inference performance, model drift, and operational outcomes across t
 - [Sovereign Compute](/solutions/sovereign-compute.html) — GPU infrastructure for AI model training
 - [IoT](/solutions/iot.html) — IoT data pipelines feeding edge AI models
 
----
 
 ## Fact-Check Notes
 
@@ -116,7 +102,6 @@ We monitor inference performance, model drift, and operational outcomes across t
 - **NIST AI RMF**: NIST AI Risk Management Framework (AI 100-1), published January 2023. ✅ Verified
 - **ISO 42001**: ISO/IEC 42001:2023 — AI management system standard. ✅ Verified
 
----
 
 *Enhanced by LangChain content enhancement pipeline for MEAICON LLC FZ.*
 *Word count: ~1,560*

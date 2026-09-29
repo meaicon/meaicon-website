@@ -4,19 +4,11 @@
 **Brand:** MEAICON LLC FZ
 **Status:** Enhanced, fact-checked, rebranded
 
----
 
 ## Frontmatter
 
-```yaml
-layout: layout.njk
-title: "Sovereign Compute — MEAICON LLC FZ | Data-Local GPU Infrastructure for Government & Defence"
-description: "MEAICON LLC FZ engineers sovereign compute platforms delivering data-locality, power-autonomous GPU infrastructure for government, defence, and critical infrastructure across the MEA region."
-canonical: "https://www.meaicon.com/solutions/sovereign-compute.html"
-permalink: /solutions/sovereign-compute.html
-```
 
----
+
 
 ## Hero Section
 
@@ -29,7 +21,6 @@ Multiple capacity tiers from 48 kW compact deployments to 240 kW high-density co
 
 Compute sovereignty has become a strategic imperative for nations seeking to mitigate risks from geopolitical fragmentation and technology dependency. MEAICON LLC FZ provides the infrastructure that enables governments and defence organisations across the Middle East and Africa to exercise sovereign control over their AI and data processing capabilities.
 
----
 
 ## Overview
 
@@ -41,7 +32,6 @@ Our platforms are designed for operational environments where the public cloud i
 
 We provide multiple capacity tiers — from 48 kW compact deployments suitable for field operations and tactical facilities, to 240 kW high-density configurations for centralised government AI training and inference centres. Each tier is engineered for the MEA region's power, cooling, and environmental realities.
 
----
 
 ## Capabilities
 
@@ -67,7 +57,6 @@ Architecture and operations aligned with national data sovereignty requirements.
 - 120 kW mid-density: Departmental or regional government facilities — 16-32 GPUs
 - 240 kW high-density: Central AI training centres — 64+ GPUs with liquid cooling
 
----
 
 ## Delivery Approach
 
@@ -85,7 +74,6 @@ We procure, integrate, and commission the platform within the controlled environ
 **04 — Operate & Audit**
 Ongoing operation, security monitoring, and compliance auditing of the sovereign compute platform. We provide capacity utilisation reporting, security audit logs, and periodic sovereignty compliance reviews to ensure the platform remains within jurisdictional boundaries.
 
----
 
 ## Why MEAICON LLC FZ
 
@@ -98,7 +86,6 @@ Ongoing operation, security monitoring, and compliance auditing of the sovereign
 - TEMPEST and physical security hardening for classified deployments
 - Vendor-independent approach — we select GPU and infrastructure components based on client requirements, not vendor relationships
 
----
 
 ## Related Solutions
 
@@ -106,7 +93,6 @@ Ongoing operation, security monitoring, and compliance auditing of the sovereign
 - [Edge AI Inference](/solutions/edge-ai-inference.html) — On-device inference for sovereign edge deployments
 - [Critical Infrastructure Consulting](/solutions/critical-infrastructure-consulting.html) — Vendor-neutral design and oversight for sovereign facilities
 
----
 
 ## Fact-Check Notes
 
@@ -119,7 +105,6 @@ Ongoing operation, security monitoring, and compliance auditing of the sovereign
 - **Saudi PDPL**: Royal Decree M/19, effective September 2023. ✅ Verified
 - **MLflow, Kubeflow**: Open-source ML lifecycle management platforms (Linux Foundation / CNCF). ✅ Verified
 
----
 
 *Enhanced by LangChain content enhancement pipeline for MEAICON LLC FZ.*
 *Word count: ~1,580*

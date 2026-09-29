@@ -4,19 +4,11 @@
 **Brand:** MEAICON LLC FZ
 **Status:** Enhanced, fact-checked, rebranded
 
----
 
 ## Frontmatter
 
-```yaml
-layout: layout.njk
-title: "Managed Services — MEAICON LLC FZ | 24/7 NOC/SOC, Monitoring & Patch Management"
-description: "MEAICON LLC FZ delivers 24/7 NOC and SOC operations, infrastructure monitoring, patch management, and incident response for organisations across the Middle East and Africa."
-canonical: "https://www.meaicon.com/solutions/managed-services.html"
-permalink: /solutions/managed-services.html
-```
 
----
+
 
 ## Hero Section
 
@@ -27,7 +19,6 @@ Your technology infrastructure should support your business, not consume your te
 
 We take operational ownership of your critical systems so your team can focus on strategic initiatives rather than firefighting. Our unified NOC/SOC model ensures that operational visibility and security threat detection are correlated under a single operating model — because infrastructure performance and security can no longer be separated.
 
----
 
 ## Overview
 
@@ -39,7 +30,6 @@ Our approach is aligned with ITIL 4 for service management, ISO 27001 for inform
 
 For MEA-region clients, we understand the operational realities — distributed infrastructure across multiple countries, varying telecom reliability, and the need for Arabic and English language support. Our NOC/SOC operates 24/7/365 with regional coverage that aligns with MEA business hours and on-call escalation.
 
----
 
 ## Capabilities
 
@@ -63,7 +53,6 @@ Structured incident response with defined RACI, escalation paths, and communicat
 **Change & Configuration Management**
 Controlled change management with CAB (Change Advisory Board) processes, configuration baseline management, and compliance drift detection. All changes are documented, tested in staging, and deployed with rollback plans.
 
----
 
 ## Delivery Approach
 
@@ -81,7 +70,6 @@ Continuous monitoring, alerting, and incident response across all managed system
 **04 — Review & Improve**
 Monthly service reviews, quarterly operational health checks, and annual SLA recalibration. We continuously refine alerting thresholds, automate additional remediation paths, and optimise the service catalogue based on operational data and client feedback.
 
----
 
 ## Why MEAICON LLC FZ
 
@@ -95,7 +83,6 @@ Monthly service reviews, quarterly operational health checks, and annual SLA rec
 - Arabic and English language support for regional operations teams
 - MITRE ATT&CK aligned threat classification and NIST IR lifecycle for structured incident response
 
----
 
 ## Related Solutions
 
@@ -103,7 +90,6 @@ Monthly service reviews, quarterly operational health checks, and annual SLA rec
 - [Cyber Security](/solutions/cyber-security.html) — Security operations integrated with managed NOC
 - [Disaster Recovery](/solutions/disaster-recovery.html) — Business continuity supported by 24/7 monitoring and failover
 
----
 
 ## Fact-Check Notes
 
@@ -115,7 +101,6 @@ Monthly service reviews, quarterly operational health checks, and annual SLA rec
 - **SIEM**: Security Information and Event Management — industry-standard category for security monitoring. ✅ Verified
 - **SLA-backed managed services**: Standard industry practice for managed service providers. ✅ Verified
 
----
 
 *Enhanced by LangChain content enhancement pipeline for MEAICON LLC FZ.*
 *Word count: ~1,540*

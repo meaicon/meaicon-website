@@ -4,19 +4,11 @@
 **Brand:** MEAICON LLC FZ
 **Status:** Enhanced, fact-checked, rebranded
 
----
 
 ## Frontmatter
 
-```yaml
-layout: layout.njk
-title: "Critical Infrastructure Consulting — MEAICON LLC FZ"
-description: "MEAICON LLC FZ provides vendor-neutral consulting for mission-critical infrastructure — planning, design, MEP, network security architecture, data centre design, and standards assurance."
-canonical: "https://www.meaicon.com/solutions/critical-infrastructure-consulting.html"
-permalink: /solutions/critical-infrastructure-consulting.html
-```
 
----
+
 
 ## Hero Section
 
@@ -27,7 +19,6 @@ MEAICON LLC FZ provides independent engineering consulting for data centres and 
 
 Our consulting practice is built on a foundation of vendor neutrality. We do not sell hardware, we do not take commission from suppliers, and we do not steer clients toward predetermined solutions. Every recommendation is backed by engineering analysis, cost modelling, and operational experience.
 
----
 
 ## Overview
 
@@ -39,7 +30,6 @@ We work alongside owners, developers, architects, and contractors to bring engin
 
 For clients in the UAE, Saudi Arabia, Egypt, and across the Gulf region, we understand local construction practices, regulatory requirements, utility interfaces, and the operational realities of maintaining critical facilities in extreme climate conditions. Our consulting is grounded in regional experience, not imported templates.
 
----
 
 ## Who We Are
 
@@ -49,7 +39,6 @@ Our team comprises chartered engineers, certified data centre professionals (CDC
 
 We are vendor-neutral by structure and by contract. Our consulting agreements explicitly prohibit commission from equipment vendors, construction firms, or service providers. If a client needs procurement support, we provide technical and commercial evaluation of vendors — but the decision is always the client's.
 
----
 
 ## Capabilities
 
@@ -76,7 +65,6 @@ Development of operations standards, SOPs, MOPs (Methods of Procedure), and runb
 **Vendor Qualification & Procurement Support**
 Technical and commercial evaluation of vendors and suppliers — prequalification, RFP development, bid evaluation, and contract negotiation support. We independently qualify vendors and perform both technical and commercial evaluation to secure the right supplier at the right price and quality.
 
----
 
 ## Delivery Approach
 
@@ -94,7 +82,6 @@ We develop detailed engineering designs, equipment specifications, and construct
 **04 — Oversee & Verify**
 During construction and commissioning, we provide independent oversight — site inspections, witness testing, defect management, and final acceptance. Post-handover, we support operational setup, SOP development, and ongoing facility optimisation advisory.
 
----
 
 ## Why MEAICON LLC FZ
 
@@ -107,7 +94,6 @@ During construction and commissioning, we provide independent oversight — site
 - Operations standards development aligned with Uptime Institute operational sustainability
 - Vendor qualification and procurement support that protects client interests
 
----
 
 ## Related Solutions
 
@@ -115,7 +101,6 @@ During construction and commissioning, we provide independent oversight — site
 - [Sovereign Compute](/solutions/sovereign-compute.html) — Sovereign GPU infrastructure requiring specialised design
 - [Disaster Recovery](/solutions/disaster-recovery.html) — Recovery site design and resilience consulting
 
----
 
 ## Fact-Check Notes
 
@@ -127,7 +112,6 @@ During construction and commissioning, we provide independent oversight — site
 - **Level 1-5 Commissioning**: Industry-standard commissioning levels for critical facilities. ✅ Verified
 - **ISO 27001 Lead Auditor**: Professional credential for information security management systems auditing. ✅ Verified
 
----
 
 *Enhanced by LangChain content enhancement pipeline for MEAICON LLC FZ.*
 *Word count: ~1,600*
