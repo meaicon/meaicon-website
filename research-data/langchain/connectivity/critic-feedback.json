@@ -1,0 +1,20 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 6,
+  "issues": [
+    "Incomplete content: Key trends section ends abruptly with placeholder text ('78% of MEA enterprises plan t')",
+    "Missing source citation for '30% MTTR reduction' claim in NOC section",
+    "Potentially inflated SD-WAN adoption figure (45% by 2026) without verification",
+    "Market context table lacks proper formatting (missing pipe alignment)"
+  ],
+  "suggestions": [
+    "Complete the Key Trends section with full sentence and additional relevant MEA-specific insights",
+    "Add source citation for MTTR reduction claim (e.g., 'Based on internal historical data')",
+    "Verify SD-WAN adoption statistic against Cisco's 2025 report or provide alternative credible source",
+    "Format market context table with proper markdown alignment for readability",
+    "Ensure all statistical claims include verifiable sources or internal data references"
+  ],
+  "timestamp": "2026-09-29T12:02:11.192411",
+  "evaluator": "llm-critic",
+  "topic": "connectivity"
+}
