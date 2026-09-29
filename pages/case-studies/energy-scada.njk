@@ -126,4 +126,77 @@ permalink: /case-studies/energy-scada.html
     </div>
   </section>
 
+---
+title: "Energy SCADA Security — MEAICON"
+description: "How MEAICON hardened a regional energy utility's SCADA network with segmentation, continuous monitoring, and rapid incident response across MEA."
+category: "Case Study"
+branch: "website-redesign"
+source: "pages/case-studies/energy-scada.njk"
+---
+
+# Energy SCADA Security — MEAICON
+
+## Overview
+How MEAICON hardened a regional energy utility's SCADA network with segmentation, continuous monitoring, and rapid incident response across MEA.
+
+A regional energy utility needed to harden its SCADA control network against cyber threats while maintaining operational continuity. MEAICON delivered network segmentation, continuous monitoring and an incident response framework tailored to industrial control systems.
+
+## What the client needed
+
+A regional energy utility operating generation, transmission and distribution infrastructure across multiple sites had a SCADA control network that had grown organically over years. Control systems, engineering workstations and corporate IT shared network paths with minimal segmentation, creating paths an attacker could traverse from corporate systems into operational technology.
+
+The utility's operations team had visibility into power flow but not into the network traffic flowing between SCADA devices. There was no continuous monitoring for anomalous activity on the control network, and no incident response plan specific to industrial control system threats. Regulators were increasingly demanding evidence of OT security controls.
+
+
+## How we engaged
+
+MEAICON began with an OT network assessment, mapping every device on the SCADA network — controllers, engineering workstations, HMI terminals, data historians — and the communication paths between them. We identified flat network segments where OT and IT traffic intermingled and designed a segmentation architecture based on the Purdue model for industrial control systems.
+
+The monitoring and incident response tracks were designed to fit the utility's operational constraints. Any security control had to be deployable without disrupting power operations, so we prioritised passive monitoring and out-of-band analysis where active scanning would risk interfering with control traffic.
+
+- OT network assessment and SCADA device inventory mapping
+- Purdue-model segmentation architecture design and deployment
+- Passive continuous monitoring for anomalous OT traffic
+- Industrial control system incident response framework development
+
+## What we delivered
+
+The delivered architecture segments the SCADA network into layered zones following the Purdue model — a corporate IT zone, an industrial demilitarised zone, and OT control zones — with strictly controlled traffic flows between them. An attacker reaching the corporate network can no longer traverse into operational technology without crossing monitored checkpoints.
+
+A passive monitoring system watches OT traffic continuously, flagging anomalous communication patterns — unexpected device connections, unusual protocol usage, traffic to unknown destinations — without injecting probes that could disrupt control systems. The incident response framework gives the utility's operations and security teams defined playbooks for containing and investigating OT-specific threats.
+
+
+## What changed
+
+OT network zones (Purdue model)
+
+Client details anonymised under NDA. Metrics reflect the delivered architecture's design objectives and engineering targets, not independently verified production results.
+
+
+## More work
+
+### Banking Blockchain Trade Finance
+
+Shared trade-finance ledger and managed SOC for a regional banking group.
+
+### Telecom Edge Computing
+
+Edge computing deployment bringing low-latency processing to regional sites.
+
+### Government Smart City Infrastructure
+
+City-scale command centre integrating CCTV, sensors and incident response.
+
+
+## Tell us what you are building.
+
+
+## Why MEAICON
+
+- **Regional Expertise**: Deep understanding of MEA market dynamics, regulatory frameworks, and cross-border operational requirements across the Gulf, East Africa, and broader Middle East & Africa region.
+- **Integrated Delivery**: Combined network, security, and infrastructure expertise delivered as a single accountable solution — no multi-vendor finger-pointing.
+- **Operational Resilience**: Every deployment is designed for 24/7 NOC monitoring, rapid incident response, and documented recovery procedures aligned to MEA regulatory expectations.
+- **Security First**: Zero-trust architectures, managed SOC services, and compliance-ready controls built into every layer of the solution.
+
+
 </main>
