@@ -1,0 +1,195 @@
+{
+  "name": "MEAICON Content Enhancement Pipeline",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:20128/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  model: \"my-free-tier\",\n  messages: [\n    {\n      role: \"system\",\n      content: \"You are a Firecrawl research agent. Given a solution domain, search for and extract the best enterprise content from industry leaders. Return structured research data.\"\n    },\n    {\n      role: \"user\",\n      content: `Research the following MEAICON solution domain: {{ $json.domain }}\n\nFind content from these competitor/reference sites:\n{{ $json.competitors }}\n\nExtract:\n1. Technical architecture details\n2. Service capabilities\n3. Industry best practices\n4. Key differentiators\n5. Customer value propositions\n\nReturn as structured JSON with sections: overview, architecture, capabilities, differentiators, use-cases, technical-specs.}\n      }\n    ],\n    temperature: 0.3,\n    max_tokens: 4000\n} }}",
+        "options": {}
+      },
+      "id": "firecrawl-research",
+      "name": "Firecrawl Research (via LLM)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:20128/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  model: \"my-free-tier\",\n  messages: [\n    {\n      role: \"system\",\n      content: \"You are a LangChain content enhancement agent. Transform raw research into MEAICON-branded, enterprise-grade content for a solution page. Follow MEAICON voice: professional, technical, MEA-region focused, outcome-oriented. Output must be valid Nunjucks/Markdown content ready for template injection.\"\n    },\n    {\n      role: \"user\",\n      content: `Transform this research into enhanced content for MEAICON page: {{ $json.page }}\n\nResearch Data:\n{{ $json.research }}\n\nMEAICON Context:\n- Company: MEAICON LLC FZ, Meydan Free Zone, Dubai, UAE\n- Region: Middle East & Africa (MEA)\n- Services: Connectivity, Data Centre, Cyber Security, Blockchain, Consulting\n- Voice: Professional, authoritative, technically precise, outcome-focused\n\nRequirements:\n1. 1,500-3,000 words\n2. Include: Overview, Technical Architecture, Capabilities, Differentiators, Use Cases, MEA Relevance\n3. Use MEAICON branding (not competitor names)\n4. Include specific technical details (not marketing fluff)\n5. Reference MEA region specifics (UAE, KSA, Egypt, Kenya, etc.)\n6. Output as Markdown with proper H2/H3 structure\n7. Include solution icon reference\n\nReturn ONLY the enhanced content markdown.}\n      }\n    ],\n    temperature: 0.4,\n    max_tokens: 6000\n} }}",
+        "options": {}
+      },
+      "id": "langchain-enhance",
+      "name": "LangChain Enhance (via LLM)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:20128/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  model: \"my-free-tier\",\n  messages: [\n    {\n      role: \"system\",\n      content: \"You are a fact-checking agent. Verify all technical claims in the enhanced content. Flag any hallucinations or unverifiable claims. Return a JSON report with: verified_claims[], flagged_claims[], confidence_score (0-1).\"\n    },\n    {\n      role: \"user\",\n      content: `Fact-check this enhanced content for MEAICON page: {{ $json.page }}\n\nContent:\n{{ $json.enhanced_content }}\n\nVerify:\n- Technical specifications (throughput, latency, standards)\n- MEA region claims (presence, regulations, partnerships)\n- Industry standards references (IEEE, ISO, ITU, etc.)\n- Competitor claims (should be rebranded to generic)\n\nReturn JSON report.}\n      }\n    ],\n    temperature: 0.1,\n    max_tokens: 3000\n} }}",
+        "options": {}
+      },
+      "id": "fact-check",
+      "name": "Fact Check (via LLM)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const fs = require('fs');\nconst path = require('path');\n\nconst page = $json.page;\nconst enhancedContent = $json.enhanced_content;\nconst factCheck = $json.fact_check;\n\n// Save enhanced content to research-data/langchain/<domain>/enhanced-content.md\nconst domain = page.replace('.njk', '').replace('pages/solutions/', '').replace('pages/industries/', 'industries/').replace('pages/case-studies/', 'case-studies/').replace('pages/insights/', 'insights/').replace('pages/', '');\nconst outputDir = path.join(__dirname, '..', 'research-data', 'langchain', domain);\n\nif (!fs.existsSync(outputDir)) {\n  fs.mkdirSync(outputDir, { recursive: true });\n}\n\nfs.writeFileSync(path.join(outputDir, 'enhanced-content.md'), enhancedContent);\nfs.writeFileSync(path.join(outputDir, 'fact-checks.json'), JSON.stringify(factCheck, null, 2));\nfs.writeFileSync(path.join(outputDir, 'summary.md'), `# ${page} Enhancement Summary\n\nFact Check Confidence: ${factCheck.confidence_score}\nVerified Claims: ${factCheck.verified_claims?.length || 0}\nFlagged Claims: ${factCheck.flagged_claims?.length || 0}\n`);\n\nreturn [{ json: { success: true, page, outputDir } }];",
+        "options": {}
+      },
+      "id": "save-output",
+      "name": "Save Enhanced Content",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Inject enhanced content into Nunjucks template\nconst { execSync } = require('child_process');\nconst path = require('path');\n\nconst pages = $json.pages || [$json.page];\nconst results = [];\n\nfor (const page of pages) {\n  try {\n    const scriptPath = path.join(__dirname, '..', 'scripts', 'inject-enhanced-content.py');\n    // Modify the injection map for this specific page\n    const domain = page.replace('.njk', '').replace('pages/solutions/', '').replace('pages/industries/', 'industries/').replace('pages/case-studies/', 'case-studies/').replace('pages/insights/', 'insights/').replace('pages/', '');\n    const enhancedPath = path.join(__dirname, '..', 'research-data', 'langchain', domain, 'enhanced-content.md');\n    const templatePath = path.join(__dirname, '..', 'pages', page);\n    \n    if (require('fs').existsSync(enhancedPath) && require('fs').existsSync(templatePath)) {\n      // Use the existing injection script logic\n      const template = require('fs').readFileSync(templatePath, 'utf8');\n      const enhanced = require('fs').readFileSync(enhancedPath, 'utf8');\n      \n      let updated;\n      if (template.includes('</main>')) {\n        updated = template.replace('</main>', enhanced + '\\n\\n</main>');\n      } else {\n        updated = template + '\\n\\n' + enhanced;\n      }\n      \n      require('fs').writeFileSync(templatePath, updated);\n      results.push({ page, success: true });\n    } else {\n      results.push({ page, success: false, error: 'Missing enhanced content or template' });\n    }\n  } catch (error) {\n    results.push({ page, success: false, error: error.message });\n  }\n}\n\nreturn [{ json: { results } }];",
+        "options": {}
+      },
+      "id": "inject-content",
+      "name": "Inject Content",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Run validation and build\nconst { execSync } = require('child_process');\nconst path = require('path');\n\ntry {\n  // Build\n  execSync('npm run build', { cwd: path.join(__dirname, '..'), stdio: 'pipe' });\n  \n  // Audit metadata\n  execSync('npm run audit:metadata', { cwd: path.join(__dirname, '..'), stdio: 'pipe' });\n  \n  // Validate content\n  execSync('npm run validate:content', { cwd: path.join(__dirname, '..'), stdio: 'pipe' });\n  \n  return [{ json: { success: true, message: 'Build and validation passed' } }];\n} catch (error) {\n  return [{ json: { success: false, error: error.message, stdout: error.stdout?.toString(), stderr: error.stderr?.toString() } }];\n}",
+        "options": {}
+      },
+      "id": "validate-build",
+      "name": "Validate & Build",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1560, 300]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Firecrawl Research (via LLM)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Firecrawl Research (via LLM)": {
+      "main": [
+        [
+          {
+            "node": "LangChain Enhance (via LLM)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LangChain Enhance (via LLM)": {
+      "main": [
+        [
+          {
+            "node": "Fact Check (via LLM)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fact Check (via LLM)": {
+      "main": [
+        [
+          {
+            "node": "Save Enhanced Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Enhanced Content": {
+      "main": [
+        [
+          {
+            "node": "Inject Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inject Content": {
+      "main": [
+        [
+          {
+            "node": "Validate & Build",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
