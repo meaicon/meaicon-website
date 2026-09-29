@@ -8,6 +8,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("content/page-template.njk");
   eleventyConfig.ignores.add("migrated/");
   eleventyConfig.ignores.add("products.html");
+  eleventyConfig.ignores.add("research-data/");
 
   // Keep legacy filters for backward compatibility (site-head.njk references them)
   /*
