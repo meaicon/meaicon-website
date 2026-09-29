@@ -1,50 +1,241 @@
 {
-  "timestamp": "2026-09-28T12:59:22.474259",
-  "total_topics": 6,
-  "approved": 6,
+  "timestamp": "2026-09-29T11:30:50.127434",
+  "mode": "pre-injection",
+  "total_topics": 29,
+  "approved": 29,
   "rejected": 0,
   "results": [
+    {
+      "topic": "ai-compute",
+      "status": "APPROVED",
+      "chars": 1116,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "ai-data-services",
+      "status": "APPROVED",
+      "chars": 981,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "application-services",
+      "status": "APPROVED",
+      "chars": 1049,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "blockchain",
+      "status": "APPROVED",
+      "chars": 10547,
+      "issues": 0,
+      "quality": 8,
+      "graded": true
+    },
+    {
+      "topic": "case-studies-index",
+      "status": "APPROVED",
+      "chars": 3410,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "cloud",
+      "status": "APPROVED",
+      "chars": 7162,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
     {
       "topic": "connectivity",
       "status": "APPROVED",
       "chars": 6103,
       "issues": 0,
-      "quality": 9
+      "quality": 9,
+      "graded": true
+    },
+    {
+      "topic": "connectivity-test",
+      "status": "APPROVED",
+      "chars": 1141,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "consulting",
+      "status": "APPROVED",
+      "chars": 15209,
+      "issues": 0,
+      "quality": 9,
+      "graded": true
+    },
+    {
+      "topic": "critical-infrastructure-consulting",
+      "status": "APPROVED",
+      "chars": 8200,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "cyber-security",
+      "status": "APPROVED",
+      "chars": 8721,
+      "issues": 0,
+      "quality": 8,
+      "graded": true
     },
     {
       "topic": "data-centre",
       "status": "APPROVED",
       "chars": 8801,
       "issues": 0,
-      "quality": 6
+      "quality": 6,
+      "graded": true
     },
     {
-      "topic": "cyber-security",
+      "topic": "digital-workplace",
       "status": "APPROVED",
-      "chars": 8865,
+      "chars": 7489,
       "issues": 0,
-      "quality": 8
+      "quality": 0,
+      "graded": false
     },
     {
-      "topic": "blockchain",
+      "topic": "disaster-recovery",
       "status": "APPROVED",
-      "chars": 10642,
+      "chars": 6864,
       "issues": 0,
-      "quality": 8
+      "quality": 0,
+      "graded": false
     },
     {
-      "topic": "consulting",
+      "topic": "edge-ai-inference",
       "status": "APPROVED",
-      "chars": 15722,
+      "chars": 7257,
       "issues": 0,
-      "quality": 9
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "edge-compute-infrastructure",
+      "status": "APPROVED",
+      "chars": 7244,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
     },
     {
       "topic": "general",
       "status": "APPROVED",
       "chars": 9119,
       "issues": 0,
-      "quality": 8
+      "quality": 8,
+      "graded": true
+    },
+    {
+      "topic": "hardware-security",
+      "status": "APPROVED",
+      "chars": 1999,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "identity-access",
+      "status": "APPROVED",
+      "chars": 2105,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "industries-index",
+      "status": "APPROVED",
+      "chars": 6596,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "iot",
+      "status": "APPROVED",
+      "chars": 1054,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "managed-services",
+      "status": "APPROVED",
+      "chars": 6976,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "mobile-data-centre",
+      "status": "APPROVED",
+      "chars": 2123,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "network-security",
+      "status": "APPROVED",
+      "chars": 2678,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "ota-fleet-management",
+      "status": "APPROVED",
+      "chars": 2010,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "post-quantum-security",
+      "status": "APPROVED",
+      "chars": 1991,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "secure-edge-computing",
+      "status": "APPROVED",
+      "chars": 2167,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "smart-building-edge",
+      "status": "APPROVED",
+      "chars": 2126,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
+    },
+    {
+      "topic": "sovereign-compute",
+      "status": "APPROVED",
+      "chars": 8005,
+      "issues": 0,
+      "quality": 0,
+      "graded": false
     }
   ]
 }

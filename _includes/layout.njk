@@ -62,9 +62,7 @@
 }
 </script>
 {% endif %}
-<main id="main-content" class="site-shell flex-1">
-  {{ content | safe }}
-</main>
+{{ content | safe }}
 {% include "footer.njk" %}
 <script>
 // IntersectionObserver for scroll reveal animations

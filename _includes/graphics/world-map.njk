@@ -5,52 +5,90 @@
       width: 100%;
       max-width: 900px;
       margin: 0 auto;
-      aspect-ratio: 2 / 1;
-      background: var(--paper);
       border-radius: 12px;
       overflow: hidden;
+      background: var(--paper);
     }
     .world-map-svg {
       width: 100%;
-      height: 100%;
+      height: auto;
       display: block;
     }
-    .world-map-svg .country {
+    .world-map-svg .land {
       fill: var(--muted);
-      fill-opacity: 0.15;
+      fill-opacity: 0.12;
       stroke: var(--line);
-      stroke-width: 0.5;
-      transition: fill 0.2s, fill-opacity 0.2s, stroke 0.2s;
+      stroke-width: 0.4;
+      stroke-linejoin: round;
+    }
+    .world-map-svg .land-active {
+      fill: var(--accent);
+      fill-opacity: 0.75;
+      stroke: var(--accent-strong);
+      stroke-width: 0.6;
+    }
+    .world-map-svg .land-active.hq {
+      fill: var(--accent-strong);
+      fill-opacity: 0.9;
+    }
+    .world-map-svg .land:hover:not(.land-active) {
+      fill-opacity: 0.25;
       cursor: pointer;
     }
-    .world-map-svg .country.active {
+    .marker {
       fill: var(--accent);
-      fill-opacity: 1;
-      stroke: var(--accent-strong);
-      stroke-width: 1;
+      stroke: #fff;
+      stroke-width: 1.2;
+      cursor: pointer;
     }
-    .world-map-svg .country:hover:not(.active) {
-      fill: var(--accent);
-      fill-opacity: 0.3;
+    .marker.hq {
+      fill: var(--accent-strong);
+      stroke-width: 1.5;
+    }
+    .marker-pulse {
+      fill: none;
       stroke: var(--accent);
+      stroke-width: 1;
+      opacity: 0.4;
     }
-    .world-map-svg .country-label {
-      font-size: 8px;
-      fill: var(--muted);
+    .marker-pulse.hq {
+      stroke: var(--accent-strong);
+    }
+    .marker-label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      fill: var(--ink);
       text-anchor: middle;
       pointer-events: none;
     }
-    .world-map-svg .country-label.active {
-      fill: var(--ink);
+    .marker-label.hq {
       font-weight: 700;
+      fill: var(--accent-strong);
     }
+    .map-tooltip {
+      position: absolute;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.5rem 0.875rem;
+      font-size: 0.8125rem;
+      color: var(--ink);
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      opacity: 0;
+      transition: opacity 0.18s;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .map-tooltip.visible { opacity: 1; }
     .map-legend {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       justify-content: center;
-      margin-top: 1rem;
-      padding: 0 1rem;
+      margin-top: 0.75rem;
+      padding: 0 1rem 0.5rem;
     }
     .legend-item {
       display: inline-flex;
@@ -65,194 +103,195 @@
       border-radius: 50%;
       flex-shrink: 0;
     }
-    .legend-dot.active {
-      background: var(--accent);
+    .legend-dot.hq { background: var(--accent-strong); }
+    .legend-dot.active { background: var(--accent); }
+    .legend-dot.context { background: var(--muted); opacity: 0.3; }
+    @keyframes pulse-ring {
+      0% { r: 4; opacity: 0.6; }
+      100% { r: 14; opacity: 0; }
     }
-    .legend-dot.inactive {
-      background: var(--muted);
-      opacity: 0.3;
-    }
-    .legend-dot.hq {
-      background: var(--accent);
-      border: 2px solid var(--accent-strong);
-    }
-    @media (max-width: 640px) {
-      .world-map-wrapper {
-        aspect-ratio: 1 / 1;
-        max-width: 100%;
-      }
-      .world-map-svg .country-label {
-        font-size: 6px;
-      }
+    .marker-pulse {
+      animation: pulse-ring 2.5s ease-out infinite;
     }
     @media (prefers-reduced-motion: reduce) {
-      .world-map-svg .country {
-        transition: none;
-      }
+      .marker-pulse { animation: none; opacity: 0; }
+    }
+    @media (max-width: 640px) {
+      .marker-label { font-size: 7px; }
     }
   </style>
-  
-  <!-- World map SVG (simplified Robinson projection) -->
-  <svg class="world-map-svg" viewBox="0 0 900 450" preserveAspectRatio="xMidYMid meet" role="img" aria-label="World map highlighting MEAICON presence countries">
+
+  <svg class="world-map-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" role="img" aria-label="World map highlighting MEAICON presence in 7 MEA markets">
     <defs>
-      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <filter id="map-glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2" result="blur"/>
         <feMerge>
-          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="blur"/>
           <feMergeNode in="SourceGraphic"/>
         </feMerge>
       </filter>
     </defs>
-    
-    <!-- Ocean background -->
-    <rect width="900" height="450" fill="var(--paper)" />
-    
-    <!-- UAE (HQ) - Dubai area approx -->
-    <g class="country active" data-country="UAE" data-detail="HQ · Meydan Free Zone, Dubai" data-hq="true" filter="url(#glow)">
-      <path d="M520,170 L535,165 L540,172 L538,180 L525,178 Z" class="country-shape"/>
-      <text x="530" y="160" class="country-label active">UAE</text>
-    </g>
-    
-    <!-- Saudi Arabia - Riyadh/Jeddah area -->
-    <g class="country active" data-country="Saudi Arabia" data-detail="Riyadh · Jeddah">
-      <path d="M490,150 L510,145 L525,150 L530,165 L520,180 L500,175 L485,165 Z" class="country-shape"/>
-      <text x="505" y="140" class="country-label active">KSA</text>
-    </g>
-    
-    <!-- Qatar - Doha -->
-    <g class="country active" data-country="Qatar" data-detail="Doha">
-      <path d="M540,178 L550,175 L555,182 L548,188 L538,185 Z" class="country-shape"/>
-      <text x="545" y="173" class="country-label active">QAT</text>
-    </g>
-    
-    <!-- Oman - Muscat -->
-    <g class="country active" data-country="Oman" data-detail="Muscat">
-      <path d="M545,195 L560,190 L568,198 L562,210 L548,205 Z" class="country-shape"/>
-      <text x="555" y="188" class="country-label active">OMN</text>
-    </g>
-    
-    <!-- Egypt - Cairo -->
-    <g class="country active" data-country="Egypt" data-detail="Cairo">
-      <path d="M480,185 L500,180 L510,190 L500,205 L475,200 L465,190 Z" class="country-shape"/>
-      <text x="490" y="175" class="country-label active">EGY</text>
-    </g>
-    
-    <!-- Kenya - Nairobi -->
-    <g class="country active" data-country="Kenya" data-detail="Nairobi">
-      <path d="M500,280 L520,275 L525,290 L515,305 L495,300 L485,285 Z" class="country-shape"/>
-      <text x="508" y="272" class="country-label active">KEN</text>
-    </g>
-    
-    <!-- Nigeria - Lagos -->
-    <g class="country active" data-country="Nigeria" data-detail="Lagos">
-      <path d="M410,245 L430,240 L440,250 L430,265 L415,260 L405,250 Z" class="country-shape"/>
-      <text x="422" y="238" class="country-label active">NGA</text>
-    </g>
-    
-    <!-- South Africa - Johannesburg -->
-    <g class="country active" data-country="South Africa" data-detail="Johannesburg · Cape Town">
-      <path d="M460,385 L485,380 L495,395 L480,415 L455,410 L445,395 Z" class="country-shape"/>
-      <text x="472" y="377" class="country-label active">ZAF</text>
-    </g>
-    
-    <!-- India - Mumbai/Delhi -->
-    <g class="country active" data-country="India" data-detail="Mumbai · Delhi">
-      <path d="M580,210 L605,205 L615,220 L610,235 L590,230 L575,218 Z" class="country-shape"/>
-      <text x="595" y="200" class="country-label active">IND</text>
-    </g>
-    
-    <!-- Other countries (inactive) for context -->
-    <g class="country" data-country="Turkey">
-      <path d="M470,115 L500,110 L520,120 L525,135 L510,145 L480,140 L460,130 Z" class="country-shape"/>
-      <text x="495" y="105" class="country-label">TUR</text>
-    </g>
-    <g class="country" data-country="Iran">
-      <path d="M525,135 L555,130 L570,145 L565,165 L540,168 L520,150 Z" class="country-shape"/>
-      <text x="545" y="125" class="country-label">IRN</text>
-    </g>
-    <g class="country" data-country="Pakistan">
-      <path d="M570,165 L595,160 L610,180 L600,200 L580,190 Z" class="country-shape"/>
-      <text x="588" y="155" class="country-label">PAK</text>
-    </g>
-    <g class="country" data-country="Ethiopia">
-      <path d="M495,275 L515,270 L520,295 L505,315 L485,310 Z" class="country-shape"/>
-      <text x="502" y="265" class="country-label">ETH</text>
-    </g>
-    <g class="country" data-country="Tanzania">
-      <path d="M495,305 L510,300 L518,325 L500,340 L485,330 Z" class="country-shape"/>
-      <text x="500" y="295" class="country-label">TZA</text>
-    </g>
-    <g class="country" data-country="Ghana">
-      <path d="M380,250 L395,248 L402,258 L392,268 L378,260 Z" class="country-shape"/>
-      <text x="390" y="245" class="country-label">GHA</text>
-    </g>
-    <g class="country" data-country="Morocco">
-      <path d="M350,200 L370,198 L375,210 L360,218 L348,210 Z" class="country-shape"/>
-      <text x="360" y="195" class="country-label">MAR</text>
-    </g>
-    <g class="country" data-country="UK">
-      <path d="M365,95 L385,92 L390,105 L375,112 L358,105 Z" class="country-shape"/>
-      <text x="375" y="90" class="country-label">GBR</text>
-    </g>
-    <g class="country" data-country="Germany">
-      <path d="M385,98 L410,95 L415,110 L400,115 L380,110 Z" class="country-shape"/>
-      <text x="395" y="93" class="country-label">DEU</text>
-    </g>
-    <g class="country" data-country="Singapore">
-      <path d="M680,290 L688,288 L692,295 L686,300 L680,295 Z" class="country-shape"/>
-      <text x="685" y="285" class="country-label">SGP</text>
-    </g>
-    <g class="country" data-country="Australia">
-      <path d="M700,380 L730,375 L735,405 L715,415 L700,405 Z" class="country-shape"/>
-      <text x="712" y="372" class="country-label">AUS</text>
-    </g>
+
+    <!-- Ocean -->
+    <rect width="1000" height="500" fill="var(--paper)"/>
+
+    <!-- Continents (simplified but recognizable shapes) -->
+    <!-- Europe -->
+    <path class="land" d="M470,80 L510,75 L530,85 L540,100 L535,120 L520,135 L500,140 L475,130 L460,115 L465,95 Z"/>
+    <path class="land" d="M445,110 L460,105 L465,125 L450,135 L440,125 Z"/>
+
+    <!-- Africa mainland -->
+    <path class="land" d="M470,145 L510,140 L535,150 L550,165 L560,185 L565,210 L560,240 L545,270 L525,300 L505,325 L480,340 L460,335 L445,320 L435,295 L430,265 L435,230 L445,200 L455,175 L460,155 Z"/>
+
+    <!-- Saudi Arabia -->
+    <path class="land-active hq" d="M545,155 L575,150 L595,155 L605,170 L610,190 L600,210 L580,215 L560,205 L550,185 L548,165 Z" data-country="Saudi Arabia" data-detail="Riyadh · Jeddah"/>
+
+    <!-- UAE (HQ) -->
+    <path class="land-active hq" d="M595,190 L608,188 L612,198 L605,208 L595,205 L592,196 Z" data-country="UAE" data-detail="HQ · Meydan Free Zone, Dubai" data-hq="true"/>
+
+    <!-- Qatar -->
+    <path class="land-active" d="M585,182 L595,180 L598,190 L590,195 L583,190 Z" data-country="Qatar" data-detail="Doha"/>
+
+    <!-- Oman -->
+    <path class="land-active" d="M612,195 L630,192 L645,200 L655,215 L648,230 L630,228 L615,218 L610,205 Z" data-country="Oman" data-detail="Muscat"/>
+
+    <!-- Egypt -->
+    <path class="land-active" d="M500,140 L530,135 L545,145 L540,165 L525,175 L505,170 L495,155 Z" data-country="Egypt" data-detail="Cairo"/>
+
+    <!-- Kenya -->
+    <path class="land-active" d="M525,275 L545,270 L555,285 L550,305 L535,315 L520,305 L515,288 Z" data-country="Kenya" data-detail="Nairobi"/>
+
+    <!-- India -->
+    <path class="land-active" d="M640,160 L665,155 L680,165 L685,185 L680,205 L670,220 L660,230 L650,225 L645,210 L640,190 L636,172 Z" data-country="India" data-detail="Mumbai · Delhi"/>
+
+    <!-- Surrounding countries for geographic context -->
+    <!-- Turkey -->
+    <path class="land" d="M490,115 L525,110 L550,118 L555,135 L540,145 L510,140 L485,130 Z"/>
+    <!-- Iran -->
+    <path class="land" d="M555,130 L590,125 L620,140 L625,160 L610,170 L585,165 L565,155 L555,140 Z"/>
+    <!-- Pakistan -->
+    <path class="land" d="M620,155 L645,150 L655,165 L650,185 L635,190 L622,175 Z"/>
+    <!-- Ethiopia -->
+    <path class="land" d="M510,255 L535,250 L545,270 L535,290 L515,285 L505,268 Z"/>
+    <!-- Tanzania -->
+    <path class="land" d="M515,305 L535,300 L545,325 L530,345 L515,335 L508,318 Z"/>
+    <!-- Nigeria -->
+    <path class="land" d="M425,220 L450,215 L460,230 L455,250 L440,245 L428,235 Z"/>
+    <!-- DRC -->
+    <path class="land" d="M460,260 L490,255 L505,275 L500,300 L480,310 L465,300 L455,280 Z"/>
+    <!-- South Africa -->
+    <path class="land" d="M470,345 L500,340 L515,355 L510,380 L490,390 L470,385 L460,365 Z"/>
+    <!-- Morocco -->
+    <path class="land" d="M400,160 L425,155 L435,170 L425,185 L408,180 L398,170 Z"/>
+    <!-- Algeria -->
+    <path class="land" d="M420,175 L460,168 L470,195 L465,225 L445,230 L425,220 L415,200 Z"/>
+    <!-- Libya -->
+    <path class="land" d="M465,150 L495,145 L505,165 L500,185 L480,188 L465,175 Z"/>
+    <!-- Sudan -->
+    <path class="land" d="M490,175 L525,170 L535,195 L530,225 L510,230 L495,215 L488,195 Z"/>
+    <!-- Madagascar -->
+    <path class="land" d="M555,310 L565,305 L570,325 L562,345 L555,340 L552,322 Z"/>
+    <!-- UK -->
+    <path class="land" d="M430,80 L448,77 L452,92 L440,100 L428,95 Z"/>
+    <!-- Germany -->
+    <path class="land" d="M460,85 L480,82 L488,98 L475,105 L460,100 Z"/>
+    <!-- France -->
+    <path class="land" d="M445,95 L460,90 L468,110 L455,118 L442,112 Z"/>
+    <!-- Russia (western) -->
+    <path class="land" d="M480,55 L560,50 L580,65 L575,85 L540,90 L505,85 L485,75 Z"/>
+    <!-- China -->
+    <path class="land" d="M650,90 L720,85 L745,105 L740,130 L720,145 L690,150 L665,140 L655,115 Z"/>
+    <!-- Southeast Asia -->
+    <path class="land" d="M700,170 L730,165 L745,180 L740,200 L715,205 L700,190 Z"/>
+    <!-- Indonesia -->
+    <path class="land" d="M710,225 L745,220 L755,235 L740,248 L715,243 L708,232 Z"/>
+    <!-- Japan -->
+    <path class="land" d="M760,100 L775,95 L782,110 L775,125 L768,120 L762,108 Z"/>
+    <!-- Australia -->
+    <path class="land" d="M740,290 L790,285 L805,310 L795,340 L770,345 L745,335 L738,312 Z"/>
+    <!-- Brazil -->
+    <path class="land" d="M310,230 L345,225 L360,245 L355,275 L340,290 L320,285 L308,265 L305,245 Z"/>
+    <!-- USA -->
+    <path class="land" d="M180,100 L250,95 L265,115 L260,140 L240,155 L210,160 L190,150 L178,130 Z"/>
+    <!-- Mexico -->
+    <path class="land" d="M180,155 L205,150 L215,165 L210,180 L195,185 L180,175 Z"/>
+
+    <!-- Marker pins for active markets -->
+    <!-- UAE (HQ) — Dubai -->
+    <circle class="marker-pulse hq" cx="603" cy="198" r="4" filter="url(#map-glow)"/>
+    <circle class="marker hq" cx="603" cy="198" r="3.5" data-country="UAE" data-detail="HQ · Meydan Free Zone, Dubai" data-hq="true"/>
+    <text class="marker-label hq" x="603" y="183">UAE</text>
+
+    <!-- Saudi Arabia — Riyadh -->
+    <circle class="marker-pulse" cx="575" cy="180" r="4"/>
+    <circle class="marker" cx="575" cy="180" r="3" data-country="Saudi Arabia" data-detail="Riyadh · Jeddah"/>
+    <text class="marker-label" x="572" y="170">KSA</text>
+
+    <!-- Qatar — Doha -->
+    <circle class="marker" cx="590" cy="187" r="2.5" data-country="Qatar" data-detail="Doha"/>
+    <text class="marker-label" x="600" y="178">QAT</text>
+
+    <!-- Oman — Muscat -->
+    <circle class="marker" cx="635" cy="210" r="3" data-country="Oman" data-detail="Muscat"/>
+    <text class="marker-label" x="645" y="208">OMN</text>
+
+    <!-- Egypt — Cairo -->
+    <circle class="marker" cx="520" cy="155" r="3" data-country="Egypt" data-detail="Cairo"/>
+    <text class="marker-label" x="520" y="145">EGY</text>
+
+    <!-- Kenya — Nairobi -->
+    <circle class="marker" cx="538" cy="292" r="3" data-country="Kenya" data-detail="Nairobi"/>
+    <text class="marker-label" x="538" y="282">KEN</text>
+
+    <!-- India — Mumbai/Delhi -->
+    <circle class="marker" cx="662" cy="190" r="3" data-country="India" data-detail="Mumbai · Delhi"/>
+    <text class="marker-label" x="672" y="185">IND</text>
   </svg>
-  
+
   <!-- Legend -->
   <div class="map-legend" role="group" aria-label="Map legend">
     <span class="legend-item"><span class="legend-dot hq" aria-hidden="true"></span> HQ (UAE)</span>
-    <span class="legend-item"><span class="legend-dot active" aria-hidden="true"></span> Active markets</span>
-    <span class="legend-item"><span class="legend-dot inactive" aria-hidden="true"></span> Regional context</span>
+    <span class="legend-item"><span class="legend-dot active" aria-hidden="true"></span> Active markets (7)</span>
+    <span class="legend-item"><span class="legend-dot context" aria-hidden="true"></span> Regional context</span>
   </div>
-  
+
+  <div class="map-tooltip" id="map-tooltip"></div>
+
   <script>
   (function() {
-    const wrapper = document.currentScript.closest('.world-map-wrapper');
+    var wrapper = document.currentScript.closest('.world-map-wrapper');
     if (!wrapper) return;
-    
-    const countries = wrapper.querySelectorAll('.country');
-    const detailEl = document.createElement('div');
-    detailEl.className = 'map-detail';
-    detailEl.style.cssText = 'position:absolute;bottom:60px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:0.75rem 1rem;font-size:0.8125rem;color:var(--ink);white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.15);opacity:0;transition:opacity 0.2s;pointer-events:none;z-index:10;';
-    detailEl.setAttribute('aria-live', 'polite');
-    wrapper.style.position = 'relative';
-    wrapper.appendChild(detailEl);
-    
-    countries.forEach(country => {
-      country.addEventListener('mouseenter', () => {
-        const name = country.dataset.country;
-        const detail = country.dataset.detail;
-        const isHQ = country.dataset.hq === 'true';
-        detailEl.textContent = (isHQ ? '🏢 ' : '') + name + ' — ' + detail;
-        detailEl.style.opacity = '1';
-      });
-      country.addEventListener('mouseleave', () => {
-        detailEl.style.opacity = '0';
-      });
-      country.addEventListener('focus', () => {
-        const name = country.dataset.country;
-        const detail = country.dataset.detail;
-        const isHQ = country.dataset.hq === 'true';
-        detailEl.textContent = (isHQ ? '🏢 ' : '') + name + ' — ' + detail;
-        detailEl.style.opacity = '1';
-      });
-      country.addEventListener('blur', () => {
-        detailEl.style.opacity = '0';
-      });
-      // Keyboard support
-      country.setAttribute('tabindex', '0');
-      country.setAttribute('role', 'button');
-      country.setAttribute('aria-label', country.dataset.country + (country.dataset.hq === 'true' ? ', HQ' : '') + ': ' + country.dataset.detail);
+    var tooltip = wrapper.querySelector('.map-tooltip');
+    var items = wrapper.querySelectorAll('[data-country]');
+
+    function showTip(e) {
+      var el = e.currentTarget;
+      var name = el.dataset.country;
+      var detail = el.dataset.detail || '';
+      var isHQ = el.dataset.hq === 'true';
+      tooltip.textContent = (isHQ ? '\uD83C\uDFD2\uFE0F ' : '') + name + (detail ? ' \u2014 ' + detail : '');
+      tooltip.classList.add('visible');
+    }
+    function moveTip(e) {
+      var rect = wrapper.getBoundingClientRect();
+      var x = e.clientX - rect.left + 12;
+      var y = e.clientY - rect.top - 32;
+      tooltip.style.left = x + 'px';
+      tooltip.style.top = y + 'px';
+    }
+    function hideTip() {
+      tooltip.classList.remove('visible');
+    }
+
+    items.forEach(function(el) {
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('role', 'button');
+      el.setAttribute('aria-label', el.dataset.country + (el.dataset.hq === 'true' ? ', HQ' : '') + ': ' + (el.dataset.detail || ''));
+      el.addEventListener('mouseenter', showTip);
+      el.addEventListener('mousemove', moveTip);
+      el.addEventListener('mouseleave', hideTip);
+      el.addEventListener('focus', showTip);
+      el.addEventListener('blur', hideTip);
     });
   })();
   </script>
