@@ -1,0 +1,95 @@
+{# Operational overview — monitoring dashboard with circular gauge and live indicators #}
+<div class="ops-dashboard">
+  <style>
+    .ops-dashboard { display: grid; gap: 1.5rem; }
+    .ops-gauge-row { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; }
+    .ops-gauge { position: relative; width: 120px; height: 120px; flex-shrink: 0; }
+    .ops-gauge svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+    .ops-gauge-track { fill: none; stroke: var(--line, #E2E8F0); stroke-width: 8; }
+    .ops-gauge-fill { fill: none; stroke: var(--accent, #0A66C2); stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 1s ease; }
+    .ops-gauge-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .ops-gauge-value { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--ink, #0F172A); line-height: 1; }
+    .ops-gauge-label { font-size: 0.65rem; color: var(--muted, #475569); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.25rem; }
+    .ops-gauge-info h4 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: var(--ink, #0F172A); margin: 0 0 0.25rem 0; }
+    .ops-gauge-info p { font-size: 0.8rem; color: var(--muted, #475569); margin: 0; }
+    .ops-indicators { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+    .ops-indicator { display: flex; flex-direction: column; align-items: flex-start; padding: 0.75rem 1rem; background: var(--card, #F8FAFC); border: 1px solid var(--line, #E2E8F0); border-radius: 0.5rem; }
+    .ops-indicator-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem; }
+    .ops-live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent, #0A66C2); box-shadow: 0 0 8px rgba(10,102,194,0.5); animation: live-blink 1.5s ease-in-out infinite; }
+    @keyframes live-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    @media (prefers-reduced-motion: reduce) { .ops-live-dot { animation: none; } .ops-gauge-fill { transition: none; } }
+    .ops-indicator-label { font-size: 0.7rem; font-weight: 600; color: var(--ink, #0F172A); text-transform: uppercase; letter-spacing: 0.05em; }
+    .ops-indicator-value { font-size: 0.75rem; color: var(--muted, #475569); }
+    .ops-progress-bars { display: grid; gap: 0.75rem; margin-top: 0.5rem; }
+    .ops-bar { display: flex; align-items: center; gap: 0.75rem; }
+    .ops-bar-label { font-size: 0.75rem; color: var(--muted, #475569); white-space: nowrap; min-width: 80px; }
+    .ops-bar-track { flex: 1; height: 6px; background: var(--line, #E2E8F0); border-radius: 3px; overflow: hidden; }
+    .ops-bar-fill { height: 100%; border-radius: 3px; background: var(--accent, #0A66C2); transition: width 1s ease; }
+    .ops-bar-value { font-size: 0.7rem; font-weight: 600; color: var(--ink, #0F172A); white-space: nowrap; }
+    @media (max-width: 640px) {
+      .ops-gauge-row { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+      .ops-indicators { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <div class="ops-gauge-row">
+    <div class="ops-gauge" role="img" aria-label="Network availability: 99.95% uptime">
+      <svg viewBox="0 0 120 120">
+        <circle class="ops-gauge-track" cx="60" cy="60" r="52" />
+        <circle class="ops-gauge-fill" cx="60" cy="60" r="52"
+          stroke-dasharray="326.7"
+          stroke-dashoffset="0.16"
+          style="stroke-dashoffset: 0.16" />
+      </svg>
+      <div class="ops-gauge-text">
+        <span class="ops-gauge-value">99.95%</span>
+        <span class="ops-gauge-label">Uptime</span>
+      </div>
+    </div>
+    <div class="ops-gauge-info">
+      <h4>Network availability</h4>
+      <p>Uptime SLA across all managed infrastructure — measured at the service delivery layer.</p>
+      <div class="ops-progress-bars">
+        <div class="ops-bar">
+          <span class="ops-bar-label">SOC coverage</span>
+          <div class="ops-bar-track"><div class="ops-bar-fill" style="width: 88%"></div></div>
+          <span class="ops-bar-value">24/7</span>
+        </div>
+        <div class="ops-bar">
+          <span class="ops-bar-label">NOC coverage</span>
+          <div class="ops-bar-track"><div class="ops-bar-fill" style="width: 92%"></div></div>
+          <span class="ops-bar-value">24/7</span>
+        </div>
+        <div class="ops-bar">
+          <span class="ops-bar-label">Threat response</span>
+          <div class="ops-bar-track"><div class="ops-bar-fill" style="width: 75%"></div></div>
+          <span class="ops-bar-value">&lt; 15 min</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ops-indicators">
+    <div class="ops-indicator">
+      <div class="ops-indicator-header">
+        <span class="ops-live-dot"></span>
+        <span class="ops-indicator-label">SOC</span>
+      </div>
+      <span class="ops-indicator-value">Security operations live</span>
+    </div>
+    <div class="ops-indicator">
+      <div class="ops-indicator-header">
+        <span class="ops-live-dot"></span>
+        <span class="ops-indicator-label">NOC</span>
+      </div>
+      <span class="ops-indicator-value">Network operations live</span>
+    </div>
+    <div class="ops-indicator">
+      <div class="ops-indicator-header">
+        <span class="ops-live-dot"></span>
+        <span class="ops-indicator-label">Regional reach</span>
+      </div>
+      <span class="ops-indicator-value">7 MEA markets</span>
+    </div>
+  </div>
+</div>

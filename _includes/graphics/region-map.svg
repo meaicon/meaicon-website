@@ -1,0 +1,89 @@
+<!-- MEAICON Regional Footprint Map — 7 MEA markets marked -->
+<!-- Markets: UAE, Saudi Arabia, Qatar, Oman, Egypt, Kenya, India -->
+<svg class="map-graphic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="map-title map-desc">
+  <title id="map-title">MEAICON Regional Footprint — 7 Markets across MEA</title>
+  <desc id="map-desc">Map showing MEAICON's presence in UAE, Saudi Arabia, Qatar, Oman, Egypt, Kenya, and India.</desc>
+
+  <defs>
+    <!-- Pulse animation for HQ marker -->
+    <filter id="pulse-glow">
+      <feGaussianBlur stdDeviation="3" result="glow" />
+      <feMerge>
+        <feMergeNode in="glow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <style>
+      .map-land { fill: var(--card, #F0EDE7); stroke: var(--line, #D4CFC4); stroke-width: 1; }
+      .map-region { fill: var(--card, #F0EDE7); stroke: var(--line, #D4CFC4); stroke-width: 1.5; }
+      .map-marker { fill: var(--accent, #0A66C2); stroke: #FFFFFF; stroke-width: 2; }
+      .map-hq { fill: var(--accent-strong, #004182); stroke: #FFFFFF; stroke-width: 2; }
+      .map-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; fill: var(--ink, #0F172A); text-anchor: middle; }
+      .map-label-hq { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; fill: var(--accent-strong, #004182); text-anchor: middle; }
+      .map-halo { fill: none; stroke: var(--accent, #0A66C2); stroke-width: 1.5; opacity: 0.3; }
+      .map-dot { fill: var(--accent, #0A66C2); opacity: 0.15; }
+      .map-sea { fill: var(--paper, #FFFFFF); }
+      .map-pulse { animation: pulse 2s ease-out infinite; transform-origin: center; }
+      @keyframes pulse { 0% { r: 6; opacity: 0.8; } 100% { r: 18; opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) { .map-pulse { animation: none; } }
+    </style>
+  </defs>
+
+  <!-- Sea background -->
+  <rect width="800" height="500" class="map-sea" />
+
+  <!-- Simplified landmass shapes (Middle East & Africa) -->
+  <!-- Africa main landmass -->
+  <path class="map-land" d="M180 180 Q200 140 240 130 Q300 120 350 140 Q400 155 420 180 L440 220 Q450 280 430 340 Q410 400 380 440 Q340 470 290 460 Q240 450 210 420 Q185 390 175 350 Q170 300 175 250 Q178 210 180 180 Z" />
+  <!-- Arabian peninsula -->
+  <path class="map-region" d="M380 130 Q420 120 460 140 Q500 160 520 200 Q530 240 510 270 Q480 290 440 280 Q400 270 380 240 Q365 200 370 160 Q375 140 380 130 Z" />
+  <!-- Egypt/Sinai bridge -->
+  <path class="map-land" d="M310 160 Q340 150 370 165 Q380 180 375 200 L350 210 Q320 205 308 190 Q302 175 310 160 Z" />
+  <!-- India landmass (upper right) -->
+  <path class="map-land" d="M580 80 Q620 70 670 85 Q710 100 730 140 Q740 180 720 220 Q700 260 670 275 Q620 280 590 260 Q560 235 545 200 Q535 165 540 130 Q550 100 580 80 Z" />
+  <!-- Persian Gulf islands (decorative dots) -->
+  <circle class="map-dot" cx="490" cy="195" r="2" />
+  <circle class="map-dot" cx="505" cy="210" r="1.5" />
+  <circle class="map-dot" cx="475" cy="185" r="1.5" />
+
+  <!-- Market markers -->
+  <!-- India (Mumbai · Bengaluru · New Delhi) -->
+  <circle class="map-marker" cx="640" cy="155" r="5" />
+  <text class="map-label" x="640" y="145">India</text>
+
+  <!-- Egypt (Cairo) -->
+  <circle class="map-marker" cx="340" cy="180" r="5" />
+  <text class="map-label" x="340" y="170">Egypt</text>
+
+  <!-- Saudi Arabia (Riyadh) -->
+  <circle class="map-marker" cx="460" cy="210" r="5" />
+  <text class="map-label" x="465" y="200">Saudi Arabia</text>
+
+  <!-- Qatar (Doha) -->
+  <circle class="map-marker" cx="490" cy="190" r="4" />
+  <text class="map-label" x="503" y="183">Qatar</text>
+
+  <!-- Oman (Muscat) -->
+  <circle class="map-marker" cx="510" cy="230" r="5" />
+  <text class="map-label" x="510" y="250">Oman</text>
+
+  <!-- UAE (Dubai - HQ) with pulse -->
+  <circle class="map-pulse" cx="475" cy="195" r="6" fill="var(--accent, #0A66C2)" opacity="0.8" />
+  <circle class="map-hq" cx="475" cy="195" r="7" filter="url(#pulse-glow)" />
+  <text class="map-label-hq" x="475" y="178">UAE</text>
+  <text class="map-label" x="475" y="217" style="font-size:9px;font-weight:500;fill:var(--muted,#475569)">HQ · Dubai</text>
+
+  <!-- Kenya (Nairobi) -->
+  <circle class="map-marker" cx="350" cy="370" r="5" />
+  <text class="map-label" x="350" y="388">Kenya</text>
+
+  <!-- Connection lines from HQ (UAE) to all markets -->
+  <g class="map-connections" opacity="0.25" stroke="var(--accent, #0A66C2)" stroke-width="1" fill="none" stroke-dasharray="3,3">
+    <line x1="475" y1="195" x2="640" y2="155" />
+    <line x1="475" y1="195" x2="340" y2="180" />
+    <line x1="475" y1="195" x2="460" y2="210" />
+    <line x1="475" y1="195" x2="490" y2="190" />
+    <line x1="475" y1="195" x2="510" y2="230" />
+    <line x1="475" y1="195" x2="350" y2="370" />
+  </g>
+</svg>

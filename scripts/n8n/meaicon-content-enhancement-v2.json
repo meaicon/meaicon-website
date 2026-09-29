@@ -1,0 +1,288 @@
+{
+  "name": "MEAICON Content Enhancement Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyDay",
+              "hour": 2,
+              "minute": 0
+            }
+          ]
+        }
+      },
+      "name": "Daily 02:00 Trigger",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        -660,
+        -220
+      ]
+    },
+    {
+      "parameters": {
+        "path": "firecrawl-change",
+        "httpMethod": "POST",
+        "options": {}
+      },
+      "name": "Firecrawl Change Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -660,
+        0
+      ],
+      "webhookId": "meaicon-firecrawl-change"
+    },
+    {
+      "parameters": {
+        "manualTrigger": {
+          "values": {
+            "topic": "all"
+          }
+        }
+      },
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -660,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "name": "Zapier trigger runs all",
+        "functionCode": "// Trigger 1 (webhook): body.topic = specific topic\n// Trigger 2 (cron) + Trigger 3 (manual): run all 6 topics\nconst topics = ['connectivity','data-centre','cyber-security','blockchain','consulting','general'];\nconst body = $json.body || {};\nlet target;\nif (body.topic === 'all' || !body.topic) {\n  target = topics;\n} else {\n  target = [body.topic];\n}\nreturn target.map(t => ({ json: { topic: t, trigger: body.trigger || 'unknown' } }));"
+      },
+      "name": "Pick Topics",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        -380,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "command": "={{ 'python scripts/firecrawl-snapshot.py --page ' + $json.topic }}",
+        "options": {}
+      },
+      "name": "Firecrawl Scrape",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        0
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "={{ 'python scripts/langchain-enhance.py --topic \"' + $json.topic + '\" --page-name ' + $json.topic + ' --input-dir research-data/firecrawl/' + $json.topic }}",
+        "options": {}
+      },
+      "name": "LangChain Enhance",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        180,
+        0
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "={{ 'python scripts/safety-gate.py' }}",
+        "options": {}
+      },
+      "name": "Safety Gate",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        460,
+        0
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Gate: only build when safety gate reports approved topics and no rejected ones\nconst output = $json.stdout || '';\nconst approved = (output.match(/APPROVED/g) || []).length;\nconst rejected = (output.match(/REJECTED|MISSING|TOO_SHORT/g) || []).length;\nreturn [{ json: { approved, rejected, build_allowed: approved > 0 && rejected === 0, output } }];"
+      },
+      "name": "Gate Decision",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        740,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "condition": {
+          "boolean": [
+            {
+              "value1": "={{ $json.build_allowed }}",
+              "operation": "true",
+              "value2": ""
+            }
+          ]
+        }
+      },
+      "name": "Only If Approved",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "command": "={{ 'npm run build && npm run validate:content' }}",
+        "options": {}
+      },
+      "name": "Build + Validate",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        -150
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Daily approval summary for Leo\nconst gate = $('Gate Decision').first().json;\nconst lines = [\n  '# Daily Approval Summary - ' + new Date().toISOString().slice(0,10),\n  '',\n  'Topics approved: ' + gate.approved,\n  'Topics rejected: ' + gate.rejected,\n  'Build: ' + ($json.build === undefined ? 'not run' : ($json.stdout ? 'ran (check output)' : 'failed')),\n  '',\n  '## Details',\n  gate.output\n];\nreturn [{ json: { summary: lines.join('\\n'), build_allowed: gate.build_allowed, approved: gate.approved, rejected: gate.rejected } }];"
+      },
+      "name": "Daily Summary",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 02:00 Trigger": {
+      "main": [
+        [
+          {
+            "node": "Pick Topics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Firecrawl Change Webhook": {
+      "main": [
+        [
+          {
+            "node": "Pick Topics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Pick Topics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick Topics": {
+      "main": [
+        [
+          {
+            "node": "Firecrawl Scrape",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Firecrawl Scrape": {
+      "main": [
+        [
+          {
+            "node": "LangChain Enhance",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LangChain Enhance": {
+      "main": [
+        [
+          {
+            "node": "Safety Gate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Safety Gate": {
+      "main": [
+        [
+          {
+            "node": "Gate Decision",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gate Decision": {
+      "main": [
+        [
+          {
+            "node": "Only If Approved",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Only If Approved": {
+      "main": [
+        [
+          {
+            "node": "Build + Validate",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Build + Validate": {
+      "main": [
+        [
+          {
+            "node": "Daily Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+    "settings": {
+      "executionOrder": "v1",
+      "saveDataSuccessExecution": "all",
+      "saveManualExecutions": true
+    }
+  }

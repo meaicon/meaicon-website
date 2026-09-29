@@ -1,0 +1,259 @@
+<div class="world-map-wrapper" aria-label="MEAICON global presence map">
+  <style>
+    .world-map-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      aspect-ratio: 2 / 1;
+      background: var(--paper);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .world-map-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .world-map-svg .country {
+      fill: var(--muted);
+      fill-opacity: 0.15;
+      stroke: var(--line);
+      stroke-width: 0.5;
+      transition: fill 0.2s, fill-opacity 0.2s, stroke 0.2s;
+      cursor: pointer;
+    }
+    .world-map-svg .country.active {
+      fill: var(--accent);
+      fill-opacity: 1;
+      stroke: var(--accent-strong);
+      stroke-width: 1;
+    }
+    .world-map-svg .country:hover:not(.active) {
+      fill: var(--accent);
+      fill-opacity: 0.3;
+      stroke: var(--accent);
+    }
+    .world-map-svg .country-label {
+      font-size: 8px;
+      fill: var(--muted);
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .world-map-svg .country-label.active {
+      fill: var(--ink);
+      font-weight: 700;
+    }
+    .map-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1rem;
+      padding: 0 1rem;
+    }
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .legend-dot.active {
+      background: var(--accent);
+    }
+    .legend-dot.inactive {
+      background: var(--muted);
+      opacity: 0.3;
+    }
+    .legend-dot.hq {
+      background: var(--accent);
+      border: 2px solid var(--accent-strong);
+    }
+    @media (max-width: 640px) {
+      .world-map-wrapper {
+        aspect-ratio: 1 / 1;
+        max-width: 100%;
+      }
+      .world-map-svg .country-label {
+        font-size: 6px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .world-map-svg .country {
+        transition: none;
+      }
+    }
+  </style>
+  
+  <!-- World map SVG (simplified Robinson projection) -->
+  <svg class="world-map-svg" viewBox="0 0 900 450" preserveAspectRatio="xMidYMid meet" role="img" aria-label="World map highlighting MEAICON presence countries">
+    <defs>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    
+    <!-- Ocean background -->
+    <rect width="900" height="450" fill="var(--paper)" />
+    
+    <!-- UAE (HQ) - Dubai area approx -->
+    <g class="country active" data-country="UAE" data-detail="HQ · Meydan Free Zone, Dubai" data-hq="true" filter="url(#glow)">
+      <path d="M520,170 L535,165 L540,172 L538,180 L525,178 Z" class="country-shape"/>
+      <text x="530" y="160" class="country-label active">UAE</text>
+    </g>
+    
+    <!-- Saudi Arabia - Riyadh/Jeddah area -->
+    <g class="country active" data-country="Saudi Arabia" data-detail="Riyadh · Jeddah">
+      <path d="M490,150 L510,145 L525,150 L530,165 L520,180 L500,175 L485,165 Z" class="country-shape"/>
+      <text x="505" y="140" class="country-label active">KSA</text>
+    </g>
+    
+    <!-- Qatar - Doha -->
+    <g class="country active" data-country="Qatar" data-detail="Doha">
+      <path d="M540,178 L550,175 L555,182 L548,188 L538,185 Z" class="country-shape"/>
+      <text x="545" y="173" class="country-label active">QAT</text>
+    </g>
+    
+    <!-- Oman - Muscat -->
+    <g class="country active" data-country="Oman" data-detail="Muscat">
+      <path d="M545,195 L560,190 L568,198 L562,210 L548,205 Z" class="country-shape"/>
+      <text x="555" y="188" class="country-label active">OMN</text>
+    </g>
+    
+    <!-- Egypt - Cairo -->
+    <g class="country active" data-country="Egypt" data-detail="Cairo">
+      <path d="M480,185 L500,180 L510,190 L500,205 L475,200 L465,190 Z" class="country-shape"/>
+      <text x="490" y="175" class="country-label active">EGY</text>
+    </g>
+    
+    <!-- Kenya - Nairobi -->
+    <g class="country active" data-country="Kenya" data-detail="Nairobi">
+      <path d="M500,280 L520,275 L525,290 L515,305 L495,300 L485,285 Z" class="country-shape"/>
+      <text x="508" y="272" class="country-label active">KEN</text>
+    </g>
+    
+    <!-- Nigeria - Lagos -->
+    <g class="country active" data-country="Nigeria" data-detail="Lagos">
+      <path d="M410,245 L430,240 L440,250 L430,265 L415,260 L405,250 Z" class="country-shape"/>
+      <text x="422" y="238" class="country-label active">NGA</text>
+    </g>
+    
+    <!-- South Africa - Johannesburg -->
+    <g class="country active" data-country="South Africa" data-detail="Johannesburg · Cape Town">
+      <path d="M460,385 L485,380 L495,395 L480,415 L455,410 L445,395 Z" class="country-shape"/>
+      <text x="472" y="377" class="country-label active">ZAF</text>
+    </g>
+    
+    <!-- India - Mumbai/Delhi -->
+    <g class="country active" data-country="India" data-detail="Mumbai · Delhi">
+      <path d="M580,210 L605,205 L615,220 L610,235 L590,230 L575,218 Z" class="country-shape"/>
+      <text x="595" y="200" class="country-label active">IND</text>
+    </g>
+    
+    <!-- Other countries (inactive) for context -->
+    <g class="country" data-country="Turkey">
+      <path d="M470,115 L500,110 L520,120 L525,135 L510,145 L480,140 L460,130 Z" class="country-shape"/>
+      <text x="495" y="105" class="country-label">TUR</text>
+    </g>
+    <g class="country" data-country="Iran">
+      <path d="M525,135 L555,130 L570,145 L565,165 L540,168 L520,150 Z" class="country-shape"/>
+      <text x="545" y="125" class="country-label">IRN</text>
+    </g>
+    <g class="country" data-country="Pakistan">
+      <path d="M570,165 L595,160 L610,180 L600,200 L580,190 Z" class="country-shape"/>
+      <text x="588" y="155" class="country-label">PAK</text>
+    </g>
+    <g class="country" data-country="Ethiopia">
+      <path d="M495,275 L515,270 L520,295 L505,315 L485,310 Z" class="country-shape"/>
+      <text x="502" y="265" class="country-label">ETH</text>
+    </g>
+    <g class="country" data-country="Tanzania">
+      <path d="M495,305 L510,300 L518,325 L500,340 L485,330 Z" class="country-shape"/>
+      <text x="500" y="295" class="country-label">TZA</text>
+    </g>
+    <g class="country" data-country="Ghana">
+      <path d="M380,250 L395,248 L402,258 L392,268 L378,260 Z" class="country-shape"/>
+      <text x="390" y="245" class="country-label">GHA</text>
+    </g>
+    <g class="country" data-country="Morocco">
+      <path d="M350,200 L370,198 L375,210 L360,218 L348,210 Z" class="country-shape"/>
+      <text x="360" y="195" class="country-label">MAR</text>
+    </g>
+    <g class="country" data-country="UK">
+      <path d="M365,95 L385,92 L390,105 L375,112 L358,105 Z" class="country-shape"/>
+      <text x="375" y="90" class="country-label">GBR</text>
+    </g>
+    <g class="country" data-country="Germany">
+      <path d="M385,98 L410,95 L415,110 L400,115 L380,110 Z" class="country-shape"/>
+      <text x="395" y="93" class="country-label">DEU</text>
+    </g>
+    <g class="country" data-country="Singapore">
+      <path d="M680,290 L688,288 L692,295 L686,300 L680,295 Z" class="country-shape"/>
+      <text x="685" y="285" class="country-label">SGP</text>
+    </g>
+    <g class="country" data-country="Australia">
+      <path d="M700,380 L730,375 L735,405 L715,415 L700,405 Z" class="country-shape"/>
+      <text x="712" y="372" class="country-label">AUS</text>
+    </g>
+  </svg>
+  
+  <!-- Legend -->
+  <div class="map-legend" role="group" aria-label="Map legend">
+    <span class="legend-item"><span class="legend-dot hq" aria-hidden="true"></span> HQ (UAE)</span>
+    <span class="legend-item"><span class="legend-dot active" aria-hidden="true"></span> Active markets</span>
+    <span class="legend-item"><span class="legend-dot inactive" aria-hidden="true"></span> Regional context</span>
+  </div>
+  
+  <script>
+  (function() {
+    const wrapper = document.currentScript.closest('.world-map-wrapper');
+    if (!wrapper) return;
+    
+    const countries = wrapper.querySelectorAll('.country');
+    const detailEl = document.createElement('div');
+    detailEl.className = 'map-detail';
+    detailEl.style.cssText = 'position:absolute;bottom:60px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:0.75rem 1rem;font-size:0.8125rem;color:var(--ink);white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.15);opacity:0;transition:opacity 0.2s;pointer-events:none;z-index:10;';
+    detailEl.setAttribute('aria-live', 'polite');
+    wrapper.style.position = 'relative';
+    wrapper.appendChild(detailEl);
+    
+    countries.forEach(country => {
+      country.addEventListener('mouseenter', () => {
+        const name = country.dataset.country;
+        const detail = country.dataset.detail;
+        const isHQ = country.dataset.hq === 'true';
+        detailEl.textContent = (isHQ ? '🏢 ' : '') + name + ' — ' + detail;
+        detailEl.style.opacity = '1';
+      });
+      country.addEventListener('mouseleave', () => {
+        detailEl.style.opacity = '0';
+      });
+      country.addEventListener('focus', () => {
+        const name = country.dataset.country;
+        const detail = country.dataset.detail;
+        const isHQ = country.dataset.hq === 'true';
+        detailEl.textContent = (isHQ ? '🏢 ' : '') + name + ' — ' + detail;
+        detailEl.style.opacity = '1';
+      });
+      country.addEventListener('blur', () => {
+        detailEl.style.opacity = '0';
+      });
+      // Keyboard support
+      country.setAttribute('tabindex', '0');
+      country.setAttribute('role', 'button');
+      country.setAttribute('aria-label', country.dataset.country + (country.dataset.hq === 'true' ? ', HQ' : '') + ': ' + country.dataset.detail);
+    });
+  })();
+  </script>
+</div>

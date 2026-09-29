@@ -1,0 +1,96 @@
+layout: layout.njk
+title: "About MEAICON — MEAICON"
+description: "MEAICON LLC FZ is a digital infrastructure company headquartered in Dubai, serving enterprises and governments across the Middle East and Africa."
+canonical: "https://www.meaicon.com/about.html"
+permalink: /about.html
+<main id="main-content" class="flex-1 site-shell">
+  <section class="reveal page-hero">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> › <span aria-current="page">About</span></nav>
+      <p class="eyebrow mb-4 mt-6">About</p>
+      <h1 class="page-title max-w-3xl">Infrastructure is a promise. We keep it.</h1>
+      <p>MEAICON designs, deploys, and operates the connectivity, data centre, cybersecurity, and blockchain foundations that governments and enterprises across the Middle East and Africa rely on.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="/why-meaicon.html" class="btn-secondary inline-flex items-center px-5 py-3">Why MEAICON</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="reveal grid-2">
+        <div>
+          <p class="eyebrow mb-3">Who we are</p>
+          <h2 class="section-title">One partner. Full stack. Full accountability.</h2>
+        </div>
+        <div class="prose-content">
+          <p>MEAICON LLC FZ is a digital infrastructure company headquartered at Meydan Free Zone in Dubai. We exist because the region's most ambitious operators — governments, banks, hospitals, telecoms, and enterprises — need infrastructure they can trust without question, and a partner who takes ownership across the full technology stack.</p>
+          <p>That means we do not hand off. We do not blame the vendor. We design, build, and operate — from the fibre in the ground to the security alerts on your phone — under one operating model, one escalation path, and one standard of delivery.</p>
+          <p>Our teams work across seven MEA markets: the United Arab Emirates, Saudi Arabia, Qatar, Oman, Egypt, Kenya, and India. Shared engineering standards, shared monitoring, shared accountability.</p>
+          <p>The company was founded on a simple principle: infrastructure is a promise, and someone needs to keep it. In a region where digital transformation is accelerating at unprecedented pace — where national visions, economic diversification, and sovereign capability requirements converge — the need for a partner who owns the outcome, not just the contract, has never been greater. MEAICON was built to be that partner.</p>
+          <p>We bring together engineering disciplines that are normally siloed across separate vendors: network architects who understand security, security analysts who understand data centre operations, data centre engineers who understand cloud architecture, and consultants who have actually built and operated what they recommend. That depth across the stack is what makes single accountability possible — not as a marketing claim, but as an operational reality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">At a glance</p>
+      <h2 class="section-title mb-12">MEAICON in numbers</h2>
+      {% include "graphics/stats-panel.njk" %}
+    </div>
+  </section>
+
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="reveal grid-2">
+        <div>
+          <p class="eyebrow mb-3">What drives us</p>
+          <h2 class="section-title">Our principles</h2>
+        </div>
+        <div class="prose-content">
+          <h3>Ownership over handoffs</h3>
+          <p>When something breaks at 3am, no one should be asking whose responsibility it is. We take the call, diagnose the issue, and fix it — regardless of which layer it sits in.</p>
+          <h3>Engineered for the region</h3>
+          <p>MEA markets have distinct regulatory frameworks, climate challenges, and infrastructure realities. Our designs account for heat, dust, sovereignty requirements, and local content regulations from the first drawing.</p>
+          <h3>Security as foundation</h3>
+          <p>Every capability we deliver is built with security as a first principle, not an add-on. Our SOC operates 24/7 alongside our NOC — monitoring threats and performance on the same plane.</p>
+          <h3>Proof over promises</h3>
+          <p>We measure success by what we have shipped and what we keep running, not by what we say in a meeting. Our case studies and references are the proof.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Regional presence</p>
+      <h2 class="section-title mb-12">Local delivery teams. Shared operating standards.</h2>
+      <div class="grid gap-12 lg:grid-cols-[1.2fr,0.8fr] lg:items-start">
+        <div>
+          {% include "graphics/region-map.svg" %}
+        </div>
+        <div>
+          {% include "graphics/presence-cards.njk" %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="reveal grid-2">
+        <div>
+          <p class="eyebrow mb-3">Our approach</p>
+          <h2 class="section-title">Technical insight with strategic foresight.</h2>
+        </div>
+        <div class="prose-content">
+          <p>By running mission-critical systems from the inside, we reimagine your business for the future. We combine hands-on infrastructure management with forward-looking transformation strategies — delivering outcome-focused solutions designed for measurable business results, not just technical improvements.</p>
+          <p>We operate at enterprise scale across seven MEA markets while maintaining the agility to address specific industry and regional requirements — from local content regulations to climate-hardened deployment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>

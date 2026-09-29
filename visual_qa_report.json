@@ -1,0 +1,970 @@
+{
+  "timestamp": "<class 'playwright.sync_api._generated.Playwright'>",
+  "total_pages_tested": 58,
+  "total_screenshots": 67,
+  "total_issues": 42,
+  "issues_by_type": {
+    "unexpected_colors": 7,
+    "layout_issues": 35
+  },
+  "screenshots": [
+    "screenshots/index_html_desktop.png",
+    "screenshots/about_html_desktop.png",
+    "screenshots/solutions_html_desktop.png",
+    "screenshots/industries_html_desktop.png",
+    "screenshots/case-studies_html_desktop.png",
+    "screenshots/contact_html_desktop.png",
+    "screenshots/faq_html_desktop.png",
+    "screenshots/global-connectivity_html_desktop.png",
+    "screenshots/leadership_html_desktop.png",
+    "screenshots/methodology_html_desktop.png",
+    "screenshots/partners_html_desktop.png",
+    "screenshots/privacy-policy_html_desktop.png",
+    "screenshots/terms-of-service_html_desktop.png",
+    "screenshots/why-meaicon_html_desktop.png",
+    "screenshots/404_html_desktop.png",
+    "screenshots/solutions_ai-compute_html_desktop.png",
+    "screenshots/solutions_ai-data-services_html_desktop.png",
+    "screenshots/solutions_application-services_html_desktop.png",
+    "screenshots/solutions_blockchain_html_desktop.png",
+    "screenshots/solutions_cloud_html_desktop.png",
+    "screenshots/solutions_connectivity_html_desktop.png",
+    "screenshots/solutions_consulting_html_desktop.png",
+    "screenshots/solutions_critical-infrastructure-consulting_html_desktop.png",
+    "screenshots/solutions_cyber-security_html_desktop.png",
+    "screenshots/solutions_data-centre_html_desktop.png",
+    "screenshots/solutions_digital-workplace_html_desktop.png",
+    "screenshots/solutions_disaster-recovery_html_desktop.png",
+    "screenshots/solutions_edge-ai-inference_html_desktop.png",
+    "screenshots/solutions_edge-compute-infrastructure_html_desktop.png",
+    "screenshots/solutions_hardware-security_html_desktop.png",
+    "screenshots/solutions_identity-access_html_desktop.png",
+    "screenshots/solutions_iot_html_desktop.png",
+    "screenshots/solutions_managed-services_html_desktop.png",
+    "screenshots/solutions_mobile-data-centre_html_desktop.png",
+    "screenshots/solutions_network-security_html_desktop.png",
+    "screenshots/solutions_ota-fleet-management_html_desktop.png",
+    "screenshots/solutions_post-quantum-security_html_desktop.png",
+    "screenshots/solutions_secure-edge-computing_html_desktop.png",
+    "screenshots/solutions_smart-building-edge_html_desktop.png",
+    "screenshots/solutions_sovereign-compute_html_desktop.png",
+    "screenshots/industries_banking_html_desktop.png",
+    "screenshots/industries_defence_html_desktop.png",
+    "screenshots/industries_education_html_desktop.png",
+    "screenshots/industries_energy_html_desktop.png",
+    "screenshots/industries_government_html_desktop.png",
+    "screenshots/industries_healthcare_html_desktop.png",
+    "screenshots/industries_hospitality_html_desktop.png",
+    "screenshots/industries_logistics_html_desktop.png",
+    "screenshots/industries_maritime_html_desktop.png",
+    "screenshots/industries_real-estate_html_desktop.png",
+    "screenshots/industries_retail_html_desktop.png",
+    "screenshots/industries_telecom_html_desktop.png",
+    "screenshots/solutions_consulting_digital-transformation-strategy_html_desktop.png",
+    "screenshots/solutions_consulting_infrastructure-network-audits_html_desktop.png",
+    "screenshots/solutions_consulting_managed-services-outsourcing_html_desktop.png",
+    "screenshots/solutions_consulting_regulatory-compliance-advisory_html_desktop.png",
+    "screenshots/solutions_consulting_technology-roadmap-vendor-selection_html_desktop.png",
+    "screenshots/solutions_consulting_tokenisation-advisory_html_desktop.png",
+    "screenshots/index_html_desktop.png",
+    "screenshots/index_html_tablet.png",
+    "screenshots/index_html_mobile.png",
+    "screenshots/solutions_html_desktop.png",
+    "screenshots/solutions_html_tablet.png",
+    "screenshots/solutions_html_mobile.png",
+    "screenshots/industries_html_desktop.png",
+    "screenshots/industries_html_tablet.png",
+    "screenshots/industries_html_mobile.png"
+  ],
+  "detailed_issues": [
+    {
+      "type": "unexpected_colors",
+      "message": "Found 4 elements with teal/green colors",
+      "details": [
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 108, 53)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 107, 63)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        }
+      ],
+      "url": "index.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 2 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "bento-grid mt-12",
+          "height_diff": 451.640625,
+          "max_height": 491.640625,
+          "min_height": 40
+        },
+        {
+          "type": "uneven_card_heights",
+          "grid": "grid gap-12 lg:grid-cols-[0.8fr,1.2fr] lg:items-start",
+          "height_diff": 463.125,
+          "max_height": 528.3125,
+          "min_height": 65.1875
+        }
+      ],
+      "url": "index.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "unexpected_colors",
+      "message": "Found 4 elements with teal/green colors",
+      "details": [
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 108, 53)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 107, 63)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        }
+      ],
+      "url": "about.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "grid gap-12 lg:grid-cols-[1.2fr,0.8fr] lg:items-start",
+          "height_diff": 463.125,
+          "max_height": 528.3125,
+          "min_height": 65.1875
+        }
+      ],
+      "url": "about.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal grid-3",
+          "height_diff": 81.5625,
+          "max_height": 266.34375,
+          "min_height": 184.78125
+        }
+      ],
+      "url": "industries.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal grid-3",
+          "height_diff": 27.1875,
+          "max_height": 270.40625,
+          "min_height": 243.21875
+        }
+      ],
+      "url": "case-studies.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "unexpected_colors",
+      "message": "Found 4 elements with teal/green colors",
+      "details": [
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 108, 53)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 107, 63)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        }
+      ],
+      "url": "contact.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "unexpected_colors",
+      "message": "Found 4 elements with teal/green colors",
+      "details": [
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 108, 53)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 107, 63)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        }
+      ],
+      "url": "global-connectivity.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 190.3125,
+          "max_height": 1179.203125,
+          "min_height": 988.890625
+        }
+      ],
+      "url": "why-meaicon.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 55.265625,
+          "max_height": 364.46875,
+          "min_height": 309.203125
+        }
+      ],
+      "url": "solutions/ai-data-services.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 28.078125,
+          "max_height": 391.65625,
+          "min_height": 363.578125
+        }
+      ],
+      "url": "solutions/application-services.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 27.1875,
+          "max_height": 336.390625,
+          "min_height": 309.203125
+        }
+      ],
+      "url": "solutions/cloud.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 27.1875,
+          "max_height": 309.203125,
+          "min_height": 282.015625
+        }
+      ],
+      "url": "solutions/connectivity.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 27.1875,
+          "max_height": 446.03125,
+          "min_height": 418.84375
+        }
+      ],
+      "url": "solutions/critical-infrastructure-consulting.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 28.078125,
+          "max_height": 337.28125,
+          "min_height": 309.203125
+        }
+      ],
+      "url": "solutions/cyber-security.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 28.078125,
+          "max_height": 391.65625,
+          "min_height": 363.578125
+        }
+      ],
+      "url": "solutions/digital-workplace.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 28.078125,
+          "max_height": 391.65625,
+          "min_height": 363.578125
+        }
+      ],
+      "url": "solutions/edge-ai-inference.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 54.375,
+          "max_height": 418.84375,
+          "min_height": 364.46875
+        }
+      ],
+      "url": "solutions/hardware-security.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 27.1875,
+          "max_height": 309.203125,
+          "min_height": 282.015625
+        }
+      ],
+      "url": "solutions/managed-services.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 28.078125,
+          "max_height": 337.28125,
+          "min_height": 309.203125
+        }
+      ],
+      "url": "solutions/mobile-data-centre.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 27.1875,
+          "max_height": 418.84375,
+          "min_height": 391.65625
+        }
+      ],
+      "url": "solutions/post-quantum-security.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 27.1875,
+          "max_height": 446.03125,
+          "min_height": 418.84375
+        }
+      ],
+      "url": "solutions/secure-edge-computing.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 26.296875,
+          "max_height": 363.578125,
+          "min_height": 337.28125
+        }
+      ],
+      "url": "industries/defence.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 28.078125,
+          "max_height": 310.09375,
+          "min_height": 282.015625
+        }
+      ],
+      "url": "industries/education.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 55.265625,
+          "max_height": 310.09375,
+          "min_height": 254.828125
+        }
+      ],
+      "url": "industries/energy.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 28.078125,
+          "max_height": 310.09375,
+          "min_height": 282.015625
+        }
+      ],
+      "url": "industries/government.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 2 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 28.078125,
+          "max_height": 310.09375,
+          "min_height": 282.015625
+        },
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal grid-2 md:grid-4 gap-6",
+          "height_diff": 23.796875,
+          "max_height": 132.59375,
+          "min_height": 108.796875
+        }
+      ],
+      "url": "industries/healthcare.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 28.078125,
+          "max_height": 310.09375,
+          "min_height": 282.015625
+        }
+      ],
+      "url": "industries/logistics.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 27.1875,
+          "max_height": 336.390625,
+          "min_height": 309.203125
+        }
+      ],
+      "url": "industries/maritime.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 55.265625,
+          "max_height": 310.09375,
+          "min_height": 254.828125
+        }
+      ],
+      "url": "industries/real-estate.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 28.078125,
+          "max_height": 310.09375,
+          "min_height": 282.015625
+        }
+      ],
+      "url": "solutions/consulting/digital-transformation-strategy.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid",
+          "height_diff": 28.078125,
+          "max_height": 310.09375,
+          "min_height": 282.015625
+        }
+      ],
+      "url": "solutions/consulting/infrastructure-network-audits.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "unexpected_colors",
+      "message": "Found 4 elements with teal/green colors",
+      "details": [
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 108, 53)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 107, 63)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        }
+      ],
+      "url": "index.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 2 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "bento-grid mt-12",
+          "height_diff": 451.640625,
+          "max_height": 491.640625,
+          "min_height": 40
+        },
+        {
+          "type": "uneven_card_heights",
+          "grid": "grid gap-12 lg:grid-cols-[0.8fr,1.2fr] lg:items-start",
+          "height_diff": 463.125,
+          "max_height": 528.3125,
+          "min_height": 65.1875
+        }
+      ],
+      "url": "index.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "unexpected_colors",
+      "message": "Found 4 elements with teal/green colors",
+      "details": [
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 108, 53)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 107, 63)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        }
+      ],
+      "url": "index.html",
+      "viewport": "768x1024"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 4 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "bento-grid mt-12",
+          "height_diff": 477.140625,
+          "max_height": 517.140625,
+          "min_height": 40
+        },
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid mt-12",
+          "height_diff": 27.1875,
+          "max_height": 417.953125,
+          "min_height": 390.765625
+        },
+        {
+          "type": "uneven_card_heights",
+          "grid": "industry-grid mt-12",
+          "height_diff": 19.5,
+          "max_height": 198.28125,
+          "min_height": 178.78125
+        },
+        {
+          "type": "uneven_card_heights",
+          "grid": "grid gap-12 lg:grid-cols-[0.8fr,1.2fr] lg:items-start",
+          "height_diff": 463.125,
+          "max_height": 528.3125,
+          "min_height": 65.1875
+        }
+      ],
+      "url": "index.html",
+      "viewport": "768x1024"
+    },
+    {
+      "type": "unexpected_colors",
+      "message": "Found 4 elements with teal/green colors",
+      "details": [
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 108, 53)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 150, 57)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        },
+        {
+          "element": "span",
+          "property": "color",
+          "value": {
+            "bgColor": "rgb(0, 107, 63)",
+            "color": "rgb(15, 23, 42)",
+            "borderColor": "rgb(15, 23, 42)"
+          }
+        }
+      ],
+      "url": "index.html",
+      "viewport": "375x667"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 3 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "bento-grid mt-12",
+          "height_diff": 1519.078125,
+          "max_height": 1559.078125,
+          "min_height": 40
+        },
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal feature-grid mt-12",
+          "height_diff": 27.1875,
+          "max_height": 417.953125,
+          "min_height": 390.765625
+        },
+        {
+          "type": "uneven_card_heights",
+          "grid": "grid gap-12 lg:grid-cols-[0.8fr,1.2fr] lg:items-start",
+          "height_diff": 463.125,
+          "max_height": 528.3125,
+          "min_height": 65.1875
+        }
+      ],
+      "url": "index.html",
+      "viewport": "375x667"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal grid-3",
+          "height_diff": 23.796875,
+          "max_height": 208.578125,
+          "min_height": 184.78125
+        }
+      ],
+      "url": "solutions.html",
+      "viewport": "375x667"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal grid-3",
+          "height_diff": 81.5625,
+          "max_height": 266.34375,
+          "min_height": 184.78125
+        }
+      ],
+      "url": "industries.html",
+      "viewport": "1440x900"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal grid-3",
+          "height_diff": 40.78125,
+          "max_height": 201.765625,
+          "min_height": 160.984375
+        }
+      ],
+      "url": "industries.html",
+      "viewport": "768x1024"
+    },
+    {
+      "type": "layout_issues",
+      "message": "Found 1 layout issues",
+      "details": [
+        {
+          "type": "uneven_card_heights",
+          "grid": "reveal grid-3",
+          "height_diff": 81.5625,
+          "max_height": 266.34375,
+          "min_height": 184.78125
+        }
+      ],
+      "url": "industries.html",
+      "viewport": "375x667"
+    }
+  ]
+}

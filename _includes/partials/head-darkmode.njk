@@ -1,0 +1,67 @@
+/* ============================================
+   Dark Mode & Theme Variables
+   ============================================ */
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --paper: #2B2B2B;
+  --card: #3D3C3C;
+  --ink: #FFFFFF;
+  --muted: #BBBBBB;
+  --line: #565049;
+  --dark: #2B2B2B;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 24px -14px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 40px -16px rgba(0, 0, 0, 0.5);
+  --accent: #0A66C2;
+  --accent-strong: #004182;
+  --accent-light: rgba(10, 102, 194, 0.15);
+  --text-primary: #FFFFFF;
+  --text-secondary: #BBBBBB;
+  --text-muted: #9E9287;
+  --text-on-dark: #FFFFFF;
+}
+
+/* System dark mode preference (no data-theme attribute set yet) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #2B2B2B;
+    --card: #3D3C3C;
+    --ink: #FFFFFF;
+    --muted: #BBBBBB;
+    --line: #565049;
+    --dark: #2B2B2B;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 24px -14px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 40px -16px rgba(0, 0, 0, 0.5);
+    --accent: #0A66C2;
+    --accent-strong: #004182;
+    --accent-light: rgba(10, 102, 194, 0.15);
+    --text-primary: #FFFFFF;
+    --text-secondary: #BBBBBB;
+    --text-muted: #9E9287;
+    --text-on-dark: #FFFFFF;
+  }
+}
+
+/* Dark Body */
+[data-theme="dark"] body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Dark Cards — fix invisible card on dark bg */
+[data-theme="dark"] .card,
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .solution-card,
+[data-theme="dark"] .case-study-card {
+  background: var(--card);
+  border-color: var(--line);
+  color: var(--ink);
+}
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .feature-card:hover,
+[data-theme="dark"] .solution-card:hover,
+[data-theme="dark"] .case-study-card:hover {
+  border-color: var(--accent);
+}

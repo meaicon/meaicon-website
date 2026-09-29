@@ -15,13 +15,27 @@ Thumbs.db
 .seo-audits/
 storage/
 
-# Dependencies (if any tooling is added later)
+# Dependencies
 node_modules/
 
-# Build output (if a build step is introduced later)
+# Build output
 dist/
 build/
+_site/
 
 # Environment files
 .env
 .env.local
+
+# QA reports (generated, not committed)
+qa-reports/
+
+# Research artifacts and audit data
+.firecrawl/
+.hermes/
+audit-nav-analysis.json
+audit-ux-results.json
+ui-ux-audit-report.json
+
+# Stale root HTML - Eleventy outputs to _site/
+/*.html

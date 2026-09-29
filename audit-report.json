@@ -1,0 +1,367 @@
+{
+  "timestamp": "2026-09-28T20:09:48.444Z",
+  "pagesChecked": 50,
+  "totalIssues": 60,
+  "results": [
+    {
+      "url": "/solutions/ai-compute.html",
+      "issues": [
+        "solutions/ai-compute: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-ai-compute.png"
+    },
+    {
+      "url": "/solutions/ai-data-services.html",
+      "issues": [
+        "solutions/ai-data-services: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-ai-data-services.png"
+    },
+    {
+      "url": "/solutions/application-services.html",
+      "issues": [
+        "solutions/application-services: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-application-services.png"
+    },
+    {
+      "url": "/solutions/blockchain.html",
+      "issues": [
+        "solutions/blockchain: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-blockchain.png"
+    },
+    {
+      "url": "/solutions/cloud.html",
+      "issues": [
+        "solutions/cloud: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-cloud.png"
+    },
+    {
+      "url": "/solutions/connectivity.html",
+      "issues": [
+        "solutions/connectivity: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-connectivity.png"
+    },
+    {
+      "url": "/solutions/consulting.html",
+      "issues": [
+        "solutions/consulting: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-consulting.png"
+    },
+    {
+      "url": "/solutions/critical-infrastructure-consulting.html",
+      "issues": [
+        "solutions/critical-infrastructure-consulting: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-critical-infrastructure-consulting.png"
+    },
+    {
+      "url": "/solutions/cyber-security.html",
+      "issues": [
+        "solutions/cyber-security: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-cyber-security.png"
+    },
+    {
+      "url": "/solutions/data-centre.html",
+      "issues": [
+        "solutions/data-centre: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-data-centre.png"
+    },
+    {
+      "url": "/solutions/digital-workplace.html",
+      "issues": [
+        "solutions/digital-workplace: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-digital-workplace.png"
+    },
+    {
+      "url": "/solutions/disaster-recovery.html",
+      "issues": [
+        "solutions/disaster-recovery: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-disaster-recovery.png"
+    },
+    {
+      "url": "/solutions/edge-ai-inference.html",
+      "issues": [
+        "solutions/edge-ai-inference: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-edge-ai-inference.png"
+    },
+    {
+      "url": "/solutions/edge-compute-infrastructure.html",
+      "issues": [
+        "solutions/edge-compute-infrastructure: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-edge-compute-infrastructure.png"
+    },
+    {
+      "url": "/solutions/hardware-security.html",
+      "issues": [
+        "solutions/hardware-security: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-hardware-security.png"
+    },
+    {
+      "url": "/solutions/identity-access.html",
+      "issues": [
+        "solutions/identity-access: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-identity-access.png"
+    },
+    {
+      "url": "/solutions/iot.html",
+      "issues": [
+        "solutions/iot: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-iot.png"
+    },
+    {
+      "url": "/solutions/managed-services.html",
+      "issues": [
+        "solutions/managed-services: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-managed-services.png"
+    },
+    {
+      "url": "/solutions/mobile-data-centre.html",
+      "issues": [
+        "solutions/mobile-data-centre: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-mobile-data-centre.png"
+    },
+    {
+      "url": "/solutions/network-security.html",
+      "issues": [
+        "solutions/network-security: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-network-security.png"
+    },
+    {
+      "url": "/solutions/ota-fleet-management.html",
+      "issues": [
+        "solutions/ota-fleet-management: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-ota-fleet-management.png"
+    },
+    {
+      "url": "/solutions/post-quantum-security.html",
+      "issues": [
+        "solutions/post-quantum-security: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-post-quantum-security.png"
+    },
+    {
+      "url": "/solutions/secure-edge-computing.html",
+      "issues": [
+        "solutions/secure-edge-computing: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-secure-edge-computing.png"
+    },
+    {
+      "url": "/solutions/smart-building-edge.html",
+      "issues": [
+        "solutions/smart-building-edge: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-smart-building-edge.png"
+    },
+    {
+      "url": "/solutions/sovereign-compute.html",
+      "issues": [
+        "solutions/sovereign-compute: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-sovereign-compute.png"
+    },
+    {
+      "url": "/solutions/consulting/digital-transformation-strategy.html",
+      "issues": [
+        "solutions/consulting/digital-transformation-strategy: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-consulting-digital-transformation-strategy.png"
+    },
+    {
+      "url": "/solutions/consulting/infrastructure-network-audits.html",
+      "issues": [
+        "solutions/consulting/infrastructure-network-audits: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-consulting-infrastructure-network-audits.png"
+    },
+    {
+      "url": "/solutions/consulting/managed-services-outsourcing.html",
+      "issues": [
+        "solutions/consulting/managed-services-outsourcing: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-consulting-managed-services-outsourcing.png"
+    },
+    {
+      "url": "/solutions/consulting/regulatory-compliance-advisory.html",
+      "issues": [
+        "solutions/consulting/regulatory-compliance-advisory: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-consulting-regulatory-compliance-advisory.png"
+    },
+    {
+      "url": "/solutions/consulting/technology-roadmap-vendor-selection.html",
+      "issues": [
+        "solutions/consulting/technology-roadmap-vendor-selection: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-consulting-technology-roadmap-vendor-selection.png"
+    },
+    {
+      "url": "/solutions/consulting/tokenisation-advisory.html",
+      "issues": [
+        "solutions/consulting/tokenisation-advisory: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions-consulting-tokenisation-advisory.png"
+    },
+    {
+      "url": "/industries/banking.html",
+      "issues": [
+        "industries/banking: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries-banking.png"
+    },
+    {
+      "url": "/industries/defence.html",
+      "issues": [
+        "industries/defence: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries-defence.png"
+    },
+    {
+      "url": "/industries/education.html",
+      "issues": [
+        "industries/education: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries-education.png"
+    },
+    {
+      "url": "/industries/energy.html",
+      "issues": [
+        "industries/energy: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries-energy.png"
+    },
+    {
+      "url": "/industries/government.html",
+      "issues": [
+        "industries/government: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries-government.png"
+    },
+    {
+      "url": "/industries/healthcare.html",
+      "issues": [
+        "industries/healthcare: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries-healthcare.png"
+    },
+    {
+      "url": "/industries/hospitality.html",
+      "issues": [
+        "industries/hospitality: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries-hospitality.png"
+    },
+    {
+      "url": "/industries/logistics.html",
+      "issues": [
+        "industries/logistics: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries-logistics.png"
+    },
+    {
+      "url": "/industries/maritime.html",
+      "issues": [
+        "industries/maritime: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries-maritime.png"
+    },
+    {
+      "url": "/industries/real-estate.html",
+      "issues": [
+        "industries/real-estate: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries-real-estate.png"
+    },
+    {
+      "url": "/industries/retail.html",
+      "issues": [
+        "industries/retail: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries-retail.png"
+    },
+    {
+      "url": "/industries/telecom.html",
+      "issues": [
+        "industries/telecom: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries-telecom.png"
+    },
+    {
+      "url": "/index.html",
+      "issues": [
+        "index: Grid 0: card height variance 376px (min: 43, max: 419)",
+        "index: Grid 1: card height variance 196px (min: 424, max: 621)",
+        "index: Grid 2: card height variance 55px (min: 92, max: 147)",
+        "index: Grid 4: card height variance 94px (min: 72, max: 166)",
+        "index: Grid 6: card height variance 90px (min: 229, max: 319)",
+        "index: Grid 9: card height variance 55px (min: 92, max: 147)",
+        "index: Grid 11: card height variance 202px (min: 355, max: 557)",
+        "index: Grid 12: card height variance 52px (min: 47, max: 99)",
+        "index: Grid 13: card height variance 104px (min: 214, max: 318)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\index.png"
+    },
+    {
+      "url": "/solutions.html",
+      "issues": [
+        "solutions: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\solutions.png"
+    },
+    {
+      "url": "/industries.html",
+      "issues": [
+        "industries: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\industries.png"
+    },
+    {
+      "url": "/case-studies.html",
+      "issues": [
+        "case-studies: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\case-studies.png"
+    },
+    {
+      "url": "/insights.html",
+      "issues": [
+        "insights: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\insights.png"
+    },
+    {
+      "url": "/about.html",
+      "issues": [
+        "about: Grid 3 child 1 has zero dimensions",
+        "about: Grid 0: card height variance 376px (min: 43, max: 419)",
+        "about: Grid 3: card height variance 355px (min: 0, max: 355)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\about.png"
+    },
+    {
+      "url": "/contact.html",
+      "issues": [
+        "contact: Grid 0: card height variance 376px (min: 43, max: 419)"
+      ],
+      "screenshot": "C:\\Users\\nev3s\\repos\\meaicon-website\\audit-screenshots\\contact.png"
+    }
+  ]
+}

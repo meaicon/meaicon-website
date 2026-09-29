@@ -1,0 +1,154 @@
+<div class="presence-cards" aria-label="MEAICON regional presence">
+  <style>
+    .presence-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+    .presence-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .presence-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 12px rgba(10, 102, 194, 0.08);
+    }
+    .presence-card.hq {
+      border-left: 3px solid var(--accent);
+    }
+    .presence-flag {
+      width: 32px;
+      height: 24px;
+      border-radius: 4px;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    .presence-flag span {
+      flex: 1;
+      height: 100%;
+    }
+    .presence-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .presence-name {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .presence-detail {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.125rem;
+    }
+    .presence-badge {
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+  </style>
+
+  <!-- UAE flag: red, green, white, black -->
+  <div class="presence-card hq">
+    <div class="presence-flag">
+      <span style="background:#FF0000"></span>
+      <span style="background:#FFFFFF"></span>
+      <span style="background:#009639"></span>
+      <span style="background:#000000"></span>
+    </div>
+    <div class="presence-info">
+      <div class="presence-name">United Arab Emirates</div>
+      <div class="presence-detail">HQ · Meydan Free Zone, Dubai</div>
+    </div>
+    <span class="presence-badge">HQ</span>
+  </div>
+
+  <!-- Saudi Arabia: green with white sword -->
+  <div class="presence-card">
+    <div class="presence-flag">
+      <span style="background:#006C35"></span>
+    </div>
+    <div class="presence-info">
+      <div class="presence-name">Saudi Arabia</div>
+      <div class="presence-detail">Riyadh · Jeddah</div>
+    </div>
+  </div>
+
+  <!-- Qatar: maroon -->
+  <div class="presence-card">
+    <div class="presence-flag">
+      <span style="background:#8A1538"></span>
+    </div>
+    <div class="presence-info">
+      <div class="presence-name">Qatar</div>
+      <div class="presence-detail">Doha</div>
+    </div>
+  </div>
+
+  <!-- Oman: red, white, green -->
+  <div class="presence-card">
+    <div class="presence-flag">
+      <span style="background:#FFFFFF"></span>
+      <span style="background:#C8102E"></span>
+      <span style="background:#009639"></span>
+    </div>
+    <div class="presence-info">
+      <div class="presence-name">Oman</div>
+      <div class="presence-detail">Muscat</div>
+    </div>
+  </div>
+
+  <!-- Egypt: red, white, black with gold eagle -->
+  <div class="presence-card">
+    <div class="presence-flag">
+      <span style="background:#CE1126"></span>
+      <span style="background:#FFFFFF"></span>
+      <span style="background:#000000"></span>
+    </div>
+    <div class="presence-info">
+      <div class="presence-name">Egypt</div>
+      <div class="presence-detail">Cairo</div>
+    </div>
+  </div>
+
+  <!-- Kenya: black, red, green with shield -->
+  <div class="presence-card">
+    <div class="presence-flag">
+      <span style="background:#000000"></span>
+      <span style="background:#BB0000"></span>
+      <span style="background:#006B3F"></span>
+    </div>
+    <div class="presence-info">
+      <div class="presence-name">Kenya</div>
+      <div class="presence-detail">Nairobi</div>
+    </div>
+  </div>
+
+  <!-- India: saffron, white, green -->
+  <div class="presence-card">
+    <div class="presence-flag">
+      <span style="background:#FF9933"></span>
+      <span style="background:#FFFFFF"></span>
+      <span style="background:#138808"></span>
+    </div>
+    <div class="presence-info">
+      <div class="presence-name">India</div>
+      <div class="presence-detail">Mumbai · Bengaluru · New Delhi</div>
+    </div>
+  </div>
+</div>

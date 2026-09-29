@@ -1,0 +1,44 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="canonical" href="{{ canonical | default('https://www.meaicon.com/') }}" />
+<link rel="stylesheet" href="/assets/css/cookie-consent.css" />
+<script src="/assets/js/cookie-consent.js" defer></script>
+
+<style>
+{% include '_includes/partials/head-css.njk' %}
+{% include '_includes/partials/head-components.njk' %}
+{% include '_includes/partials/head-darkmode.njk' %}
+{% include '_includes/partials/head-animations.njk' %}
+</style>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}" />
+<meta property="og:title" content="{{ ogTitle | default(title) }}" />
+<meta property="og:description" content="{{ ogDescription | default(description) }}" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://www.meaicon.com/assets/brand/meaicon/meaicon-LLC-FZ-logo-black.png" />
+<meta property="og:url" content="{{ canonical | default('https://www.meaicon.com/') }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ twitterTitle | default(ogTitle | default(title)) }}" />
+<meta name="twitter:description" content="{{ twitterDescription | default(ogDescription | default(description)) }}" />
+<meta name="twitter:image" content="https://www.meaicon.com/assets/brand/meaicon/meaicon-LLC-FZ-logo-black.png" />
+{% if legacySource %}{{ legacySource | legacyJsonLd | safe }}{% else %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MEAICON LLC FZ",
+  "url": "https://www.meaicon.com/",
+  "address": { "@type": "PostalAddress", "addressCountry": "AE", "addressLocality": "Dubai", "streetAddress": "Meydan Free Zone" },
+  "contactPoint": { "@type": "ContactPoint", "telephone": "+971 55 513 1234" }
+}
+</script>
+{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />

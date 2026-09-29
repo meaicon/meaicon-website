@@ -1,0 +1,222 @@
+{
+  "name": "MEAICON Content Enhancement Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "manual",
+        "fieldsToMatch": {
+          "values": [
+            {
+              "topic": "MEA connectivity SD-WAN MPLS satellite",
+              "page_type": "solution",
+              "page_name": "connectivity"
+            },
+            {
+              "topic": "Data centre colocation managed hosting edge MEA",
+              "page_type": "solution",
+              "page_name": "data-centre"
+            },
+            {
+              "topic": "Cyber security SOC MSSP zero-trust OT security MEA",
+              "page_type": "solution",
+              "page_name": "cyber-security"
+            },
+            {
+              "topic": "Blockchain DLT smart contracts CBDC tokenization MEA",
+              "page_type": "solution",
+              "page_name": "blockchain"
+            },
+            {
+              "topic": "Digital transformation IT strategy cloud migration consulting MEA",
+              "page_type": "solution",
+              "page_name": "consulting"
+            }
+          ]
+        }
+      },
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5678/webhook/firecrawl-research",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "topic",
+              "value": "={{ $json.topic }}"
+            },
+            {
+              "name": "page_name",
+              "value": "={{ $json.page_name }}"
+            },
+            {
+              "name": "page_type",
+              "value": "={{ $json.page_type }}"
+            }
+          ]
+        }
+      },
+      "name": "Firecrawl Research",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "command": "python C:/Users/nev3s/repos/meaicon-website/scripts/langchain-enhance.py --topic \"{{ $json.topic }}\" --page-name \"{{ $json.page_name }}\" --input-dir research-data/firecrawl/{{ $json.page_name }}"
+      },
+      "name": "LangChain Enhance",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:20128/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer {{ $credentials.httpHeaderAuth.headerValue }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "my-free-tier"
+            },
+            {
+              "name": "messages",
+              "value": "={{ JSON.stringify([{role: 'system', content: 'You are a content rebranding agent for MEAICON LLC FZ, a technology company in Dubai. Rewrite the following enhanced research content in MEAICON brand voice: professional, authoritative, enterprise-grade. Remove all source references. Use MEAICON service taxonomy: Connectivity, Data Centre, Cyber Security, Blockchain, Consulting. Target: Enterprise IT leaders and government decision-makers across MEA.'}, {role: 'user', content: $json.output}]) }}"
+            }
+          ]
+        }
+      },
+      "name": "Content Rebrand (OmniRoute LLM)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 0]
+    },
+    {
+      "parameters": {
+        "file": "C:/Users/nev3s/repos/meaicon-website/research-data/content.md"
+      },
+      "name": "Write content.md",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [880, 0]
+    },
+    {
+      "parameters": {
+        "functionCode": "const items = $input.all();\nconst result = items.map(item => {\n  return {\n    json: {\n      page_name: item.json.page_name || 'unknown',\n      page_type: item.json.page_type || 'unknown',\n      topic: item.json.topic || 'unknown',\n      firecrawl_status: item.json.firecrawl_status || 'pending',\n      langchain_status: item.json.langchain_status || 'pending',\n      rebrand_status: item.json.rebrand_status || 'pending',\n      content_md: item.json.content_md || 'pending',\n      timestamp: new Date().toISOString()\n    }\n  };\n});\nreturn result;"
+      },
+      "name": "Pipeline Status",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1100, 0]
+    },
+    {
+      "parameters": {
+        "functionCode": "return [{json:{topic:'MEA connectivity SD-WAN MPLS satellite subsea cables 5G edge networking',page_type:'solution',page_name:'connectivity'}}];"
+      },
+      "name": "Test Single Topic",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [0, 200]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Firecrawl Research",
+            "type": "n8n-nodes-base.connection.main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Firecrawl Research": {
+      "main": [
+        [
+          {
+            "node": "LangChain Enhance",
+            "type": "n8n-nodes-base.connection.main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LangChain Enhance": {
+      "content": [
+        [
+          {
+            "node": "Content Rebrand (OmniRoute LLM)",
+            "type": "n8n-nodes-base.connection.main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Content Rebrand (OmniRoute LLM)": {
+      "main": [
+        [
+          {
+            "snapshot": "Write content.md",
+            "type": "n8n-nodes-base.connection.main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write content.md": {
+      "main": [
+        [
+          {
+            "node": "Pipeline Status",
+            "type": "n8n-nodes-base.connection.main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test Single Topic": {
+      "main": [
+        [
+          {
+            "node": "Firecrawl Research",
+            "type": "n8n-nodes-base.connection.main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

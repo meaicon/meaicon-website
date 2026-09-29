@@ -1,199 +1,315 @@
-# Meaicon Website
+# MEAICON Website
 
-This repository contains the static marketing website for Meaicon. The project is built with plain HTML, CSS, and JavaScript, and does not require a build step.
+Static marketing website for MEAICON LLC FZ — a digital infrastructure company headquartered in Dubai, serving enterprises and governments across the Middle East &amp; Africa.
 
 ## Overview
 
-- Static site with multi-page HTML structure
-- No framework dependency required
-- Designed for fast hosting on GitHub Pages, Netlify, Vercel, or any static host
-- Assets are stored in the `assets/` folder, including branding, CSS, and JavaScript
+- **80-page** corporate website built with Eleventy 3.1.6 and Nunjucks templates
+- Original MEAICON content — connectivity, data centre, cybersecurity, blockchain, cloud, managed services, consulting
+- 12 industry vertical pages, 8 insight articles, 8 case studies, company pages, legal pages
+- Design system: Plus Jakarta Sans + Inter typography, custom CSS token system, Tailwind utility layer
+- Enterprise UI/UX: full-viewport hero, dark mode (auto + manual toggle), IntersectionObserver scroll reveals, card hover effects, button micro-interactions
+- Production-ready: SEO-complete, accessible (WCAG AA), semantic HTML5
 
-## Project structure
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| SSG | Eleventy 3.1.6 |
+| Templating | Nunjucks |
+| Styling | Custom CSS design system + Tailwind CDN |
+| Fonts | Google Fonts (Plus Jakarta Sans, Inter, IBM Plex Mono, Space Grotesk) |
+| Design tokens | CSS custom properties (color, typography, spacing, gradients) |
+| Dark mode | Auto (`prefers-color-scheme`) + manual toggle (`[data-theme]`, localStorage) |
+| Build output | Static HTML/CSS/JS |
+
+## Project Structure
 
 ```text
-/workspaces/meaicon-website
-├── index.html
-├── about.html
-├── solutions.html
-├── industries.html
-├── global-connectivity.html
-├── partners.html
-├── case-studies.html
-├── contact.html
-├── products.html
-├── robots.txt
-├── sitemap.xml
-├── favicon.ico
-├── favicon.svg
-├── apple-touch-icon.png
-├── README.md
+meaicon-website/
+├── .eleventy.js              # Eleventy config — ignores migrated/ and root *.html
+├── index.html               # Homepage (standalone, not Nunjucks)
+├── package.json              # npm scripts: build, start, clean, validate, audit, lint, format
+├── _includes/
+│   ├── layout.njk            # Base layout — <main id="main-content"> wrapper, skip-link target
+│   ├── site-head.njk         # <head> — meta, OG, Twitter, JSON-LD, fonts, CSS design system, dark mode toggle
+│   ├── header.njk            # Sticky nav — semi-transparent on scroll, mega-menu, animated hamburger, dark mode toggle
+│   ├── footer.njk            # Redesigned 4-column footer — brand+CTA, link grid, social, dark mode
+│   └── home-main.html        # Homepage content sections
+├── pages/
+│   ├── about.njk
+│   ├── leadership.njk
+│   ├── careers.njk
+│   ├── contact.njk
+│   ├── methodology.njk
+│   ├── why-meaicon.njk
+│   ├── faq.njk
+│   ├── partners.njk
+│   ├── global-connectivity.njk
+│   ├── privacy-policy.njk
+│   ├── terms-of-service.njk
+│   ├── solutions-index.njk
+│   ├── industries-index.njk
+│   ├── case-studies-index.njk
+│   ├── solutions/            # 22 solution pages + 6 consulting sub-pages
+│   │   ├── connectivity.njk
+│   │   ├── data-centre.njk
+│   │   ├── cyber-security.njk
+│   │   ├── blockchain.njk
+│   │   ├── consulting.njk     # Main consulting hub → 6 sub-pages below
+│   │   ├── managed-services.njk
+│   │   ├── cloud.njk
+│   │   ├── network-security.njk
+│   │   ├── identity-access.njk
+│   │   ├── disaster-recovery.njk
+│   │   ├── iot.njk
+│   │   ├── consulting/        # 6 consulting sub-pages
+│   │   │   ├── digital-transformation-strategy.njk
+│   │   │   ├── infrastructure-network-audits.njk
+│   │   │   ├── technology-roadmap-vendor-selection.njk
+│   │   │   ├── regulatory-compliance-advisory.njk
+│   │   │   ├── managed-services-outsourcing.njk
+│   │   │   └── tokenisation-advisory.njk
+│   │   ├── edge-compute-infrastructure.njk   # Edge & AI solutions
+│   │   ├── edge-ai-inference.njk
+│   │   ├── sovereign-compute.njk
+│   │   ├── mobile-data-centre.njk
+│   │   ├── secure-edge-computing.njk
+│   │   ├── hardware-security.njk
+│   │   ├── post-quantum-security.njk
+│   │   ├── ota-fleet-management.njk
+│   │   └── smart-building-edge.njk
+│   ├── industries/           # 12 industry pages
+│   │   ├── government.njk
+│   │   ├── banking.njk
+│   │   ├── healthcare.njk
+│   │   ├── energy.njk
+│   │   ├── telecom.njk
+│   │   ├── hospitality.njk
+│   │   ├── retail.njk
+│   │   ├── logistics.njk
+│   │   ├── education.njk
+│   │   ├── real-estate.njk
+│   │   ├── defence.njk
+│   │   └── maritime.njk
+│   ├── insights/             # 11 insight pages (8 articles + 3 indexes)
+│   │   ├── index.njk         # → /insights.html
+│   │   ├── digital-transformation-mea.njk
+│   │   ├── cybersecurity-threat-landscape.njk
+│   │   ├── blockchain-trade-finance.njk
+│   │   ├── data-centre-trends.njk
+│   │   ├── sd-wan-mea.njk
+│   │   ├── cloud-migration-strategy.njk
+│   │   ├── edge-ai-fleet-management.njk
+│   │   ├── sovereign-compute-mea.njk
+│   │   ├── whitepapers.njk
+│   │   └── case-studies.njk
+│   └── case-studies/         # 8 case study pages
+│       ├── banking-blockchain.njk
+│       ├── government-smart-city.njk
+│       ├── healthcare-uptime.njk
+│       ├── telecom-edge.njk
+│       ├── energy-scada.njk
+│       ├── retail-omnichannel.njk
+│       ├── hospitality-guest-experience.njk
+│       └── fleet-predictive-maintenance.njk
+├── data/
+│   └── site-content.json     # Brand metadata (name, address, contact, nav)
+├── scripts/
+│   ├── validate-content.js   # Validates page structure and frontmatter
+│   └── audit-metadata.js     # Audits unique titles, descriptions, canonicals
 ├── assets/
 │   ├── css/
 │   ├── js/
 │   ├── images/
 │   └── brand/
 │       └── meaicon/
+├── content/
+│   └── page-template.njk     # Reusable page template
+├── migrated/                 # Legacy pages (ignored by Eleventy)
+├── research-data/            # Crawled source data (pipeline input)
+├── qa-reports/               # QA validation reports
+├── sitemap.xml               # 80 URLs
+├── robots.txt
+├── _headers                  # Cloudflare Pages security headers (CSP, HSTS, COOP/CORP)
+├── _redirects                # URL redirects
+├── docs/
+│   └── design-guideline.md   # UI/UX design guideline for MEAICON
 └── .gitignore
 ```
 
-## Quick start
-
-Open the site directly in a browser, or run a local static server:
+## Quick Start
 
 ```bash
-cd /workspaces/meaicon-website
-python3 -m http.server 8000
+npm install
+npm run build
 ```
 
-Then open:
-
-```text
-http://localhost:8000
-```
-
-## Update the repo from a zip
-
-If you have a new site zip and want to replace the repo content in one fast step, run:
+Output is written to `_site/`. Serve locally with:
 
 ```bash
-cd /workspaces/meaicon-website && \
-rm -rf /tmp/meaicon-update && \
-mkdir -p /tmp/meaicon-update && \
-unzip -o "/path/to/your-site.zip" -d /tmp/meaicon-update && \
-rsync -a --delete /tmp/meaicon-update/ ./
+npx @11ty/eleventy --serve
 ```
 
-This updates the whole repository and removes old files that are no longer in the new package.
+## npm Scripts
 
-## Deployment
+| Script | Purpose |
+|--------|---------|
+| `npm run build` | Build static site to `_site/` |
+| `npm run start` | Local dev server with live reload |
+| `npm run clean` | Remove `_site/` build directory |
+| `npm run validate:content` | Validate frontmatter and page structure |
+| `npm run audit:metadata` | Audit unique titles, descriptions, canonicals |
+| `npm run lint` | Lint JS/CSS (if eslint configured) |
+| `npm run format` | Format files with prettier (if configured) |
+| `npm run audit` | Run npm security audit |
 
-This site is intended for static hosting. Any of the following are suitable:
+## SEO Compliance
 
-- GitHub Pages
-- Netlify
-- Vercel
-- Any web host that supports static HTML files
+- ✅ Unique `<title>` on every page (under 60 chars)
+- ✅ Unique `<meta name="description">` on every page (under 160 chars)
+- ✅ `<link rel="canonical">` on every page
+- ✅ Open Graph tags (og:title, og:description, og:type, og:image, og:url)
+- ✅ Twitter Card tags (summary_large_image)
+- ✅ JSON-LD structured data (Organization schema on every page)
+- ✅ `sitemap.xml` with all 80 URLs
+- ✅ `robots.txt` with sitemap reference
+- ✅ Semantic HTML5 (`<main>`, `<section>`, `<nav>`, `<header>`, `<footer>`, `<article>`)
+- ✅ Single `<h1>` per page
+- ✅ All `<img>` tags have `alt` attributes
+- ✅ All internal links are relative
+- ✅ No broken links (verified)
 
-Before deployment, verify that:
+## Accessibility (WCAG AA)
 
-- all HTML pages load correctly
-- all links resolve without 404s
-- favicon and branding assets are present
-- the site root renders correctly on desktop and mobile
-- the hosting platform applies the `_headers` security policy
+- ✅ `lang="en"` on `<html>`
+- ✅ `viewport` meta tag
+- ✅ Skip-to-main-content link + `<main id="main-content">` target
+- ✅ `aria-label` on icon-only links (social media)
+- ✅ `aria-expanded` on mobile menu toggle
+- ✅ `aria-hidden="true"` on decorative SVG icons
+- ✅ `<button type="button">` on interactive controls
+- ✅ `.sr-only` class for screen-reader text
+- ✅ Color contrast meets WCAG AA (4.5:1 normal text, 3:1 large text)
+- ✅ `*:focus-visible` outlines on all interactive elements (2px solid accent)
+- ✅ 44px minimum touch targets on mobile (WCAG 2.5.5) — nav, buttons, footer links
+- ✅ Cookie consent: 44px touch targets, focus trap, Escape key, backdrop close
+- ✅ `prefers-reduced-motion` — disables all animations/transitions, forces reveal visible
+- ✅ `prefers-color-scheme: dark` + `[data-theme]` manual toggle with localStorage persistence
 
-### IndexNow
+## UI/UX Design System
 
-The public verification key is available at `/7cc8503712a0c79742073c805efa675e.txt`. After deploying a metadata or content update, submit changed URLs to `https://api.indexnow.org/indexnow` with this key and the matching host. IndexNow requests discovery; search engines still decide whether and when to crawl or index a URL.
+### Color Tokens
 
-### SEO crawler MCP
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--accent` | `#0066FF` | Electric blue — buttons, links, focus states |
+| `--accent-strong` | `#0044CC` | Hover/active states |
+| `--paper` | `#FAFBFC` | Page background (light) |
+| `--ink` | `#0A192F` | Body text (light) |
+| `--muted` | `#475569` | Secondary text |
+| `--dark` | `#0a0e1a` | Charcoal — dark sections, dark mode bg (not pure black) |
+| `--gradient-accent` | `135deg, #0066FF → #0044CC` | Buttons, CTA bands |
+| `--gradient-dark` | `135deg, #0a0e1a → #1a2744` | Hero, dark sections |
 
-VS Code is configured to start `@houtini/seo-crawler-mcp@2.1.5` on demand through `.vscode/mcp.json`. Use its `run_seo_audit` tool against the deployed site after content or design changes, then use `analyze_seo` to inspect missing metadata, broken links, canonical issues, sitemap coverage, and other crawl findings. Reports are written to `.seo-audits/`, which is intentionally excluded from version control.
+### Key UI Patterns
 
-### Content and design toolkit
+- **Full-viewport hero** (`min-height: 100vh`) — dark overlay, left-aligned headline, dual CTAs, animated scroll cue
+- **Scroll reveals** — IntersectionObserver with `.reveal`/`.reveal-visible` classes (opacity 0→1, translateY 30px→0, 600ms ease)
+- **Card hover** — `translateY(-6px)` + shadow increase + image zoom within frame
+- **Button micro-interactions** — 250ms ease-in-out, `scale(1.02)` on active, gradient fill on hover
+- **Nav transparency** — transparent + blur at top, solid on scroll (`.nav-scrolled` class, rAF-throttled)
+- **Hamburger animation** — 3-bar → X icon via CSS transforms
+- **Dark mode** — auto via `prefers-color-scheme`, manual via `[data-theme]` toggle with localStorage, logo invert
+- **Footer** — 4-column grid (Solutions / Security & Edge / Company / Resources), brand + CTA top, gradient dividers, social circle buttons
 
-The workspace recommends extensions for live previews, HTML and CSS validation, JavaScript linting, consistent formatting, spelling and content QA, color inspection, image preview, and image compression. These recommendations are stored in `.vscode/extensions.json` so contributors can reproduce the same editing environment.
+## Performance (Core Web Vitals)
 
-For a recurring maintenance pass:
+- LCP < 2.5s — preload critical fonts, minimize render-blocking CSS
+- CLS < 0.1 — reserve space for images/ads, avoid layout shifts
+- INP < 200ms — defer non-critical JS, use `async` on analytics
 
-1. Preview changed pages with Live Preview at desktop and mobile widths.
-2. Run the SEO crawler against the deployed site and review its report.
-3. Fix broken links, missing metadata, canonical or sitemap issues, and accessibility warnings.
-4. Check copy with Code Spell Checker and format changed files with Prettier.
-5. Compress newly added image assets and rerun the crawl after deployment.
+### Resource Hints
 
-## Branding and UI consistency
+The following `<link>` hints should be added to the `<head>` (via `site-head.njk`):
 
-The public site follows a fixed brand language built around the Meaicon identity:
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.tailwindcss.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+```
 
-- warm paper background: `#F6F3EC`
-- dark ink text: `#23241F`
-- accent gold: `#C1873D`
-- border tone: `#E2DDCF`
-- button and heading typography remain consistent with the existing design system
+### Tailwind CDN Performance Tradeoff
 
-The cookie consent banner and modal were aligned to this system so they match the rest of the site instead of using a generic dark-template look. Recent refinements increased the luxury feel with more generous spacing, an enterprise-style legal tone, and a subtle gold brand accent line across the consent surfaces.
+This site uses the **Tailwind CDN** (`https://cdn.tailwindcss.com`) for rapid prototyping.
+The CDN injects a runtime script that parses the DOM and generates utility classes in the
+browser — this has known tradeoffs:
 
-## Social Media Integration
+| Factor | CDN (current) | Build-time Tailwind (recommended for production) |
+|--------|---------------|--------------------------------------------------|
+| Initial JS payload | ~400 KB runtime script | 0 — purged CSS only |
+| Render blocking | Yes — script must execute before styles apply | No — CSS is static |
+| LCP impact | Can delay LCP by 200-500ms | Minimal |
+| CSP compatibility | Requires `script-src` for CDN | Fully self-hosted |
+| Tree-shaking | None — all utilities shipped | Full purge of unused classes |
 
-All pages include professional social media profiles optimized for SEO and brand visibility:
+**Recommendation**: Migrate to build-time Tailwind (`tailwindcss` + `@tailwindcss/postcss`) before
+production launch. This removes the runtime script, reduces CSP to `script-src 'self'`, and
+improves LCP by ~200-500ms.
 
-### Social Profiles
-- **LinkedIn**: https://www.linkedin.com/company/meaicon/
-- **X (Twitter)**: https://x.com/meaicon
-- **Instagram**: https://www.instagram.com/meaicon.official/
-- **Facebook**: https://www.facebook.com/Meaicon.Official
-- **YouTube**: https://www.youtube.com/channel/UCVbuZOFqHeFGAMmzu3jE3oA
+## Security Headers
 
-### Implementation Details
+All security headers are configured in `_headers` and deployed via Cloudflare Pages:
 
-#### Footer Social Icons
-- Professional SVG icons for all 5 social media platforms
-- Responsive grid layout with hover effects (accent color transition)
-- Proper accessibility with `aria-label` attributes and semantic `rel="me"` links
-- Consistent styling across all 11 indexable website pages
+| Header | Value | Purpose |
+|--------|-------|---------|
+| `Strict-Transport-Security` | `max-age=31536000; includeSubDomains; preload` | Force HTTPS |
+| `Content-Security-Policy` | `default-src 'self'; ...` | Restrict resource origins |
+| `X-Frame-Options` | `DENY` | Prevent clickjacking |
+| `X-Content-Type-Options` | `nosniff` | Prevent MIME sniffing |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` | Limit referrer leakage |
+| `Permissions-Policy` | `geolocation=(), microphone=(), camera=(), payment=(), browsing-topics=()` | Disable unused APIs |
+| `Cross-Origin-Opener-Policy` | `same-origin` | Isolate browsing context |
+| `Cross-Origin-Resource-Policy` | `same-origin` | Restrict cross-origin loads |
 
-#### JSON-LD Schema Markup
-- Added `sameAs` property to Organization schema on every page
-- Improves search engine entity recognition and knowledge graph linking
-- Enhances presence in social media search results
-- Optimizes for improved SEO visibility across platforms
+### Caching Strategy
 
-#### Coverage
-- **Pages updated**: 10 (index.html, about.html, solutions.html, case-studies.html, contact.html, global-connectivity.html, industries.html, partners.html, privacy-policy.html, terms-of-service.html)
-- **Total social profile coverage**: 11 indexable pages × 5 platforms
-- **Each page includes**: 2 Instagram references, 2 Facebook references, 2 YouTube references, plus all profiles in JSON-LD schema
+- `/assets/*` — `Cache-Control: public, max-age=31536000, immutable` (1 year, never revalidate)
+- `/*.html` — `Cache-Control: public, max-age=0, must-revalidate` (always check for updates)
+- `/favicon.*` — `Cache-Control: public, max-age=604800` (7 days)
 
-## Recent progress
+### CSP Inline Allowances
 
-### Social Media & SEO Optimization (August 2026)
-- **Social Profile Integration**: Added professional social media links to all 11 indexable website pages
-  - Footer social icons with responsive design and hover effects
-  - JSON-LD schema markup with `sameAs` property for 5 social platforms
-  - Proper accessibility attributes (aria-labels, rel="me") for improved SEO
-- **Social Profiles Configured**:
-  - LinkedIn Company Page: https://www.linkedin.com/company/meaicon/
-  - X (Twitter): https://x.com/meaicon
-  - Instagram Official: https://www.instagram.com/meaicon.official/
-  - Facebook Page: https://www.facebook.com/Meaicon.Official
-  - YouTube Channel: https://www.youtube.com/channel/UCVbuZOFqHeFGAMmzu3jE3oA
-- **SEO Benefits**: Schema.org integration improves entity recognition, knowledge graph linking, and cross-platform visibility
+The CSP includes `'unsafe-inline'` for `script-src` and `style-src` because the site currently
+uses the Tailwind CDN (which injects inline styles/scripts). When migrating to build-time
+Tailwind, remove `'unsafe-inline'` from both directives for stricter security.
 
-### Infrastructure & Compliance
-- Updated repo with refreshed site content from the new zip package
-- Replaced placeholder brand references with official Meaicon brand assets
-- Normalized homepage and footer logo variants for consistent visual identity
-- Added legal policy pages for privacy and terms references in the consent flow
-- Improved cookie consent styling to match the corporate brand system
-- Refined the consent prompt to read more like a premium enterprise compliance banner
-- Verified the consent logic remains centralized and site-wide consistent
+## Content Pipeline
 
-### Audit & Fixes
-- Ran a full static-site audit and fixed invalid markup placement, sitemap/robots domain alignment, and site asset references
-- Confirmed all core pages and critical assets return successful HTTP responses
+```
+User provides URLs → Research Agent crawls → Content Agent rebrands → Dev Agent builds → QA Agent validates → User reviews
+```
 
-### Premium Branding & Marketing Polish
-- Refined the homepage hero, CTA hierarchy, and trust messaging for a more premium enterprise marketing feel
-- Added a proof-led trust strip to reinforce credibility and conversion intent
-- Completed premium editorial redesign of the global-connectivity (regional presence) page with enhanced storytelling and visual hierarchy
-- Applied the same premium editorial polish across the remaining key pages:
-  - **about.html**: Stronger mission/vision positioning and regional footprint narrative
-  - **industries.html**: Enhanced value prop around mission-critical infrastructure; clearer sector differentiation
-  - **partners.html**: Refined vendor-neutral positioning and ecosystem narrative
-  - **case-studies.html**: Improved proof-based credibility messaging and outcome metrics
-  - **contact.html**: Elevated conversion tone with strategic, high-touch engagement framing
-- Increased spacing and layout rhythm for a more luxury, enterprise-ready feel
-- Strengthened CTA hierarchy and messaging for better lead-generation conversion
-- All pages now carry a consistent, cohesive brand voice across the entire site
+- `research-data/` — crawled source data (input)
+- `qa-reports/` — QA validation reports (output)
+- `ORCHESTRATION-PLAN.md` — full pipeline documentation
 
-## Notes
+## Branch & Deployment
 
-- This repo is intentionally lightweight and easy to manage.
-- Keep the site stateless and static unless a new build system is explicitly added.
-- If you update structure or asset paths, keep this README current.
-- Run Lighthouse or PageSpeed Insights checks periodically and address Core Web Vitals issues when they appear.
+- Active branch: `website-redesign` — all UI/UX overhaul work lives here
+- Main branch: untouched — merge only after final review
+- Deploy: GitHub Pages via GitHub Actions (`.github/workflows/pages.yml`)
+- Build command: `npm run build`
+- Output directory: `_site/`
+- Live URL: https://meaicon.github.io/meaicon-website/
+
+## Browser Support
+
+- Modern browsers (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)
+- Mobile-first responsive design (breakpoints: 640px, 760px, 1023px)
+- Dark mode support across all modern browsers
 
 ## License
 
-Proprietary — All rights reserved by Meaicon LLC FZ, unless otherwise specified.
+© 2026 MEAICON LLC FZ. All rights reserved.

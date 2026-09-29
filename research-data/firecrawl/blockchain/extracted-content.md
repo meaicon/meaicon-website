@@ -1,0 +1,120 @@
+layout: layout.njk
+title: "Blockchain — MEAICON"
+description: "Enterprise blockchain architecture, smart contract development, and trade finance solutions by MEAICON across the MEA region."
+canonical: "https://www.meaicon.com/solutions/blockchain.html"
+permalink: /solutions/blockchain.html
+<main id="main-content" class="flex-1 site-shell">
+  <section class="reveal page-hero">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> › <a href="/solutions.html">Solutions</a> › <span aria-current="page">Blockchain</span></nav>
+      <p class="eyebrow mb-4 mt-6">Solutions</p>
+            <svg class="solution-icon-sm"><use href="/assets/icons.svg#blockchain"></use></svg>
+<h1 class="page-title max-w-3xl">Blockchain</h1>
+      <p>Blockchain technology enables trust, transparency, and efficiency in business processes that span multiple parties. MEAICON designs and builds enterprise blockchain architectures, develops smart contracts, and delivers trade finance solutions for organisations across the Middle East and Africa.</p>
+      <p>From consortium networks to permissioned ledgers, we help you identify where distributed ledger technology creates genuine business value and implement it with enterprise-grade reliability.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="/solutions.html" class="btn-secondary inline-flex items-center px-5 py-3">All solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="reveal grid-2">
+        <div>
+          <p class="eyebrow mb-3">Overview</p>
+          <h2 class="section-title">Enterprise blockchain, built for real business outcomes</h2>
+        </div>
+        <div class="prose-content">
+          <p>MEAICON approaches blockchain as a business enabler first and a technology second. We help organisations evaluate whether distributed ledger technology is the right solution for their use case, then design and implement permissioned networks that deliver measurable improvements in transparency, efficiency, and trust.</p>
+          <p>Our practice covers consortium network architecture for multi-party business processes, smart contract development and auditing for automated agreement enforcement, and trade finance solutions that streamline cross-border transactions. We work with established enterprise platforms and frameworks suited to permissioned, private, and consortium deployments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Capabilities</p>
+      <h2 class="section-title mb-12">What we deliver</h2>
+      <div class="reveal feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z"/><path d="M4 7l8 5 8-5M12 12v10"/></svg></div>
+          <h3>Enterprise Architecture</h3>
+          <p>Permissioned blockchain network design covering node topology, consensus mechanisms, data privacy, and integration with existing enterprise systems.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/><path d="M14 4l-4 16"/></svg></div>
+          <h3>Smart Contracts</h3>
+          <p>Smart contract development, testing, and auditing for automated business logic enforcement — from multi-party agreements to tokenised asset workflows.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v10H3zM3 11h18M7 7v10"/></svg></div>
+          <h3>Trade Finance</h3>
+          <p>Blockchain-based trade finance solutions that streamline letters of credit, supply chain documentation, and cross-border transaction verification.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Consortium Networks</h3>
+          <p>Multi-party blockchain network design enabling trusted data sharing, provenance tracking, and collaborative processes among business partners.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg></div>
+          <h3>Integration & APIs</h3>
+          <p>Integration of blockchain networks with enterprise applications, databases, and external systems through secure APIs and middleware layers.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">How it works</p>
+      <h2 class="section-title mb-12">Delivery approach</h2>
+      <div class="reveal process-grid">
+        <div class="process-step"><span>01</span><h3>Assess</h3><p>We evaluate your business processes, identify where blockchain creates genuine value, and define consortium participant roles and governance structures.</p></div>
+        <div class="process-step"><span>02</span><h3>Design</h3><p>We architect the network topology, consensus model, data privacy approach, smart contract logic, and integration points with existing systems.</p></div>
+        <div class="process-step"><span>03</span><h3>Build</h3><p>We develop and rigorously test smart contracts, deploy network nodes, integrate APIs, and conduct end-to-end validation with consortium participants.</p></div>
+        <div class="process-step"><span>04</span><h3>Operate</h3><p>Ongoing network operation, smart contract upgrades, governance support, and performance monitoring ensure sustainable consortium operations.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Why MEAICON</p>
+      <h2 class="section-title mb-12">Why choose us</h2>
+      <ul class="checklist max-w-3xl mx-auto">
+        <li>Business-first approach — we assess whether blockchain is the right solution before recommending it</li>
+        <li>Experience with enterprise permissioned blockchain platforms and consortium network models</li>
+        <li>Smart contract development with rigorous testing and security auditing practices</li>
+        <li>Trade finance domain knowledge aligned with regional banking and commerce requirements</li>
+        <li>End-to-end delivery from use case evaluation through network deployment and integration</li>
+        <li>Governance design support for multi-party consortium networks with complex stakeholder dynamics</li>
+        <li>Understanding of MEA regulatory environments for digital assets and distributed ledger deployments</li>
+      </ul>
+    </div>
+  </section>
+
+  
+  <section class="related-links content-section reveal" aria-label="Related solutions">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <h2 class="section-title mb-6">Related Solutions</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        <a href="/solutions/cyber-security.html" class="card p-6 block">
+          <h3 class="solution-title text-lg">Cyber Security</h3>
+          <p class="solution-copy text-sm mt-2">Learn more about cyber security.</p>
+        </a>
+        <a href="/solutions/identity-access.html" class="card p-6 block">
+          <h3 class="solution-title text-lg">Identity & Access Management</h3>
+          <p class="solution-copy text-sm mt-2">Learn more about identity & access management.</p>
+        </a>
+        <a href="/solutions/consulting.html" class="card p-6 block">
+          <h3 class="solution-title text-lg">Consulting</h3>
+          <p class="solution-copy text-sm mt-2">Learn more about consulting.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>

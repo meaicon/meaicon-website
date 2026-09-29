@@ -1,0 +1,61 @@
+{# Delivery model flow diagram — 4 stages with icons and connecting arrows #}
+<div class="delivery-flow">
+  <style>
+    .delivery-flow { max-width: 900px; }
+    .delivery-flow-track { display: flex; align-items: stretch; gap: 0; flex-wrap: wrap; }
+    .delivery-stage {
+      flex: 1; min-width: 140px; display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 1.5rem 1rem; position: relative; background: var(--card, #F8FAFC);
+      border: 1px solid var(--line, #E2E8F0); border-radius: 0.5rem; transition: all 0.3s ease;
+    }
+    .delivery-stage:hover { border-color: var(--accent, #0A66C2); box-shadow: 0 4px 12px -2px rgba(10,102,194,0.12); transform: translateY(-2px); }
+    .delivery-stage-num { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent, #0A66C2); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .delivery-stage-icon { width: 40px; height: 40px; color: var(--accent, #0A66C2); margin-bottom: 0.75rem; }
+    .delivery-stage-name { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--ink, #0F172A); margin-bottom: 0.25rem; }
+    .delivery-stage-desc { font-size: 0.8rem; color: var(--muted, #475569); line-height: 1.4; }
+    .delivery-arrow {
+      display: flex; align-items: center; justify-content: center; width: 32px; flex-shrink: 0;
+      color: var(--accent, #0A66C2); opacity: 0.5;
+    }
+    .delivery-arrow svg { width: 20px; height: 20px; }
+    @media (max-width: 640px) {
+      .delivery-flow-track { flex-direction: column; }
+      .delivery-arrow { transform: rotate(90deg); width: 100%; height: 24px; }
+    }
+  </style>
+  <div class="delivery-flow-track">
+    <div class="delivery-stage">
+      <span class="delivery-stage-num">01</span>
+      <svg class="delivery-stage-icon"><use href="/assets/icons.svg#assess"></use></svg>
+      <p class="delivery-stage-name">Assess</p>
+      <p class="delivery-stage-desc">Audit current state, identify gaps, define requirements</p>
+    </div>
+    <div class="delivery-arrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg>
+    </div>
+    <div class="delivery-stage">
+      <span class="delivery-stage-num">02</span>
+      <svg class="delivery-stage-icon"><use href="/assets/icons.svg#design"></use></svg>
+      <p class="delivery-stage-name">Design</p>
+      <p class="delivery-stage-desc">Architecture, specification, and budget alignment</p>
+    </div>
+    <div class="delivery-arrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg>
+    </div>
+    <div class="delivery-stage">
+      <span class="delivery-stage-num">03</span>
+      <svg class="delivery-stage-icon"><use href="/assets/icons.svg#build"></use></svg>
+      <p class="delivery-stage-name">Build</p>
+      <p class="delivery-stage-desc">Procurement, deployment, configuration, and testing</p>
+    </div>
+    <div class="delivery-arrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg>
+    </div>
+    <div class="delivery-stage">
+      <span class="delivery-stage-num">04</span>
+      <svg class="delivery-stage-icon"><use href="/assets/icons.svg#operate"></use></svg>
+      <p class="delivery-stage-name">Operate</p>
+      <p class="delivery-stage-desc">24/7 monitoring, maintenance, and continuous improvement</p>
+    </div>
+  </div>
+</div>

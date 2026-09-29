@@ -1,0 +1,177 @@
+layout: layout.njk
+title: "Consulting — MEAICON"
+description: "Independent strategy consulting that decides what gets built and why — transformation, audits, roadmaps, compliance, managed services, tokenisation."
+canonical: "https://www.meaicon.com/solutions/consulting.html"
+permalink: /solutions/consulting.html
+<main id="main-content" class="flex-1 site-shell">
+  <section class="reveal page-hero">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> › <a href="/solutions.html">Solutions</a> › <span aria-current="page">Consulting</span></nav>
+      <p class="eyebrow mb-4 mt-6">05 · Consulting</p>
+            <svg class="solution-icon-sm"><use href="/assets/icons.svg#consulting"></use></svg>
+<h1 class="page-title max-w-3xl">Independent strategy that decides what gets built and why.</h1>
+      <p>MEAICON's consulting practice sits between business intent and technology execution. We are vendor-neutral — we recommend what fits your needs, not what we sell. Every engagement produces a decision, not a deck.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="/solutions.html" class="btn-secondary inline-flex items-center px-5 py-3">All solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="reveal grid-2">
+        <div>
+          <p class="eyebrow mb-3">Overview</p>
+          <h2 class="section-title">Strategy before spend.</h2>
+        </div>
+        <div class="prose-content">
+          <p>Technology investments fail when they start with a product and work backwards to a justification. MEAICON reverses that order. Our consulting practice begins with the business outcome you need — a compliance deadline, a margin target, an operational risk to close — and works forward to the specific infrastructure, platform, and organisational decisions that will get you there.</p>
+          <p>We are independent. We do not resell hardware, software, or cloud capacity. That means our roadmaps, vendor shortlists, and build-versus-buy recommendations are shaped by what works for your context, not what generates a commission. We benchmark options against your operating model, regulatory environment, and team maturity — not against a preferred partner programme.</p>
+          <p>Every consulting engagement is structured around six pillars. Each pillar addresses a distinct decision: what to transform, what to fix, what to buy, what to comply with, what to outsource, and what to tokenise. You can engage one pillar or combine several into a single programme.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Service pillars</p>
+      <h2 class="section-title mb-12">Six decisions we help you make.</h2>
+      <div class="reveal feature-grid">
+        <a href="consulting/digital-transformation-strategy.html" class="feature-card block">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14"/><circle cx="18" cy="8" r="1.5" fill="currentColor"/></svg></div>
+          <h3>Digital Transformation Strategy</h3>
+          <p>Aligns technology investments with business goals, operating model, and key customer, employee, and partner journeys.</p>
+          <span class="text-link mt-4">Learn more &rarr;</span>
+        </a>
+        <a href="consulting/infrastructure-network-audits.html" class="feature-card block">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/><path d="M3 9h2M3 15h2M19 9h2M19 15h2M9 3v2M15 3v2M9 19v2M15 19v2"/></svg></div>
+          <h3>Infrastructure &amp; Network Audits</h3>
+          <p>Independent assessment of physical, network, and security infrastructure against operational and regulatory standards.</p>
+          <span class="text-link mt-4">Learn more &rarr;</span>
+        </a>
+        <a href="consulting/technology-roadmap-vendor-selection.html" class="feature-card block">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 4-6"/><circle cx="7" cy="14" r="1.5" fill="currentColor"/><circle cx="11" cy="10" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><circle cx="19" cy="8" r="1.5" fill="currentColor"/></svg></div>
+          <h3>Technology Roadmap &amp; Vendor Selection</h3>
+          <p>Multi-year investment roadmap with prioritised initiatives, dependency mapping, and vendor shortlists ranked by fit.</p>
+          <span class="text-link mt-4">Learn more &rarr;</span>
+        </a>
+        <a href="consulting/regulatory-compliance-advisory.html" class="feature-card block">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Regulatory &amp; Compliance Advisory</h3>
+          <p>Navigates data protection, industry-specific, and cross-border regulatory requirements across MEA jurisdictions.</p>
+          <span class="text-link mt-4">Learn more &rarr;</span>
+        </a>
+        <a href="consulting/managed-services-outsourcing.html" class="feature-card block">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></div>
+          <h3>Managed Services Outsourcing</h3>
+          <p>Build-versus-outsource analysis for NOC, SOC, infrastructure operations, and platform management decisions.</p>
+          <span class="text-link mt-4">Learn more &rarr;</span>
+        </a>
+        <a href="consulting/tokenisation-advisory.html" class="feature-card block">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L6 8l6 6 6-6-6-6z"/><path d="M6 12l6 6 6-6"/><path d="M6 16l6 6 6-6"/></svg></div>
+          <h3>Tokenisation Advisory</h3>
+          <p>Assesses feasibility, regulatory posture, and architecture for asset tokenisation and distributed ledger adoption.</p>
+          <span class="text-link mt-4">Learn more &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Engagement model</p>
+      <h2 class="section-title mb-12">How we work.</h2>
+      <div class="reveal process-grid">
+        <div class="process-step"><span>01</span><h3>Scope</h3><p>We define the decision you need to make, the stakeholders involved, and the constraints — budget, timeline, regulatory, organisational.</p></div>
+        <div class="process-step"><span>02</span><h3>Assess</h3><p>We conduct interviews, review documentation, inspect infrastructure, and benchmark against industry and regulatory standards.</p></div>
+        <div class="process-step"><span>03</span><h3>Recommend</h3><p>We present options ranked by fit, cost, and risk — not a single preferred answer. Each option includes the trade-offs and dependencies.</p></div>
+        <div class="process-step"><span>04</span><h3>Plan</h3><p>For the selected direction, we build the implementation plan — work breakdown, vendor shortlist, timeline, and governance structure.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Why MEAICON</p>
+      <h2 class="section-title mb-12">What makes this different.</h2>
+      <ul class="checklist max-w-3xl mx-auto">
+        <li>Vendor-neutral — we do not resell hardware, software, or cloud capacity. Recommendations are shaped by fit, not commission.</li>
+        <li>Consultants with engineering experience — advice is grounded in what is technically achievable, not theoretical frameworks alone.</li>
+        <li>Regional regulatory knowledge across MEA jurisdictions — UAE, Saudi Arabia, Qatar, Kenya, Nigeria, Egypt, and cross-border frameworks.</li>
+        <li>Each engagement produces a decision and an implementation plan — not a slide deck that sits on a shelf.</li>
+        <li>Options-based recommendations — we present trade-offs, not a single preferred answer, so your team owns the decision.</li>
+        <li>Experience across enterprise, government, and regulated industries — we calibrate advice to your environment, not a generic best practice.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Consulting approach</p>
+      <h2 class="section-title mb-12">A four-phase methodology</h2>
+      <div class="reveal process-grid">
+        <div class="process-step">
+          <span>01</span>
+          <h3>Strategic Visioning</h3>
+          <p>Business outcome alignment with technology capabilities, digital transformation roadmap development, technology portfolio assessment and prioritisation, investment optimisation and TCO analysis.</p>
+        </div>
+        <div class="process-step">
+          <span>02</span>
+          <h3>Architecture Design</h3>
+          <p>Enterprise architecture framework development, cloud and hybrid infrastructure design, security and compliance architecture, data and AI architecture.</p>
+        </div>
+        <div class="process-step">
+          <span>03</span>
+          <h3>Organizational Change Management</h3>
+          <p>Workforce readiness assessment and planning, skills development and training programs, process redesign and automation, culture transformation for AI-native operations.</p>
+        </div>
+        <div class="process-step">
+          <span>04</span>
+          <h3>Implementation &amp; Execution</h3>
+          <p>Solution design and development, migration planning and execution, integration and testing, go-live support and stabilisation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section-alt reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <p class="eyebrow mb-3">Specialised offerings</p>
+      <h2 class="section-title mb-12">Targeted consulting engagements</h2>
+      <div class="reveal feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 4-6"/></svg></div>
+          <h3>Modernization Strategy Assessment</h3>
+          <p>Evaluate your current technology estate and develop a prioritised modernisation roadmap that balances risk, cost, and business value.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>AI Readiness Evaluation</h3>
+          <p>Assess your organisation's preparedness for AI adoption across technology, data, processes, and people dimensions — with a prioritised gap analysis.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>Cloud Economics Analysis</h3>
+          <p>Model total cost of ownership across different deployment options to optimise cloud investment decisions and avoid cost surprises.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Sovereignty &amp; Compliance Advisory</h3>
+          <p>Navigate data residency, operational dependencies, and regulatory requirements for regulated industries and geographies across the MEA region.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section reveal">
+    <div class="max-w-4xl mx-auto px-4 py-20 text-center lg:px-6 lg:py-24">
+      <p class="eyebrow mb-4">Start a conversation</p>
+      <h2 class="cta-title">Tell us what decision you are facing.</h2>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="mailto:connect@meaicon.com" class="text-link">connect@meaicon.com</a>
+        </div>
+    </div>
+  </section>
+
+</main>
