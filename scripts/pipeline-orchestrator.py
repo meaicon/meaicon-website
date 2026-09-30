@@ -82,31 +82,31 @@ def process_entry(entry: dict, dry_run: bool = False) -> dict:
         return {**entry, "status": "pending"}
 
     # Step 1: LangChain enhancement
-    print(f"\n▶ Step 1: LangChain Enhancement ({topic})")
-    source_url = entry.get("source_url", "")
-    enhance_cmd = f'python "{ENHANCE_SCRIPT}" --topic "{topic}" --page-name "{topic}"'
+        print(f"\n▶ Step 1: LangChain Enhancement ({topic})")
+        source_url = entry.get("source_url", "")
+        firecrawl_dir = REPO_ROOT / "research-data" / "firecrawl" / topic
+        enhance_cmd = f'python "{ENHANCE_SCRIPT}" --topic "{topic}" --page-name "{topic}" --input-dir "{firecrawl_dir}"'
 
-    # If source_url provided, pass it to enhancer
-    firecrawl_dir = REPO_ROOT / "research-data" / "firecrawl" / topic
-    if source_url and not (firecrawl_dir / "extracted-content.md").exists():
-        # Run firecrawl extraction first (if firecrawl script exists)
-        firecrawl_script = REPO_ROOT / "scripts" / "firecrawl-snapshot.py"
-        if firecrawl_script.exists():
-            print(f"  Running Firecrawl extraction for {source_url}")
-            fc_cmd = f'python "{firecrawl_script}" --url "{source_url}" --topic "{topic}"'
-            fc_exit, fc_out = run_script(fc_cmd)
-            if fc_exit != 0:
-                print(f"  ⚠ Firecrawl failed (non-fatal): {fc_out[-200:]}")
+        # If source_url provided, pass it to enhancer
+        if source_url and not (firecrawl_dir / "extracted-content.md").exists():
+            # Run firecrawl extraction first (if firecrawl script exists)
+            firecrawl_script = REPO_ROOT / "scripts" / "firecrawl-snapshot.py"
+            if firecrawl_script.exists():
+                print(f"  Running Firecrawl extraction for {source_url}")
+                fc_cmd = f'python "{firecrawl_script}" --url "{source_url}" --topic "{topic}"'
+                fc_exit, fc_out = run_script(fc_cmd)
+                if fc_exit != 0:
+                    print(f"  ⚠ Firecrawl failed (non-fatal): {fc_out[-200:]}")
 
-    exit_code, output = run_script(enhance_cmd)
-    if exit_code != 0:
-        entry["status"] = "failed"
-        entry["error"] = f"Enhancement failed: {output[-500:]}"
-        entry["attempts"] = attempts + 1
-        return entry
+        exit_code, output = run_script(enhance_cmd)
+        if exit_code != 0:
+            entry["status"] = "failed"
+            entry["error"] = f"Enhancement failed: {output[-500:]}"
+            entry["attempts"] = attempts + 1
+            return entry
 
-    # Step 2: Safety gate (pre-injection)
-    print(f"\n▶ Step 2: Safety Gate (pre-injection)")
+        # Step 2: Safety gate (pre-injection)
+        print(f"\n▶ Step 2: Safety Gate (pre-injection)")
     sg_exit, sg_out = run_script(f'python "{SAFETY_SCRIPT}" --pre-injection')
     if sg_exit != 0:
         print(f"  ⚠ Safety gate flagged issues (non-fatal, will check specific topic)")

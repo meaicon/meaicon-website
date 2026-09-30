@@ -7,7 +7,9 @@
     "source_url": "https://www.meaicon.com/solutions/connectivity",
     "competitors": [],
     "status": "pending",
-    "priority": 8
+    "priority": 8,
+    "error": "Enhancement failed: usage: langchain-enhance.py [-h] --topic TOPIC --page-name PAGE_NAME\n                            --input-dir INPUT_DIR [--output-dir OUTPUT_DIR]\nlangchain-enhance.py: error: the following arguments are required: --input-dir\n",
+    "attempts": 1
   },
   {
     "slug": "solutions/sovereign-compute",
@@ -16,7 +18,9 @@
     "section": "Solutions",
     "competitors": [],
     "status": "pending",
-    "priority": 7
+    "priority": 7,
+    "error": "Enhancement failed: usage: langchain-enhance.py [-h] --topic TOPIC --page-name PAGE_NAME\n                            --input-dir INPUT_DIR [--output-dir OUTPUT_DIR]\nlangchain-enhance.py: error: the following arguments are required: --input-dir\n",
+    "attempts": 1
   },
   {
     "slug": "industries/banking",
@@ -25,6 +29,8 @@
     "section": "Industries",
     "competitors": [],
     "status": "pending",
-    "priority": 6
+    "priority": 6,
+    "error": "Enhancement failed: usage: langchain-enhance.py [-h] --topic TOPIC --page-name PAGE_NAME\n                            --input-dir INPUT_DIR [--output-dir OUTPUT_DIR]\nlangchain-enhance.py: error: the following arguments are required: --input-dir\n",
+    "attempts": 1
   }
 ]
