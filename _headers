@@ -1,12 +1,13 @@
 /*
   Security headers for Cloudflare Pages, Netlify, and compatible static hosts.
-  CSP allows inline styles/scripts (needed for inline JSON-LD and head CSS)
-  and the Google Fonts origin. Build-time Tailwind pipeline is used (no CDN).
+  CSP allows inline styles/scripts (needed while Tailwind CDN is in use) and
+  the Google Fonts + Tailwind CDN origins.  When the site moves to a build-time
+  Tailwind pipeline the 'unsafe-inline' directives can be tightened.
 */
 
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; frame-src https://docs.google.com https://www.google.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; worker-src 'self'; manifest-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; frame-src https://docs.google.com https://www.google.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; worker-src 'self'; manifest-src 'self'
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff

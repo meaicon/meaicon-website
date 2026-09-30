@@ -69,20 +69,6 @@
     <line x1="4" y1="40" x2="44" y2="40" stroke-width="3" />
   </symbol>
 
-  <!-- AI Compute: neural network / brain-like node -->
-  <symbol id="ai-compute" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="24" cy="24" r="16" />
-    <circle cx="24" cy="24" r="8" />
-    <line x1="24" y1="8" x2="24" y2="16" />
-    <line x1="24" y1="32" x2="24" y2="40" />
-    <line x1="8" y1="24" x2="16" y2="24" />
-    <line x1="32" y1="24" x2="40" y2="24" />
-    <circle cx="24" cy="8" r="2" fill="currentColor" stroke="none" />
-    <circle cx="24" cy="40" r="2" fill="currentColor" stroke="none" />
-    <circle cx="8" cy="24" r="2" fill="currentColor" stroke="none" />
-    <circle cx="40" cy="24" r="2" fill="currentColor" stroke="none" />
-  </symbol>
-
   <!-- Banking: bank building -->
   <symbol id="banking" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M6 18 L24 6 L42 18" />

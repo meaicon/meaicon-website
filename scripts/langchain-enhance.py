@@ -22,13 +22,13 @@ import argparse
 import json
 import os
 import sys
+import textwrap
 from pathlib import Path
 from datetime import datetime
 
 # LangChain imports
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
-from tenacity import retry, stop_after_attempt, wait_exponential, before_sleep_log
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -114,7 +114,6 @@ def init_llm():
         openai_api_base=OMNIROUTE_URL,
         temperature=0.7,
         max_tokens=4096,
-        timeout=300, # Increased timeout to handle larger requests
     )
 
 
@@ -132,7 +131,6 @@ def read_input(input_dir: Path) -> str:
         return f.read()
 
 
-@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=2, min=5, max=60))
 def enhance_content(llm, raw_content: str, topic: str) -> str:
     """Use LangChain to enhance the raw research content."""
     messages = [
@@ -143,7 +141,6 @@ def enhance_content(llm, raw_content: str, topic: str) -> str:
     return response.content
 
 
-@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=2, min=5, max=60))
 def fact_check(llm, enhanced_content: str) -> dict:
     """Run fact-checking on enhanced content."""
     messages = [
@@ -157,7 +154,6 @@ def fact_check(llm, enhanced_content: str) -> dict:
         return {"raw_response": response.content, "error": "Failed to parse JSON"}
 
 
-@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=2, min=5, max=60))
 def analyze_content(llm, enhanced_content: str) -> dict:
     """Analyze content quality and provide recommendations."""
     messages = [
@@ -171,7 +167,6 @@ def analyze_content(llm, enhanced_content: str) -> dict:
         return {"raw_response": response.content, "error": "Failed to parse JSON"}
 
 
-@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=2, min=5, max=60))
 def summarize(llm, enhanced_content: str) -> str:
     """Generate an executive summary."""
     messages = [
@@ -199,26 +194,65 @@ def write_output(output_dir: Path, enhanced: str, facts: dict, analysis: dict, s
         f.write(summary)
 
     print(f"Output written to {output_dir}")
+    print(f"  - enhanced-content.md ({len(enhanced)} chars)")
+    print(f"  - fact-checks.json")
+    print(f"  - content-analysis.json")
+    print(f"  - summary.md ({len(summary)} chars)")
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--topic", required=True)
-    parser.add_argument("--page-name", required=True)
-    parser.add_argument("--input-dir", required=True)
+    parser = argparse.ArgumentParser(description="MEAICON LangChain Content Enhancement")
+    parser.add_argument("--topic", required=True, help="Research topic")
+    parser.add_argument("--page-name", required=True, help="Page name (e.g., connectivity)")
+    parser.add_argument("--input-dir", required=True, help="Input directory with Firecrawl content")
+    parser.add_argument("--output-dir", default=None, help="Output directory (default: research-data/langchain/<page-name>)")
     args = parser.parse_args()
 
-    llm = init_llm()
     input_dir = Path(args.input_dir)
-    output_dir = REPO_ROOT / "research-data" / "langchain" / args.topic
+    if not input_dir.is_absolute():
+        input_dir = REPO_ROOT / input_dir
 
-    print(f"Enhancing content for {args.page_name}...")
+    output_dir = Path(args.output_dir) if args.output_dir else REPO_ROOT / "research-data/langchain" / args.page_name
+    if not output_dir.is_absolute():
+        output_dir = REPO_ROOT / output_dir
+
+    print(f"MEAICON LangChain Content Enhancement Pipeline")
+    print(f"  Topic: {args.topic}")
+    print(f"  Page: {args.page_name}")
+    print(f"  Input: {input_dir}")
+    print(f"  Output: {output_dir}")
+    print(f"  LLM: {OMNIROUTE_MODEL} @ {OMNIROUTE_URL}")
+    print()
+
+    # Read input
     raw_content = read_input(input_dir)
+    print(f"Read {len(raw_content)} chars from input")
+
+    # Initialize LLM
+    llm = init_llm()
+    print("LangChain LLM initialized")
+
+    # Enhance
+    print("Enhancing content...")
     enhanced = enhance_content(llm, raw_content, args.topic)
+    print(f"Enhanced content: {len(enhanced)} chars")
+
+    # Fact-check
+    print("Fact-checking...")
     facts = fact_check(llm, enhanced)
+
+    # Analyze
+    print("Analyzing content...")
     analysis = analyze_content(llm, enhanced)
-    summary = summarize(llm, enhanced)
-    write_output(output_dir, enhanced, facts, analysis, summary)
+
+    # Summarize
+    print("Generating summary...")
+    summary_text = summarize(llm, enhanced)
+
+    # Write output
+    write_output(output_dir, enhanced, facts, analysis, summary_text)
+
+    print("\nPipeline complete!")
 
 
 if __name__ == "__main__":
