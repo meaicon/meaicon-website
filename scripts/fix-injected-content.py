@@ -109,8 +109,15 @@ def markdown_to_html(md: str) -> str:
         if re.match(r'^(title|description|layout|permalink|canonical|ogTitle|ogDescription|ogImage)\s*:', stripped, re.IGNORECASE):
             continue
         # Skip metadata field lines (markdown bold format, optionally as list items)
-        if re.match(r'^-?\s*\*\*(Title|Description|Canonical|Permalink|Section\s+title|Canonical\s+URL|OG\s+Title|OG\s+Description)\s*:', stripped, re.IGNORECASE):
+        if re.match(r'^-?\s*\*\*(Title|Description|Canonical|Permalink|Section\s+title|Canonical\s+URL|OG\s+Title|OG\s+Description|Eyebrow|Paragraph|Original\s+meta)\s*:', stripped, re.IGNORECASE):
             continue
+        # Skip "Original meta" / "Original" / "Suggested" standalone labels in blockquotes
+        if re.match(r'^\*\*(Original\s+meta|Original|Suggested|Consider)\s*$', stripped, re.IGNORECASE):
+            continue
+        # Skip "[ENHANCED]" prefix lines
+        if stripped.startswith('[ENHANCED]'):
+            stripped = stripped.replace('[ENHANCED] ', '').strip()
+            line = line.replace('[ENHANCED] ', '')
         # Skip raw separator lines (--- becomes <hr>)
         if stripped == '---':
             continue
@@ -133,6 +140,17 @@ def markdown_to_html(md: str) -> str:
     html = re.sub(r'<hr\s*/?>', '', html)
     # Remove empty sections that might result from stripping
     html = re.sub(r'<section[^>]*>\s*</section>', '', html)
+    # Convert any remaining **text** to <strong> (survives inside <td>, <blockquote>, etc.)
+    html = re.sub(r'\*\*([^*]+?)\*\*', r'<strong>\1</strong>', html)
+    # Convert any remaining *text* to <em> (but not inside HTML tags)
+    html = re.sub(r'(?<![<*])\*([^*\n]+?)\*(?![*>])', r'<em>\1</em>', html)
+    # Strip metadata lines that survived inside <blockquote> or <p> tags
+    html = re.sub(r'<p[^>]*>\s*-?\s*\*\*(Title|Description|Canonical|Permalink|Section\s+title|Canonical\s+URL|OG\s+Title|OG\s+Description|Eyebrow|Paragraph|Original\s+meta)\s*:.*?</p>', '', html, flags=re.IGNORECASE | re.DOTALL)
+    html = re.sub(r'<blockquote>\s*</blockquote>', '', html)
+    # Remove empty <p> tags
+    html = re.sub(r'<p[^>]*>\s*</p>', '', html)
+    # Remove empty <li> tags
+    html = re.sub(r'<li>\s*</li>', '', html)
 
     # Wrap in a content-section with prose-content
     wrapped = f'''
