@@ -2,11 +2,17 @@
 """Inject enhanced content into solution page templates. Inserts enhanced-content.md before </main> in each .njk template.
 
 SANITIZATION: Strips code fences, enforces single H1, removes raw research notes before injection.
+CONVERSION: Converts markdown to HTML before injection so it renders properly in Nunjucks templates.
 """
 
 import re
 import json
 from pathlib import Path
+
+try:
+    import markdown as md_lib
+except ImportError:
+    raise ImportError("markdown package required: pip install markdown")
 
 REPO_ROOT = Path("C:/Users/nev3s/repos/meaicon-website")
 PROGRESS_FILE = REPO_ROOT / "research-data" / "progress.json"
@@ -101,6 +107,7 @@ def sanitize_content(content: str) -> str:
     - Enforces single H1: converts any H1 after the first to H2
     - Removes raw research notes (metadata-like lines)
     - Strips trailing whitespace per line
+    - Removes metadata field lines (Title:, Description:, Canonical:, Permalink:)
     """
     # Strip code fences (```...``` blocks)
     content = re.sub(r'```[a-zA-Z]*\n.*?```', '', content, flags=re.DOTALL)
@@ -126,6 +133,10 @@ def sanitize_content(content: str) -> str:
         if re.match(r'^(Source|Research|URL|Reference|Metadata|Fact-check)\s*:', stripped, re.IGNORECASE):
             continue
 
+        # Skip enhanced-content metadata fields (Title:, Description:, Canonical:, Permalink:)
+        if re.match(r'^\*\*(Title|Description|Canonical|Permalink)\s*:', stripped, re.IGNORECASE):
+            continue
+
         cleaned_lines.append(line.rstrip())
 
     return '\n'.join(cleaned_lines).strip()
@@ -148,15 +159,29 @@ def inject(template_path: Path, enhanced_path: Path):
         return False, "empty_after_sanitize"
 
     # Prevent double-injection with a marker comment
-    marker = f"<!-- enhanced-content-injected: {enhanced_path.name} -->"
+    marker = f"<!-- enhanced-content-injected: enhanced-content.md (html-converted) -->"
     if marker in original:
         print(f"SKIP: {template_path.name} already injected")
         return False, "already_injected"
 
+    # Convert markdown to HTML before injection
+    html_content = md_lib.markdown(enhanced, extensions=['tables', 'fenced_code', 'toc'])
+
+    # Wrap in proper semantic sections matching site design
+    html_block = f'''
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="prose-content">
+{html_content}
+      </div>
+    </div>
+  </section>
+'''
+
     if "</main>" in original:
-        updated = original.replace("</main>", f"{marker}\n{enhanced}\n\n</main>")
+        updated = original.replace("</main>", f"{marker}\n{html_block}\n\n</main>")
     else:
-        updated = original + f"\n{marker}\n{enhanced}\n"
+        updated = original + f"\n{marker}\n{html_block}\n"
 
     template_path.write_text(updated, encoding="utf-8")
     print(f"OK: {template_path.name} ({len(enhanced)} chars injected)")
@@ -173,6 +198,10 @@ def main():
         progress = json.loads(PROGRESS_FILE.read_text(encoding="utf-8"))
     else:
         progress = {"pages": {}}
+    
+    # Ensure pages key exists
+    if "pages" not in progress:
+        progress["pages"] = {}
 
     updated = 0
     skipped = 0

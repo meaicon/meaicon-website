@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MEAICON Content Queue Entry",
+  "description": "Schema for entries in content_queue.json. Each entry represents a page that needs content enhancement.",
+  "type": "object",
+  "required": ["slug", "title", "description", "section", "status"],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "Page slug, e.g. 'solutions/connectivity', 'industries/banking'",
+      "pattern": "^[a-z0-9][a-z0-9/-]*$"
+    },
+    "title": {
+      "type": "string",
+      "description": "Page title for front matter",
+      "minLength": 3
+    },
+    "description": {
+      "type": "string",
+      "description": "Meta description (150-160 chars recommended)",
+      "minLength": 20
+    },
+    "section": {
+      "type": "string",
+      "enum": ["Solutions", "Industries", "Case Studies", "Insights", "Index"]
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to extract content from (optional — if omitted, agent generates from topic knowledge)"
+    },
+    "competitors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Reference/competitor URLs for research"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "processing", "enhanced", "injected", "verified", "failed"],
+      "description": "Pipeline status of this entry"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "default": 5,
+      "description": "Priority (0=low, 10=urgent)"
+    },
+    "quality_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "description": "LangChain quality assessment score"
+    },
+    "error": {
+      "type": "string",
+      "description": "Last error message if status=failed"
+    },
+    "attempts": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "description": "Number of enhancement attempts"
+    },
+    "max_attempts": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 3,
+      "description": "Max self-correction retries before escalating"
+    }
+  }
+}

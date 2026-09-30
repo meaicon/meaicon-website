@@ -1,7 +1,7 @@
 ---
 layout: layout.njk
 title: "AI Compute Infrastructure – MEAICON"
-description: "Bare-metal GPU compute platforms, configurable AI servers, and sovereign cloud instances for model training and inference across the Middle East and Africa."
+description: "Bare-metal GPU compute platforms, configurable AI servers, and sovereign cloud instances for model training and inference across the the GCC, Africa, South Asia, and North America."
 canonical: "https://www.meaicon.com/solutions/ai-compute.html"
 permalink: /solutions/ai-compute.html
 ---
@@ -12,7 +12,7 @@ permalink: /solutions/ai-compute.html
       <p class="eyebrow mb-4 mt-6">Solutions</p>
             <svg class="solution-icon-sm"><use href="/assets/icons.svg#ai-compute"></use></svg>
 <h1 class="page-title max-w-3xl">AI Compute Infrastructure</h1>
-      <p>Organisations across the Middle East and Africa are training, fine-tuning, and deploying AI models at scale — but regional access to high-performance GPU compute remains a bottleneck. MEAICON designs, sources, and deploys bare-metal GPU infrastructure tailored to your AI workloads, with flexible delivery models that fit whether you are building an on-premises cluster, colocating in a regional data centre, or renting cloud instances on demand.</p>
+      <p>Organisations across the the GCC, Africa, South Asia, and North America are training, fine-tuning, and deploying AI models at scale — but regional access to high-performance GPU compute remains a bottleneck. MEAICON designs, sources, and deploys bare-metal GPU infrastructure tailored to your AI workloads, with flexible delivery models that fit whether you are building an on-premises cluster, colocating in a regional data centre, or renting cloud instances on demand.</p>
       <p>We help you cut through the complexity of GPU selection, system balancing, cooling, and software setup so your data science team can start iterating from day one — not week six.</p>
       <div class="mt-8 flex flex-wrap gap-4">
         <a href="/solutions.html" class="btn-secondary inline-flex items-center px-5 py-3">All solutions</a>
@@ -241,81 +241,29 @@ permalink: /solutions/ai-compute.html
       }
     });
   </script>
----
-title: AI Compute Infrastructure | MEAICON LLC FZ
-description: Enterprise-grade AI compute infrastructure and supercomputing solutions tailored for the MEA region.
----
-# AI Compute Infrastructure
+<!-- enhanced-content-injected: enhanced-content.md (html-converted) -->
 
-## Overview
-MEAICON LLC FZ provides high-performance AI compute infrastructure designed for complex workloads, from large-scale model training to high-speed inference. We deploy purpose-built, AI-native hardware stacks to accelerate your AI initiatives.
-
-## Capabilities
-- **AI Superclusters**: Scalable, high-performance GPU compute clusters optimized for deep learning.
-- **AI-Native Architecture**: Infrastructure designed specifically for production AI workloads, not repurposed general-purpose data centers.
-- **Hybrid AI Deployment**: Seamless integration of cloud compute with edge inference for reduced latency.
-
-## Why MEAICON
-- **Regional Data Sovereignty**: Ensure compliance with GCC data regulations by keeping your AI compute local.
-- **Enterprise-Grade Reliability**: Mission-critical AI infrastructure with high availability.
-- **Optimization**: Expert tuning for maximum throughput and efficiency.
-
-
----
-title: AI Compute Infrastructure | MEAICON LLC FZ
-description: Enterprise-grade AI compute infrastructure and supercomputing solutions tailored for the MEA region.
----
-# AI Compute Infrastructure
-
-## Overview
-MEAICON LLC FZ provides high-performance AI compute infrastructure designed for complex workloads, from large-scale model training to high-speed inference. We deploy purpose-built, AI-native hardware stacks to accelerate your AI initiatives.
-
-## Capabilities
-- **AI Superclusters**: Scalable, high-performance GPU compute clusters optimized for deep learning.
-- **AI-Native Architecture**: Infrastructure designed specifically for production AI workloads, not repurposed general-purpose data centers.
-- **Hybrid AI Deployment**: Seamless integration of cloud compute with edge inference for reduced latency.
-
-## Why MEAICON
-- **Regional Data Sovereignty**: Ensure compliance with GCC data regulations by keeping your AI compute local.
-- **Enterprise-Grade Reliability**: Mission-critical AI infrastructure with high availability.
-- **Optimization**: Expert tuning for maximum throughput and efficiency.
+  <section class="content-section reveal">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="prose-content">
+<h2 id="ai-compute-infrastructure">AI Compute Infrastructure</h2>
+<h2 id="overview">Overview</h2>
+<p>MEAICON LLC FZ provides high-performance AI compute infrastructure designed for complex workloads, from large-scale model training to high-speed inference. We deploy purpose-built, AI-native hardware stacks to accelerate your AI initiatives.</p>
+<h2 id="capabilities">Capabilities</h2>
+<ul>
+<li><strong>AI Superclusters</strong>: Scalable, high-performance GPU compute clusters optimized for deep learning.</li>
+<li><strong>AI-Native Architecture</strong>: Infrastructure designed specifically for production AI workloads, not repurposed general-purpose data centers.</li>
+<li><strong>Hybrid AI Deployment</strong>: Seamless integration of cloud compute with edge inference for reduced latency.</li>
+</ul>
+<h2 id="why-meaicon">Why MEAICON</h2>
+<ul>
+<li><strong>Regional Data Sovereignty</strong>: Ensure compliance with GCC data regulations by keeping your AI compute local.</li>
+<li><strong>Enterprise-Grade Reliability</strong>: Mission-critical AI infrastructure with high availability.</li>
+<li><strong>Optimization</strong>: Expert tuning for maximum throughput and efficiency.</li>
+</ul>
+      </div>
+    </div>
+  </section>
 
 
 </main>
-
-<script>
-(function() {
-  const cfgForm = document.getElementById('configurator-form');
-  const priceUSD = document.getElementById('price-usd');
-  const priceAED = document.getElementById('price-aed');
-
-  const USD_RATE = 1.08;
-  const AED_RATE = 3.97;
-  const MARKUP = 1.25;
-
-  function updatePrice() {
-    const gpuChecked = cfgForm.querySelector('input[name="gpu"]:checked');
-    const cpuSelect = cfgForm.querySelector('#cpu-select');
-    const ramSelect = cfgForm.querySelector('#ram-select');
-    const deliveryChecked = cfgForm.querySelector('input[name="delivery"]:checked');
-
-    let base = 0;
-    if (gpuChecked) base += parseFloat(gpuChecked.dataset.basePrice);
-    if (cpuSelect && cpuSelect.selectedOptions.length > 0) base += parseFloat(cpuSelect.selectedOptions[0].dataset.basePrice);
-    if (ramSelect && ramSelect.selectedOptions.length > 0) base += parseFloat(ramSelect.selectedOptions[0].dataset.basePrice);
-
-    let multiplier = 1.0;
-    if (deliveryChecked) multiplier = parseFloat(deliveryChecked.dataset.multiplier);
-
-    const total = base * MARKUP * multiplier;
-    const totalUSD = total * USD_RATE;
-    const totalAED = total * AED_RATE;
-
-    priceUSD.textContent = '$' + Math.round(totalUSD).toLocaleString();
-    priceAED.textContent = Math.round(totalAED).toLocaleString() + ' AED';
-  }
-
-  cfgForm.addEventListener('change', updatePrice);
-  updatePrice();
-})();
-</script>
