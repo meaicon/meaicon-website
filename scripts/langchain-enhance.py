@@ -28,7 +28,7 @@ from datetime import datetime
 # LangChain imports
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
-from tenacity import retry, stop_after_attempt, wait_exponential
+from tenacity import retry, stop_after_attempt, wait_exponential, before_sleep_log
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -114,7 +114,7 @@ def init_llm():
         openai_api_base=OMNIROUTE_URL,
         temperature=0.7,
         max_tokens=4096,
-        timeout=300,  # Increased to 5 minutes for complex enhancement requests
+        timeout=300, # Increased timeout to handle larger requests
     )
 
 
