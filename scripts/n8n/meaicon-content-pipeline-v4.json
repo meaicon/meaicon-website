@@ -20,7 +20,10 @@
       "name": "Daily 02:00 Batch",
       "type": "n8n-nodes-base.cron",
       "typeVersion": 1,
-      "position": [-800, -200]
+      "position": [
+        -800,
+        -200
+      ]
     },
     {
       "parameters": {
@@ -33,25 +36,35 @@
       "name": "Queue Webhook",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
-      "position": [-800, 100],
+      "position": [
+        -800,
+        100
+      ],
       "webhookId": "meaicon-content-queue-v4"
     },
     {
       "parameters": {
         "method": "GET",
         "url": "http://127.0.0.1:20128/v1/models",
-        "options": { "timeout": 5000 }
+        "options": {
+          "timeout": 5000
+        }
       },
       "id": "health-check",
       "name": "OmniRoute Health Check",
       "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [-500, -50]
+      "typeVersion": 4,
+      "position": [
+        -500,
+        -50
+      ]
     },
     {
       "parameters": {
         "conditions": {
-          "options": { "caseSensitive": true },
+          "options": {
+            "caseSensitive": true
+          },
           "conditions": [
             {
               "leftValue": "={{$json['data'] || $json['models'] ? 'healthy' : 'down'}}",
@@ -68,7 +81,10 @@
       "name": "OmniRoute Ready?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
-      "position": [-250, -50]
+      "position": [
+        -250,
+        -50
+      ]
     },
     {
       "parameters": {
@@ -78,17 +94,25 @@
       "name": "Read Queue",
       "type": "n8n-nodes-base.function",
       "typeVersion": 1,
-      "position": [0, -50]
+      "position": [
+        0,
+        -50
+      ]
     },
     {
       "parameters": {
         "conditions": {
-          "options": { "caseSensitive": true },
+          "options": {
+            "caseSensitive": true
+          },
           "conditions": [
             {
               "leftValue": "={{$json['empty'] || $json['error'] ? 'skip' : 'process'}}",
               "rightValue": "process",
-              "operator": { "type": "string", "operation": "equals" }
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
             }
           ]
         }
@@ -97,7 +121,10 @@
       "name": "Queue Has Pending?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
-      "position": [250, -50]
+      "position": [
+        250,
+        -50
+      ]
     },
     {
       "parameters": {
@@ -108,7 +135,10 @@
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            { "name": "Content-Type", "value": "application/json" }
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
           ]
         },
         "sendBody": true,
@@ -119,8 +149,11 @@
       "id": "enhance-llm",
       "name": "LangChain Enhance",
       "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [500, -150]
+      "typeVersion": 4,
+      "position": [
+        500,
+        -150
+      ]
     },
     {
       "parameters": {
@@ -131,7 +164,10 @@
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            { "name": "Content-Type", "value": "application/json" }
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
           ]
         },
         "sendBody": true,
@@ -142,8 +178,11 @@
       "id": "critic-llm",
       "name": "LangGraph Critic",
       "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [750, -150]
+      "typeVersion": 4,
+      "position": [
+        750,
+        -150
+      ]
     },
     {
       "parameters": {
@@ -153,17 +192,25 @@
       "name": "Parse Critic Verdict",
       "type": "n8n-nodes-base.function",
       "typeVersion": 1,
-      "position": [1000, -150]
+      "position": [
+        1000,
+        -150
+      ]
     },
     {
       "parameters": {
         "conditions": {
-          "options": { "caseSensitive": true },
+          "options": {
+            "caseSensitive": true
+          },
           "conditions": [
             {
               "leftValue": "={{$json['verdict']}}",
               "rightValue": "APPROVED",
-              "operator": { "type": "string", "operation": "equals" }
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
             }
           ]
         }
@@ -172,7 +219,10 @@
       "name": "Critic Approved?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
-      "position": [1250, -150]
+      "position": [
+        1250,
+        -150
+      ]
     },
     {
       "parameters": {
@@ -183,7 +233,10 @@
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            { "name": "Content-Type", "value": "application/json" }
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
           ]
         },
         "sendBody": true,
@@ -194,8 +247,11 @@
       "id": "self-correct",
       "name": "Self-Correct",
       "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [1500, 0]
+      "typeVersion": 4,
+      "position": [
+        1500,
+        0
+      ]
     },
     {
       "parameters": {
@@ -205,7 +261,10 @@
       "name": "Write Self-Corrected",
       "type": "n8n-nodes-base.function",
       "typeVersion": 1,
-      "position": [1750, 0]
+      "position": [
+        1750,
+        0
+      ]
     },
     {
       "parameters": {
@@ -219,8 +278,11 @@
       "id": "trigger-inject",
       "name": "Trigger Inject",
       "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [2000, 0]
+      "typeVersion": 4,
+      "position": [
+        2000,
+        0
+      ]
     },
     {
       "parameters": {
@@ -230,7 +292,10 @@
       "name": "Write Enhanced Content",
       "type": "n8n-nodes-base.function",
       "typeVersion": 1,
-      "position": [1500, -300]
+      "position": [
+        1500,
+        -300
+      ]
     },
     {
       "parameters": {
@@ -242,10 +307,13 @@
         "options": {}
       },
       "id": "trigger-inject-approved",
-      "name": "Trigger Inject",
+      "name": "Trigger Inject (Approved)",
       "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [1750, -300]
+      "typeVersion": 4,
+      "position": [
+        1750,
+        -300
+      ]
     },
     {
       "parameters": {
@@ -259,8 +327,11 @@
       "id": "trigger-build-gate",
       "name": "Build + Lint Gate",
       "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [2000, -300]
+      "typeVersion": 4,
+      "position": [
+        2000,
+        -300
+      ]
     },
     {
       "parameters": {
@@ -270,7 +341,10 @@
       "name": "Update Queue Status",
       "type": "n8n-nodes-base.function",
       "typeVersion": 1,
-      "position": [2250, -300]
+      "position": [
+        2250,
+        -300
+      ]
     },
     {
       "parameters": {
@@ -280,7 +354,10 @@
       "name": "Log Failure + Retry",
       "type": "n8n-nodes-base.function",
       "typeVersion": 1,
-      "position": [1500, 200]
+      "position": [
+        1500,
+        200
+      ]
     },
     {
       "parameters": {
@@ -290,7 +367,10 @@
       "name": "Log Empty Queue",
       "type": "n8n-nodes-base.function",
       "typeVersion": 1,
-      "position": [250, 100]
+      "position": [
+        250,
+        100
+      ]
     },
     {
       "parameters": {
@@ -300,128 +380,207 @@
       "name": "Log OmniRoute Down",
       "type": "n8n-nodes-base.function",
       "typeVersion": 1,
-      "position": [0, 200]
+      "position": [
+        0,
+        200
+      ]
     }
   ],
   "connections": {
     "Daily 02:00 Batch": {
       "main": [
         [
-          { "node": "OmniRoute Health Check", "type": "main", "index": 0 }
+          {
+            "node": "OmniRoute Health Check",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "Queue Webhook": {
       "main": [
         [
-          { "node": "OmniRoute Health Check", "type": "main", "index": 0 }
+          {
+            "node": "OmniRoute Health Check",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "OmniRoute Health Check": {
       "main": [
         [
-          { "node": "Health Gate", "type": "main", "index": 0 }
+          {
+            "node": "OmniRoute Ready?",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
-    "Health Gate": {
+    "OmniRoute Ready?": {
       "main": [
         [
-          { "node": "Read Queue", "type": "main", "index": 0 }
+          {
+            "node": "Read Queue",
+            "type": "main",
+            "index": 0
+          }
         ],
         [
-          { "node": "Log OmniRoute Down", "type": "main", "index": 0 }
+          {
+            "node": "Log OmniRoute Down",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "Read Queue": {
       "main": [
         [
-          { "node": "Queue Has Pending?", "type": "main", "index": 0 }
+          {
+            "node": "Queue Has Pending?",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "Queue Has Pending?": {
       "main": [
         [
-          { "node": "LangChain Enhance", "type": "main", "index": 0 }
+          {
+            "node": "LangChain Enhance",
+            "type": "main",
+            "index": 0
+          }
         ],
         [
-          { "node": "Log Empty Queue", "type": "main", "index": 0 }
+          {
+            "node": "Log Empty Queue",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "LangChain Enhance": {
       "main": [
         [
-          { "node": "LangGraph Critic", "type": "main", "index": 0 }
+          {
+            "node": "LangGraph Critic",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "LangGraph Critic": {
       "main": [
         [
-          { "node": "Parse Critic Verdict", "type": "main", "index": 0 }
+          {
+            "node": "Parse Critic Verdict",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "Parse Critic Verdict": {
       "main": [
         [
-          { "node": "Critic Approved?", "type": "main", "index": 0 }
+          {
+            "node": "Critic Approved?",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "Critic Approved?": {
       "main": [
         [
-          { "node": "Write Enhanced Content", "type": "main", "index": 0 }
+          {
+            "node": "Write Enhanced Content",
+            "type": "main",
+            "index": 0
+          }
         ],
         [
-          { "node": "Self-Correct", "type": "main", "index": 0 }
+          {
+            "node": "Self-Correct",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "Write Enhanced Content": {
       "main": [
         [
-          { "node": "Trigger Inject (Approved)", "type": "main", "index": 0 }
+          {
+            "node": "Trigger Inject (Approved)",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "Trigger Inject (Approved)": {
-      "webhook": [
+      "main": [
         [
-          { "node": "Build + Lint Gate", "type": "main", "index": 0 }
+          {
+            "node": "Build + Lint Gate",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "Build + Lint Gate": {
-      "webhook": [
+      "main": [
         [
-          { "node": "Update Queue Status", "type": "main", "index": 0 }
+          {
+            "node": "Update Queue Status",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "Self-Correct": {
       "main": [
         [
-          { "node": "Write Self-Corrected", "type": "main", "index": 0 }
+          {
+            "node": "Write Self-Corrected",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "Write Self-Corrected": {
       "main": [
         [
-          { "node": "Trigger Inject", "type": "main", "index": 0 }
+          {
+            "node": "Trigger Inject",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "Trigger Inject": {
-      "webhook": [
+      "main": [
         [
-          { "node": "Log Failure + Retry", "type": "main", "index": 0 }
+          {
+            "node": "Log Failure + Retry",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     }

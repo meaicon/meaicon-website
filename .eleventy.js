@@ -1,5 +1,3 @@
-const fs = require("node:fs");
-const path = require("node:path");
 const Image = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
@@ -9,24 +7,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("migrated/");
   eleventyConfig.ignores.add("products.html");
   eleventyConfig.ignores.add("research-data/");
-
-  // Keep legacy filters for backward compatibility (site-head.njk references them)
-  /*
-  eleventyConfig.addFilter("legacyBody", (source) => {
-    const html = fs.readFileSync(path.join(process.cwd(), source), "utf8");
-    const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1];
-    const main = body?.match(/<main[^>]*>[\s\S]*?<\/main>/i)?.[0];
-    if (!main) throw new Error(`Could not extract <main> from ${source}`);
-    return main;
-  });
-
-  eleventyConfig.addFilter("legacyJsonLd", (source) => {
-    const html = fs.readFileSync(path.join(process.cwd(), source), "utf8");
-    return [...html.matchAll(/<script type="application\/ld+json">[\s\S]*?<\/script>/gi)]
-      .map((match) => match[0])
-      .join("\n");
-  });
-  */
 
   eleventyConfig.addAsyncShortcode("image", async function (src, alt, classes) {
     if (!alt) throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
