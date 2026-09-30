@@ -173,6 +173,10 @@ def main():
         progress = json.loads(PROGRESS_FILE.read_text(encoding="utf-8"))
     else:
         progress = {"pages": {}}
+    
+    # Ensure pages key exists
+    if "pages" not in progress:
+        progress["pages"] = {}
 
     updated = 0
     skipped = 0
