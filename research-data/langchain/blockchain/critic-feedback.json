@@ -1,0 +1,19 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 6,
+  "issues": [
+    "Missing H1 header in the body content.",
+    "Redundant phrasing in the introductory section.",
+    "Lack of specific MEA-contextual use cases.",
+    "Structural violation: The content includes raw markdown front-matter fences (---) which may interfere with CMS ingestion if not handled as metadata."
+  ],
+  "suggestions": [
+    "Insert an H1 header (e.g., # Enterprise Blockchain Solutions) at the top of the body content to ensure proper document hierarchy.",
+    "Consolidate the two repetitive paragraphs under the 'Blockchain' section into a single, high-impact paragraph to improve flow and readability.",
+    "Incorporate specific regional use cases relevant to the MEA market, such as supply chain logistics, trade finance digitisation, or government service automation, to enhance local relevance.",
+    "Ensure the front-matter metadata is separated from the body content or formatted according to the specific CMS requirements to avoid raw markdown fences appearing in the rendered output."
+  ],
+  "timestamp": "2026-09-30T12:40:33.756606",
+  "evaluator": "llm-critic",
+  "topic": "blockchain"
+}

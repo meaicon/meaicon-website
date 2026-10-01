@@ -1,0 +1,23 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 4,
+  "issues": [
+    "Brand Safety: Explicit mention of competitors (Gulf Data Centres, Digital Realty) violates brand safety protocols.",
+    "Technical Precision: '90% PUE' is physically impossible. PUE is a ratio (e.g., 1.3), not a percentage. This undermines engineering credibility.",
+    "Technical Precision: '99.9% MTTR' is a unit error. MTTR (Mean Time To Repair) is a time duration, not a percentage.",
+    "Completeness: The text ends abruptly mid-sentence in the Cyber Security section.",
+    "Structure: The document lacks a primary H1 header.",
+    "Hallucination/Accuracy: 'AI-driven path optimisation' is vague marketing fluff. Without specific technical context, it reads as an AI-ism."
+  ],
+  "suggestions": [
+    "Remove all competitor references. Focus exclusively on MEAICON's internal benchmarks and regional expertise.",
+    "Correct PUE to a realistic industry standard (e.g., 'PUE of 1.3 or lower').",
+    "Replace '99.9% MTTR' with a time-based SLA (e.g., 'MTTR < 4 hours').",
+    "Complete the sentence regarding the USD 12bn cyber security forecast and ensure the source is cited.",
+    "Add a clear H1 title (e.g., 'MEAICON: Enterprise Infrastructure Solutions').",
+    "Replace 'AI-driven' with specific technical mechanisms (e.g., 'Dynamic path selection based on real-time latency and jitter metrics')."
+  ],
+  "timestamp": "2026-09-30T12:43:42.170755",
+  "evaluator": "llm-critic",
+  "topic": "general"
+}

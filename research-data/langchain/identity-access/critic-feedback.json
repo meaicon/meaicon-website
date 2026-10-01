@@ -1,0 +1,38 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 4,
+  "issues": [
+    {
+      "issue": "Multiple H1 tags present.",
+      "suggestion": "Use only one H1 for the page title. Convert 'MEAICON LLC FZ \u2013 Identity Access Management (IAM)' to an H2."
+    },
+    {
+      "issue": "Content length is significantly below the 900-character requirement.",
+      "suggestion": "Expand the technical descriptions of the IAM platform, specifically detailing how the solution handles OT/IT convergence and specific NESA compliance controls."
+    },
+    {
+      "issue": "Competitor names (Okta, Citrix) included in sources.",
+      "suggestion": "Remove all competitor references. Replace with neutral industry standards such as NIST SP 800-63 or ISO/IEC 27001."
+    },
+    {
+      "issue": "Formatting errors (stray pipe characters '|').",
+      "suggestion": "Remove pipe characters and utilize standard bulleted lists or paragraph blocks for readability."
+    },
+    {
+      "issue": "Vague regulatory claims ('MEA region audits').",
+      "suggestion": "Explicitly reference specific UAE regulatory frameworks (e.g., NESA IAS, Dubai Electronic Security Center standards) rather than generic regional terms."
+    },
+    {
+      "issue": "Lack of technical specificity regarding authentication protocols.",
+      "suggestion": "Replace marketing fluff like 'identity-centric security' with specific protocol support (e.g., SAML 2.0, OIDC, FIDO2, or LDAP integration)."
+    }
+  ],
+  "suggestions": [
+    "Ensure the content focuses on the technical architecture of the MEAICON platform rather than high-level marketing positioning.",
+    "Include a section on how the solution integrates with existing legacy infrastructure common in the MEA region.",
+    "Verify that all claims regarding compliance are mapped to specific, verifiable regulatory controls."
+  ],
+  "timestamp": "2026-09-30T12:44:33.891685",
+  "evaluator": "llm-critic",
+  "topic": "identity-access"
+}

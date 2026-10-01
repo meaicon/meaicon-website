@@ -1,0 +1,17 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 3,
+  "issues": [
+    "Content length is significantly below the 900-character minimum requirement.",
+    "Lack of technical depth; relies on generic marketing terminology rather than specific enterprise IT methodologies.",
+    "MEA relevance is superficial; mentions 'standards' without citing specific regional regulatory frameworks or infrastructure challenges."
+  ],
+  "suggestions": [
+    "Expand the content to include detailed sections on CI/CD pipelines, container orchestration (Kubernetes), and API-first architecture to meet length and technical precision requirements.",
+    "Incorporate specific references to MEA data sovereignty laws (e.g., UAE Federal Decree-Law No. 45 of 2021) to ground the 'Secure & Compliant' claim.",
+    "Add a section on 'Legacy Modernization' detailing the approach to refactoring monolithic architectures, which is a key pain point for enterprise clients in the region."
+  ],
+  "timestamp": "2026-09-30T12:40:21.148203",
+  "evaluator": "llm-critic",
+  "topic": "application-services"
+}

@@ -1,0 +1,19 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 3,
+  "issues": [
+    "Incomplete content: The text cuts off mid-sentence and fails the 900-character minimum requirement.",
+    "Lack of technical precision: The copy relies on marketing fluff ('consistent monitoring, engineering, and governance model') rather than enterprise IT specifications.",
+    "Unsubstantiated claims: 'Seven markets' is a vague claim without supporting evidence or a coverage map.",
+    "Insufficient MEA context: The content fails to address specific regional infrastructure challenges or regulatory environments relevant to MEAICON's operational footprint."
+  ],
+  "suggestions": [
+    "Complete the draft to exceed 900 characters, ensuring a full explanation of the connectivity service architecture.",
+    "Replace generic marketing language with specific technical terminology such as 'low-latency fiber backhaul,' 'carrier-neutral peering,' 'SLA-backed uptime,' or 'edge compute integration.'",
+    "Include a list of the seven markets or a link to a verified coverage map to substantiate the operational footprint claim.",
+    "Integrate specific regional context, such as addressing cross-border regulatory compliance in the GCC or subsea cable connectivity challenges in Africa."
+  ],
+  "timestamp": "2026-09-30T12:41:30.992263",
+  "evaluator": "llm-critic",
+  "topic": "connectivity-test"
+}

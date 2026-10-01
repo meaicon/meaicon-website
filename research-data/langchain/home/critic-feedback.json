@@ -1,0 +1,21 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 4,
+  "issues": [
+    "Content is truncated at the end of the Consulting section, rendering the final point incomplete.",
+    "The claim '0 security incidents since go-live' is technically implausible and unverifiable for any enterprise IT environment, bordering on hallucination.",
+    "Use of specific vendor name 'Cisco' violates the 'No competitor names' policy.",
+    "Technical inaccuracy: 'Cisco SD-WAN 3000 series' does not exist in the current enterprise product portfolio (hallucinated model number).",
+    "The '0 security incidents' metric is a marketing superlative that lacks technical precision and credibility."
+  ],
+  "suggestions": [
+    "Complete the final sentence regarding ISO 27001 certification timelines to ensure the content is finished.",
+    "Replace '0 security incidents' with 'Zero critical data breaches' or 'Zero unauthorized system compromises' to maintain technical credibility.",
+    "Remove specific vendor names (e.g., Cisco) and replace with generic industry terminology like 'enterprise-grade SD-WAN architecture' to comply with brand safety guidelines.",
+    "Correct the product reference to align with current industry-standard hardware nomenclature or remove specific model numbers to avoid technical inaccuracies.",
+    "Ensure all metrics are auditable; replace marketing superlatives with verifiable performance indicators."
+  ],
+  "timestamp": "2026-09-30T12:44:21.904586",
+  "evaluator": "llm-critic",
+  "topic": "home"
+}

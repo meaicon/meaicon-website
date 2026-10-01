@@ -1,0 +1,19 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 4,
+  "issues": [
+    "Content length is significantly below the 900-character minimum requirement.",
+    "Use of vague marketing terminology ('high-performance', 'AI-Native') without technical substantiation.",
+    "Lack of specific enterprise IT technical details (e.g., interconnect fabrics, power density, cooling solutions).",
+    "Insufficient depth regarding MEA-specific operational challenges (e.g., extreme heat management in data centers)."
+  ],
+  "suggestions": [
+    "Expand the content to meet the 900-character minimum by detailing specific hardware stacks (e.g., GPU clusters, InfiniBand/RoCE fabrics).",
+    "Replace 'AI-Native' with specific architectural descriptions such as 'non-blocking fat-tree topologies' or 'high-density liquid cooling integration'.",
+    "Include a section on power density and thermal management, specifically addressing the challenges of operating high-compute clusters in the MEA climate.",
+    "Explicitly reference relevant regional regulatory frameworks (e.g., UAE Data Protection Law, Saudi PDPL) to strengthen the Data Sovereignty claim."
+  ],
+  "timestamp": "2026-09-30T12:39:58.454216",
+  "evaluator": "llm-critic",
+  "topic": "ai-compute"
+}

@@ -1,0 +1,17 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 6,
+  "issues": [
+    "Incomplete sentence at the end of the text ('We help teams adopt the twelve-factor app method').",
+    "Empty 'Frontmatter' section serves no purpose and creates a structural error.",
+    "Lack of a concluding call-to-action (CTA) or summary statement to guide the user journey."
+  ],
+  "suggestions": [
+    "Complete the final sentence: 'We help teams adopt the twelve-factor app method to ensure scalable, maintainable, and portable cloud-native application development.'",
+    "Remove the 'Frontmatter' header entirely, or populate it with essential SEO metadata (e.g., Meta Title: Cloud Services | MEAICON LLC FZ; Meta Description: Enterprise cloud migration and hybrid architecture services for the Middle East and Africa).",
+    "Add a concluding sentence or CTA, such as: 'Contact our engineering team to discuss your cloud migration roadmap and data residency requirements.'"
+  ],
+  "timestamp": "2026-09-30T12:40:56.081293",
+  "evaluator": "llm-critic",
+  "topic": "cloud"
+}

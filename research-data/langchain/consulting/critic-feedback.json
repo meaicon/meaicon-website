@@ -1,0 +1,21 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 3,
+  "issues": [
+    "Incomplete content: The text cuts off mid-sentence at the end, rendering the final section unusable.",
+    "Unsubstantiated statistics: The IDC and Gartner citations appear to be placeholder or hallucinated data points that lack verifiable sources.",
+    "Proprietary jargon: The 'ME-A-C' framework is not an industry-standard term and lacks sufficient context, appearing as marketing fluff rather than technical methodology.",
+    "Formatting error: The content ends with a broken table/list structure, violating the structure requirements.",
+    "Insufficient length: The provided text is under the 900-character requirement."
+  ],
+  "suggestions": [
+    "Complete the final section regarding Regulatory & Compliance Advisory and ensure the table or list is properly closed with complete sentences.",
+    "Remove specific percentages if they cannot be verified by a primary source. Replace with qualitative industry observations (e.g., 'A significant majority of CIOs...').",
+    "Define 'ME-A-C' clearly as a proprietary MEAICON methodology or remove it to maintain credibility with enterprise clients who expect established frameworks.",
+    "Expand the content by detailing the 'Managed Services' and 'Tokenisation' pillars mentioned in the meta to meet the 900-character minimum and provide technical depth.",
+    "Ensure all citations are linked to verifiable public reports or internal whitepapers."
+  ],
+  "timestamp": "2026-09-30T12:41:42.766718",
+  "evaluator": "llm-critic",
+  "topic": "consulting"
+}

@@ -1,0 +1,15 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 4,
+  "issues": [
+    "The content cuts off abruptly mid-sentence at the end ('collaboration su'), violating completeness standards.",
+    "The text completely lacks Middle East / Africa (MEA) regional context, which is mandatory for MEAICON LLC FZ content."
+  ],
+  "suggestions": [
+    "Complete the 'Collaboration Platforms' section and ensure all sentences and paragraphs are fully written out without truncation.",
+    "Incorporate MEA regional relevance by mentioning deployment considerations for GCC/Middle East enterprises, such as regional data residency or hybrid workforce adoption trends in Dubai and the wider region."
+  ],
+  "timestamp": "2026-09-30T12:42:42.740605",
+  "evaluator": "llm-critic",
+  "topic": "digital-workplace"
+}

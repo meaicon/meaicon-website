@@ -1,0 +1,19 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 4,
+  "issues": [
+    "Content length is significantly below the 900-character requirement.",
+    "Lack of specific MEA regional context (e.g., regulatory compliance, environmental challenges).",
+    "Use of marketing fluff ('single pane of glass').",
+    "Reference to 'MEANETC' appears to be a hallucination or non-standard acronym; NEMA is US-centric and lacks local relevance."
+  ],
+  "suggestions": [
+    "Expand the text to include specific use cases relevant to the region, such as remote oil and gas field connectivity or construction site infrastructure in the GCC.",
+    "Explicitly mention compliance with UAE Data Law, TRA regulations, or local environmental standards (e.g., heat/dust mitigation) to ground the content in the MEA market.",
+    "Replace 'single pane of glass' with 'centralized orchestration' or 'unified management plane' to maintain technical precision.",
+    "Remove 'MEANETC' and replace with recognized international or regional standards (e.g., ISO/IEC 27001, local GCC building codes)."
+  ],
+  "timestamp": "2026-09-30T12:45:30.707799",
+  "evaluator": "llm-critic",
+  "topic": "mobile-data-centre"
+}

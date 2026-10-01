@@ -1,0 +1,15 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 4,
+  "issues": [
+    "Content cuts off abruptly at the end under the Capabilities section, leaving 'Cloud-Edge Integration' incomplete.",
+    "The statistic regarding the $6 billion Middle East edge data centre market projection through 2030 lacks source attribution."
+  ],
+  "suggestions": [
+    "Complete the 'Cloud-Edge Integration' capability description and ensure all planned tiers are fully fleshed out with complete sentences before publication.",
+    "Add a credible research source citation for the $6 billion market projection or adjust the phrasing to reflect general regional growth trends if unverified."
+  ],
+  "timestamp": "2026-09-30T12:43:33.079283",
+  "evaluator": "llm-critic",
+  "topic": "edge-compute-infrastructure"
+}

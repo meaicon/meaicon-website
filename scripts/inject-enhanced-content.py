@@ -107,6 +107,7 @@ def sanitize_content(content: str) -> str:
     - Enforces single H1: converts any H1 after the first to H2
     - Removes raw research notes (metadata-like lines)
     - Strips trailing whitespace per line
+    - Strips leading whitespace so markdown parser handles headings/tables correctly
     - Removes metadata field lines (Title:, Description:, Canonical:, Permalink:)
     """
     # Strip code fences (```...``` blocks)
@@ -123,7 +124,7 @@ def sanitize_content(content: str) -> str:
         if stripped.startswith('# ') and not stripped.startswith('## '):
             h1_count += 1
             if h1_count > 1:
-                line = line.replace('# ', '## ', 1)
+                stripped = '## ' + stripped[2:]
 
         # Skip raw separator lines (---) in body content
         if stripped == '---' and len(cleaned_lines) > 0:
@@ -137,7 +138,8 @@ def sanitize_content(content: str) -> str:
         if re.match(r'^\*\*(Title|Description|Canonical|Permalink)\s*:', stripped, re.IGNORECASE):
             continue
 
-        cleaned_lines.append(line.rstrip())
+        # Lstrip the line so markdown parser sees headings/tables at col 0
+        cleaned_lines.append(stripped)
 
     return '\n'.join(cleaned_lines).strip()
 

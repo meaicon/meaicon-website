@@ -1,0 +1,30 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 3,
+  "issues": [
+    {
+      "issue": "The content is incomplete and ends abruptly mid-sentence in the 'Delivery Approach' section.",
+      "suggestion": "Complete the 'Delivery Approach' section and ensure the total character count exceeds the 900-character requirement."
+    },
+    {
+      "issue": "The table data appears to be fabricated or lacks specific, verifiable citations for the MEA region.",
+      "suggestion": "Replace the table with verified data from reputable regional market intelligence reports (e.g., JLL or CBRE MEA Data Centre Outlook) or remove the table if specific, verifiable data is unavailable."
+    },
+    {
+      "issue": "The 'Overview' section relies on generic marketing fluff rather than technical value propositions.",
+      "suggestion": "Rewrite the overview to focus on technical specifications relevant to the MEA climate, such as ASHRAE compliance, PUE optimization, and Tier IV redundancy standards."
+    },
+    {
+      "issue": "The 'Delivery Approach' list is malformed ('1. 2. Design').",
+      "suggestion": "Correct the list formatting to a standard sequential format (1. Design, 2. Build, 3. Commission, 4. Operate) and expand on the technical scope of each phase."
+    }
+  ],
+  "suggestions": [
+    "Ensure all claims regarding market growth are backed by specific, dated reports from recognized industry analysts.",
+    "Focus the content on MEAICON's specific engineering capabilities (e.g., cooling solutions for high-ambient temperatures) rather than generic industry trends.",
+    "Review the entire document for formatting errors and ensure it meets the minimum length requirement before submission."
+  ],
+  "timestamp": "2026-09-30T12:42:17.061991",
+  "evaluator": "llm-critic",
+  "topic": "data-centre"
+}

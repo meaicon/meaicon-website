@@ -2,37 +2,14 @@
   "verdict": "REJECTED",
   "quality_score": 5,
   "issues": [
-    {
-      "issue": "Unsubstantiated performance claims for Wi\u2011Fi\u202f6/6E (9.6\u202fGbps aggregate throughput, 4\u00d7 higher density, 5\u00d7 lower latency) without cited sources."
-    },
-    {
-      "issue": "No evidence or references for fibre interconnects between MEA hubs and the 10\u202fGbps per cabinet claim for GPON/EPON last\u2011mile."
-    },
-    {
-      "issue": "Market context table cites Statista, Cisco, GSMA but provides no verifiable links or detailed methodology, raising potential fabrication concerns."
-    },
-    {
-      "issue": "Statement that proactive fault detection reduces MTTR by up to 30\u202f% lacks supporting data or source."
-    }
+    "Incomplete four-stage quality gate list containing only numbers (1. 2. 3. 4.) with no accompanying text.",
+    "Trailing formatting artifacts (orphan '##' and '---') at the end of the document."
   ],
   "suggestions": [
-    {
-      "suggestion": "Add inline citations or footnotes for all quantitative claims, referencing reputable industry reports or vendor whitepapers."
-    },
-    {
-      "suggestion": "Replace generic performance figures with conservative, verifiable ranges or specify that they are theoretical maximums."
-    },
-    {
-      "suggestion": "Provide actual URLs or document titles for Statista, Cisco, and GSMA references, and summarize key methodology to demonstrate credibility."
-    },
-    {
-      "suggestion": "If MTTR reduction figures are based on internal studies, include a brief description of the study design and results, or remove the claim if no evidence exists."
-    },
-    {
-      "suggestion": "Maintain enterprise\u2011level terminology but avoid superlatives such as \"deterministic QoS\" unless supported by technical specifications."
-    }
+    "Populate the four-stage quality gate list with specific descriptions for each stage (e.g., Design Review, Security Audit, Compliance Check, Deployment Sign-off) or remove the empty enumeration.",
+    "Remove the trailing '##' and '---' syntax markers from the end of the file."
   ],
-  "timestamp": "2026-09-30T05:59:14.237787",
+  "timestamp": "2026-09-30T12:41:19.004313",
   "evaluator": "llm-critic",
   "topic": "connectivity"
 }

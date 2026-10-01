@@ -1,0 +1,17 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 3,
+  "issues": [
+    "Incomplete Content: The text cuts off mid-sentence ('MEA ma...'), rendering the draft unusable.",
+    "Completeness: The total character count is significantly below the 900-character minimum requirement.",
+    "Structure: The 'Why MEAICON' section is truncated, leaving the page in an unfinished state."
+  ],
+  "suggestions": [
+    "Complete the 'Regional Expertise' bullet point and flesh out the 'Why MEAICON' section to provide substantive value.",
+    "Expand the text to exceed 900 characters by elaborating on the specific infrastructure challenges unique to the MEA region (e.g., data sovereignty laws, extreme climate considerations for hardware, or connectivity hurdles).",
+    "Finalize the draft to ensure no truncated sentences remain and that the 'Why MEAICON' section includes at least 3-4 distinct, value-driven bullet points."
+  ],
+  "timestamp": "2026-09-30T12:40:44.914261",
+  "evaluator": "llm-critic",
+  "topic": "case-studies-index"
+}

@@ -1,0 +1,19 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 2,
+  "issues": [
+    "Incomplete Content: The draft contains placeholders ('1. 2. 3.') and is significantly under the 900-character minimum requirement.",
+    "Missing MEA Context: The content fails to address the Middle East/Africa operational landscape, such as regional data sovereignty, local latency, or specific regulatory compliance requirements.",
+    "Brand Safety Violation: The 'Source insights' section explicitly lists competitors, which violates the brand safety policy.",
+    "Lack of Technical Depth: The content relies on generic marketing terminology rather than specific enterprise IT architecture details."
+  ],
+  "suggestions": [
+    "Remove all placeholders and expand the three pillars to provide at least 900 characters of substantive technical detail regarding MEAICON's specific implementation.",
+    "Integrate references to UAE/MEA regulatory frameworks (e.g., UAE Data Protection Law) and explain how MEAICON's ZTNA addresses local data residency and sovereignty requirements.",
+    "Delete the 'Source insights' section entirely to avoid competitor association and maintain brand integrity.",
+    "Replace vague marketing terms with specific technical protocols (e.g., mTLS, SAML/OIDC integration, micro-segmentation strategies) relevant to enterprise network security."
+  ],
+  "timestamp": "2026-09-30T12:45:39.520006",
+  "evaluator": "llm-critic",
+  "topic": "network-security"
+}

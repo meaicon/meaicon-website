@@ -1,0 +1,15 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 6,
+  "issues": [
+    "The content ends abruptly in the 'Patch Management' section, leaving a trailing comma and an incomplete sentence.",
+    "The phrasing 'regional coverage that aligns with MEA business hours' creates a logical contradiction with the '24/7/365' claim, potentially confusing the client regarding the scope of support."
+  ],
+  "suggestions": [
+    "Complete the sentence in the 'Patch Management' section (e.g., '...testing, and deployment to minimize system downtime and security exposure.')",
+    "Rephrase the coverage statement to: 'Our 24/7/365 operations provide continuous global coverage, with dedicated support teams based in the MEA region to ensure local context and rapid on-site escalation when required.'"
+  ],
+  "timestamp": "2026-09-30T12:45:18.334299",
+  "evaluator": "llm-critic",
+  "topic": "managed-services"
+}

@@ -1,0 +1,43 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 4,
+  "issues": [
+    {
+      "criterion": "COMPLETENESS",
+      "description": "The content is significantly under the 900-character minimum requirement."
+    },
+    {
+      "criterion": "TECHNICAL PRECISION",
+      "description": "The term 'One-click enrollment' is marketing fluff and lacks the technical rigor expected for enterprise infrastructure documentation."
+    },
+    {
+      "criterion": "MEA RELEVANCE",
+      "description": "The content mentions the 'MEA region' but fails to address specific regional challenges such as data sovereignty compliance, harsh environmental factors affecting hardware, or connectivity constraints in remote areas."
+    },
+    {
+      "criterion": "STRUCTURE",
+      "description": "The 'Key Capabilities' table is incomplete, containing only one entry, which disrupts the document's professional flow."
+    }
+  ],
+  "suggestions": [
+    {
+      "issue": "COMPLETENESS",
+      "suggestion": "Expand the content to include sections on the OTA update lifecycle (staging, validation, deployment, verification) and the specific architecture used to handle mobile data centre fleets to exceed the 900-character threshold."
+    },
+    {
+      "issue": "TECHNICAL PRECISION",
+      "suggestion": "Replace 'One-click enrollment' with 'Automated Zero-Touch Provisioning (ZTP) workflows' and describe the underlying authentication protocols (e.g., PKI-based identity management)."
+    },
+    {
+      "issue": "MEA RELEVANCE",
+      "suggestion": "Include a section on 'Regional Operational Resilience.' Discuss how the OTA solution handles intermittent connectivity common in remote MEA sites and ensures compliance with local data residency regulations (e.g., UAE Data Law)."
+    },
+    {
+      "issue": "STRUCTURE",
+      "suggestion": "Expand the 'Key Capabilities' table to include at least four rows: 1. Delta Update Compression (for bandwidth efficiency), 2. Automated Rollback/Recovery, 3. Bandwidth Throttling/Scheduling, and 4. Compliance Auditing."
+    }
+  ],
+  "timestamp": "2026-09-30T12:45:50.021863",
+  "evaluator": "llm-critic",
+  "topic": "ota-fleet-management"
+}

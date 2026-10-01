@@ -1,0 +1,19 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 4,
+  "issues": [
+    "Content length is significantly below the 900-character minimum requirement.",
+    "Structure contains prohibited markdown fences and lacks a clear H1 header within the body.",
+    "Content relies on vague marketing superlatives ('secure', 'reliable', 'scalable') rather than technical specifications.",
+    "MEA relevance is superficial and lacks specific regional context regarding operational challenges."
+  ],
+  "suggestions": [
+    "Expand the content to include specific use cases such as smart grid monitoring, oil & gas asset tracking, or logistics optimization in the GCC to meet the length requirement.",
+    "Remove the `---` fences. Add a proper H1 title and ensure the structure follows a logical flow (Introduction -> Technical Capabilities -> MEA-Specific Use Cases -> Reliability Standards).",
+    "Incorporate specific technical details relevant to the stack, such as support for MQTT/OPC-UA protocols, containerization at the edge, or specific connectivity standards like NB-IoT or LoRaWAN.",
+    "Elaborate on how the hardware/software is hardened for extreme desert temperatures or how it addresses data sovereignty regulations within the UAE/GCC."
+  ],
+  "timestamp": "2026-09-30T12:45:06.753602",
+  "evaluator": "llm-critic",
+  "topic": "iot"
+}

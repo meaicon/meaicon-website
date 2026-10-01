@@ -1,0 +1,19 @@
+{
+  "verdict": "REJECTED",
+  "quality_score": 4,
+  "issues": [
+    "Content length is significantly below the 900-character minimum requirement.",
+    "Lack of technical depth; relies on generic marketing language rather than enterprise IT terminology.",
+    "MEA relevance is asserted but not substantiated with specific regional context (e.g., data sovereignty, local infrastructure).",
+    "The content lacks a clear value proposition regarding the 'how' of the services provided."
+  ],
+  "suggestions": [
+    "Expand the content to include specific service pillars: Data Ingestion, ETL/ELT pipelines, Vector Database management, and Data Residency compliance to meet the 900-character threshold.",
+    "Replace generic phrases with technical terminology relevant to AI infrastructure (e.g., 'data lineage,' 'latency optimization,' 'unstructured data normalization,' 'GPU-accelerated processing').",
+    "Explicitly reference regional regulatory frameworks (e.g., UAE Data Protection Law, Saudi PDPL) to substantiate the 'MEA Expertise' claim and demonstrate local compliance knowledge.",
+    "Add a section detailing the infrastructure stack or methodology (e.g., hybrid cloud, on-premise data sovereignty) to provide a concrete value proposition."
+  ],
+  "timestamp": "2026-09-30T12:40:10.613881",
+  "evaluator": "llm-critic",
+  "topic": "ai-data-services"
+}
