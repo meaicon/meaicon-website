@@ -63,4 +63,4 @@ User-agent: PerplexityBot
 Allow: /
 
 # --- Sitemap ---
-Sitemap: https://meaicon.com/sitemap.xml
+Sitemap: https://meaicon.github.io/meaicon-website/sitemap.xml
