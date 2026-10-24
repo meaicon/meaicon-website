@@ -5,17 +5,19 @@
       <!-- Top: Brand + CTA -->
 
   <div class="footer-top reveal flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
-    <div class="footer-brand-block max-w-sm">
-      <img src="/assets/brand/meaicon/meaicon-LLC-FZ-logo-transparent.svg" alt="MEAICON Technology Group logo" class="footer-logo mb-4" width="200" height="40" loading="eager" />
-      <p class="footer-tagline text-sm text-muted">Connectivity, data centre, cyber security, blockchain and consulting services for enterprises and governments across the Middle East & Africa.</p>
+      <div class="footer-brand-block max-w-sm">
+        <img src="/assets/brand/meaicon/meaicon-LLC-FZ-logo-transparent.svg" alt="MEAICON Technology Group logo" class="footer-logo mb-4" width="200" height="40" loading="eager" />
+        <p class="footer-tagline text-sm text-muted">Connectivity, data centre, cyber security, blockchain and consulting services for enterprises and governments across the Middle East & Africa.</p>
+      </div>
+      {% if page.url == "/contact.html" %}
+      <div class="footer-contact-info text-sm text-muted">
+        <p class="font-semibold text-ink mb-2">MEAICON LLC FZ</p>
+        <p>Meydan Free Zone, Dubai, UAE</p>
+        <p><a href="tel:+971****5784" class="hover:text-accent">+971 55 513 5784</a></p>
+        <p><a href="mailto:connect@meaicon.com" class="hover:text-accent">connect@meaicon.com</a></p>
+      </div>
+      {% endif %}
     </div>
-    <div class="footer-contact-info text-sm text-muted">
-      <p class="font-semibold text-ink mb-2">MEAICON LLC FZ</p>
-      <p>Meydan Free Zone, Dubai, UAE</p>
-      <p><a href="tel:+971555135784" class="hover:text-accent">+971 55 513 5784</a></p>
-      <p><a href="mailto:connect@meaicon.com" class="hover:text-accent">connect@meaicon.com</a></p>
-    </div>
-  </div>
 
       <div class="footer-divider reveal"></div>
 
