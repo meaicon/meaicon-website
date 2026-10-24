@@ -1,0 +1,25 @@
+{
+  "regions": [
+    {
+      "name": "GCC",
+      "description": "Gulf Cooperation Council countries — UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman",
+      "countries": ["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Bahrain", "Oman"]
+    },
+    {
+      "name": "Africa",
+      "description": "Sub-Saharan Africa with focus on East, West, and Southern Africa",
+      "countries": ["Kenya", "Nigeria", "South Africa", "Ghana", "Egypt", "Morocco"]
+    },
+    {
+      "name": "South Asia",
+      "description": "South Asian markets including India, Pakistan, Bangladesh, Sri Lanka",
+      "countries": ["India", "Pakistan", "Bangladesh", "Sri Lanka", "Nepal"]
+    },
+    {
+      "name": "North America",
+      "description": "US and Canada for global enterprise engagements",
+      "countries": ["United States", "Canada"]
+    }
+  ],
+  "blurb": "MEAICON delivers digital infrastructure across the GCC, Africa, South Asia, and North America — with local delivery teams and shared operating standards in every region."
+}

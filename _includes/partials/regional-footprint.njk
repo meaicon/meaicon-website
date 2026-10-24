@@ -1,0 +1,20 @@
+{% macro regionalFootprint() %}
+<div class="regional-footprint reveal">
+  <p class="eyebrow mb-3">Our footprint</p>
+  <h3 class="section-title mb-6">Local delivery teams. Shared operating standards.</h3>
+  <p class="max-w-2xl text-ink/70 mb-8">{{ regions.blurb }}</p>
+  <div class="grid-4 gap-6">
+    {% for region in regions.regions %}
+    <article class="feature-card">
+      <h4 class="feature-title">{{ region.name }}</h4>
+      <p class="feature-desc">{{ region.description }}</p>
+      <ul class="mt-4 space-y-2 text-sm text-ink/60">
+        {% for country in region.countries %}
+        <li>{{ country }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+{% endmacro %}
